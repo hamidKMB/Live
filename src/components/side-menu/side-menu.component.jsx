@@ -51,6 +51,7 @@ const SideMenu = (props) => {
                   key={index}
                   id={index}
                   title={item.title}
+                  routeName={item.routeName}
                   onSelect={handleClick}
                   classValue={activeIndex === index ? "on-click" : undefined}
                 />

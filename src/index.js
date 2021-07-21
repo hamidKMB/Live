@@ -1,11 +1,18 @@
+//REACT
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+//Styles
 import './index.css';
+
+//COMPONENTS
 import App from './App';
-// import reportWebVitals from './reportWebVitals';
+
 
 ReactDOM.render(
-    <App />,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter> ,
   document.getElementById('root')
 );
 

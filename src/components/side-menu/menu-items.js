@@ -10,38 +10,47 @@ import HeadsetMicIcon from "@material-ui/icons/HeadsetMic";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 export const menuItemsData = [
-    {
-      title: "داشبورد",
-    },
-    {
-      title: "حساب کاربری",
-    },
-    {
-        title: "ویدیوها" ,
-
-    },
-    {
-      title: "رویدادها",
-    },
-    {
-      title: "آمار بازدید",
-    },
-    {
-      title: "مالی",
-    },
-    {
-      title: "بلیط ها",
-    },
-    {
-      title: "تخفیف ها",
-    },
-    {
-      title: "دنبال کنندگان/دنبال شدگان",
-    },
-    {
-      title: "پشتیبانی",
-    },
-    {
-      title: "خروج از حساب کاربری",
-    }
-]
+  {
+    title: "داشبورد",
+    routeName: "/dashboard",
+  },
+  {
+    title: "حساب کاربری",
+    routeName: "/account",
+  },
+  {
+    title: "ویدیوها",
+    routeName: "/videos",
+  },
+  {
+    title: "رویدادها",
+    routeName: "/events",
+  },
+  {
+    title: "آمار بازدید",
+    routeName: "/views",
+  },
+  {
+    title: "مالی",
+    routeName: "/finance",
+  },
+  {
+    title: "بلیط ها",
+    routeName: "/tickets",
+  },
+  {
+    title: "تخفیف ها",
+    routeName: "/discounts",
+  },
+  {
+    title: "دنبال کنندگان/دنبال شدگان",
+    routeName: "/follow",
+  },
+  {
+    title: "پشتیبانی",
+    routeName: "/backup"
+  },
+  {
+    title: "خروج از حساب کاربری",
+  },
+];
