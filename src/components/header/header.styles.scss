@@ -1,0 +1,127 @@
+.header{
+    background-color: #fff;
+    position: fixed;
+    z-index: 10;
+    width: 100vw;
+    height:fit-content;
+    animation: comeFromTop 1s ease;
+    -webkit-box-shadow: 0px 10px 15px -1px rgba(176, 176, 176, 0.44);
+    box-shadow: 0px 10px 15px -1px rgba(176, 176, 176, 0.44);
+    
+    .MuiContainer-root{
+        background-color: #0000;    
+        
+        .items-holder{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            @media screen and (max-width: 786px) {
+                justify-content: space-evenly;
+            }
+            @media screen and (max-width: 425px) {
+                justify-content: right;
+            }
+            .MuiSvgIcon-root{
+                color: gray
+                }
+            .right{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .ham-menu{
+                    color: orange;
+                    margin-left: 5px;
+                }
+                @media screen and (max-width: 425px) {
+                    margin-left: 10px;
+                }
+                }
+            .middle{
+                background-color: #f7f7f7;
+                border-radius: 5px;
+                padding: 5px;
+                width: 30%;
+                @media screen and (max-width: 430px) {
+                    border-radius: 40px;
+                    padding: 10px;
+                    width: 40%;
+                }
+                @media screen and (max-width: 786px) {
+                    width: 60%;
+                }
+                .input-box{
+                    display: flex;
+                    align-items: center;
+                    @media screen and (max-width: 430px) {
+                        .icon-color{
+                            color:orange;
+                        }
+                    }
+                    input{
+                        background-color: transparent;
+                        border: none;
+                        width: 100%;
+                        color: gray;
+                        text-align: right;
+                        font-size: 79%;
+                        &:focus{
+                            outline: none;
+                        }
+                        &::-webkit-input-placeholder{
+                            color: lightgray;
+                            font-size: 79%;
+                        }
+                    }
+                }
+            }
+            .left{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                    p{
+                        margin: 0;
+                        display: inline;
+                        span{
+                            margin:0;
+                        }
+                    }
+                    span:not(:last-child){
+                        background-color: #f7f7f7;
+                        border-radius: 5px;
+                        padding: 5px;
+                        margin-left: 15px;
+                        display: flex;
+                        align-items: center;
+                    }
+                    .profile-photo{
+                        border-radius: 100%;
+                        height: 2.5rem;
+                        width: 2.5rem;
+                        img{
+                            height: inherit;
+                            width: inherit;
+                            border-radius: inherit;
+                            object-fit: cover;
+                        }
+                    }
+                @media screen and (max-width: 786px) {
+                    display: none
+                }
+            }
+        }
+    }
+}
+
+@keyframes comeFromTop {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}

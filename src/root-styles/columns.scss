@@ -1,0 +1,9 @@
+.column{
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 991px) {
+    .column{
+        margin-bottom: 10px
+    }
+}

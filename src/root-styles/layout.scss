@@ -1,0 +1,13 @@
+.admin-pages-layout {
+    margin: 0 19vw 0 0;
+    padding: 10rem;
+    position: relative;
+    z-index: 0;
+}
+
+@media screen and (max-width: 786px) {
+    .admin-pages-layout{
+        margin: 0;
+        padding: 7rem 4rem;
+    }
+}
