@@ -28,27 +28,34 @@ const SideMenu = (props) => {
       };
 
     return (
-      <div className={`side-menu ${props.display}`}> 
+      <div className={`side-menu ${props.display}`}>
         <div className="user-profile">
-          <img src={userPicture} alt="user" />
-          <CameraAlt className="camera-icon" />
-          <SettingsIcon className="settings-icon" />
+          <div className="user-profile-holder">
+            <div className="user-image-holder">
+              <img src={userPicture} alt="user" />
+              <CameraAlt className="camera-icon" />
+              <SettingsIcon className="settings-icon" />
+            </div>
+            <div className="user-details">
+              <h3>علی رجبی</h3>
+              <p>{`0933 333 3333`}</p>
+            </div>
+          </div>
         </div>
+
         <div className="list-of-dashboard">
           <ul>
-            {
-              menuItemsData.map((item, index) => {
-                return(
-                  <MenuItem 
-                    key={index}
-                    id={index}
-                    title={item.title}
-                    onSelect={handleClick}
-                    classValue= {activeIndex === index ? "on-click" : undefined}
-                  />
-                )
-              })
-            }
+            {menuItemsData.map((item, index) => {
+              return (
+                <MenuItem
+                  key={index}
+                  id={index}
+                  title={item.title}
+                  onSelect={handleClick}
+                  classValue={activeIndex === index ? "on-click" : undefined}
+                />
+              );
+            })}
           </ul>
         </div>
       </div>

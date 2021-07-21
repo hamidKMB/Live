@@ -42,14 +42,14 @@
                 border-radius: 5px;
                 padding: 5px;
                 width: 30%;
-                @media screen and (max-width: 430px) {
-                    border-radius: 40px;
-                    padding: 10px;
-                    width: 40%;
-                }
                 @media screen and (max-width: 786px) {
+                    border-radius: 40px;
+                    padding: 6px;
                     width: 60%;
                 }
+                // @media screen and (max-width: 786px) {
+                //     width: 40%;
+                // }
                 .input-box{
                     display: flex;
                     align-items: center;
