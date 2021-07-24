@@ -1,16 +1,17 @@
+@import "../../root-styles/variables.scss";
+
 .side-menu {
     animation: comeFromRight 1s ease;
-    background-color: #fff;
+    background-color: $color-light-white;
     width: 16rem;
     height: 100vh;
     position: fixed;
     z-index:0;
     right: 0;
-    padding: 20px 10px 50px;
-    overflow-y: scroll;
+    padding: 20px 10px;
+    overflow-y: auto;
     margin-top: 3.5rem;
     transition: all ease .2s;
-
     .user-profile{
         .user-profile-holder{
             .user-image-holder{
@@ -20,77 +21,71 @@
                 margin: 2.5rem auto 1.5rem;
                 position: relative;
                 transition: all ease .2s;
-
                 img {
                     width: inherit;
                     height: inherit;
                     border-radius: inherit;
                     object-fit: cover;
                 }
-
                 .camera-icon {
                     position: absolute;
                     bottom: 8px;
                     right: 58px;
-                    color: rgba(255, 255, 255, 100);
-                    background-color: rgba(255, 255, 255, 0);
+                    color: rgba($color-light-white , 1);
+                    background-color: rgba($color-light-white, 0);
                     border-radius: 100%;
                     padding: 3px;
                     font-size: 19px;
                     transition: all ease .2s;
-
                     &:hover {
                         color: rgba(0, 0, 0, 100);
-                        background-color: rgba(255, 255, 255, 0.5);
-                        text-shadow: 0 0 10px #FFFFFF,
+                        background-color: rgba($color-light-white, 0.5);
+                        text-shadow: 0 0 10px $color-light-white,
                             2px 2px 0px rgba(255, 255, 255, 0);
                         transition: all ease .2s;
                     }
                 }
-
                 .settings-icon {
                     position: absolute;
                     left: 6px;
                     top: 4px;
-                    background-color: #fff;
+                    background-color: $color-light-white;
                     border-radius: 100%;
-                    color: orange;
+                    color: $color-light-orange;
                 }
             }
-        
-
         .user-details {
             display: none;
         }
     }
 }
-    .list-of-dashboard{
+    .list-of-dashboard{ 
         padding-bottom: 20px;
         ul{
+            list-style: none;
+            padding: 0;
             a{
                 text-decoration: none;
             }
-            list-style: none;
-            padding: 0;
             li{
                 padding: 0.5rem;
                 align-items: center;
                 display: flex;
                 flex-direction: row-reverse;
                 justify-content: flex-end;
-                color: gray;
+                color: $color-light-grey;
                 .dashboard-icon{
                     margin-left: 5px;
                 }
                 }
             }
             .on-click {
-                color: #0f0f0f;
-                background-color: #f7f7f7;
+                color: $color-light-text;
+                background-color: $color-light-white-items-select;
                 border-radius: 5px;
-                border-right: 5px solid #0f0f0f;
+                border-right: 5px solid $color-light-text;
                 .dashboard-icon{
-                    color: orange;
+                    color: $color-light-orange;
                     
                 } 
             }
@@ -101,10 +96,11 @@
         display: none;
         width: 14rem;
         margin-top: 4rem;
+        padding-bottom: 25vh;
+        overflow-y: scroll;
         z-index: 2;
         -webkit-box-shadow: -15px 0px 19px 2px rgba(109, 109, 109, 0.57);
         box-shadow: -15px 0px 19px 2px rgba(109, 109, 109, 0.57);
-        
         .user-profile{
             padding: 0 5px;
                 &::after {
@@ -112,9 +108,11 @@
                     margin-top: 10px;
                     width: 100%;
                     display: flex;
-                    border: 0.8px solid lightgray;
+                    border: 0.8px solid $color-light-grey;
+                    margin-bottom: 5px;
                 }
                 .user-profile-holder{
+                    margin: 20px 0 20px;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
@@ -132,8 +130,8 @@
                     .user-details{
                         display: flex;
                         flex-direction: column;
-                        
-                        h3{
+                        color: $color-light-text;
+                        h3{ 
                             font-size: 18px;
                         }
                         p{
@@ -143,12 +141,13 @@
                     }
                 }
         }
-
+    
     }
 }
 
 .toggle-side-menu {
     display: block !important;
+    
 }
 
 @keyframes comeFromRight {
@@ -160,6 +159,19 @@
     100%{
         transform: translateX(0);
         opacity: 1;
+    }
+
+}
+
+@keyframes goToRight {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-20px);
+        opacity: 0;
     }
 
 }

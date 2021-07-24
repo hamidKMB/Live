@@ -1,0 +1,17 @@
+@import "../../../root-styles/variables.scss";
+
+.tipper{
+    header{
+        box-shadow: none;
+        border-bottom: 1px solid $color-light-grey;
+        .tab-list{
+                    background-color: $color-light-dark-white;
+                    button{
+                        color:$color-light-grey;
+                        font-family: inherit;
+                        padding: 0;
+                        width: 5rem;
+                    }
+                }    
+    }
+}

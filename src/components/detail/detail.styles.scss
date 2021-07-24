@@ -1,0 +1,13 @@
+@import "../../root-styles/variables.scss";
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 1px solid rgba($color-light-grey, 0.5);
+    margin-bottom: 10px;
+
+    .look-all {
+        color: $color-light-orange
+    }
+}

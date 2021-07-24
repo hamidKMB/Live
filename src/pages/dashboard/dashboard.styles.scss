@@ -1,41 +1,39 @@
+@import "../../root-styles/variables.scss";
+
 .dashboard{
     .row{
         margin-bottom: 20px;
-        .detail {
-            display: flex;
-            justify-content: space-between;
-            flex-direction: row;
-            border-bottom: 1px solid gray;
-            margin-bottom: 10px;
-        }
         .first-row {
             text-align: center;
             padding: 1rem 0.5rem;
             h5{
-                margin-bottom: 1rem;
+                margin-bottom: 10%;
             }
             span{
-                font-size: 0.81rem;
+                font-size: 80%;
             }
         }
     .second-row{
-        .messages{
-            background-color: #f0f0f0;
-            border-radius: 5px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            color: grey;
-            margin-bottom:  5px; 
-            padding: 5px;
-            .message-text {
-                color: #0f0f0f
+        .message-holder{
+            height: 10rem;
+            overflow-y: scroll;
+            }
+        #tickets{
+            .messages{
+                span{
+                    &:last-child{
+                        padding: 0.1rem 0.4rem;
+                        border-radius: inherit;
+                        background-color: $color-light-closed-ticket;
+                        color: $color-light-text;
+                    }
+                }
             }
         }
         }
     }
     .stock{
-        border: 1px solid orange;
+        border: 1px solid $color-light-orange;
         border-radius: 10px;
         padding: 0.9rem 0.5rem;
         font-size: 12px;
@@ -54,5 +52,27 @@
     }
     .guide{
         font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .col-4{
+        &:last-child{
+            display: none;
+        }
+    }
+    .row{
+        #notif{
+                display: none;
+        }
+        
+    }
+    .row{
+        #guide{
+            display: none;
+        }
+        #wallet{
+            display: none;
+        }
     }
 }
