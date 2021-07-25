@@ -1,16 +1,24 @@
 //COLORS
 
-$color-light-white: #fff ;
+//LIGHT
+$color-light-white: #FFFF;
 $color-light-dark-white: #f0f0f0;
 $color-light-white-items-select: #F7F7FA;
-
-$color-dark-body-background: #000;
-$color-dark-text: #fff;
 
 $color-light-orange: #EFA00B;
 
 $color-light-grey: #707070;
-$color-light-text: #372C51;
+$color-light-text: #372C51; //static
+
+$color-light-borders: rgba(#372C51 , 0.24);
 
 $color-light-open-ticket: #BFBEDC;
 $color-light-closed-ticket: #E2E3E5;
+
+//DARK
+$color-dark-black: #0000;
+$color-dark-black-artboard: #16171A;
+$color-dark-black-main: #212226;
+$color-dark-orange: #EFB13C;
+$color-dark-grey: #292A33;
+$color-dark-black-progress: #34363D;

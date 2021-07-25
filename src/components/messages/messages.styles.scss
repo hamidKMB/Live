@@ -18,3 +18,13 @@
         background-color: $color-light-open-ticket !important;
     }
 }
+
+.dark{
+    .messages{
+        background-color: $color-dark-grey;
+        color: rgba($color-light-white, 0.1);
+        .message-text{
+            color: rgba($color-light-white, 0.8)
+        }
+    }
+}

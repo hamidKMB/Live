@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 .card {
     padding: 5px;
     height: 100%;
@@ -5,4 +7,18 @@
     -webkit-box-shadow: 0px 0px 9px 0px rgba(170, 170, 170, 0.57);
     box-shadow: 0px 0px 9px 0px rgba(170, 170, 170, 0.57);
     border: none;
+}
+
+.dark{
+    .card {
+        background-color: $color-dark-black-main;
+        -webkit-box-shadow: 0px 0px 9px 0px rgba($color-dark-black, 0.5);
+        box-shadow: 0px 0px 9px 0px rgba($color-dark-black, 0.5);
+        h5{
+            color: rgba($color-light-white, 0.88);
+        }
+        span{
+            color: rgba($color-light-white, 0.6)
+        }
+    }
 }

@@ -6,18 +6,18 @@ import { Link } from "react-router-dom";
 import "./side-menu.styles.scss";
 
 const MenuItem = (props) => {
-        return(
-            <Link to={props.routeName}>
-            <li onClick={ () => {
-                props.onSelect(props.id)
-            }}
-            className={props.classValue}
+        return (
+          <Link to={props.routeName}>
+            <li
+              onClick={() => {
+                props.onSelect(props.id);
+              }}
+              className={props.classValue}
             >
-                {props.title}
-                {props.logo}
+            {props.title}
             </li>
-            </Link>
-        )
+          </Link>
+        );
 }
 
 export default MenuItem

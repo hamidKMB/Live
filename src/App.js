@@ -18,8 +18,10 @@ import Discounts from "./pages/discounts/discounts.component";
 import Followers from "./pages/followers/followers.component";
 import BackUp from "./pages/back-up/back-up.component";
 
+
 //STYLES
 import "./App.css";
+import "./root-styles/__dark-mode.scss"
 
 function App() {
   const [toggled, setToggled] = React.useState(false);
@@ -38,12 +40,24 @@ function App() {
     });
   };
 
+  const stored = localStorage.getItem("isDark");
+  //saving dark mode to local storage
+  const [isDark, setIsDark] = React.useState(
+    stored === "true" ? true : false
+  );
+
+  const onToggledDarkMode = () => {
+    // dark mode toggled
+    setIsDark(!isDark);
+    localStorage.setItem("isDark", !isDark);
+  }
+
   return (
-    <div className="App">
-      <Header toggleSideBar={() => handleClick()} />
+    <div className={`App ${isDark ? `dark` : ` `}`}>
+      <Header toggleSideBar={handleClick} onToggleDarkMode={onToggledDarkMode}/>
       <SideMenu display={toggled ? "toggle-side-menu" : " "} />
       <Switch>
-        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/" component={Dashboard} />
         <Route exact path="/account" component={Account} />
         <Route exact path="/videos" component={Videos} />
         <Route exact path="/events" component={Events} />

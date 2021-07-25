@@ -1,0 +1,116 @@
+@import "./variables.scss";
+
+.App.dark{
+        background-color: $color-dark-black-artboard;
+        //HEADER_STYLE
+            .header{
+            background-color: $color-dark-black-main;
+            color:rgba($color-light-white, 0.5);
+            -webkit-box-shadow: 0px 10px 15px -1px rgba($color-dark-black-artboard, 50%);
+            box-shadow: 0px 10px 15px -1px rgba($color-dark-black-artboard, 50%);
+            .MuiContainer-root {
+                .items-holder{
+                    .MuiSvgIcon-root{
+                        color:$color-light-white;
+                    }
+                    .right{
+                        .ham-menu{
+                            color: $color-dark-orange;
+                        }
+                    }
+                    .middle{
+                        background-color: rgba($color-light-white, 0.12);
+                        border: 1px solid rgba($color-light-white, 0.4);
+                        .input-box{
+                            @media screen and (max-width: 430px) {
+                                .icon-color {
+                                    color: $color-dark-orange;
+                                }
+                            }
+                            input{
+                                color: rgba($color-light-white, 0.8);
+                            }
+                        }
+                    }
+                    .left{
+                        span:not(:last-child) {
+                            background-color: rgba($color-light-white, 0.12);
+                            border: 1px solid rgba($color-light-white, 0.4);
+                            .hover-state{
+                                background-color: $color-dark-orange;
+                                color: rgba($color-light-text, 0.8)
+                            }
+                            .gooshe{
+                                background-color: $color-dark-orange;
+                            }
+                            &:hover:not(:nth-child(n+5)) {
+                                background-color: rgba($color-light-white, 0.2);
+                                box-shadow: none;
+                                .icon-color{
+                                    color: $color-dark-orange;
+                                }
+                            }
+                            &:nth-child(5) {
+                                color:#fff;
+                                &:hover{
+                                    .icon-color{
+                                        color: $color-dark-orange;
+                                    }
+                                }
+                        }
+                    }
+                }
+            }
+        }   
+        }
+        //SIDE-MENU-STYLE
+            .side-menu{
+                background-color: $color-dark-black-main;
+                color: rgba($color-light-white, 50%);
+                -webkit-box-shadow: 0px 10px 15px -1px rgba($color-dark-black-artboard, 50%);
+                box-shadow: 0px 10px 15px -1px rgba($color-dark-black-artboard, 50%);
+                .user-profile {
+                    .user-profile-holder {
+                        .user-image-holder {
+                            .settings-icon {
+                                background-color: $color-light-grey;
+                                }
+                            }
+                        }
+                    }
+                .list-of-dashboard{
+                    ul{
+                        li{
+                            color: rgba($color-light-white, 0.5);
+                        }
+                        .on-click{
+                            color:rgba($color-light-white, 0.9);
+                            background-color: rgba($color-light-white, 0.12);
+                            border-right: 5px solid rgba($color-light-white, 0.4);
+                            .icon-color{
+                                color: $color-dark-orange;
+                            }
+                        }
+                    }
+                }
+            }
+            .dashboard{
+                .row{
+                    .second-row{
+                        .message-holder#tickets{
+                            .messages{
+                                .in-progress {
+                                    background-color: $color-dark-black-artboard !important;
+                                    border: 1px solid $color-dark-black-progress;
+                                    color: rgba($color-light-white, 0.8);
+                                }
+                                span:last-child{
+                                    background-color: rgba($color-light-white, 0.24);
+                                    color: rgba($color-light-white, 0.5);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+}

@@ -29,8 +29,10 @@
                 }
                 .camera-icon {
                     position: absolute;
-                    bottom: 8px;
-                    right: 58px;
+                    width: 26px;
+                    height: 25px;
+                    bottom: 11px;
+                    right: 56px;
                     color: rgba($color-light-white , 1);
                     background-color: rgba($color-light-white, 0);
                     border-radius: 100%;
@@ -43,6 +45,7 @@
                         text-shadow: 0 0 10px $color-light-white,
                             2px 2px 0px rgba(255, 255, 255, 0);
                         transition: all ease .2s;
+                        cursor: pointer;
                     }
                 }
                 .settings-icon {
@@ -52,6 +55,10 @@
                     background-color: $color-light-white;
                     border-radius: 100%;
                     color: $color-light-orange;
+                    &:hover{
+                        animation: rotate 2s linear infinite;
+                        cursor: pointer;
+                    }
                 }
             }
         .user-details {
@@ -97,7 +104,7 @@
         width: 14rem;
         margin-top: 4rem;
         padding-bottom: 25vh;
-        overflow-y: scroll;
+        overflow-y: auto; 
         z-index: 2;
         -webkit-box-shadow: -15px 0px 19px 2px rgba(109, 109, 109, 0.57);
         box-shadow: -15px 0px 19px 2px rgba(109, 109, 109, 0.57);
@@ -108,7 +115,7 @@
                     margin-top: 10px;
                     width: 100%;
                     display: flex;
-                    border: 0.8px solid $color-light-grey;
+                    border: 0.8px solid $color-light-borders;
                     margin-bottom: 5px;
                 }
                 .user-profile-holder{
@@ -174,4 +181,13 @@
         opacity: 0;
     }
 
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }

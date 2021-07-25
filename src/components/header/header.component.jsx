@@ -18,7 +18,7 @@ import HeadsetMicIcon from "@material-ui/icons/HeadsetMic";
 import SearchIcon from "@material-ui/icons/Search";
 import MenuIcon from "@material-ui/icons/Menu";
 import AddIcon from "@material-ui/icons/Add";
-import DarkModeButton from "../dark-mode-theme/darkmode.component";
+import Brightness4OutlinedIcon from "@material-ui/icons/Brightness4Outlined";
 
 const Header = (props) => {
     return (
@@ -31,7 +31,10 @@ const Header = (props) => {
                 <img src="#" alt="brand-logo" />
               </span>
             </div>
-            <DarkModeButton />
+            <Brightness4OutlinedIcon
+              className="icon-color toggle-dark-light--mode"
+              onClick={props.onToggleDarkMode}
+            />
             <div className="middle">
               <div className="input-box">
                 <SearchIcon className="icon-color" />

@@ -11,3 +11,14 @@
         color: $color-light-orange
     }
 }
+
+.dark{
+    .detail{
+        h6{
+            color:rgba($color-light-white, 0.88);
+        }
+    }
+    span.look-all{
+        color: $color-dark-orange !important;
+    }
+}

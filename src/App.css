@@ -1,7 +1,10 @@
 @import url(fonts/add-font.css);
 
 body{
-    background-color: #f0f0f0;
     font-family: IRANSans_FaNum !important;
     direction: rtl;
+}
+
+.App{
+    background-color: #f0f0f0;
 }
