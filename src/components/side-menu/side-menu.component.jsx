@@ -4,16 +4,6 @@ import SettingsIcon from "@material-ui/icons/Settings";
 // import PermIdentityOutlinedIcon from "@material-ui/icons/PermIdentityOutlined";
 import userPicture from "./WhatsApp Image 2021-06-22 at 13.15.45.jpeg"
 import React from "react";
-// import { useLocation } from "react-router-dom";
-// import { Link } from "react-router-dom";
-// import EventOutlinedIcon from "@material-ui/icons/EventOutlined";
-// import VideocamOutlinedIcon from "@material-ui/icons/VideocamOutlined";
-// import TrendingUpOutlinedIcon from "@material-ui/icons/TrendingUpOutlined";
-// import MonetizationOnOutlinedIcon from "@material-ui/icons/MonetizationOnOutlined";
-// import ConfirmationNumberOutlinedIcon from "@material-ui/icons/ConfirmationNumberOutlined";
-// import GroupIcon from "@material-ui/icons/Group";
-// import HeadsetMicIcon from "@material-ui/icons/HeadsetMic";
-// import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { menuItemsData } from "./menu-items";
 import MenuItem from "./side-menu-items.component";
 
@@ -52,6 +42,7 @@ const SideMenu = (props) => {
                   id={index}
                   title={item.title}
                   routeName={item.routeName}
+                  logo={item.logo}
                   onSelect={handleClick}
                   classValue={activeIndex === index ? "on-click" : undefined}
                 />

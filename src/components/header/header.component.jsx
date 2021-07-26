@@ -8,17 +8,21 @@ import userPicture from "../side-menu/WhatsApp Image 2021-06-22 at 13.15.45.jpeg
 
 //Styles
 import "./header.styles.scss"
+import "../../root-styles/variables.scss"
 import { Container } from "@material-ui/core";
 
+
 ///ICONS
-import VideocamIcon from "@material-ui/icons/Videocam";
-import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
-import LiveTvIcon from "@material-ui/icons/LiveTv";
-import HeadsetMicIcon from "@material-ui/icons/HeadsetMic";
-import SearchIcon from "@material-ui/icons/Search";
-import MenuIcon from "@material-ui/icons/Menu";
-import AddIcon from "@material-ui/icons/Add";
+import { MenuItem } from "@material-ui/core";
+import { ReactComponent as VideoCameraIcon } from "./Header/camera_video.svg";
+import { ReactComponent as NotificationsIcon } from "./Header/notification1.svg";
+import { ReactComponent as LiveIcon } from "./Header/live.svg";
+import { ReactComponent as HeadsetIcon } from "./Header/support.svg";
+import { ReactComponent as SearchIcon } from "./Header/Search.svg";
+import { ReactComponent as HamburgerMenuIcon } from "./Header/hamburger_menu.svg";
+import { ReactComponent as PlusIcon } from "./Header/plus.svg";
 import Brightness4OutlinedIcon from "@material-ui/icons/Brightness4Outlined";
+import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
 
 const Header = (props) => {
     return (
@@ -26,15 +30,30 @@ const Header = (props) => {
         <Container>
           <div className="items-holder">
             <div className="right">
-              <MenuIcon className="ham-menu" onClick={props.toggleSideBar} />
-              <span className="brand-logo">
-                <img src="#" alt="brand-logo" />
-              </span>
+              <HamburgerMenuIcon 
+                className="ham-menu"
+                onClick={props.toggleSideBar}
+              />
+              <div className="brand-logo" />
             </div>
-            <Brightness4OutlinedIcon
-              className="icon-color toggle-dark-light--mode"
-              onClick={props.onToggleDarkMode}
-            />
+            {props.dark ? (
+              <BrightnessHighIcon
+                style={{
+                  color: "#EFB13C",
+                  cursor: "pointer",
+                }}
+                className="icon-color"
+                onClick={props.onToggleDarkMode}
+              />
+            ) : (
+              <Brightness4OutlinedIcon
+                style={{
+                  cursor: "pointer",
+                }}
+                className="icon-color"
+                onClick={props.onToggleDarkMode}
+              />
+            )}
             <div className="middle">
               <div className="input-box">
                 <SearchIcon className="icon-color" />
@@ -46,28 +65,28 @@ const Header = (props) => {
             </div>
             <div className="left">
               <span>
-                <NotificationsNoneIcon className="icon-color" />
+                <NotificationsIcon className="icon-color"/>
                 <span className="gooshe" />
                 <div className="hover-state">نمایش اعلان ها</div>
               </span>
               <span>
-                <VideocamIcon className="icon-color" />
+                <VideoCameraIcon className="icon-color" />
                 <span className="gooshe" />
                 <div className="hover-state">ویدیوها</div>
               </span>
               <span>
-                <LiveTvIcon className="icon-color" />
+                <LiveIcon className="icon-color" />
                 <span className="gooshe" />
                 <div className="hover-state">لایو</div>
               </span>
               <span>
-                <HeadsetMicIcon className="icon-color" />
+                <HeadsetIcon className="icon-color" />
                 <span className="gooshe" />
                 <div className="hover-state">پشتیبانی</div>
               </span>
               <span>
                 <p>تومان2500</p>
-                <AddIcon className="icon-color" />
+                <PlusIcon className="icon-color" />
               </span>
               <span className="profile-photo">
                 <img src={userPicture} alt="profile" />

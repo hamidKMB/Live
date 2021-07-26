@@ -48,13 +48,14 @@ function App() {
 
   const onToggledDarkMode = () => {
     // dark mode toggled
+    console.log(localStorage);
     setIsDark(!isDark);
     localStorage.setItem("isDark", !isDark);
   }
 
   return (
     <div className={`App ${isDark ? `dark` : ` `}`}>
-      <Header toggleSideBar={handleClick} onToggleDarkMode={onToggledDarkMode}/>
+      <Header toggleSideBar={handleClick} onToggleDarkMode={onToggledDarkMode} dark={isDark}/>
       <SideMenu display={toggled ? "toggle-side-menu" : " "} />
       <Switch>
         <Route exact path="/" component={Dashboard} />

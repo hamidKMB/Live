@@ -1,57 +1,57 @@
 export const menuItemsData = [
   {
     title: "داشبورد",
-    logo:"./Dashboard_Menu/1.dashboard.svg",
+    logo: "1.dashboard",
     routeName: "/",
   },
   {
     title: "حساب کاربری",
-    logo:"./Dashboard_Menu/2.user.svg",
+    logo: "2.user",
     routeName: "/account",
   },
   {
     title: "ویدیوها",
-    logo:"./Dashboard_Menu/3.live.svg",
+    logo: "3.live",
     routeName: "/videos",
   },
   {
     title: "رویدادها",
-    logo: "./Dashboard_Menu/4.camera_video.svg",
+    logo: "4.camera_video",
     routeName: "/events",
   },
   {
     title: "آمار بازدید",
-    logo:"./Dashboard_Menu/5.bar_chart.svg",
+    logo: "5.bar_chart",
     routeName: "/views",
   },
   {
     title: "مالی",
-    logo:"./Dashboard_Menu/6.coin.svg",
+    logo: "6.coin",
     routeName: "/finance",
   },
   {
     title: "بلیط ها",
-    logo: "./Dashboard_Menu/7.ticket.svg",
+    logo: "7.ticket",
     routeName: "/tickets",
   },
   {
     title: "تخفیف ها",
-    logo:"./Dashboard_Menu/8.discount.svg",
+    logo: "8.discount",
     routeName: "/discounts",
   },
   {
     title: "دنبال کنندگان/دنبال شدگان",
-    logo:"Dashboard_Menu/9.followers.svg",
+    logo: "9.followers",
     routeName: "/follow",
   },
   {
     title: "پشتیبانی",
-    logo:"Dashboard_Menu/10.support.svg",
-    routeName: "/backup"
+    logo: "10.support",
+    routeName: "/backup",
   },
   {
     title: "خروج از حساب کاربری",
-    logo: "Dashboard_Menu/11.logout.svg",
-    routeName: "/"
+    logo: "11.logout",
+    routeName: "/",
   },
 ];
