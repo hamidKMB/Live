@@ -1,0 +1,48 @@
+@import "../../../../root-styles/variables.scss";
+
+.settings{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    width: 65%;
+    .setting-detail{
+        font-size: 17px;
+        margin-bottom: 1.5rem;
+    }
+    .circle-holder{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+        .circle{
+            background-color: $color-light-white;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 1rem;
+            border: 1px dashed $color-light-orange;
+            border-radius: 100%;
+            text-align: center;
+            align-items: center;
+            img{
+                margin: 20px
+            }
+        }
+    }
+    .rect{
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        padding: 4.5rem 5rem;
+        border: 1px dashed $color-light-orange;
+        text-align: center;
+        background-color: $color-light-white;
+        margin-bottom: 20px;
+    }
+    .text-field{
+        margin-bottom: 15px
+    }
+    .settings-button{
+        margin: 20px auto 0;
+        padding: 0.5rem 1rem;
+        width: 8.8rem;
+    }
+}

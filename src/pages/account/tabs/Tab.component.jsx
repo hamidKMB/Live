@@ -13,6 +13,7 @@ import TabPanel from "@material-ui/lab/TabPanel";
 
 //STYLES
 import "./Tab.styles.scss"
+import SettingsOfChannel from "./settings-of-channel/setting-of-channel.component";
 
 export default function LabTabs() {
     const [value, setValue] = React.useState("1");
@@ -32,8 +33,8 @@ export default function LabTabs() {
                 <Tab label="تغییر رمز عبور" value="4" />
             </TabList>
           </AppBar>
-          <TabPanel value="1"><PersonalInformation/></TabPanel>
-          <TabPanel value="2">تنظیمان</TabPanel>
+          <TabPanel value="1"> <PersonalInformation/> </TabPanel>
+          <TabPanel value="2"> <SettingsOfChannel/> </TabPanel>
           <TabPanel value="3">اعلان ها</TabPanel>
           <TabPanel value="4">تغییر رمز عبور</TabPanel>
         </TabContext>

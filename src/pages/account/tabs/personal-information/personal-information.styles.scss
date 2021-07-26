@@ -1,0 +1,78 @@
+@import "../../../../root-styles/variables.scss";
+
+.personal-information{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    .right{
+        display: flex;
+        flex-direction: column;
+        margin: 0 20px;
+        h1{
+            font-size: 25px;
+            margin: 0 0 20px 0;
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .text-field{
+                margin: 0 0 20px 0;
+                text-align: right;
+                font-family: inherit;
+                animation: comeFromTop .5s ease;
+            }
+        }
+    }
+
+    .left{
+        display: flex;
+        flex-direction: column;
+        margin: 0 20px;
+
+        .detail-left{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            h1 {
+                font-size: 25px;
+                margin: 0 0 20px 0;
+            }
+            .switch{
+                    height: 2rem;
+                    width: 5rem;
+                    border-radius: 100px;
+                    margin-left: 1px;
+                    .switch-handle{
+                            background-color: #fff;
+                            border-radius: 100px;
+                            padding-left: 0px;
+                            padding-right: 0px;
+                            margin-left: 0px;
+                            width: 26px;
+                    }
+            }
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            .text-field {
+                margin: 0 0 20px 0;
+                text-align: right;
+                font-family: inherit;
+                animation: comeFromTop .5s ease;
+            }
+        }
+    }
+}
+
+@keyframes comeFromTop {
+    0%{
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity:1;
+    }
+}
