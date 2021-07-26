@@ -1,16 +1,34 @@
 @import "../../../root-styles/variables.scss";
 
-.tipper{
+.tabs{
     header{
-        box-shadow: none;
-        border-bottom: 1px solid $color-light-grey;
-        .tab-list{
+    color: $color-light-grey;
+    font-style: inherit;
+    background-color: inherit;
+    box-shadow: none;
+    width: 300px;
+    .tab-list{
                     background-color: $color-light-dark-white;
-                    button{
-                        color:$color-light-grey;
-                        font-family: inherit;
-                        padding: 0;
-                        width: 5rem;
+                    width: 302px;
+                    .MuiTabs-scroller{
+                        width: 177px;
+                        .MuiTabs-flexContainer{
+                            width: 303px;
+                            button.MuiButtonBase-root.MuiTab-root.MuiTab-textColorInherit{
+                                color:$color-light-grey;
+                                padding: 0;
+                                width: 2rem !important;
+                                justify-content: center;
+                                font-family: inherit;
+                                span{
+                                    width: 97px;
+                                }
+                                
+                            }
+                        }
+                    span.PrivateTabIndicator-root-1 {
+                        background-color: $color-light-orange;
+                    }
                     }
                 }    
     }
