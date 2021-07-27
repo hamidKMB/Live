@@ -48,10 +48,13 @@ function App() {
 
   const onToggledDarkMode = () => {
     // dark mode toggled
-    console.log(localStorage);
     setIsDark(!isDark);
     localStorage.setItem("isDark", !isDark);
   }
+
+  React.useEffect(() => {
+    document.querySelector("body").classList.toggle("dark")
+  })
 
   return (
     <div className={`App ${isDark ? `dark` : ` `}`}>
