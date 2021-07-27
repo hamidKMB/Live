@@ -4,6 +4,7 @@ import { TextField } from "@material-ui/core"
 
 import "./change-password.styles.scss"
 import "../../../../root-styles/buttons.scss"
+
 const ChangePassword = () => {
     return (
         <div className="change-password">

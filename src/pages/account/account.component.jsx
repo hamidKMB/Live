@@ -10,7 +10,7 @@ import "../../root-styles/layout.scss"
 
 const Account = () => {
     return (
-        <div className="admin-pages-layout">
+        <div className="admin-pages-layout account-layout">
             <LabTabs/>
         </div>
     );

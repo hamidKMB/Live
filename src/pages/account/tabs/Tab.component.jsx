@@ -13,9 +13,30 @@ import Tab from "@material-ui/core/Tab";
 import TabContext from "@material-ui/lab/TabContext";
 import TabList from "@material-ui/lab/TabList";
 import TabPanel from "@material-ui/lab/TabPanel";
+import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 
 //STYLES
 import "./Tab.styles.scss"
+import "../../../root-styles/variables.scss"
+
+
+const theme = createTheme({ //overriding the classes of the material UI
+  overrides:{
+    MuiTab:{
+      root:{
+        minWidth: 0,
+        '@media (min-width: 0px)':{
+          minWidth:0
+        }
+      }
+    },
+  },
+  palette: {
+    primary: {
+      main: '#EFA00B',
+    },
+  },
+})
 
 
 
@@ -28,10 +49,14 @@ export default function LabTabs() {
 
     return (
       <div className="tabs">
-        <TabContext value={value} className="tab-context">
-            <AppBar position="static">
-            <TabList onChange={handleChange} aria-label="simple tabs example" className="tab-list">
-                <Tab label="اطلاعات شخصی" value="1" />
+      <ThemeProvider theme={theme}>
+        <TabContext 
+          value={value} 
+          className="tab-context"
+          >
+            <AppBar position="static" className="bottom-slider">
+            <TabList indicatorColor="primary" onChange={handleChange} aria-label="simple tabs example" className='tab-list'>
+                <Tab label="اطلاعات شخصی" value="1" indicatorColor="primary"/>
                 <Tab label="تنظیمات کانال" value="2" />
                 <Tab label="اعلان ها" value="3" />
                 <Tab label="تغییر رمز عبور" value="4" />
@@ -42,6 +67,7 @@ export default function LabTabs() {
           <TabPanel value="3"> <Notifications/> </TabPanel>
           <TabPanel value="4"> <ChangePassword/> </TabPanel>
         </TabContext>
+        </ThemeProvider>
       </div>
     );
 }
