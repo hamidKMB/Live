@@ -52,8 +52,10 @@ function App() {
     localStorage.setItem("isDark", !isDark);
   }
 
-  React.useEffect(() => {
-    document.querySelector("body").classList.toggle("dark")
+  React.useEffect(() => { // dark-mode of body
+    isDark?
+    document.querySelector("body").classList.add("dark") :
+    document.querySelector("body").classList.remove("dark")
   })
 
   return (

@@ -3,6 +3,9 @@ import React from "react";
 
 //COMPONENTS
 import PersonalInformation from "./personal-information/personal-information.component";
+import SettingsOfChannel from "./settings-of-channel/setting-of-channel.component";
+import Notifications from "./notifications/notifications.component"
+import ChangePassword from "./change-password/change-password.component";
 
 //MaterialUI
 import AppBar from "@material-ui/core/AppBar";
@@ -13,7 +16,8 @@ import TabPanel from "@material-ui/lab/TabPanel";
 
 //STYLES
 import "./Tab.styles.scss"
-import SettingsOfChannel from "./settings-of-channel/setting-of-channel.component";
+
+
 
 export default function LabTabs() {
     const [value, setValue] = React.useState("1");
@@ -35,8 +39,8 @@ export default function LabTabs() {
           </AppBar>
           <TabPanel value="1"> <PersonalInformation/> </TabPanel>
           <TabPanel value="2"> <SettingsOfChannel/> </TabPanel>
-          <TabPanel value="3">اعلان ها</TabPanel>
-          <TabPanel value="4">تغییر رمز عبور</TabPanel>
+          <TabPanel value="3"> <Notifications/> </TabPanel>
+          <TabPanel value="4"> <ChangePassword/> </TabPanel>
         </TabContext>
       </div>
     );
