@@ -9,6 +9,7 @@ import BootstrapSwitchButton from "bootstrap-switch-button-react";
 import Hoquqi from "./hoquqi.component";
 import Haqiqi from "./haqiqi.component";
 
+
 //STYLES
 import "./personal-information.styles.scss";
 import "../../../../root-styles/buttons.scss"
@@ -24,26 +25,27 @@ const PersonalInformation = () => {
   return (
     <div className="personal-information">
       <div className="right">
-        <h1> اطلاعات پایه </h1>{" "}
+        <h1> اطلاعات پایه </h1>
         <div className="content">
           <TextField
-            id="outlined-basic"
-            label="نام و نام خانوادگی"
-            variant="outlined"
-            className="text-field"
-          />
-          <TextField
-            id="outlined-basic"
-            label="پست الکترونیک"
-            variant="outlined"
-            className="text-field"
-          />
-          <TextField
-            id="outlined-basic"
-            label="شماره همراه"
-            variant="outlined"
-            className="text-field"
-          />
+          id="outlined-basic"
+          label="نام و نام خانوادگی"
+          variant="outlined"
+          inputProps={{shrink:true}} 
+          className="text-field"
+        />
+        <TextField
+          id="outlined-basic"
+          label="پست الکترونیک"
+          variant="outlined"a
+          className="text-field"
+        />
+        <TextField
+          id="outlined-basic"
+          label="شماره همراه"
+          variant="outlined"
+          className="text-field"
+        />
         </div>
       </div>
       <div className="left">

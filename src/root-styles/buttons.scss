@@ -11,6 +11,19 @@
     }
 }
 
+.button-outline{
+  padding: 0.8rem 1.5rem;
+  border: 1px solid $color-light-grey;
+  color: $color-light-grey;
+  border-radius: 5px;
+  &:hover{
+    background-color: $color-light-grey;
+    color: $color-light-white;
+    cursor: pointer;
+  }
+}
+
+
 .dark{
     .button{
         background-color: $color-dark-orange;
