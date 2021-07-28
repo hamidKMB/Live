@@ -9,7 +9,6 @@ import userPicture from "../side-menu/WhatsApp Image 2021-06-22 at 13.15.45.jpeg
 //Styles
 import "./header.styles.scss"
 import "../../root-styles/variables.scss"
-import { Container } from "@material-ui/core";
 
 
 ///ICONS
@@ -27,7 +26,6 @@ import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
 const Header = (props) => {
     return (
       <div className="header">
-        <Container>
           <div className="items-holder">
             <div className="right">
               <HamburgerMenuIcon 
@@ -64,11 +62,11 @@ const Header = (props) => {
               </div>
             </div>
             <div className="left">
-              <span>
-                <NotificationsIcon className="icon-color"/>
-                <span className="gooshe" />
-                <div className="hover-state">نمایش اعلان ها</div>
-              </span>
+                <span>
+                  <NotificationsIcon className="icon-color"/>
+                  <span className="gooshe" />
+                  <div className="hover-state">نمایش اعلان ها</div>
+                </span>
               <span>
                 <VideoCameraIcon className="icon-color" />
                 <span className="gooshe" />
@@ -93,7 +91,6 @@ const Header = (props) => {
               </span>
             </div>
           </div>
-        </Container>
       </div>
     );
 }

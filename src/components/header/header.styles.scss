@@ -3,13 +3,14 @@
 .header{
     background-color: $color-light-white;
     position: fixed;
+    padding: 0 4%;
     z-index: 10;
     width: 100vw;
     height: fit-content;
     animation: comeFromTop 1s ease;
     -webkit-box-shadow: 0px 10px 15px -1px rgba(176, 176, 176, 0.44);
     box-shadow: 0px 10px 15px -1px rgba(176, 176, 176, 0.44);
-    .MuiContainer-root{ 
+     
         .items-holder{
             display: flex;
             justify-content: space-between;
@@ -175,7 +176,7 @@
                 }
             }
         }
-    }
+    
 }
 
 @keyframes comeFromTop {

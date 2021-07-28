@@ -1,12 +1,14 @@
 import React from "react";
 
+import {ReactComponent as ThreeDotHorizontal} from "./three_dots_vertical.svg"
+
 import "../../root-styles/cards.scss"
 import "./event.styles.scss";
 import "../../root-styles/buttons.scss";
 
 const Event = (props) => {
     return(
-        <div className= "card col-lg-6 col-md-6" >
+        <div className= "card card-event col-lg-6" >
             <div className= "image-holder">
                 <img src={props.image}/>
             </div>
@@ -15,7 +17,7 @@ const Event = (props) => {
                     <span>{props.title}</span>
                     <div> 
                         <span>{props.date}</span>
-                        <span><img src="./three_dots_vertical.svg" alt="three dot vertical"/></span>
+                        <span><ThreeDotHorizontal/></span>
                     </div>
                 </div>
                 <span>{props.genere}</span>

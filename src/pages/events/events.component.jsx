@@ -17,37 +17,36 @@ const Events = () => {
           + ایجاد رویداد جدید
         </div>  
       </div>
-      <div className="row">
-      
-        <Event 
-          title="Lorem Ipsum"
-          image="#"
-          date="lorem Ipsum"
-          genere="lorem Ipsum"
-          timeLeftToStart="lorem Ipsum"
-        />
-        <Event 
-          title="Lorem Ipsum"
-          image="#"
-          date="lorem Ipsum"
-          genere="lorem Ipsum"
-          timeLeftToStart="lorem Ipsum"
-        />
-        <Event 
-          title="Lorem Ipsum"
-          image="#"
-          date="lorem Ipsum"
-          genere="lorem Ipsum"
-          timeLeftToStart="lorem Ipsum"
-        />
-        <Event 
-          title="Lorem Ipsum"
-          image="#"
-          date="lorem Ipsum"
-          genere="lorem Ipsum"
-          timeLeftToStart="lorem Ipsum"
-        />
-      </div>
+        <div className="row">
+          <Event 
+            title="Lorem Ipsum"
+            image="#"
+            date="lorem Ipsum"
+            genere="lorem Ipsum"
+            timeLeftToStart="lorem Ipsum"
+          />
+          <Event 
+            title="Lorem Ipsum"
+            image="#"
+            date="lorem Ipsum"
+            genere="lorem Ipsum"
+            timeLeftToStart="lorem Ipsum"
+          />
+          <Event 
+            title="Lorem Ipsum"
+            image="#"
+            date="lorem Ipsum"
+            genere="lorem Ipsum"
+            timeLeftToStart="lorem Ipsum"
+          />
+          <Event 
+            title="Lorem Ipsum"
+            image="#"
+            date="lorem Ipsum"
+            genere="lorem Ipsum"
+            timeLeftToStart="lorem Ipsum"
+          />
+        </div>
     </div>
   );
 };
