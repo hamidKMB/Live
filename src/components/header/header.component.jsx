@@ -12,7 +12,6 @@ import "../../root-styles/variables.scss"
 
 
 ///ICONS
-import { MenuItem } from "@material-ui/core";
 import { ReactComponent as VideoCameraIcon } from "./Header/camera_video.svg";
 import { ReactComponent as NotificationsIcon } from "./Header/notification1.svg";
 import { ReactComponent as LiveIcon } from "./Header/live.svg";
@@ -22,6 +21,7 @@ import { ReactComponent as HamburgerMenuIcon } from "./Header/hamburger_menu.svg
 import { ReactComponent as PlusIcon } from "./Header/plus.svg";
 import Brightness4OutlinedIcon from "@material-ui/icons/Brightness4Outlined";
 import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
     return (
@@ -62,26 +62,34 @@ const Header = (props) => {
             </div>
           </div>
           <div className="left">
-            <span>
-              <NotificationsIcon className="icon-color" />
-              <span className="gooshe" />
-              <div className="hover-state">نمایش اعلان ها</div>
-            </span>
-            <span>
-              <VideoCameraIcon className="icon-color" />
-              <span className="gooshe" />
-              <div className="hover-state">ویدیوها</div>
-            </span>
-            <span>
-              <LiveIcon className="icon-color" />
-              <span className="gooshe" />
-              <div className="hover-state">لایو</div>
-            </span>
-            <span>
-              <HeadsetIcon className="icon-color" />
-              <span className="gooshe" />
-              <div className="hover-state">پشتیبانی</div>
-            </span>
+              <span>
+                <Link to={`/personal-information`}>
+                  <NotificationsIcon className="icon-color" />
+                </Link>
+                <span className="gooshe" />
+                <div className="hover-state">نمایش اعلان ها</div>
+              </span>
+              <span>
+                <Link to="/videos">
+                  <VideoCameraIcon className="icon-color" />
+                </Link> 
+                <span className="gooshe" />
+                <div className="hover-state">ویدیوها</div>
+              </span>
+              <span>
+                <Link to='/events'>
+                  <LiveIcon className="icon-color" />
+                </Link>
+                <span className="gooshe" />
+                <div className="hover-state">لایو</div>
+              </span>
+              <span>
+                <Link to="/backup">
+                  <HeadsetIcon className="icon-color" />
+                </Link>
+                <span className="gooshe" />
+                <div className="hover-state">پشتیبانی</div>
+              </span>
             <span>
               <p>
                 <span>2500</span> تومان

@@ -18,6 +18,7 @@ import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 //STYLES
 import "./Tab.styles.scss"
 import "../../../root-styles/variables.scss"
+import { Route, Switch } from "react-router-dom";
 
 
 const theme = createTheme({ //overriding the classes of the material UI
@@ -40,7 +41,7 @@ const theme = createTheme({ //overriding the classes of the material UI
 
 
 
-export default function LabTabs() {
+export default function LabTabs(props) {
     const [value, setValue] = React.useState("1");
 
     const handleChange = (event, newValue) => {
@@ -56,13 +57,19 @@ export default function LabTabs() {
           >
             <AppBar position="static" className="bottom-slider">
             <TabList indicatorColor="primary" onChange={handleChange} aria-label="simple tabs example" className='tab-list'>
-                <Tab label="اطلاعات شخصی" value="1" indicatorColor="primary"/>
+                <Tab label="اطلاعات شخصی" value="1" indicatorColor="primary" onClick={() => props.history.push("/personal-information")}/>
                 <Tab label="تنظیمات کانال" value="2" />
                 <Tab label="اعلان ها" value="3" />
                 <Tab label="تغییر رمز عبور" value="4" />
             </TabList>
           </AppBar>
-          <TabPanel value="1"> <PersonalInformation/> </TabPanel>
+            <TabPanel value="1"> 
+            <Switch>
+              <Route path='/personal-information'>
+                <PersonalInformation/> 
+              </Route>
+            </Switch>
+            </TabPanel>
           <TabPanel value="2"> <SettingsOfChannel/> </TabPanel>
           <TabPanel value="3"> <Notifications/> </TabPanel>
           <TabPanel value="4"> <ChangePassword/> </TabPanel>
