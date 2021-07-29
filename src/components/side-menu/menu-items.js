@@ -10,14 +10,14 @@ export const menuItemsData = [
     routeName: "/account",
   },
   {
-    title: "ویدیوها",
+    title: "رویدادها",
     logo: "3.live",
-    routeName: "/videos",
+    routeName: "/events",
   },
   {
-    title: "رویدادها",
+    title: "ویدیوها",
     logo: "4.camera_video",
-    routeName: "/events",
+    routeName: "/videos",
   },
   {
     title: "آمار بازدید",

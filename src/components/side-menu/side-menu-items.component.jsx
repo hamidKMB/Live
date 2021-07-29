@@ -14,8 +14,13 @@ const MenuItem = (props) => {
               }}
               className={props.classValue}
             >
-            {props.title}
-            <img src={`./Dashboard_Menu/${props.logo}.svg`} alt={`icon${props.routeName}`} className="dashboard-icon"/>
+              {props.title}
+              <object
+                data={`./Dashboard_Menu/${props.logo}.svg`}
+                type="image/svg+xml"
+                className="dashboard-icon"
+              >
+              </object>
             </li>
           </Link>
         );

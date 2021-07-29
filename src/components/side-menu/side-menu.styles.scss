@@ -96,7 +96,11 @@
                 font-size: 15px;
                 .dashboard-icon{
                     margin-left: 10px;
-                    color: inherit !important;
+                    width: 1.1rem;
+                    height: 1.1rem;
+                    stroke: orange;
+                    fill:red;
+                    color:blue;
                 }
                 }
             }
@@ -106,7 +110,9 @@
                 border-radius: 5px;
                 border-right: 5px solid $color-light-text;
                 .dashboard-icon{
-                    color: $color-light-orange;
+                    .a{
+                        fill: $color-light-orange;
+                    }
                     
                 } 
             }
