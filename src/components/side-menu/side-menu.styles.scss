@@ -83,10 +83,9 @@
             list-style: none;
             margin: 0 0 2rem 0;
             padding: 0 0 2rem 0;
-            a{
-                text-decoration: none;
-            }
             li{
+                a{
+                    text-decoration: none;
                 padding: 0.5rem;
                 align-items: center;
                 display: flex;
@@ -96,20 +95,27 @@
                 font-size: 15px;
                 .dashboard-icon{
                     margin-left: 10px;
-                    color: inherit !important;
-                }
+                    width: 1.1rem;
+                    height: 1.1rem;
+                    stroke: orange;
+                    fill:red;
+                    color:blue;
                 }
             }
-            .on-click {
+            a.on-click {
                 color: $color-light-text;
                 background-color: $color-light-white-items-select;
                 border-radius: 5px;
                 border-right: 5px solid $color-light-text;
                 .dashboard-icon{
-                    color: $color-light-orange;
+                    .a{
+                        fill: $color-light-orange;
+                    }
                     
                 } 
             }
+            }
+        }
             }
         }
 @media screen and (max-width: 786px){

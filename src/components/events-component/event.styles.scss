@@ -1,0 +1,54 @@
+@import "../../root-styles/variables.scss";
+
+.card-event{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    background-color: $color-light-white;
+    margin: 0 0 20px;
+    .image-holder{
+        border-radius: 7px;
+                width: 8.2rem;
+                height: 7.2rem;
+                margin: 0;
+                position: relative;
+                display: inline;
+                img {
+                    width: inherit;
+                    height: inherit;
+                    border-radius: inherit;
+                    object-fit: cover;
+                }
+    }
+    .other-detail-event{
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        .title-and-date{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            span{
+                margin: 0;
+                padding: 0;
+            }
+            div{
+                display: inline;
+                width: fit-content;
+                span{
+                    &:first-child{
+                        margin-left: 10%;
+                    }
+                }
+            }
+        }
+    }
+    .button-holder{
+        display: flex;
+        flex-direction: row-reverse;
+        .button-outline{
+            width: fit-content;
+            padding: 10px 16px;
+        }
+    }
+}

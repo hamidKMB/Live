@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: row;
     justify-content: right;
+    margin-top: 4rem;
     .right{
         display: flex;
         flex-direction: column;
@@ -17,10 +18,16 @@
             flex-direction: column;
             justify-content: space-between;
             .text-field{
-                margin: 0 0 20px 0;
-                text-align: right;
-                font-family: inherit;
-                animation: comeFromTop .5s ease;
+                margin-bottom: 20px;
+                label{
+                    right:30px;
+                    color: grey;
+                }
+                &:focus{
+                    label{
+                        color:grey;
+                    }
+                }
             }
         }
     }
@@ -56,11 +63,18 @@
         .content {
             display: flex;
             flex-direction: column;
-            .text-field {
-                margin: 0 0 20px 0;
-                text-align: right;
-                font-family: inherit;
-                animation: comeFromTop .5s ease;
+            .text-field{
+                margin-bottom: 20px;
+                label{
+                    right:30px;
+                    color: grey;
+                }
+                &:focus{
+                    label{
+                        
+                        color:grey;
+                    }
+                }
             }
         }
     }

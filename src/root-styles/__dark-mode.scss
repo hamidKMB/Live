@@ -8,14 +8,16 @@
             color:rgba($color-light-white, 0.5);
             -webkit-box-shadow: 0px 10px 15px -1px rgba($color-dark-black-artboard, 50%);
             box-shadow: 0px 10px 15px -1px rgba($color-dark-black-artboard, 50%);
-            .MuiContainer-root {
+            
                 .items-holder{
                     .MuiSvgIcon-root{
                         color:$color-light-white;
                     }
                     .right{
                         .ham-menu{
-                            color: $color-dark-orange;
+                            line.a{
+                                color: $color-dark-orange;
+                            }
                         }
                         .brand-logo{
                             background-image: url(../components/header/brand/LOGO_Dark.png);
@@ -27,7 +29,9 @@
                         .input-box{
                             @media screen and (max-width: 430px) {
                                 .icon-color {
-                                    color: $color-dark-orange;
+                                    .b{
+                                        stroke: $color-dark-orange;
+                                    }
                                 }
                             }
                             input{
@@ -36,6 +40,12 @@
                         }
                     }
                     .left{
+                        .icon-color{
+                            .a{
+                                stroke: $color-light-white;
+                                fill: $color-light-white;
+                            }
+                        }
                         span:not(:last-child) {
                             background-color: rgba($color-light-white, 0.12);
                             border: 1px solid rgba($color-light-white, 0.4);
@@ -54,7 +64,7 @@
                                 }
                             }
                             &:nth-child(5) {
-                                color:#fff;
+                                color:$color-light-white;
                                 &:hover{
                                     .icon-color{
                                         color: $color-dark-orange;
@@ -64,7 +74,7 @@
                     }
                 }
             }
-        }   
+           
         }
         //SIDE-MENU-STYLE
             .side-menu{
@@ -73,7 +83,17 @@
                 -webkit-box-shadow: 0px 10px 15px -1px rgba($color-dark-black-artboard, 50%);
                 box-shadow: 0px 10px 15px -1px rgba($color-dark-black-artboard, 50%);
                 .user-profile {
+                    @media screen and (max-width:786px){
+                        &:after{
+                            border-color: rgba($color-light-white, 0.12);
+                        }
+                    }
                     .user-profile-holder {
+                        @media screen and (max-width: 786px) {
+                            .user-details {
+                                color: rgba($color-light-white, 0.9)
+                            }
+                        }
                         .user-image-holder {
                             .settings-icon {
                                 background-color: $color-light-grey;
@@ -90,8 +110,10 @@
                             color:rgba($color-light-white, 0.9);
                             background-color: rgba($color-light-white, 0.12);
                             border-right: 5px solid rgba($color-light-white, 0.4);
-                            .icon-color{
-                                color: $color-dark-orange;
+                            .dashboard-icon{
+                                .a{
+                                    fill: $color-dark-orange;
+                                }
                             }
                         }
                     }

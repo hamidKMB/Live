@@ -3,13 +3,14 @@
 .header{
     background-color: $color-light-white;
     position: fixed;
+    padding: 0 4%;
     z-index: 10;
     width: 100vw;
     height: fit-content;
     animation: comeFromTop 1s ease;
     -webkit-box-shadow: 0px 10px 15px -1px rgba(176, 176, 176, 0.44);
     box-shadow: 0px 10px 15px -1px rgba(176, 176, 176, 0.44);
-    .MuiContainer-root{ 
+    
         .items-holder{
             display: flex;
             justify-content: space-between;
@@ -21,16 +22,14 @@
             @media screen and (max-width: 425px) {
                 justify-content: right;
             }
-            .MuiSvgIcon-root{
-                color: $color-light-grey;
-                // font-size: 16px;
-                }
             .right{
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 .ham-menu{
-                    color: $color-light-orange;
+                    line.a{
+                        stroke: $color-light-orange;
+                    }
                     margin-left: 5px;
                     &:hover{
                         cursor: pointer;
@@ -48,9 +47,6 @@
                     height: 40px;
                 }
                 }
-            .light-mode{
-                color: $color-dark-orange;
-            }
             .middle{
                 background-color: $color-light-dark-white;
                 border-radius: 5px;
@@ -67,7 +63,10 @@
                     align-items: center;
                     @media screen and (max-width: 430px) {
                         .icon-color{
-                            color:$color-light-orange;
+                            margin-left: 0.2rem;
+                            .b{
+                                stroke:$color-light-orange;
+                            }
                         }
                     }
                     input{
@@ -91,9 +90,21 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                .icon-color{
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    .a{
+                        stroke: grey;
+                        stroke-linecap: round;
+                        stroke-width: 0.4px;
+                        fill: grey;
+                    }
+                }
                     p{
                         margin: 0;
                         display: inline;
+                        font-size: 11pt;
+                        font-weight: 300;
                         span{
                             margin:0
                         }
@@ -139,7 +150,10 @@
                             -webkit-box-shadow: 0px 10px 15px -1px rgba(176, 176, 176, 0.44);
                             box-shadow: 0px 10px 15px -1px rgba(176, 176, 176, 0.44);
                             .icon-color{
-                                fill: $color-light-orange
+                                .a {
+                                    stroke: $color-light-orange; 
+                                    fill: $color-light-orange;
+                                }
                             } 
                             .gooshe{
                                 display: inline-block;
@@ -151,10 +165,21 @@
                         &:nth-child(5){
                             padding-left: 1rem;
                             padding-right: 1rem;
+                            flex-direction: row-reverse;
+                            .icon-color{
+                                width: 0.8rem;
+                                height: 0.8rem;
+                                margin-left: 0.6rem;
+                                .a {
+                                    stroke-width: 2px;
+                                }
+                            }
                             &:hover{
                                 cursor: pointer;
                                 .icon-color {
-                                    fill: $color-light-orange
+                                    .a{
+                                        stroke: $color-light-orange
+                                    }
                                 }
                             }
                         }
@@ -175,7 +200,7 @@
                 }
             }
         }
-    }
+    
 }
 
 @keyframes comeFromTop {
