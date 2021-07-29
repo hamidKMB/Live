@@ -1,19 +1,14 @@
 //REACT
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 //STYLES
 import "./side-menu.styles.scss";
 
 const MenuItem = (props) => {
         return (
-          <Link to={props.routeName}>
-            <li
-              onClick={() => {
-                props.onSelect(props.id);
-              }}
-              className={props.classValue}
-            >
+          <li>
+            <NavLink exact to={props.routeName} activeClassName="on-click">
               {props.title}
               <object
                 data={`./Dashboard_Menu/${props.logo}.svg`}
@@ -21,8 +16,8 @@ const MenuItem = (props) => {
                 className="dashboard-icon"
               >
               </object>
+            </NavLink>
             </li>
-          </Link>
         );
 }
 

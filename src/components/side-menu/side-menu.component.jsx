@@ -10,13 +10,6 @@ import MenuItem from "./side-menu-items.component";
 import "./side-menu.styles.scss"
 
 const SideMenu = (props) => {
-
-    const [activeIndex, setActiveIndex] = React.useState(null);
-
-    const handleClick = (i) => {
-        setActiveIndex(i);
-      };
-
     return (
       <div className={`side-menu ${props.display}`}>
         <div className="user-profile">
@@ -43,8 +36,6 @@ const SideMenu = (props) => {
                   title={item.title}
                   routeName={item.routeName}
                   logo={item.logo}
-                  onSelect={handleClick}
-                  classValue={activeIndex === index ? "on-click" : undefined}
                 />
               );
             })}
