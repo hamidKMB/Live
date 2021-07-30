@@ -61,10 +61,14 @@
                 .input-box{
                     display: flex;
                     align-items: center;
+                    margin-left: 0.2rem;
+                    .b {
+                        stroke: $color-light-grey;
+                    }
                     @media screen and (max-width: 430px) {
                         .icon-color{
                             margin-left: 0.2rem;
-                            .b{
+                            circle.b{
                                 stroke:$color-light-orange;
                             }
                         }
