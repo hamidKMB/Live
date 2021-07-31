@@ -10,7 +10,7 @@ const Event = (props) => {
     return(
         <div className= "card card-event col-lg-6" >
             <div className= "image-holder">
-                <img src={props.image}/>
+                <img src={props.image} alt="video"/>
             </div>
             <div className="other-detail-event">
                 <div className="title-and-date">

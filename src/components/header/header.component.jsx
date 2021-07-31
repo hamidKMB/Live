@@ -63,7 +63,7 @@ const Header = (props) => {
           </div>
           <div className="left">
               <span>
-                <Link to={`/personal-information`}>
+                <Link to={`/account/notifications`}>
                   <NotificationsIcon className="icon-color" />
                 </Link>
                 <span className="gooshe" />

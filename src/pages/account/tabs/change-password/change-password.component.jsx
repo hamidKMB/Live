@@ -48,7 +48,7 @@ const ChangePassword = () => {
                 </ul>
                 <p>
                     رمز عبور خور را فراموش کرده اید؟ <span>
-                    <a>
+                    <a href="/">
                         بازیابی رمز عبور
                     </a>
                     </span>

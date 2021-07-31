@@ -64,15 +64,15 @@ function App() {
       <SideMenu display={toggled ? "toggle-side-menu" : " "} />
       <Switch>
         <Route exact path="/" component={Dashboard} />
-        <Route exact path="/account" component={Account} />
-        <Route exact path="/videos" component={Videos} />
-        <Route exact path="/events" component={Events} />
-        <Route exact path="/views" component={Views} />
-        <Route exact path="/finance" component={Finance} />
-        <Route exact path="/tickets" component={Tickets} />
-        <Route exact path="/discounts" component={Discounts} />
-        <Route exact path="/follow" component={Followers} />
-        <Route exact path="/backup" component={BackUp} />
+        <Route path="/account" component={Account} />
+        <Route path="/videos" component={Videos} />
+        <Route path="/events" component={Events} />
+        <Route path="/views" component={Views} />
+        <Route path="/finance" component={Finance} />
+        <Route path="/tickets" component={Tickets} />
+        <Route path="/discounts" component={Discounts} />
+        <Route path="/follow" component={Followers} />
+        <Route path="/backup" component={BackUp} />
       </Switch>
     </div>
   );

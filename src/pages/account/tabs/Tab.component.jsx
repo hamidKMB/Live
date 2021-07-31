@@ -15,10 +15,13 @@ import TabList from "@material-ui/lab/TabList";
 import TabPanel from "@material-ui/lab/TabPanel";
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 
+//React Router
+import { Link, Switch, Route, useRouteMatch } from "react-router-dom";
+
 //STYLES
 import "./Tab.styles.scss"
 import "../../../root-styles/variables.scss"
-import { Route, Switch } from "react-router-dom";
+
 
 
 const theme = createTheme({ //overriding the classes of the material UI
@@ -42,9 +45,10 @@ const theme = createTheme({ //overriding the classes of the material UI
 
 
 export default function LabTabs(props) {
-    const [value, setValue] = React.useState("1");
+  let { path, url } = useRouteMatch();  
+  const [value, setValue] = React.useState("1");
 
-    const handleChange = (event, newValue) => {
+  const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
@@ -55,24 +59,41 @@ export default function LabTabs(props) {
           value={value} 
           className="tab-context"
           >
-            <AppBar position="static" className="bottom-slider">
+          <AppBar position="static" className="bottom-slider">
             <TabList indicatorColor="primary" onChange={handleChange} aria-label="simple tabs example" className='tab-list'>
-                <Tab label="اطلاعات شخصی" value="1" indicatorColor="primary" onClick={() => props.history.push("/personal-information")}/>
-                <Tab label="تنظیمات کانال" value="2" />
-                <Tab label="اعلان ها" value="3" />
-                <Tab label="تغییر رمز عبور" value="4" />
+              <Link to={`${url}/personal-info`}>
+                <Tab label="اطلاعات شخصی" value="1"/>
+              </Link>  
+              <Link to= {`${url}/settings-channel`}>
+                <Tab label="تنظیمات کانال" value="2"/>
+              </Link>
+              <Link to= {`${url}/notifications`}>
+                <Tab label="اعلان ها" value="3"/>
+              </Link>
+              <Link to= {`${url}/change-password`}>
+                <Tab label="تغییر رمز عبور" value="4"/>
+              </Link>
             </TabList>
           </AppBar>
-            <TabPanel value="1"> 
+
+          <div>
             <Switch>
-              <Route path='/personal-information'>
-                <PersonalInformation/> 
+              <Route path={`${path}/personal-info`}>
+                  <PersonalInformation/>
               </Route>
-            </Switch>
-            </TabPanel>
-          <TabPanel value="2"> <SettingsOfChannel/> </TabPanel>
-          <TabPanel value="3"> <Notifications/> </TabPanel>
-          <TabPanel value="4"> <ChangePassword/> </TabPanel>
+              <Route path={`${path}/settings-channel`}>
+                  <SettingsOfChannel/>
+              </Route>
+              <Route path={`${path}/notifications`}>
+                  <Notifications/>
+              </Route>
+              <Route path={`${path}/change-password`}>
+                  <ChangePassword/>
+              </Route>
+            </Switch>          
+          </div>
+       
+
         </TabContext>
         </ThemeProvider>
       </div>

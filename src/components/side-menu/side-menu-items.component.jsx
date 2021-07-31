@@ -8,9 +8,8 @@ import "./side-menu.styles.scss";
 const MenuItem = (props) => {
         return (
           <li>
-            <NavLink exact to={props.routeName} activeClassName="on-click">
+            <NavLink exact={props.routeName === "/" ? true : false} to={props.routeName} activeClassName="on-click">
               {props.title}
-              
               {props.logo}
             </NavLink>
             </li>
