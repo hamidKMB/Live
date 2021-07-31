@@ -19,10 +19,8 @@ import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import { Link, Switch, Route, useRouteMatch } from "react-router-dom";
 
 //STYLES
-import "./Tab.styles.scss"
-import "../../../root-styles/variables.scss"
-
-
+import "./Tab.styles.scss";
+import "../../../root-styles/variables.scss";
 
 const theme = createTheme({ //overriding the classes of the material UI
   overrides:{
@@ -46,7 +44,7 @@ const theme = createTheme({ //overriding the classes of the material UI
 
 export default function LabTabs(props) {
   let { path, url } = useRouteMatch();  
-  const [value, setValue] = React.useState("1");
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -60,25 +58,16 @@ export default function LabTabs(props) {
           className="tab-context"
           >
           <AppBar position="static" className="bottom-slider">
-            <TabList indicatorColor="primary" onChange={handleChange} aria-label="simple tabs example" className='tab-list'>
-              <Link to={`${url}/personal-info`}>
-                <Tab label="اطلاعات شخصی" value="1"/>
-              </Link>  
-              <Link to= {`${url}/settings-channel`}>
-                <Tab label="تنظیمات کانال" value="2"/>
-              </Link>
-              <Link to= {`${url}/notifications`}>
-                <Tab label="اعلان ها" value="3"/>
-              </Link>
-              <Link to= {`${url}/change-password`}>
-                <Tab label="تغییر رمز عبور" value="4"/>
-              </Link>
+            <TabList indicatorColor="primary" textColor="primary" onChange={handleChange} aria-label="simple tabs example" className='tab-list'>
+                <Tab label="اطلاعات شخصی" component={Link} to={`${url}`}/>
+                <Tab label="تنظیمات کانال" component={Link} to={`${url}/settings-channel`}/>
+                <Tab label="اعلان ها" component={Link} to={`${url}/notifications`}/>
+                <Tab label="تغییر رمز عبور" component={Link} to={`${url}/change-password`}/>
             </TabList>
           </AppBar>
-
           <div>
             <Switch>
-              <Route path={`${path}/personal-info`}>
+              <Route exact path={`${path}`}>
                   <PersonalInformation/>
               </Route>
               <Route path={`${path}/settings-channel`}>

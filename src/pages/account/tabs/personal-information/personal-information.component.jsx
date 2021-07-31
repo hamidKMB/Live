@@ -31,7 +31,6 @@ const PersonalInformation = () => {
           id="outlined-basic"
           label="نام و نام خانوادگی"
           variant="outlined"
-          inputProps={{shrink:true}} 
           className="text-field"
         />
         <TextField
