@@ -65,7 +65,7 @@ export default function LabTabs(props) {
           >
           <AppBar position="static" className="bottom-slider">
             <TabList indicatorColor="primary" textColor="primary" onChange={handleChange} aria-label="simple tabs example" className='tab-list'>
-                <Tab label="اطلاعات شخصی" component={Link} to={`$account/personal-info`}/>
+                <Tab label="اطلاعات شخصی" component={Link} to={`/account/personal-info`}/>
                 <Tab label="تنظیمات کانال" component={Link} to={`/account/settings-channel`}/>
                 <Tab label="اعلان ها" component={Link} to={`/account/notifications`}/>
                 <Tab label="تغییر رمز عبور" component={Link} to={`/account/change-password`}/>
@@ -73,16 +73,16 @@ export default function LabTabs(props) {
           </AppBar>
           <div>
             <Switch>
-              <Route path={`${path}/personal-info`}>
+              <Route path={`/account/personal-info`}>
                   <PersonalInformation/>
               </Route>
-              <Route path={`${path}/settings-channel`}>
+              <Route path={`/account/settings-channel`}>
                   <SettingsOfChannel/>
               </Route>
-              <Route path={`${path}/notifications`}>
+              <Route path={`/account/notifications`}>
                   <Notifications/>
               </Route>
-              <Route path={`${path}/change-password`}>
+              <Route path={`/account/change-password`}>
                   <ChangePassword/>
               </Route>
             </Switch>          
