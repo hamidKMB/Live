@@ -11,11 +11,12 @@ import { createTheme, ThemeProvider } from "@material-ui/core";
 
 
 //React-router-dom
-import { Link, Switch, Route, useRouteMatch, useParams } from "react-router-dom";
+import { Link, Switch, Route, useRouteMatch, useParams, Redirect } from "react-router-dom";
 
 //STYLES
 import "./videos.styles.scss";
 import UploadedVideos from "./uploaded-videos/uploaded-videos.component";
+import Dnd from "../../components/Drag-and-Drop/DND.component";
 
 const useStyles = makeStyles({
   root: {
@@ -81,7 +82,7 @@ const Videos = () => {
         <h5>
           لیست ویدیو های آپلود شده
         </h5>
-        <Link to={`${url}/upload-video`}>
+        <Link to={`/videos/upload-video`}>
           <div className="button upload-video">
             آپلود ویدیو های جدید
           </div>
@@ -92,8 +93,11 @@ const Videos = () => {
         <Route path={`/videos/uploaded`}>
           <UploadedVideos/>
         </Route>
-        <Route path={`${path}/upload-video`}>
-          <h3>Upload Video</h3>
+        <Route path="/videos/upload-video">
+          <Dnd/>
+        </Route>
+        <Route path="/videos/video-info">
+          <h3>Video Information</h3>
         </Route>
         <Route path={`/videos/courses`}>
         <h3>Courses</h3>

@@ -10,10 +10,14 @@
         h5{
             margin: 0;
         }
-        .upload-videos{
-            &:hover{
-                cursor: pointer;
+        a{
+            text-decoration: none;
+            .upload-videos{
+                &:hover{
+                    cursor: pointer;
+                }
             }
+
         }
     }
 }

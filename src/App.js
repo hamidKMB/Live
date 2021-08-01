@@ -1,6 +1,6 @@
 //REACT
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route} from "react-router-dom";
 
 //COMPONENTS
 import Header from "./components/header/header.component";
@@ -17,8 +17,7 @@ import Tickets from "./pages/tickets/tickets.component";
 import Discounts from "./pages/discounts/discounts.component";
 import Followers from "./pages/followers/followers.component";
 import BackUp from "./pages/back-up/back-up.component";
-
-
+import Dnd from "./components/Drag-and-Drop/DND.component";
 //STYLES
 import "./App.css";
 import "./root-styles/__dark-mode.scss"
