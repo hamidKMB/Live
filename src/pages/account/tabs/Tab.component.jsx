@@ -12,11 +12,10 @@ import AppBar from "@material-ui/core/AppBar";
 import Tab from "@material-ui/core/Tab";
 import TabContext from "@material-ui/lab/TabContext";
 import TabList from "@material-ui/lab/TabList";
-import TabPanel from "@material-ui/lab/TabPanel";
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 
 //React Router
-import { Link, Switch, Route, useRouteMatch, NavLink, useParams } from "react-router-dom";
+import { Link, Switch, Route, useParams } from "react-router-dom";
 
 //STYLES
 import "./Tab.styles.scss";
@@ -43,16 +42,17 @@ const theme = createTheme({ //overriding the classes of the material UI
 
 
 export default function LabTabs(props) {
-  let my_tabs = [ 'personal-info', 'settings-channel', 'notifications', "change-password"]
-  let { path, url } = useRouteMatch();
   let {tab} = useParams();
-
+  let my_tab = [ 'personal-info', 'settings-channel', 'notifications', "change-password"];
+  
   const [value, setValue] = React.useState(0);
-   React.useEffect(() => {
-     let index = my_tabs.indexOf(tab)
+
+  React.useEffect(() => {
+     let index = my_tab.indexOf(tab);
      setValue(index);
-   })
-  const handleChange = (event, newValue) => {
+   }, [my_tab, tab]);
+  
+   const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 

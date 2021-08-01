@@ -11,7 +11,7 @@ import { createTheme, ThemeProvider } from "@material-ui/core";
 
 
 //React-router-dom
-import { Link, Switch, Route, useRouteMatch, useParams, Redirect } from "react-router-dom";
+import { Link, Switch, Route, useParams } from "react-router-dom";
 
 //STYLES
 import "./videos.styles.scss";
@@ -49,15 +49,14 @@ const theme = createTheme({
 })
 
 const Videos = () => {
-  let my_tabs = [ 'uploaded', 'courses', 'bought-videos', "liked-videos"]
+  let my_tabs = ['uploaded', 'courses', 'bought-videos', 'liked-videos']
   let { tab } = useParams()
   React.useEffect(() => {
-     let index = my_tabs.indexOf(tab)
-     setValue(index);
-   })
+    let index = my_tabs.indexOf(tab);
+    setValue(index);
+  }, [my_tabs, tab]);
 
   const classes = useStyles();
-  const {url, path} = useRouteMatch()
 
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
@@ -66,7 +65,7 @@ const Videos = () => {
 
   return (
     <ThemeProvider theme={theme}>
-    <div className="admin-pages-layout videos">
+    <div className="admin-pages-layout videos-layout">
       <Paper className={classes.root}>
       <Tabs
         value={value}

@@ -35,7 +35,14 @@ const SideMenu = (props) => {
 
                         let pages;
                         let account_pages = ['/account/personal-info', '/account/settings-channel', '/account/notifications', '/account/change-password'];
-                        let videos_pages = ['/videos/uploaded', '/videos/courses', '/videos/bought-videos', '/videos/liked-videos'];
+                        let videos_pages = [
+                          "/videos/uploaded",
+                          "/videos/courses",
+                          "/videos/bought-videos",
+                          "/videos/liked-videos",
+                          "/videos/upload-video",
+                          "/videos/video-info",
+                        ];
 
                         pages = item.routeName.includes('account') ? account_pages : [];
                         pages = item.routeName.includes('videos') ? videos_pages : pages;

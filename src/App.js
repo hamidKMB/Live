@@ -72,6 +72,7 @@ function App() {
         <Route path="/discounts" component={Discounts} />
         <Route path="/follow" component={Followers} />
         <Route path="/backup" component={BackUp} />
+        <Route path="/videos/upload-video" component={Dnd}/>
       </Switch>
     </div>
   );

@@ -10,8 +10,8 @@ import "./video.styles.scss";
 const Video = (props) => {
     return (
         <div className="col-lg-4 col-md-6 col-sm-6 col-12 card-grid">
-            <div className="card">
-            <div className="image"  >
+            <div className="card card-video">
+            <div className="image">
             <img src="./WhatsApp Image 2021-06-22 at 13.15.45.jpeg"/>
             <div className="time">
                 {props.time}
