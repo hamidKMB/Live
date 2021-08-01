@@ -11,7 +11,7 @@ import { createTheme, ThemeProvider } from "@material-ui/core";
 
 
 //React-router-dom
-import { Link, Switch, Route, useRouteMatch } from "react-router-dom";
+import { Link, Switch, Route, useRouteMatch, useParams } from "react-router-dom";
 
 //STYLES
 import "./videos.styles.scss";
@@ -47,10 +47,17 @@ const theme = createTheme({
 })
 
 const Videos = () => {
+  let my_tabs = [ 'uploaded', 'courses', 'bought-videos', "liked-videos"]
+  let { tab } = useParams()
+  React.useEffect(() => {
+     let index = my_tabs.indexOf(tab)
+     setValue(index);
+   })
+
   const classes = useStyles();
   const {url, path} = useRouteMatch()
-  const [value, setValue] = React.useState(0);
 
+  const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -82,17 +89,19 @@ const Videos = () => {
       </div>
     <div className="content-holder">
       <Switch>
-        <Route exact path={`${path}`} component={UploadedVideos}/>
+        <Route path={`/videos/uploaded`}>
+          <UploadedVideos/>
+        </Route>
         <Route path={`${path}/upload-video`}>
           <h3>Upload Video</h3>
         </Route>
-        <Route path={`${path}/courses`}>
+        <Route path={`/videos/courses`}>
         <h3>Courses</h3>
         </Route>
-        <Route path={`${path}/bought-videos`}>
+        <Route path={`/videos/bought-videos`}>
         <h3>bought Videos</h3>
         </Route>
-        <Route path={`${path}/liked-videos`}>
+        <Route path={`/videos/liked-videos`}>
           <h3>Liked Videos</h3>
         </Route>
       </Switch>

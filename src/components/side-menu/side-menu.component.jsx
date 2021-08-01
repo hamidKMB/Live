@@ -65,7 +65,6 @@ const SideMenu = (props) => {
                                 />
                             );
                         }
-                        console.log(item.routeName)
 
                     })}
                 </ul>
