@@ -20,7 +20,7 @@ export const menuItemsData = [
   {
     title: "حساب کاربری",
     logo: <UserLogo className="dashboard-icon"/>,
-    routeName: "/account",
+    routeName: "/account/personal-info",
   },
   {
     title: "رویدادها",
@@ -30,7 +30,7 @@ export const menuItemsData = [
   {
     title: "ویدیوها",
     logo: <CameraLogo className="dashboard-icon"/>,
-    routeName: "/videos",
+    routeName: "/videos/uploaded",
   },
   {
     title: "آمار بازدید",

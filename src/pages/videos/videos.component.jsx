@@ -21,7 +21,7 @@ const useStyles = makeStyles({
   root: {
     flexGrow: 1,
     width:"50vw",
-    
+
     backgroundColor:"inherit",
     border: "none",
     boxShadow: "none",
@@ -64,18 +64,18 @@ const Videos = () => {
         onChange={handleChange}
         TabIndicatorProps={{style:{backgroundColor: "#EFA00B", color:"#000"}}}
       >
-        <Tab label="ویدیو های آپلود شده" component={Link} to={`${url}`}/>
-        <Tab label="دوره ها" component={Link} to={`${url}/courses`}/>
-        <Tab label="ویدیوهای خریداری شده" component={Link} to={`${url}/bought-videos`}/>
-        <Tab label="ویدیوهای پسندیده شده" component={Link} to={`${url}/liked-videos`}/>
+        <Tab label="ویدیو های آپلود شده" component={Link} to={`/videos/uploaded`}/>
+        <Tab label="دوره ها" component={Link} to={`/videos/courses`}/>
+        <Tab label="ویدیوهای خریداری شده" component={Link} to={`/videos/bought-videos`}/>
+        <Tab label="ویدیوهای پسندیده شده" component={Link} to={`/videos/liked-videos`}/>
       </Tabs>
       </Paper>
       <div className="videos-detail">
         <h5>
           لیست ویدیو های آپلود شده
-        </h5>    
+        </h5>
         <Link to={`${url}/upload-video`}>
-          <div className="button upload-video"> 
+          <div className="button upload-video">
             آپلود ویدیو های جدید
           </div>
         </Link>
