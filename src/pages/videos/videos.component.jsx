@@ -17,6 +17,7 @@ import { Link, Switch, Route, useRouteMatch, useParams, Redirect } from "react-r
 import "./videos.styles.scss";
 import UploadedVideos from "./uploaded-videos/uploaded-videos.component";
 import Dnd from "../../components/Drag-and-Drop/DND.component";
+import VideoInfo from "./video-info/video-info.component";
 
 const useStyles = makeStyles({
   root: {
@@ -97,7 +98,7 @@ const Videos = () => {
           <Dnd/>
         </Route>
         <Route path="/videos/video-info">
-          <h3>Video Information</h3>
+          <VideoInfo/>
         </Route>
         <Route path={`/videos/courses`}>
         <h3>Courses</h3>
