@@ -5,12 +5,15 @@ import {NavLink} from "react-router-dom";
 //STYLES
 import "./side-menu.styles.scss";
 
-const MenuItem = (props) => {
+const MenuMultiActiveItem = (props) => {
 
     return (
         <li>
-            <NavLink exact={props.routeName === "/"} to={props.routeName}
-                     activeClassName='on-click'
+            <NavLink exact={props.routeName === "/"}
+                     to={props.routeName}
+                     isActive={() => props.multi_pages.includes(props.pathname)
+                     }
+
             >
                 {props.title}
                 {props.logo}
@@ -19,4 +22,4 @@ const MenuItem = (props) => {
     );
 }
 
-export default MenuItem
+export default MenuMultiActiveItem

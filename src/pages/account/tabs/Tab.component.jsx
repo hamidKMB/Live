@@ -44,9 +44,9 @@ const theme = createTheme({ //overriding the classes of the material UI
 
 export default function LabTabs(props) {
   let my_tabs = [ 'personal-info', 'settings-channel', 'notifications', "change-password"]
-  let { path, url } = useRouteMatch();  
+  let { path, url } = useRouteMatch();
   let {tab} = useParams();
- 
+
   const [value, setValue] = React.useState(0);
    React.useEffect(() => {
      let index = my_tabs.indexOf(tab)
@@ -59,8 +59,8 @@ export default function LabTabs(props) {
     return (
       <div className="tabs">
       <ThemeProvider theme={theme}>
-        <TabContext 
-          value={value} 
+        <TabContext
+          value={value}
           className="tab-context"
           >
           <AppBar position="static" className="bottom-slider">
@@ -85,7 +85,7 @@ export default function LabTabs(props) {
               <Route path={`/account/change-password`}>
                   <ChangePassword/>
               </Route>
-            </Switch>          
+            </Switch>
           </div>
         </TabContext>
         </ThemeProvider>

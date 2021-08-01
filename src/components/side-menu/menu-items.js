@@ -30,7 +30,7 @@ export const menuItemsData = [
   {
     title: "ویدیوها",
     logo: <CameraLogo className="dashboard-icon"/>,
-    routeName: "/videos",
+    routeName: "/videos/uploaded",
   },
   {
     title: "آمار بازدید",
