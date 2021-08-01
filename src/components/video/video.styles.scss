@@ -1,0 +1,64 @@
+.card-grid{
+    margin-bottom: 1rem;
+    .card{
+        border-radius: 10px;
+        padding: 0.6rem;
+        font-weight: 300;
+        font-size: 14px;
+        max-width: 301.5px;
+        max-height: 334px;
+        .image{
+            background-color: grey;
+            position: relative;
+            height: 9.5rem;
+            border-radius: 15px;
+
+            .time{
+                position: absolute;
+                bottom: 10px;
+                left: 15px;
+                color: #fff;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 100;
+                font-size: 14px;
+            }
+        }
+        .title-video{
+            margin: 6px 0;
+            font-size: 18px;
+            span{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0;
+            }
+        }
+        .cost{
+            
+            color: red;
+            margin-bottom: 6px;
+        }
+        .date-created{
+            margin-bottom: 6px;
+        }
+        .published{
+            margin-bottom: 6px;
+            span{
+                &:first-child{
+                    margin-left: 1rem;
+                }
+            }
+        }
+        .views-likes-etc{
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            word-break: break-all;
+            span{
+                .logo{
+                    margin-left: 2px;
+                }
+            }
+        }
+    }
+}

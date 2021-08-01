@@ -64,7 +64,7 @@ function App() {
       <SideMenu display={toggled ? "toggle-side-menu" : " "} />
       <Switch>
         <Route exact path="/" component={Dashboard} />
-        <Route path="/account" component={Account} />
+        <Route path="/account/:tab" component={Account} />
         <Route path="/videos" component={Videos} />
         <Route path="/events" component={Events} />
         <Route path="/views" component={Views} />

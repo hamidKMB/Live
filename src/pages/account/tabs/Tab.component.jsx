@@ -16,7 +16,7 @@ import TabPanel from "@material-ui/lab/TabPanel";
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 
 //React Router
-import { Link, Switch, Route, useRouteMatch } from "react-router-dom";
+import { Link, Switch, Route, useRouteMatch, NavLink, useParams } from "react-router-dom";
 
 //STYLES
 import "./Tab.styles.scss";
@@ -43,9 +43,15 @@ const theme = createTheme({ //overriding the classes of the material UI
 
 
 export default function LabTabs(props) {
+  let my_tabs = [ 'personal-info', 'settings-channel', 'notifications', "change-password"]
   let { path, url } = useRouteMatch();  
+  let {tab} = useParams();
+ 
   const [value, setValue] = React.useState(0);
-
+   React.useEffect(() => {
+     let index = my_tabs.indexOf(tab)
+     setValue(index);
+   })
   const handleChange = (event, newValue) => {
         setValue(newValue);
     };
@@ -59,15 +65,15 @@ export default function LabTabs(props) {
           >
           <AppBar position="static" className="bottom-slider">
             <TabList indicatorColor="primary" textColor="primary" onChange={handleChange} aria-label="simple tabs example" className='tab-list'>
-                <Tab label="اطلاعات شخصی" component={Link} to={`${url}`}/>
-                <Tab label="تنظیمات کانال" component={Link} to={`${url}/settings-channel`}/>
-                <Tab label="اعلان ها" component={Link} to={`${url}/notifications`}/>
-                <Tab label="تغییر رمز عبور" component={Link} to={`${url}/change-password`}/>
+                <Tab label="اطلاعات شخصی" component={Link} to={`$account/personal-info`}/>
+                <Tab label="تنظیمات کانال" component={Link} to={`/account/settings-channel`}/>
+                <Tab label="اعلان ها" component={Link} to={`/account/notifications`}/>
+                <Tab label="تغییر رمز عبور" component={Link} to={`/account/change-password`}/>
             </TabList>
           </AppBar>
           <div>
             <Switch>
-              <Route exact path={`${path}`}>
+              <Route path={`${path}/personal-info`}>
                   <PersonalInformation/>
               </Route>
               <Route path={`${path}/settings-channel`}>
@@ -81,8 +87,6 @@ export default function LabTabs(props) {
               </Route>
             </Switch>          
           </div>
-       
-
         </TabContext>
         </ThemeProvider>
       </div>
