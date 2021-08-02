@@ -11,19 +11,19 @@ import { createTheme, ThemeProvider } from "@material-ui/core";
 
 
 //React-router-dom
-import { Link, Switch, Route, useParams } from "react-router-dom";
+import { Link, Switch, Route, useParams, useRouteMatch } from "react-router-dom";
 
 //STYLES
 import "./videos.styles.scss";
 import UploadedVideos from "./uploaded-videos/uploaded-videos.component";
 import Dnd from "../../components/Drag-and-Drop/DND.component";
 import VideoInfo from "./video-info/video-info.component";
+import Courses from "./courses/courses.component";
 
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
     width:"50vw",
-
     backgroundColor:"inherit",
     border: "none",
     boxShadow: "none",
@@ -44,13 +44,19 @@ const theme = createTheme({
           minWidth: 'fit-content'
         }
       }
-    }
-  }
+    } ,
+    MuiTabs:{
+      root:{
+        marginBottom: "2.5rem"
+      }
+    } 
+  } 
 })
 
 const Videos = () => {
   let my_tabs = ['uploaded', 'courses', 'bought-videos', 'liked-videos']
   let { tab } = useParams()
+  let {url} = useRouteMatch()
   React.useEffect(() => {
     let index = my_tabs.indexOf(tab);
     setValue(index);
@@ -78,23 +84,39 @@ const Videos = () => {
         <Tab label="ویدیوهای پسندیده شده" component={Link} to={`/videos/liked-videos`}/>
       </Tabs>
       </Paper>
-      <div className="videos-detail">
-        <h5>
-          لیست ویدیو های آپلود شده
-        </h5>
-        <Link to={`/videos/upload-video`}>
-          <div className="button upload-video">
-            آپلود ویدیو های جدید
-          </div>
-        </Link>
-      </div>
+      {
+        url == "/videos/uploaded" ?
+            <div className="videos-detail">
+              <h5>
+                لیست ویدیو های آپلود شده
+              </h5>
+              <Link to={`/videos/upload-video`}>
+                <div className="button upload-video">
+                  آپلود ویدیو های جدید
+                </div>
+              </Link>
+            </div>
+            :
+        url == "/videos/courses" ?
+           <div className="videos-detail">
+              <h5>
+                همه دوره های ایجاد شده
+              </h5>
+              <Link to={`/videos/upload-video`}>
+                <div className="button upload-video">
+                  آپلود دوره جدید
+                </div>
+              </Link>
+            </div>
+          : null
+      }
     <div className="content-holder">
       <Switch>
         <Route path={`/videos/uploaded`}>
           <UploadedVideos/>
         </Route>
         <Route path={`/videos/courses`}>
-        <h3>Courses</h3>
+          <Courses/>
         </Route>
         <Route path={`/videos/bought-videos`}>
         <h3>bought Videos</h3>

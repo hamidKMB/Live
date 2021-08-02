@@ -1,3 +1,5 @@
+@import "../../root-styles/variables.scss";
+
 .card-grid{
     margin-bottom: 1rem;
         .card-video{
@@ -12,7 +14,23 @@
             position: relative;
             height: 9.5rem;
             border-radius: 15px;
-
+            .play-all{
+                position: absolute;
+                top: 0;
+                z-index: 20;
+                height: inherit;
+                width: 100%;
+                border-radius: inherit;
+                background-color: rgba(0,0,0, 0.6);
+                color: $color-light-white;
+                display: flex;
+                text-align: center;
+                flex-direction: column;
+                justify-content: center;
+                .play-logo{
+                    margin-left: 5px;
+                }
+            }
             .time{
                 position: absolute;
                 bottom: 10px;
@@ -59,6 +77,41 @@
                     margin-left: 2px;
                 }
             }
+        }
+        div.views-likes-etc.after{
+            &::after{
+                    content: " ";
+                    position: absolute;
+                    width: 91%;
+                    right: 13px;
+                    /* border-radius: 10px; */
+                    height: 26px;
+                    border-bottom: 1px solid rgba($color-light-grey, 0.4);
+            }
+        }
+        .cost-and-detail-course{
+            margin: 12px 0 5px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .watch-green{
+                color: green;
+                .watch-logo{
+                    margin-left: 5px;
+                    #Path_70839,
+                    #Path_70840{
+                        fill:green;
+                    }
+                }
+            }
+            .watch-default{
+                color: $color-light-grey;
+            }
+        }
+        .cost-course{
+            margin-bottom: 0;
+            color: red;
         }
     }
 }
