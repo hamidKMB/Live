@@ -106,7 +106,17 @@
                         li{
                             color: rgba($color-light-white, 0.5);
                         }
-                        .on-click{
+                        a.on-click{
+                            color:rgba($color-light-white, 0.9);
+                            background-color: rgba($color-light-white, 0.12);
+                            border-right: 5px solid rgba($color-light-white, 0.4);
+                            .dashboard-icon{
+                                .a{
+                                    fill: $color-dark-orange;
+                                }
+                            }
+                        }
+                        a.active{
                             color:rgba($color-light-white, 0.9);
                             background-color: rgba($color-light-white, 0.12);
                             border-right: 5px solid rgba($color-light-white, 0.4);
