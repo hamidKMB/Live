@@ -18,7 +18,7 @@ const uppy = new Uppy({
   autoProceed: true
 })
 
-uppy.use(Tus, { endpoint: 'https://storage.livenegah.com/tus/zz?token=9721' })
+uppy.use(Tus, { endpoint: 'https://storage.livenegah.com:1443/tus/zz?token=9721' })
 
 uppy.on('complete', (result) => {
   const url = result.successful[0].uploadURL
@@ -29,12 +29,14 @@ uppy.on('error', (error) => {
   console.log(error)
 })
 
-
+const dropHandler = (event) => {
+    console.log("upload");
+}
 
 const Dnd = () => {
     return (
         <div className="admin-pages-layout file-upload">
-            <DragDrop uppy={uppy} className="select-file">
+            <DragDrop uppy={uppy} className="select-file" onDrop={dropHandler}>
                 <DragAndDrop/>
                 <h5>بارگذاری ویدیو</h5>
                 <p>برای بارگذاری ویدیو یک فایل را بکشید و رها کنید<br/>و یا فایل را انتخاب کنید</p>

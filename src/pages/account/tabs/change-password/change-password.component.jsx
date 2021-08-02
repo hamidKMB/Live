@@ -7,7 +7,7 @@ import { TextField } from "@material-ui/core"
 import "./change-password.styles.scss"
 import "../../../../root-styles/buttons.scss"
 
-import { Modal } from "@material-ui/core"
+import Modal from "../../../../components/modal/modal.component"
 
 const ChangePassword = () => {
     const [isModalShow, setIsModalShow] = React.useState(false);
@@ -58,15 +58,7 @@ const ChangePassword = () => {
                 </div>
             </div>
             {
-                isModalShow && 
-                 <Modal
-                    open={isModalShow}
-                    onClose={closeModal}
-                    aria-labelledby="simple-modal-title"
-                    aria-describedby="simple-modal-description"
-                >
-                Hello
-                </Modal>
+                isModalShow && <Modal closeModal={closeModal}/>
             }
         </div>
     )
