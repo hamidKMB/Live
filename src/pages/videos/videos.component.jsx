@@ -55,8 +55,9 @@ const theme = createTheme({
 
 const Videos = () => {
   let my_tabs = ['uploaded', 'courses', 'bought-videos', 'liked-videos']
-  let { tab } = useParams()
+  let { tab, courseTitle } = useParams()
   let {url} = useRouteMatch()
+
   React.useEffect(() => {
     let index = my_tabs.indexOf(tab);
     setValue(index);
@@ -108,14 +109,30 @@ const Videos = () => {
                 </div>
               </Link>
             </div>
-          : null
+          : 
+        url == "/videos/courses/:courseTitle" ?
+        <div className="videos-detail">
+              <h5>
+                New Title
+              </h5>
+              <Link to={`/videos/upload-video`}>
+                <div className="button upload-video">
+                  آپلود ویدیو جدید
+                </div>
+              </Link>
+          </div>
+          :
+          null
       }
     <div className="content-holder">
       <Switch>
         <Route path={`/videos/uploaded`}>
           <UploadedVideos/>
         </Route>
-        <Route path={`/videos/courses`}>
+        <Route path={`/videos/courses/:courseTitle`}>
+          <h3>HelloWorld</h3>
+        </Route>
+        <Route exact path={`/videos/courses`}>
           <Courses/>
         </Route>
         <Route path={`/videos/bought-videos`}>

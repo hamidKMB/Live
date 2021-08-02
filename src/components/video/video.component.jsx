@@ -7,17 +7,20 @@ import {ReactComponent as Eye} from "../../Icon/view.svg";
 import {ReactComponent as Shop} from "../../Icon/shop.svg"
 import {ReactComponent as Watch} from "./watch.svg";
 import {ReactComponent as Play} from "./playlogo.svg";
+import {Link, useRouteMatch} from "react-router-dom";
 
 import "./video.styles.scss";
 
 const Video = (props) => {
+    const { url } = useRouteMatch()
     return (
         <div className="col-lg-4 col-md-6 col-sm-6 col-12 card-grid">
             <div className="card card-video">
             <div className="image">
             <img src="./WhatsApp Image 2021-06-22 at 13.15.45.jpeg"/>
             {
-                props.course ?
+            props.course ?
+                <Link to={`/videos/courses/${props.title}`}>
                     <div className="play-all">
                         <span>
                             <Play className="play-logo"/>
@@ -27,11 +30,11 @@ const Video = (props) => {
                             {props.number}   ویدیو
                         </span>
                     </div>
-
+                </Link>
                 :
-                    <div className="time">
-                        {props.time}
-                    </div>                
+                <div className="time">
+                    {props.time}
+                </div>                
             }
             </div>
                  <div className="title-video">

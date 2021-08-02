@@ -14,23 +14,28 @@
             position: relative;
             height: 9.5rem;
             border-radius: 15px;
-            .play-all{
-                position: absolute;
-                top: 0;
-                z-index: 20;
-                height: inherit;
-                width: 100%;
-                border-radius: inherit;
-                background-color: rgba(0,0,0, 0.6);
-                color: $color-light-white;
-                display: flex;
-                text-align: center;
-                flex-direction: column;
-                justify-content: center;
-                .play-logo{
-                    margin-left: 5px;
+            
+                
+                .play-all{
+                    position: absolute;
+                    top: 0;
+                    z-index: 20;
+                    height: inherit;
+                    width: 100%;
+                    border-radius: inherit;
+                    background-color: rgba(0,0,0, 0.6);
+                    color: $color-light-white;
+                    display: flex;
+                    text-align: center;
+                    flex-direction: column;
+                    justify-content: center;
+                    cursor: pointer;
+                    .play-logo{
+                        margin-left: 5px;
+                    }
                 }
-            }
+            
+            
             .time{
                 position: absolute;
                 bottom: 10px;
@@ -107,6 +112,9 @@
             }
             .watch-default{
                 color: $color-light-grey;
+                .watch-logo{
+                    margin-left: 5px;
+                }
             }
         }
         .cost-course{
