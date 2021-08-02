@@ -10,7 +10,7 @@ import "./video-info.styles.scss";
 
 const VideoInfo = () => {
     return (
-        <div className="video-info">
+        <div className="video-info admin-pages-layout">
             <div className="input">
                 <TextField
                 id="outlined-basic"

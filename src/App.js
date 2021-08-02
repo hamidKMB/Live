@@ -21,6 +21,7 @@ import Dnd from "./components/Drag-and-Drop/DND.component";
 //STYLES
 import "./App.css";
 import "./root-styles/__dark-mode.scss"
+import VideoInfo from "./pages/videos/video-info/video-info.component";
 
 function App() {
   const [toggled, setToggled] = React.useState(false);
@@ -64,6 +65,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={Dashboard} />
         <Route path="/account/:tab" component={Account} />
+        <Route path="/videos/video-info" component={VideoInfo}/>
+        <Route path="/videos/upload-video" component={Dnd}/>
         <Route path="/videos/:tab" component={Videos} />
         <Route path="/events" component={Events} />
         <Route path="/views" component={Views} />
@@ -72,7 +75,6 @@ function App() {
         <Route path="/discounts" component={Discounts} />
         <Route path="/follow" component={Followers} />
         <Route path="/backup" component={BackUp} />
-        <Route path="/videos/upload-video" component={Dnd}/>
       </Switch>
     </div>
   );

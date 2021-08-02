@@ -9,10 +9,10 @@ import ChangePassword from "./change-password/change-password.component";
 
 //MaterialUI
 import AppBar from "@material-ui/core/AppBar";
-import Tab from "@material-ui/core/Tab";
-import TabContext from "@material-ui/lab/TabContext";
-import TabList from "@material-ui/lab/TabList";
-import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import { createTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
 
 //React Router
 import { Link, Switch, Route, useParams } from "react-router-dom";
@@ -21,22 +21,33 @@ import { Link, Switch, Route, useParams } from "react-router-dom";
 import "./Tab.styles.scss";
 import "../../../root-styles/variables.scss";
 
-const theme = createTheme({ //overriding the classes of the material UI
+const useStyles = makeStyles({
+  root: {
+    flexGrow: 1,
+    width:"50vw",
+
+    backgroundColor:"inherit",
+    border: "none",
+    boxShadow: "none",
+    fontFamily: "inherit",
+  },
+}
+)
+
+const theme = createTheme({
   overrides:{
     MuiTab:{
       root:{
-        minWidth: 0,
-        '@media (min-width: 0px)':{
-          minWidth:0
+        fontFamily:"inherit",
+        fontSize: "80%",
+        borderBottom: "1px solid rgba(0, 0, 0, 0.2)",
+        padding: "0 10px 0 10px",
+        '@media (min-width: 600px)':{
+          minWidth: 'fit-content'
         }
       }
-    },
-  },
-  palette: {
-    primary: {
-      main: '#EFA00B',
-    },
-  },
+    }
+  }
 })
 
 
@@ -56,21 +67,23 @@ export default function LabTabs(props) {
         setValue(newValue);
     };
 
+      const classes = useStyles();
+
     return (
       <div className="tabs">
       <ThemeProvider theme={theme}>
-        <TabContext
-          value={value}
-          className="tab-context"
-          >
-          <AppBar position="static" className="bottom-slider">
-            <TabList indicatorColor="primary" textColor="primary" onChange={handleChange} aria-label="simple tabs example" className='tab-list'>
+        <Paper className={classes.root}>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        TabIndicatorProps={{style:{backgroundColor: "#EFA00B", color:"#000"}}}
+      >
                 <Tab label="اطلاعات شخصی" component={Link} to={`/account/personal-info`}/>
                 <Tab label="تنظیمات کانال" component={Link} to={`/account/settings-channel`}/>
                 <Tab label="اعلان ها" component={Link} to={`/account/notifications`}/>
                 <Tab label="تغییر رمز عبور" component={Link} to={`/account/change-password`}/>
-            </TabList>
-          </AppBar>
+      </Tabs>
+      </Paper>
           <div>
             <Switch>
               <Route path={`/account/personal-info`}>
@@ -87,7 +100,6 @@ export default function LabTabs(props) {
               </Route>
             </Switch>
           </div>
-        </TabContext>
         </ThemeProvider>
       </div>
     );

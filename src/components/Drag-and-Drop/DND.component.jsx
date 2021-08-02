@@ -32,9 +32,8 @@ uppy.on('error', (error) => {
 
 
 const Dnd = () => {
-    const {url, path} = useRouteMatch()
     return (
-        <div className="file-upload">
+        <div className="admin-pages-layout file-upload">
             <DragDrop uppy={uppy} className="select-file">
                 <DragAndDrop/>
                 <h5>بارگذاری ویدیو</h5>

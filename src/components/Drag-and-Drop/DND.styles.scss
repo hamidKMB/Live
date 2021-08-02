@@ -1,6 +1,13 @@
 @import "../../root-styles/variables.scss";
 
 .file-upload{
+    padding: 10rem 10rem 0 0;
+    @media screen and (max-width: 991px) {
+        padding: 8rem 9rem 0 0;
+    }
+    @media screen and (max-width: 786px){
+        padding: 7rem 1rem;
+    }
     display: flex;
     justify-content: center;
     margin: 0 auto;
@@ -8,7 +15,7 @@
     .select-file{
         position: relative;
         border: 2px dashed $color-light-orange;
-        padding: 3rem;
+        padding: 10%;
         border-radius: 15px;
         display: flex;
         justify-content: center;

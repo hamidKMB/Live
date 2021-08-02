@@ -93,12 +93,6 @@ const Videos = () => {
         <Route path={`/videos/uploaded`}>
           <UploadedVideos/>
         </Route>
-        <Route path="/videos/upload-video">
-          <Dnd/>
-        </Route>
-        <Route path="/videos/video-info">
-          <VideoInfo/>
-        </Route>
         <Route path={`/videos/courses`}>
         <h3>Courses</h3>
         </Route>
