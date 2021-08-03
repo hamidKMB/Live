@@ -4,6 +4,7 @@
     background-color: $color-light-white;
     position: fixed;
     padding: 0 4%;
+    z-index: 1;
     width: 100vw;
     height: fit-content;
     animation: comeFromTop 1s ease;

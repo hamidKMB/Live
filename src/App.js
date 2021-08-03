@@ -59,10 +59,9 @@ function App() {
   })
 
   return (
-    <div className={`App modal-custom ${isDark ? `dark` : ` `}`}>
+    <div className={`App ${isDark ? `dark` : ` `}`}>
       <Header toggleSideBar={handleClick} onToggleDarkMode={onToggledDarkMode} dark={isDark}/>
       <SideMenu display={toggled ? "toggle-side-menu" : " "} />
-     
       <Switch>
         <Route exact path="/" component={Dashboard} />
         <Route path="/account/:tab" component={Account} />
@@ -78,7 +77,7 @@ function App() {
         <Route path="/backup" component={BackUp} />
       </Switch>
     </div>
-  );
+    );
 }
 
 export default App;
