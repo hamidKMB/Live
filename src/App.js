@@ -59,9 +59,10 @@ function App() {
   })
 
   return (
-    <div className={`App ${isDark ? `dark` : ` `}`}>
+    <div className={`App modal-custom ${isDark ? `dark` : ` `}`}>
       <Header toggleSideBar={handleClick} onToggleDarkMode={onToggledDarkMode} dark={isDark}/>
       <SideMenu display={toggled ? "toggle-side-menu" : " "} />
+     
       <Switch>
         <Route exact path="/" component={Dashboard} />
         <Route path="/account/:tab" component={Account} />

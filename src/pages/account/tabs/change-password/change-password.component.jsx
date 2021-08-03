@@ -57,9 +57,10 @@ const ChangePassword = () => {
                     تغییر رمز
                 </div>
             </div>
-            {
-                isModalShow && <Modal closeModal={closeModal}/>
-            }
+            
+            <Modal closeModal={closeModal} isShow={isModalShow}>
+                
+            </Modal>
         </div>
     )
 }
