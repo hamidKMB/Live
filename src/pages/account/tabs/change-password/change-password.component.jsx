@@ -1,6 +1,6 @@
 import React from "react"
 
-import { TextField } from "@material-ui/core"
+import { ReactComponent as ChangePasswordLogo } from "./change-password-logo.svg";
 
 // import Modal from "../../../../components/modal/modal.component"
 
@@ -20,7 +20,8 @@ const ChangePassword = () => {
     setIsModalShow(false);
   };
     return (
-        <div className="change-password">
+        <div className="change-password d-flex flex-row">
+        <div className="change-password-form">
             <h3 className="settings-detail">
                 تغییر رمز عبور
             </h3>
@@ -48,11 +49,12 @@ const ChangePassword = () => {
                 <div className="button change-password-button" onClick={openModal}>
                     تغییر رمز
                 </div>
+                </div>
+                <Modal closeModal={closeModal} isShow={isModalShow}>
+                    
+                </Modal>
             </div>
-            
-            <Modal closeModal={closeModal} isShow={isModalShow}>
-                
-            </Modal>
+            <ChangePasswordLogo className="change-password-logo"/>
         </div>
     )
 }

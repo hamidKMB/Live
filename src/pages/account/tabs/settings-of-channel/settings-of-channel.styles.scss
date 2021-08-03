@@ -1,49 +1,61 @@
 @import "../../../../root-styles/variables.scss";
 
 .settings{
-    display: flex;
-    flex-direction: column;
-    justify-content: right;
-    width: 65%;
-    margin-top: 4rem;
-    .setting-detail{
-        font-size: 17px;
-        margin-bottom: 1.5rem;
-    }
-    .circle-holder{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2rem;
-        .circle{
-            background-color: $color-light-white;
-            display: flex;
-            flex-direction: column;
-            padding: 2rem 1rem;
-            border: 1px dashed $color-light-orange;
-            border-radius: 100%;
-            text-align: center;
-            align-items: center;
-            img{
-                margin: 20px
-            }
-        }
-    }
-    .rect{
+    .settings-form{
         display: flex;
         flex-direction: column;
-        border-radius: 10px;
-        padding: 4.5rem 5rem;
-        border: 1px dashed $color-light-orange;
-        text-align: center;
-        background-color: $color-light-white;
-        margin-bottom: 20px;
+        justify-content: right;
+        width: 60%;
+        margin-top: 4rem;
+        .setting-detail{
+            font-size: 17px;
+            margin-bottom: 1.5rem;
+        }
+        .circle-holder{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            .circle{
+                background-color: $color-light-white;
+                display: flex;
+                flex-direction: column;
+                padding: 3rem 1rem;
+                border: 1px dashed $color-light-orange;
+                border-radius: 100%;
+                text-align: center;
+                align-items: center;
+                span{
+                    margin-top: 10px;
+                }
+            }
+        }
+        .rect{
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            padding: 3.5rem 5rem;
+            border: 1px dashed $color-light-orange;
+            text-align: center;
+            background-color: $color-light-white;
+            margin-bottom: 5rem;
+            align-items: center;
+            svg{
+                width: 3rem;
+            }
+            span{
+                margin-top: 15px;
+            }
+        }
+        fieldset{
+            margin-bottom: 15px
+        }
+        .settings-button{
+            margin: 20px auto 0;
+            padding: 0.5rem 1rem;
+            width: 8.8rem;
+        }
     }
-    fieldset{
-        margin-bottom: 15px
-    }
-    .settings-button{
-        margin: 20px auto 0;
-        padding: 0.5rem 1rem;
-        width: 8.8rem;
+    .settings-channel-logo{
+        margin-top: 10rem;
     }
 }
