@@ -16,17 +16,8 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            .text-field{
+            .field-set{
                 margin-bottom: 20px;
-                label{
-                    right:30px;
-                    color: grey;
-                }
-                &:focus{
-                    label{
-                        color:grey;
-                    }
-                }
             }
         }
     }
@@ -62,18 +53,8 @@
         .content {
             display: flex;
             flex-direction: column;
-            .text-field{
+            .field-set{
                 margin-bottom: 20px;
-                label{
-                    right:30px;
-                    color: grey;
-                }
-                &:focus{
-                    label{
-                        
-                        color:grey;
-                    }
-                }
             }
         }
     }

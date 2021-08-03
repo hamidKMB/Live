@@ -1,45 +1,27 @@
 import React from "react"
 
-import { TextField } from "@material-ui/core";
+import TextInput from "../../../../components/text-input/text-input.component";
 
 const Haqiqi = () => {
     return (
       <div className="content">
-        <TextField
-          id="outlined-basic"
-          label="استان"
-          variant="outlined"
-          className="text-field"
+        <TextInput
+        label="استان"
         />
-        <TextField
-          id="outlined-basic"
-          label="شهر"
-          variant="outlined"
-          className="text-field"
+        <TextInput
+        label="شهر"
         />
-        <TextField
-          id="outlined-basic"
-          label="کد ملی"
-          variant="outlined"
-          className="text-field"
+        <TextInput
+        label="کد ملی"
         />
-        <TextField
-          id="outlined-basic"
-          label="کد پستی"
-          variant="outlined"
-          className="text-field"
+        <TextInput
+        label="کد پستی"
         />
-        <TextField
-          id="outlined-basic"
-          label="تلفن"
-          variant="outlined"
-          className="text-field"
+        <TextInput
+        label="تلفن"
         />
-        <TextField
-          id="outlined-basic"
-          label="آدرس"
-          variant="outlined"
-          className="text-field"
+        <TextInput
+        label="آدرس"
         />
       </div>
     );
