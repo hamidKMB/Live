@@ -21,18 +21,19 @@
         width: 100%;
         height: 95%;
     .image-holder{
-        background-color: grey;
-        border-radius: 7px;
-        width: 60%;
-        margin: 0.3rem 0.3rem 0.3rem 0.7rem;
-        position: relative;
-        display: inline;
-        img {
-            width: inherit;
-            height: inherit;
-            border-radius: inherit;
-            object-fit: cover;
-            }
+            background-color: grey;
+            border-radius: 7px;
+            width: 20rem;
+            height: 7.5rem;
+            margin: 0.3rem 0.3rem 0.3rem 0.7rem;
+            position: relative;
+            display: inline;
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+                object-fit: fill;
+                }
     }
     .other-detail-event{
         padding: 10px 5px;

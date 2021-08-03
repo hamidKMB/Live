@@ -22,6 +22,7 @@ import Dnd from "./components/Drag-and-Drop/DND.component";
 import "./App.css";
 import "./root-styles/__dark-mode.scss"
 import VideoInfo from "./pages/videos/video-info/video-info.component";
+import ApiRequest from "./ApiRequest";
 
 function App() {
   const [toggled, setToggled] = React.useState(false);
