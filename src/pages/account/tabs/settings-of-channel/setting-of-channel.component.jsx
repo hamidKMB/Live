@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TextField } from "@material-ui/core";
+import TextInput from "../../../../components/text-input/text-input.component";
 
 import "./settings-of-channel.styles.scss"
 import "../../../../root-styles/buttons.scss"
@@ -23,23 +23,14 @@ const SettingsOfChannel = () => {
           <span>برای انتخاب کاور کانال کلیک کنید</span>
         </div>
         <h3 className="setting-detail">معرفی کانال</h3>
-        <TextField
-          id="outlined-basic"
-          label="نام کانال"
-          variant="outlined"
-          className="text-field"
+        <TextInput
+        label="نام کانال"
         />
-        <TextField
-          id="outlined-basic"
-          label="آدرس کانال"
-          variant="outlined"
-          className="text-field"
+        <TextInput
+        label="آدرس کانال"
         />
-        <TextField
-          id="outlined-basic"
-          label="خود را معرفی کنید"
-          variant="outlined"
-          className="text-field"
+        <TextInput
+        label="خود را معرفی کنید"
         />
         <div className="button settings-button">
             ثبت تغییرات

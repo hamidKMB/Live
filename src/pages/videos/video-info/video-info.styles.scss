@@ -11,6 +11,9 @@
         flex-direction: column;
         justify-content: space-between;
         width: 100%;
+        fieldset{
+            margin-bottom: 20px;
+        }
     }
     .status-and-others{
         margin-right: 7rem;

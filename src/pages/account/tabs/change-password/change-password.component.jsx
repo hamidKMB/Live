@@ -8,6 +8,7 @@ import "./change-password.styles.scss"
 import "../../../../root-styles/buttons.scss"
 
 import Modal from "../../../../components/modal/modal.component"
+import TextInput from "../../../../components/text-input/text-input.component"
 
 const ChangePassword = () => {
     const [isModalShow, setIsModalShow] = React.useState(false);
@@ -24,23 +25,14 @@ const ChangePassword = () => {
                 تغییر رمز عبور
             </h3>
             <div className="field-holder">
-                <TextField
-                    id="outlined-basic"
-                    label="رمز عبور فعلی"
-                    variant="outlined"
-                    className="text-field"
+                <TextInput
+                label="رمز عبور فعلی"
                 />
-                <TextField
-                    id="outlined-basic"
-                    label="رمز عبور جدید"
-                    variant="outlined"
-                    className="text-field"
+                <TextInput
+                label="رمز عبور جدید"
                 />
-                <TextField
-                    id="outlined-basic"
-                    label="تکرار رمز عبور جدید"
-                    variant="outlined"
-                    className="text-field"
+                <TextInput
+                label="تکرار رمز عبور جدید"
                 />
                 <ul>
                     <li>حداقل 8 کاراکتر</li>

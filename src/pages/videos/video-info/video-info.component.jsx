@@ -1,6 +1,6 @@
 import React from "react"
 
-import { TextField } from "@material-ui/core"
+import TextInput from "../../../components/text-input/text-input.component"
 
 import {ReactComponent as BinLogo } from "./bin.svg";
 import {ReactComponent as UploadLogo } from "./upload.svg";
@@ -12,41 +12,23 @@ const VideoInfo = () => {
     return (
         <div className="video-info admin-pages-layout">
             <div className="input">
-                <TextField
-                id="outlined-basic"
+                <TextInput
                 label="عنوان ویدیو"
-                variant="outlined"
-                className="text-field"
                 />
-                <TextField
-                id="outlined-basic"
+                <TextInput
                 label="توضیحات ویدیو"
-                variant="outlined"
-                className="text-field"
                 />
-                <TextField
-                id="outlined-basic"
+                <TextInput
                 label="دسته بندی"
-                variant="outlined"
-                className="text-field"
                 />
-                <TextField
-                id="outlined-basic"
+                <TextInput
                 label="دوره"
-                variant="outlined"
-                className="text-field"
                 />
-                <TextField
-                id="outlined-basic"
+                <TextInput
                 label="هزینه ویدیو"
-                variant="outlined"
-                className="text-field"
                 />
-                <TextField
-                id="outlined-basic"
+                <TextInput
                 label="انتخاب تخفیف"
-                variant="outlined"
-                className="text-field"
                 />
             </div>
             <div className="status-and-others">

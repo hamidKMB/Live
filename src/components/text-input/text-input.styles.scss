@@ -5,10 +5,13 @@
   padding: 0 15px 15px 15px;
   border-radius: 5px;
   border: 2px solid rgba($color-light-grey, 0.5);
-  background-color: #fff;
-  &:hover,
+  background-color: transparent;
+  &:hover{
+    border-color: orange;
+  }
   &:focus-within {
     border-color: orange;
+    background-color: #fff;
   }
   .legend {
     float: none;
@@ -24,6 +27,7 @@
     text-align: right;
     font-size: 12pt;
     border: none;
+    background-color: transparent;
     &:focus {
       outline: none;
     }
