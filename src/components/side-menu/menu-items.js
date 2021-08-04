@@ -35,7 +35,7 @@ export const menuItemsData = [
   {
     title: "آمار بازدید",
     logo: <BarLogo className="dashboard-icon"/>,
-    routeName: "/views",
+    routeName: "/charts",
   },
   {
     title: "مالی",

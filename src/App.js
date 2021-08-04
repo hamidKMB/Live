@@ -11,7 +11,7 @@ import Dashboard from "./pages/dashboard/dashboard.component";
 import Account from "./pages/account/account.component";
 import Videos from "./pages/videos/videos.component";
 import Events from "./pages/events/events.component";
-import Views from "./pages/views/views.component";
+import ChartPage from "./pages/charts/chart-page.component";
 import Finance from "./pages/finance/finance.component";
 import Tickets from "./pages/tickets/tickets.component";
 import Discounts from "./pages/discounts/discounts.component";
@@ -70,7 +70,7 @@ function App() {
         <Route path="/videos/upload-video" component={UploadVideo}/>
         <Route path="/videos/:tab" component={Videos} />
         <Route path="/events" component={Events} />
-        <Route path="/views" component={Views} />
+        <Route path="/charts" component={ChartPage} />
         <Route path="/finance" component={Finance} />
         <Route path="/tickets" component={Tickets} />
         <Route path="/discounts" component={Discounts} />
