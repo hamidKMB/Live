@@ -8,7 +8,7 @@ import "../../../../root-styles/buttons.scss"
 
 const SettingsOfChannel = () => {
     return (
-      <div className="settings d-flex flex-row">
+      <div className="settings d-flex flex-row align-items-center align-items-md-start justify-content-md-start justify-content-center">
         <div className="settings-form">
         <h3 className="setting-detail">تصویر پروفایل</h3>
         <div className="circle-holder">
@@ -38,7 +38,7 @@ const SettingsOfChannel = () => {
             ثبت تغییرات
         </div>
         </div>
-        <SettingsChannelLogo className="settings-channel-logo me-5"/>
+        <SettingsChannelLogo className="settings-channel-logo me-5 d-none d-md-block"/>
       </div>
     );
 }

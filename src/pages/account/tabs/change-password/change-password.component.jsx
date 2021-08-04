@@ -20,7 +20,7 @@ const ChangePassword = () => {
     setIsModalShow(false);
   };
     return (
-        <div className="change-password d-flex flex-row">
+        <div className="change-password d-flex align-items-md-start align-items-center flex-md-row flex-column">
         <div className="change-password-form">
             <h3 className="settings-detail">
                 تغییر رمز عبور
@@ -50,9 +50,13 @@ const ChangePassword = () => {
                     تغییر رمز
                 </div>
                 </div>
-                <Modal closeModal={closeModal} isShow={isModalShow}>
-                    
-                </Modal>
+                {
+                    isModalShow &&
+                    <Modal closeModal={closeModal} isShow={isModalShow}>
+                        
+                    </Modal>
+
+                }
             </div>
             <ChangePasswordLogo className="change-password-logo"/>
         </div>

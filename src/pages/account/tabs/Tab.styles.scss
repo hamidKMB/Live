@@ -1,39 +1,48 @@
 @import "../../../root-styles/variables.scss";
 
-.tabs{
-    header{
-    color: #707070;
-    font-style: inherit;
-    background-color: inherit;
-    box-shadow: none;
-    width: 599px;
-    position: absolute;
-    right: 7rem;
-    .tab-list{
-            background-color: inherit;
-            width: 599px;
-            .MuiTabs-scroller{
-                width: 604px;
-                .MuiTabs-flexContainer{
-                    width: 303px;
-                    button.MuiButtonBase-root.MuiTab-root.MuiTab-textColorInherit{
-                        color:$color-light-grey;
-                        padding: 0;
-                        width: 7rem;
-                        justify-content: center;
-                        font-family: inherit;
-                        border-bottom: 2px solid $color-light-grey;
-                        span{
-                            width: 97px;
+.account-layout{
+    padding: 10rem 10rem 10rem 1rem;
+    @media screen and (max-width: 991px) {
+        padding: 8rem 8rem 8rem 1rem;
+    }
+    @media screen and (max-width: 786px){
+        padding: 7rem 1rem;
+    }
+    .tabs{
+        header{
+        color: #707070;
+        font-style: inherit;
+        background-color: inherit;
+        box-shadow: none;
+        width: 599px;
+        position: absolute;
+        right: 7rem;
+        .tab-list{
+                background-color: inherit;
+                width: 599px;
+                .MuiTabs-scroller{
+                    width: 604px;
+                    .MuiTabs-flexContainer{
+                        width: 303px;
+                        button.MuiButtonBase-root.MuiTab-root.MuiTab-textColorInherit{
+                            color:$color-light-grey;
+                            padding: 0;
+                            width: 7rem;
+                            justify-content: center;
+                            font-family: inherit;
+                            border-bottom: 2px solid $color-light-grey;
+                            span{
+                                width: 97px;
+                            }
                         }
                     }
                 }
-            }
-        }    
-    }
-    .MuiTabPanel-root{
-        padding-left: 0;
-        padding-right: 0;
-        margin: 0.5rem 0 0 0;
+            }    
+        }
+        .MuiTabPanel-root{
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0.5rem 0 0 0;
+        }
     }
 }

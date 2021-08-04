@@ -6,6 +6,9 @@
         flex-direction: column;
         justify-content: right;
         width: 60%;
+        @media screen and (max-width: 769px) {
+            width:87vw;
+        }
         margin-top: 4rem;
         .setting-detail{
             font-size: 17px;

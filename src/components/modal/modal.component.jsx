@@ -3,21 +3,36 @@ import React from "react";
 import "./modal.styles.scss";
 
 import { ReactComponent as CrossLogo } from "./crossMark.svg";
-const Modal = (props) => {
-  
-  props.isShow ? document.querySelector(".header").style.zIndex = "0" :  document.querySelector(".header").style.zIndex = "1"
+import { render } from "@testing-library/react";
+class Modal extends React.Component{
+    constructor(props) {
+    super(props);
+    this.state = {
+      isShow: this.props.isShow ,
+    };
+  }
 
-  return (
-    <div className="modal-custom" style={{display:`${props.isShow ? "inline-flex" : "none"}`}}>
-      <div className="black-overlay"/>
-        <div className="main-modal">
-          <div className="content-in-modal">
-            <CrossLogo className="cross-logo" onClick={props.closeModal}/>
-            {props.children}
+  componentDidMount(){
+      document.querySelector(".header").style.zIndex = "0";
+    }
+  componentWillUnmount(){
+      document.querySelector(".header").style.zIndex = "2";
+    }
+
+
+  render() {
+    return (
+      <div className="modal-custom" style={{display:`${this.props.isShow ? "inline-flex" : "none"}`}}>
+        <div className="black-overlay"/>
+          <div className="main-modal">
+            <div className="content-in-modal">
+              <CrossLogo className="cross-logo" onClick={this.props.closeModal}/>
+              {this.props.children}
+            </div>
           </div>
-        </div>
-    </div>
-  );
-};
+      </div>
+    );
+  }
+}
 
 export default Modal;

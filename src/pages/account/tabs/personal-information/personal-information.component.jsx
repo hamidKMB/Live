@@ -23,7 +23,7 @@ const PersonalInformation = () => {
     }
 
   return (
-    <div className="personal-information">
+    <div className="personal-information d-flex flex-column flex-md-row">
       <div className="right">
         <h1> اطلاعات پایه </h1>
         <div className="content">
