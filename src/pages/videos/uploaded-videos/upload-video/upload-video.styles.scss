@@ -1,0 +1,14 @@
+.file-upload{
+    padding: 10rem 10rem 0 0;
+    @media screen and (max-width: 991px) {
+        padding: 8rem 9rem 0 0;
+    }
+    @media screen and (max-width: 786px){
+        padding: 7rem 1rem;
+    }
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 60%;
+    
+}

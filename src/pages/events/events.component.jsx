@@ -27,6 +27,7 @@ const Events = () => {
        {
          eventList.map( (item) => (
            <Event
+            key = {item.id}
             image={item.image_path}
             title={item.title}
             date={item.created_at}

@@ -4,12 +4,9 @@ import React from "react";
 import Uppy from '@uppy/core'
 import Tus from '@uppy/tus'
 import { DragDrop } from '@uppy/react'
+import ProgressBar from '@uppy/progress-bar'
 
-//React-Router-Dom
-import {Link, Redirect, useRouteMatch} from "react-router-dom"
 
-//STYLES & Logo
-import {ReactComponent as DragAndDrop} from "./drag-drop.svg"
 import "./DND.styles.scss"
 
 
@@ -19,6 +16,14 @@ const uppy = new Uppy({
 })
 
 uppy.use(Tus, { endpoint: 'https://storage.livenegah.com:1443/tus/zz?token=9721' })
+
+
+
+const progress = uppy.use(ProgressBar, {
+  target: "body",
+  fixed: false,
+  hideAfterFinish: false,
+})
 
 uppy.on('complete', (result) => {
   const url = result.successful[0].uploadURL
@@ -31,32 +36,16 @@ uppy.on('error', (error) => {
 
 const dropHandler = (event) => {
     console.log("upload");
+    
 }
 
-const Dnd = () => {
+const Dnd = (props) => {
+    var selectFile = document.querySelector(".select-file");
+    console.log(selectFile);
     return (
-        <div className="admin-pages-layout file-upload">
-            <DragDrop uppy={uppy} className="select-file" onDrop={dropHandler}>
-                <DragAndDrop/>
-                <h5>بارگذاری ویدیو</h5>
-                <p>برای بارگذاری ویدیو یک فایل را بکشید و رها کنید<br/>و یا فایل را انتخاب کنید</p>
-                <div className="row">
-                    <div className="col-12 center">
-                        <div className="button choose-video"> انتخاب ویدیو </div>
-                    </div>
-                    <div className="col-6">
-                        <Link to="/videos/uploaded">
-                            <div className="button-outline">بازگشت به سایت</div>
-                        </Link>
-                    </div>
-                    <div className="col-6">
-                        <Link to="/videos/video-info">
-                            <div className="button-gray-fill">بعدا بارگذاری میکنم</div>
-                        </Link>
-                    </div>    
-                </div>
-            </DragDrop>
-        </div>
+        <DragDrop uppy={uppy} className="select-file" onDrop={dropHandler} progress= {progress}>
+            {props.children}
+        </DragDrop>
     )
 }
 

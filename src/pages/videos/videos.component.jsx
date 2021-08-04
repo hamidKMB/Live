@@ -17,7 +17,7 @@ import { Link, Switch, Route, useParams, useRouteMatch } from "react-router-dom"
 import "./videos.styles.scss";
 import UploadedVideos from "./uploaded-videos/uploaded-videos.component";
 import Dnd from "../../components/Drag-and-Drop/DND.component";
-import VideoInfo from "./video-info/video-info.component";
+import VideoInfo from "./uploaded-videos/video-info/video-info.component";
 import Courses from "./courses/courses.component";
 
 const useStyles = makeStyles({
@@ -86,7 +86,7 @@ const Videos = () => {
       </Tabs>
       </Paper>
       {
-        url == "/videos/uploaded" ?
+        url === "/videos/uploaded" ?
             <div className="videos-detail">
               <h5>
                 لیست ویدیو های آپلود شده
@@ -98,7 +98,7 @@ const Videos = () => {
               </Link>
             </div>
             :
-        url == "/videos/courses" ?
+        url === "/videos/courses" ?
            <div className="videos-detail">
               <h5>
                 همه دوره های ایجاد شده
@@ -110,7 +110,7 @@ const Videos = () => {
               </Link>
             </div>
           : 
-        url == "/videos/courses/:courseTitle" ?
+        url === "/videos/courses/:courseTitle" ?
         <div className="videos-detail">
               <h5>
                 New Title

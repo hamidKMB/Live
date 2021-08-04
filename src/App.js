@@ -17,11 +17,11 @@ import Tickets from "./pages/tickets/tickets.component";
 import Discounts from "./pages/discounts/discounts.component";
 import Followers from "./pages/followers/followers.component";
 import BackUp from "./pages/back-up/back-up.component";
-import Dnd from "./components/Drag-and-Drop/DND.component";
+import UploadVideo from "./pages/videos/uploaded-videos/upload-video/upload-video.component";
 //STYLES
 import "./App.css";
 import "./root-styles/__dark-mode.scss"
-import VideoInfo from "./pages/videos/video-info/video-info.component";
+import VideoInfo from "./pages/videos/uploaded-videos/video-info/video-info.component";
 import ApiRequest from "./ApiRequest";
 
 function App() {
@@ -67,7 +67,7 @@ function App() {
         <Route exact path="/" component={Dashboard} />
         <Route path="/account/:tab" component={Account} />
         <Route path="/videos/video-info" component={VideoInfo}/>
-        <Route path="/videos/upload-video" component={Dnd}/>
+        <Route path="/videos/upload-video" component={UploadVideo}/>
         <Route path="/videos/:tab" component={Videos} />
         <Route path="/events" component={Events} />
         <Route path="/views" component={Views} />

@@ -1,6 +1,6 @@
 import React from "react"
 
-import TextInput from "../../../components/text-input/text-input.component"
+import TextInput from "../../../../components/text-input/text-input.component"
 
 import {ReactComponent as BinLogo } from "./bin.svg";
 import {ReactComponent as UploadLogo } from "./upload.svg";
@@ -35,17 +35,18 @@ const VideoInfo = () => {
             <div className="top">
                 <span className="status"> status </span>
                 <div className="background-image-of-video">
-                    <img src="#" alt=""/>
+                    <img src="#" alt="ads"/>
+                    <span className="progress-bar"/>
                 </div>
                 <span className="is-ready-to-upload"> status </span>
                 <span>تصویری برای کاور ویدیو انتخاب کنید</span>
                 <div className="row">
-                    <div className="col-6">
+                    <div className="col-lg-6 col-md-6 col-sm-12">
                         <div className="button-outline font">
                             بارگذاری تصویر<UploadLogo/>
                         </div>
                     </div>
-                    <div className="col-6">
+                    <div className="col-lg-6 col-md-6 col-sm-12">
                         <div className="button-outline font">
                             انتخاب تصویر از ویدیو<PictureLogo/>
                         </div>
