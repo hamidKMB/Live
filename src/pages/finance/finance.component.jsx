@@ -13,24 +13,26 @@ const Finance = () => {
     <div className="admin-pages-layout">
       <TabSlider
         routeParameters={["wallet", "payments", "tasfie", "sheba"]}
-        tabDetails={[
-          {
-            label: "کیف پول",
-            link: "/finance/wallet",
-          },
-          {
-            label: "پرداختی ها",
-            link: "/finance/payments",
-          },
-          {
-            label: "تسویه حساب",
-            link: "/finance/tasfie",
-          },
-          {
-            label: "شبا های تسویه حساب",
-            link: "/finance/sheba",
-          },
-        ]}
+        tabDetails={
+          [
+            {
+              label: "کیف پول",
+              link: "/finance/wallet",
+            },
+            {
+              label: "پرداختی ها",
+              link: "/finance/payments",
+            },
+            {
+              label: "تسویه حساب",
+              link: "/finance/tasfie",
+            },
+            {
+              label: "شبا های تسویه حساب",
+              link: "/finance/sheba",
+            },
+          ]
+        }
       />
       <Link to="/finance/wallet">Press Me</Link>
       <Switch>
