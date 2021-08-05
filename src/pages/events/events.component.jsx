@@ -13,7 +13,7 @@ const Events = () => {
   const [eventList, setEventList] = React.useState([]);
   React.useEffect(() => {
       ApiRequest("/vod/list", "get").then((res) => {
-         setEventList(res.data.data)
+         setEventList(res.data.data);
        });
     },[])
     console.log(eventList);

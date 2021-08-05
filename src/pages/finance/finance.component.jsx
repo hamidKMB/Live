@@ -8,6 +8,7 @@ import {Switch, Route, Link} from "react-router-dom";
 //STYLES
 import "../../root-styles/layout.scss";
 import Wallet from "./wallet/wallet.component";
+import Tasfie from "./tasfie/tasfie.component";
 
 const Finance = () => {
   return (
@@ -40,7 +41,7 @@ const Finance = () => {
           <Wallet/>
         </Route>
         <Route path="/finance/payments">
-          <h3>Wat</h3>
+          <Tasfie/>
         </Route>
         <Route path="/finance/tasfie">
           <h3>lelt</h3>
