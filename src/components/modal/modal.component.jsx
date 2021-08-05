@@ -3,7 +3,7 @@ import React from "react";
 import "./modal.styles.scss";
 
 import { ReactComponent as CrossLogo } from "./crossMark.svg";
-import { render } from "@testing-library/react";
+
 class Modal extends React.Component{
     constructor(props) {
     super(props);

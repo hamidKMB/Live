@@ -81,27 +81,26 @@ const Videos = () => {
           :
           null
       }
-    <div className="content-holder">
-      <Switch>
-        <Route path={`/videos/uploaded`}>
-          <UploadedVideos/>
-        </Route>
-        <Route path={`/videos/courses/:courseTitle`}>
-          <h3>HelloWorld</h3>
-        </Route>
-        <Route exact path={`/videos/courses`}>
-          <Courses/>
-        </Route>
-        <Route path={`/videos/bought-videos`}>
-        <h3>bought Videos</h3>
-        </Route>
-        <Route path={`/videos/liked-videos`}>
-          <h3>Liked Videos</h3>
-        </Route>
-      </Switch>
+      <div className="content-holder">
+        <Switch>
+          <Route path={`/videos/uploaded`}>
+            <UploadedVideos/>
+          </Route>
+          <Route path={`/videos/courses/:courseTitle`}>
+            <h3>HelloWorld</h3>
+          </Route>
+          <Route exact path={`/videos/courses`}>
+            <Courses/>
+          </Route>
+          <Route path={`/videos/bought-videos`}>
+          <h3>bought Videos</h3>
+          </Route>
+          <Route path={`/videos/liked-videos`}>
+            <h3>Liked Videos</h3>
+          </Route>
+        </Switch>
+      </div>
     </div>
-    </div>
-
     );
 };
 

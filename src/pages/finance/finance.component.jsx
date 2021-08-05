@@ -7,10 +7,11 @@ import {Switch, Route, Link} from "react-router-dom";
 
 //STYLES
 import "../../root-styles/layout.scss";
+import Wallet from "./wallet/wallet.component";
 
 const Finance = () => {
   return (
-    <div className="admin-pages-layout">
+    <div className="admin-pages-layout finance-page">
       <TabSlider
         routeParameters={["wallet", "payments", "tasfie", "sheba"]}
         tabDetails={
@@ -34,10 +35,9 @@ const Finance = () => {
           ]
         }
       />
-      <Link to="/finance/wallet">Press Me</Link>
       <Switch>
         <Route path="/finance/wallet">
-          <h3>Walelt</h3>
+          <Wallet/>
         </Route>
         <Route path="/finance/payments">
           <h3>Wat</h3>
