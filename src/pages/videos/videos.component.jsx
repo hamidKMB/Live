@@ -16,8 +16,6 @@ import { Link, Switch, Route, useParams, useRouteMatch } from "react-router-dom"
 //STYLES
 import "./videos.styles.scss";
 import UploadedVideos from "./uploaded-videos/uploaded-videos.component";
-import Dnd from "../../components/Drag-and-Drop/DND.component";
-import VideoInfo from "./uploaded-videos/video-info/video-info.component";
 import Courses from "./courses/courses.component";
 
 const useStyles = makeStyles({
@@ -55,7 +53,7 @@ const theme = createTheme({
 
 const Videos = () => {
   let my_tabs = ['uploaded', 'courses', 'bought-videos', 'liked-videos']
-  let { tab, courseTitle } = useParams()
+  let { tab } = useParams()
   let {url} = useRouteMatch()
 
   React.useEffect(() => {

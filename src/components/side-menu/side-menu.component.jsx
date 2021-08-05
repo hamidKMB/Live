@@ -32,21 +32,30 @@ const SideMenu = (props) => {
             <div className="list-of-dashboard">
                 <ul>
                     {menuItemsData.map((item, index) => {
-
                         let pages;
-                        let account_pages = ['/account/personal-info', '/account/settings-channel', '/account/notifications', '/account/change-password'];
+                        let account_pages = [
+                            '/account/personal-info',
+                            '/account/settings-channel', 
+                            '/account/notifications', 
+                            '/account/change-password'
+                            ];
                         let videos_pages = [
-                          "/videos/uploaded",
-                          "/videos/courses",
-                          "/videos/bought-videos",
-                          "/videos/liked-videos",
-                          "/videos/upload-video",
-                          "/videos/video-info",
-                        ];
-
+                            "/videos/uploaded",
+                            "/videos/courses",
+                            "/videos/bought-videos",
+                            "/videos/liked-videos",
+                            "/videos/upload-video",
+                            "/videos/video-info",
+                            ];
+                        let finance_pages = [
+                            "/finance/wallet",
+                            "/finance/payments",
+                            "/finance/tasfie",
+                            "/finance/sheba",
+                            ];
                         pages = item.routeName.includes('account') ? account_pages : [];
                         pages = item.routeName.includes('videos') ? videos_pages : pages;
-
+                        pages = item.routeName.includes('finance') ? finance_pages : pages;
                         if (pages.length > 0) {
                             return (
                                 <MenuMultiActiveItem
@@ -62,7 +71,6 @@ const SideMenu = (props) => {
                         } else {
                             return (
                                 <MenuItem
-
                                     pathname={pathname}
                                     key={index}
                                     id={index}

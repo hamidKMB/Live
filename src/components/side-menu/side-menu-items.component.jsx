@@ -10,7 +10,7 @@ const MenuItem = (props) => {
     return (
         <li>
             <NavLink exact={props.routeName === "/"} to={props.routeName}
-                     activeClassName='on-click'
+                activeClassName='on-click'
             >
                 {props.title}
                 {props.logo}

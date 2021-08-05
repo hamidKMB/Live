@@ -6,14 +6,11 @@ import {NavLink} from "react-router-dom";
 import "./side-menu.styles.scss";
 
 const MenuMultiActiveItem = (props) => {
-
     return (
         <li>
             <NavLink exact={props.routeName === "/"}
-                     to={props.routeName}
-                     isActive={() => props.multi_pages.includes(props.pathname)
-                     }
-
+                to={props.routeName}
+                isActive={() => props.multi_pages.includes(props.pathname)}
             >
                 {props.title}
                 {props.logo}

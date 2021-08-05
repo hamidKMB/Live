@@ -40,7 +40,7 @@ export const menuItemsData = [
   {
     title: "مالی",
     logo: <CoinLogo className="dashboard-icon"/>,
-    routeName: "/finance",
+    routeName: "/finance/wallet",
   },
   {
     title: "بلیط ها",

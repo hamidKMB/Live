@@ -64,17 +64,36 @@ function App() {
       <Header toggleSideBar={handleClick} onToggleDarkMode={onToggledDarkMode} dark={isDark}/>
       <SideMenu display={toggled ? "toggle-side-menu" : " "} />
       <Switch>
+        {/* dashboard */}
         <Route exact path="/" component={Dashboard} />
+
+        {/* account */}
         <Route path="/account/:tab" component={Account} />
+
+        {/* Videos */}
         <Route path="/videos/video-info" component={VideoInfo}/>
         <Route path="/videos/upload-video" component={UploadVideo}/>
         <Route path="/videos/:tab" component={Videos} />
+        
+        {/* Events */}
         <Route path="/events" component={Events} />
+        
+        {/* Charts */}
         <Route path="/charts" component={ChartPage} />
-        <Route path="/finance" component={Finance} />
+        
+        {/* Finance */}
+        <Route path="/finance/:tab" component={Finance} />
+        
+        {/* Tickets */}
         <Route path="/tickets" component={Tickets} />
+        
+        {/* Discounts */}
         <Route path="/discounts" component={Discounts} />
+        
+        {/* Followers/Following */}
         <Route path="/follow" component={Followers} />
+        
+        {/* BackUp */}
         <Route path="/backup" component={BackUp} />
       </Switch>
     </div>
