@@ -25,7 +25,7 @@ const Tasfie = () => {
             </thead>
             <div className="button">خروجی از لیست</div>
           </div>
-          <div className="d-flex flex-row flex-md-column">
+          <div className="ss d-flex flex-row flex-md-column">
             <tbody>
               <TransactionDetail
                 shenasePardakht="25652145"

@@ -3,12 +3,14 @@ import React from "react";
 
 import TabSlider from "../../components/tab-slider/tab-slider.component";
 
-import {Switch, Route, Link} from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
 
 //STYLES
+import "./finance.styles.scss"
 import "../../root-styles/layout.scss";
 import Wallet from "./wallet/wallet.component";
 import Tasfie from "./tasfie/tasfie.component";
+import Payment from "./payments/payment.component";
 
 const Finance = () => {
   return (
@@ -44,7 +46,7 @@ const Finance = () => {
           <Tasfie/>
         </Route>
         <Route path="/finance/tasfie">
-          <h3>lelt</h3>
+          <Payment/>
         </Route>
         <Route path="/finance/sheba">
           <h3>t</h3>
