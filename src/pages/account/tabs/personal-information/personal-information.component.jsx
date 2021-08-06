@@ -2,7 +2,7 @@
 import React from "react";
 
 //MaterialUI
-import { TextField } from "@material-ui/core";
+import  TextInput  from "../../../../components/text-input/text-input.component";
 import BootstrapSwitchButton from "bootstrap-switch-button-react";
 
 //Components
@@ -23,28 +23,21 @@ const PersonalInformation = () => {
     }
 
   return (
-    <div className="personal-information">
+    <div className="personal-information d-flex flex-column flex-md-row">
       <div className="right">
         <h1> اطلاعات پایه </h1>
         <div className="content">
-          <TextField
-          id="outlined-basic"
+          <TextInput
           label="نام و نام خانوادگی"
-          variant="outlined"
-          inputProps={{shrink:true}} 
           className="text-field"
         />
-        <TextField
-          id="outlined-basic"
+        <TextInput
           label="پست الکترونیک"
-          variant="outlined"a
-          className="text-field"
+          
         />
-        <TextField
-          id="outlined-basic"
+        <TextInput
           label="شماره همراه"
-          variant="outlined"
-          className="text-field"
+          
         />
         </div>
       </div>

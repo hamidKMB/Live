@@ -1,13 +1,14 @@
 import React from "react"
 
-import { TextField } from "@material-ui/core"
+import { ReactComponent as ChangePasswordLogo } from "./change-password-logo.svg";
 
 // import Modal from "../../../../components/modal/modal.component"
 
 import "./change-password.styles.scss"
 import "../../../../root-styles/buttons.scss"
 
-import { Modal } from "@material-ui/core"
+import Modal from "../../../../components/modal/modal.component"
+import TextInput from "../../../../components/text-input/text-input.component"
 
 const ChangePassword = () => {
     const [isModalShow, setIsModalShow] = React.useState(false);
@@ -19,28 +20,20 @@ const ChangePassword = () => {
     setIsModalShow(false);
   };
     return (
-        <div className="change-password">
+        <div className="change-password d-flex align-items-md-start align-items-center flex-md-row flex-column">
+        <div className="change-password-form">
             <h3 className="settings-detail">
                 تغییر رمز عبور
             </h3>
             <div className="field-holder">
-                <TextField
-                    id="outlined-basic"
-                    label="رمز عبور فعلی"
-                    variant="outlined"
-                    className="text-field"
+                <TextInput
+                label="رمز عبور فعلی"
                 />
-                <TextField
-                    id="outlined-basic"
-                    label="رمز عبور جدید"
-                    variant="outlined"
-                    className="text-field"
+                <TextInput
+                label="رمز عبور جدید"
                 />
-                <TextField
-                    id="outlined-basic"
-                    label="تکرار رمز عبور جدید"
-                    variant="outlined"
-                    className="text-field"
+                <TextInput
+                label="تکرار رمز عبور جدید"
                 />
                 <ul>
                     <li>حداقل 8 کاراکتر</li>
@@ -48,7 +41,7 @@ const ChangePassword = () => {
                 </ul>
                 <p>
                     رمز عبور خور را فراموش کرده اید؟ <span>
-                    <a>
+                    <a href="/">
                         بازیابی رمز عبور
                     </a>
                     </span>
@@ -56,18 +49,16 @@ const ChangePassword = () => {
                 <div className="button change-password-button" onClick={openModal}>
                     تغییر رمز
                 </div>
+                </div>
+                {
+                    isModalShow &&
+                    <Modal closeModal={closeModal} isShow={isModalShow}>
+                        
+                    </Modal>
+
+                }
             </div>
-            {
-                isModalShow && 
-                 <Modal
-                    open={isModalShow}
-                    onClose={closeModal}
-                    aria-labelledby="simple-modal-title"
-                    aria-describedby="simple-modal-description"
-                >
-                Hello
-                </Modal>
-            }
+            <ChangePasswordLogo className="change-password-logo"/>
         </div>
     )
 }

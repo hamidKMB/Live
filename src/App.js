@@ -1,6 +1,6 @@
 //REACT
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route} from "react-router-dom";
 
 //COMPONENTS
 import Header from "./components/header/header.component";
@@ -11,17 +11,18 @@ import Dashboard from "./pages/dashboard/dashboard.component";
 import Account from "./pages/account/account.component";
 import Videos from "./pages/videos/videos.component";
 import Events from "./pages/events/events.component";
-import Views from "./pages/views/views.component";
+import ChartPage from "./pages/charts/chart-page.component";
 import Finance from "./pages/finance/finance.component";
 import Tickets from "./pages/tickets/tickets.component";
 import Discounts from "./pages/discounts/discounts.component";
 import Followers from "./pages/followers/followers.component";
 import BackUp from "./pages/back-up/back-up.component";
-
-
+import UploadVideo from "./pages/videos/uploaded-videos/upload-video/upload-video.component";
 //STYLES
 import "./App.css";
 import "./root-styles/__dark-mode.scss"
+import VideoInfo from "./pages/videos/uploaded-videos/video-info/video-info.component";
+import ApiRequest from "./ApiRequest";
 
 function App() {
   const [toggled, setToggled] = React.useState(false);
@@ -63,19 +64,40 @@ function App() {
       <Header toggleSideBar={handleClick} onToggleDarkMode={onToggledDarkMode} dark={isDark}/>
       <SideMenu display={toggled ? "toggle-side-menu" : " "} />
       <Switch>
+        {/* dashboard */}
         <Route exact path="/" component={Dashboard} />
-        <Route exact path="/account" component={Account} />
-        <Route exact path="/videos" component={Videos} />
-        <Route exact path="/events" component={Events} />
-        <Route exact path="/views" component={Views} />
-        <Route exact path="/finance" component={Finance} />
-        <Route exact path="/tickets" component={Tickets} />
-        <Route exact path="/discounts" component={Discounts} />
-        <Route exact path="/follow" component={Followers} />
-        <Route exact path="/backup" component={BackUp} />
+
+        {/* account */}
+        <Route path="/account/:tab" component={Account} />
+
+        {/* Videos */}
+        <Route path="/videos/video-info" component={VideoInfo}/>
+        <Route path="/videos/upload-video" component={UploadVideo}/>
+        <Route path="/videos/:tab" component={Videos} />
+        
+        {/* Events */}
+        <Route path="/events" component={Events} />
+        
+        {/* Charts */}
+        <Route path="/charts" component={ChartPage} />
+        
+        {/* Finance */}
+        <Route path="/finance/:tab" component={Finance} />
+        
+        {/* Tickets */}
+        <Route path="/tickets" component={Tickets} />
+        
+        {/* Discounts */}
+        <Route path="/discounts" component={Discounts} />
+        
+        {/* Followers/Following */}
+        <Route path="/follow" component={Followers} />
+        
+        {/* BackUp */}
+        <Route path="/backup" component={BackUp} />
       </Switch>
     </div>
-  );
+    );
 }
 
 export default App;

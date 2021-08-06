@@ -4,18 +4,32 @@
     background-color: $color-light-orange;
     color: $color-light-white;
     text-align: center;
-    padding: 0.5rem;
-    border-radius: 10px;
+    
+    padding: 0.7rem 0.8rem;
+    border-radius: 8px;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.button-gray-fill {
+    background-color: $color-light-grey;
+    color: $color-light-white;
+    text-align: center;
+    
+    padding: 0.7rem 0.8rem;
+    border-radius: 8px;
     &:hover{
         cursor: pointer;
     }
 }
 
 .button-outline{
-  padding: 0.8rem 1.5rem;
+  
+    padding: 0.7rem 0.8rem;
   border: 1px solid $color-light-grey;
   color: $color-light-grey;
-  border-radius: 5px;
+  border-radius: 8px;
   &:hover{
     background-color: $color-light-grey;
     color: $color-light-white;

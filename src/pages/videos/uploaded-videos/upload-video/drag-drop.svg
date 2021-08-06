@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="153.622" height="142.103" viewBox="0 0 153.622 142.103">
+  <g id="Group_161696" data-name="Group 161696" transform="translate(-525.148 -215.26)">
+    <g id="Uplod" transform="translate(525.148 215.26)">
+      <g id="Group_18878" data-name="Group 18878">
+        <path id="Path_55162" data-name="Path 55162" d="M120.035,178.429H87.075v-33.3H97.968a3.407,3.407,0,0,0,2.762-5.4L79.542,110.407a3.377,3.377,0,0,0-5.493,0L52.86,139.726a3.4,3.4,0,0,0,2.762,5.4H66.515v33.3H29.6C13.121,177.519,0,162.106,0,145.407a31.271,31.271,0,0,1,15.507-27A20.965,20.965,0,0,1,14.22,111.1,21.26,21.26,0,0,1,35.5,89.816,20.919,20.919,0,0,1,42.784,91.1a42.606,42.606,0,0,1,80.954,14.063c16.982,2.919,29.883,18.646,29.883,36.444C153.622,160.631,138.806,177.111,120.035,178.429Z" transform="translate(0 -66.65)" fill="#efa00b"/>
+      </g>
+    </g>
+    <rect id="Rectangle_147903" data-name="Rectangle 147903" width="95" height="65" rx="5" transform="translate(554 253)" fill="#f7f7fa"/>
+    <g id="play-button-arrowhead_1_" data-name="play-button-arrowhead (1)" transform="translate(580.74 266.738)">
+      <path id="Path_67757" data-name="Path 67757" d="M13.417.717c-2.932-1.682-5.31-.3-5.31,3.075V28.73c0,3.383,2.377,4.759,5.31,3.078l21.8-12.5c2.933-1.683,2.933-4.409,0-6.091Z" fill="#efa00b"/>
+    </g>
+    <line id="Line_322" data-name="Line 322" x2="90" transform="translate(556.5 312.5)" fill="none" stroke="#969697" stroke-linecap="round" stroke-width="1" stroke-dasharray="2"/>
+    <g id="down-arrow" transform="translate(580.391 308)">
+      <g id="Group_161695" data-name="Group 161695">
+        <path id="Path_67756" data-name="Path 67756" d="M75.361,22a1.03,1.03,0,0,1-.95.635H63.145v25.7a1.028,1.028,0,0,1-1.028,1.028H45.669a1.028,1.028,0,0,1-1.028-1.028v-25.7H33.332A1.028,1.028,0,0,1,32.6,20.88L53.114.3a1.03,1.03,0,0,1,1.456,0L75.139,20.878A1.026,1.026,0,0,1,75.361,22Z" transform="translate(-32.304 0)" fill="#372c51"/>
+      </g>
+    </g>
+  </g>
+</svg>

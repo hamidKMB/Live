@@ -1,0 +1,55 @@
+.wallet{
+    margin-top: 5rem;
+    .wallet-detail{
+        width: 40vw;
+        vertical-align: middle;
+        h6{
+            margin-bottom: 2rem;
+        }
+        .stock{
+            border-radius: 15px;
+            background-color: #fff;
+            border: 2px solid orange;
+            width: 100%;
+            padding: 15px 20px;
+            margin-bottom: 4rem;
+            span{
+                &:last-child{
+                    font-weight: 700;
+                }
+            }
+        }
+        .five-last-transaction{
+            margin-bottom: 3rem;
+        }
+        .button-finance{
+            margin: 0 auto;
+            padding: 0.7rem 2.2rem;
+        }
+    }
+    .increase-stock{
+            width: 40%;
+            margin: 2rem auto;
+            .card{
+                padding: 2.5rem 0.8rem;
+                h5{
+                    margin-bottom: 1.5rem;
+                    font-size: 16px;
+                }
+                p{
+                    margin-bottom: 0.7rem;
+                    font-size: 12px;
+                }
+                .field-set{
+                    margin-bottom: 1.5rem;
+                    padding-bottom: 7px;
+                    width: 90%;
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+                .button-increase-stock{
+                    margin: 0 auto;
+                }
+            }
+        }
+}

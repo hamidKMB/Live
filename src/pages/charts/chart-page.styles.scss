@@ -1,0 +1,19 @@
+.chart-layout{
+    .drop-down-holder{
+        width: 30vw;
+        margin: 0 0 4rem 0;
+    }
+    .chart-container{
+        .row{
+            .col-6{
+                .rounded-card-chart{
+
+                    canvas{
+                        width: 10rem !important;
+                        height: 10rem !important;
+                    }
+                }
+            }
+        }
+    }
+}

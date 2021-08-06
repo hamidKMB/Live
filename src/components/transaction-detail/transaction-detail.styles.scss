@@ -1,0 +1,15 @@
+@import "../../root-styles/variables.scss";
+
+tr {
+    border-color: rgba(grey, 0.4);
+    td {
+        padding: 0.5rem 0.5rem;
+        font-size: 12px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+    &:hover{
+        background-color: rgba($color-light-orange, 0.2) !important;
+        cursor: pointer;
+    }
+}

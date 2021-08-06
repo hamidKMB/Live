@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14.685" height="13.998" viewBox="0 0 14.685 13.998">
+  <g id="shopping-cart" transform="translate(0 -10.67)">
+    <g id="Group_164100" data-name="Group 164100" transform="translate(9.414 21.238)">
+      <g id="Group_164099" data-name="Group 164099" transform="translate(0 0)">
+        <path id="Path_72737" data-name="Path 72737" d="M294.067,338.862a1.715,1.715,0,1,0,1.715,1.715A1.735,1.735,0,0,0,294.067,338.862Z" transform="translate(-292.352 -338.862)" fill="#372c51"/>
+      </g>
+    </g>
+    <g id="Group_164102" data-name="Group 164102" transform="translate(0 10.67)">
+      <g id="Group_164101" data-name="Group 164101" transform="translate(0 0)">
+        <path id="Path_72738" data-name="Path 72738" d="M14.146,13.061c-.033,0-.082-.016-.132-.016H3.627l-.165-1.1a1.476,1.476,0,0,0-1.467-1.27H.659a.659.659,0,0,0,0,1.319H1.995a.175.175,0,0,1,.165.148L3.182,19.1a1.808,1.808,0,0,0,1.781,1.533h6.859A1.832,1.832,0,0,0,13.6,19.178l1.072-5.358A.652.652,0,0,0,14.146,13.061Z" transform="translate(0 -10.67)" fill="#372c51"/>
+      </g>
+    </g>
+    <g id="Group_164104" data-name="Group 164104" transform="translate(3.577 21.238)">
+      <g id="Group_164103" data-name="Group 164103" transform="translate(0 0)">
+        <path id="Path_72739" data-name="Path 72739" d="M114.418,340.494a1.7,1.7,0,0,0-1.7-1.632,1.725,1.725,0,0,0-1.649,1.781,1.69,1.69,0,0,0,1.682,1.632h.033A1.711,1.711,0,0,0,114.418,340.494Z" transform="translate(-111.07 -338.862)" fill="#372c51"/>
+      </g>
+    </g>
+  </g>
+</svg>

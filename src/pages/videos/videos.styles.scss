@@ -1,0 +1,29 @@
+.videos-layout{
+    padding: 7rem 4rem;
+
+    @media screen and (max-width: 993px) {
+        padding: 7rem 7rem 0 1rem;
+    }
+
+    @media screen and (max-width: 786px) {
+        padding: 7rem 1rem;
+    }
+    .videos-detail{
+        margin: 2.5rem 0 1.9rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h5{
+            margin: 0;
+        }
+        a{
+            text-decoration: none;
+            .upload-videos{
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+        }
+    }
+}
