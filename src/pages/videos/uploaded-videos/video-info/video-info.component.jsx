@@ -5,11 +5,19 @@ import TextInput from "../../../../components/text-input/text-input.component"
 import {ReactComponent as BinLogo } from "./bin.svg";
 import {ReactComponent as UploadLogo } from "./upload.svg";
 import {ReactComponent as PictureLogo } from "./picture.svg";
-
+import Switch from '@material-ui/core/Switch';
 import "./video-info.styles.scss";
 
 const VideoInfo = (props) => {
+    const [state, setState] = React.useState({
+        checkedA: false ,
+        checkedB: false ,
+        checkedC: false
+    });
 
+    const handleChange = (event) => {
+     setState({ ...state, [event.target.name]: event.target.checked });
+    };
 
     return (
         <div className="video-info admin-pages-layout">
@@ -40,15 +48,15 @@ const VideoInfo = (props) => {
                     <img src="#" alt="ads"/>
                     <span className="progress-bar" style={{width:`${props.progress}%`}}/>
                 </div>
-                <span className="is-ready-to-upload"> status </span>
+                <span className="mb-3"> status </span>
                 <span>تصویری برای کاور ویدیو انتخاب کنید</span>
-                <div className="row">
-                    <div className="col-lg-6 col-md-6 col-sm-12">
+                <div className="row mb-3 mt-3">
+                    <div className="col-lg-6 col-md-6 col-sm-12 upload-status">
                         <div className="button-outline font">
                             بارگذاری تصویر<UploadLogo/>
                         </div>
                     </div>
-                    <div className="col-lg-6 col-md-6 col-sm-12">
+                    <div className="col-lg-6 col-md-6 col-sm-12 upload-status">
                         <div className="button-outline font">
                             انتخاب تصویر از ویدیو<PictureLogo/>
                         </div>
@@ -57,20 +65,38 @@ const VideoInfo = (props) => {
                 <div className="switch-parts">
                     <div className="part">
                         <span>ثبت نظر (پسندیدن/نپسندیدن)</span>
-                        <span>Switch</span>
+                        <Switch
+                            checked={state.checkedA}
+                            onChange={handleChange}
+                            color="primary"
+                            name="checkedA"
+                            inputProps={{ 'aria-label': 'primary checkbox' }}
+                        />
                     </div>
                     <div className="part">
                         <span>ارسال دیدگاه</span>
-                        <span>Switch</span>
+                        <Switch
+                            checked={state.checkedB}
+                            onChange={handleChange}
+                            color="primary"
+                            name="checkedB"
+                            inputProps={{ 'aria-label': 'primary checkbox' }}
+                        />
                     </div>
                     <div className="part">
                         <span>قابل دانلود</span>
-                        <span>Switch</span>
+                        <Switch
+                            checked={state.checkedC}
+                            onChange={handleChange}
+                            color="primary"
+                            name="checkedC"
+                            inputProps={{ 'aria-label': 'primary checkbox' }}
+                        />
                     </div>
                 </div>
             </div>
             <div className="bottom">
-                <span>بعد از تایید ادمین ویدیو شما منتشر میشود</span>
+                <span className="mb-2">بعد از تایید ادمین ویدیو شما منتشر میشود</span>
                 <div className="button publish-video">
                     انتشار ویدیو
                 </div>

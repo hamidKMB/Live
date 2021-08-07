@@ -1,7 +1,7 @@
 .video-info{
     display: flex;
     flex-direction: row;
-    padding: 10rem 6rem 10rem 4rem;
+    padding: 10rem 6rem 1rem 4rem;
     @media screen and (max-width: 991px) {
         padding: 8rem 8rem 8rem 1rem;
     }
@@ -46,10 +46,13 @@
             flex-direction: column;
             justify-content: right;
             text-align: right;
+            .upload-status{
+                padding: 0;
+            }
             .background-image-of-video{
                 border-radius: 7px 7px 0 0;
                 background-color: grey;
-                width: 277.5px;
+                width: 100%;
                 height: 155.15px;
                 position: relative;
                 margin: 20px 0;
@@ -77,6 +80,7 @@
                             justify-content: center;
                             font-size: 13px;
                             width: 10rem;
+                            margin: 0 0 0 10px;
                             &:hover{
                                 background-color: inherit;
                                 color: inherit;
@@ -91,14 +95,18 @@
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
+                    align-items: center;
                 }
             }
         }
         .bottom{
-            position: relative;
+            position: absolute;
             bottom: 0;
+            margin: 20px 0;
+            width: 100%;
             .publish-video{
                 margin: 0 4rem;
+                max-width: 10rem;
             }
             @media screen and (max-width: 832px) {
                 text-align: center;
