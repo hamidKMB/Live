@@ -16,7 +16,6 @@ const UploadVideo = (props) => {
     const [isDrop, setIsDrop] = React.useState(false)
 
     return(
-        <div className="admin-pages-layout file-upload">
             <Dnd>
                 <DragAndDrop/>
                 <h5>بارگذاری ویدیو</h5>
@@ -37,7 +36,7 @@ const UploadVideo = (props) => {
                     </div>
                 </div>
             </Dnd>
-        </div>
+        
     )
 }
 

@@ -21,6 +21,7 @@
         width: 50%;
         @media screen and (max-width: 832px) {
         width:100%;
+        padding: 28rem 0 4rem;
     }
         fieldset{
             margin-bottom: 20px;
@@ -38,7 +39,10 @@
             position: relative;
             top: 0;
             display: flex;
-            align-items: right;
+            align-items: flex-start;
+            @media screen and (max-width: 832px) {
+        align-items: center;
+    }
             flex-direction: column;
             justify-content: right;
             text-align: right;
@@ -96,6 +100,9 @@
             .publish-video{
                 margin: 0 4rem;
             }
+            @media screen and (max-width: 832px) {
+                text-align: center;
+    }
         }
     }
 }

@@ -93,17 +93,20 @@ const Dnd = (props) => {
     const [stateOfUpload, setstateOfUpload] = useState("")
 
     return (
-            file === null ?
-                <div style={{background:'red'}} draggable onDragOver={onDragOverHandler} onDrop={dropHandler}>
-                    <div className="admin-pages-layout file-upload">
+        // <div className="admin-pages-layout">
+            // {
+                file === null ? 
+                <div draggable onDragOver={onDragOverHandler} onDrop={dropHandler} className="admin-pages-layout">
+                    <div className="select-file">
                         <DragAndDrop/>
                         <h5>بارگذاری ویدیو</h5>
                         <p>برای بارگذاری ویدیو یک فایل را بکشید و رها کنید<br/>و یا فایل را انتخاب کنید</p>
                         <div className="row">
                             <div className="col-12 center">
-                                <div className="button choose-video"><input  type='file' onChange={onChangeHandler}/> انتخاب
-                                    ویدیو
-                                </div>
+                                <label className="button choose-video">
+                                    <input  type='file' onChange={onChangeHandler}/> 
+                                انتخاب ویدیو
+                                </label>
                             </div>
                             <div className="col-6">
                                 <Link to="/videos/uploaded">
@@ -119,7 +122,9 @@ const Dnd = (props) => {
                     </div>
                 </div>
                 : 
-                <VideoInfo progress={progress} stateOfUpload={stateOfUpload}/>
+                <VideoInfo id='changed-video-info' progress={progress} stateOfUpload={stateOfUpload}/>
+            // }
+        // </div>
     )
 }
 
