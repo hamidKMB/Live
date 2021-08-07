@@ -37,8 +37,6 @@ const UploadVideo = (props) => {
                     </div>
                 </div>
             </Dnd>
-
-            <VideoInfo/>
         </div>
     )
 }

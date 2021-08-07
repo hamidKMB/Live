@@ -35,10 +35,10 @@ const VideoInfo = (props) => {
             </div>
             <div className="status-and-others">
             <div className="top">
-                <span className="status"> status </span>
+                <span className="status"> {props.stateOfUpload} </span>
                 <div className="background-image-of-video">
                     <img src="#" alt="ads"/>
-                    <span className="progress-bar"/>
+                    <span className="progress-bar" style={{width:`${props.progress}%`}}/>
                 </div>
                 <span className="is-ready-to-upload"> status </span>
                 <span>تصویری برای کاور ویدیو انتخاب کنید</span>
@@ -64,7 +64,7 @@ const VideoInfo = (props) => {
                         <span>Switch</span>
                     </div>
                     <div className="part">
-                        <span>قابل دانلود  {props.progress}</span>
+                        <span>قابل دانلود</span>
                         <span>Switch</span>
                     </div>
                 </div>

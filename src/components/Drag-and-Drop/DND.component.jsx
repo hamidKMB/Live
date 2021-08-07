@@ -20,13 +20,6 @@ const uppy = new Uppy({
 
 uppy.use(Tus, {endpoint: 'https://storage.livenegah.com:1443/tus/zz?token=9721'})
 
-
-const progress = uppy.use(ProgressBar, {
-    target: "body",
-    fixed: false,
-    hideAfterFinish: false,
-})
-
 uppy.on('complete', (result) => {
     const url = result.successful[0].uploadURL
     console.log(url);
@@ -38,13 +31,8 @@ uppy.on('error', (error) => {
 
 
 const Dnd = (props) => {
-
-
-
     function uploadTus(my_file){
-
         setFile(my_file);
-
         // Get the selected file from the input element
         // Create a new tus upload
         let upload = new tus.Upload(my_file, {
@@ -55,16 +43,16 @@ const Dnd = (props) => {
             //     filetype: file.type
             // },
             onError: function (error) {
-                console.log("Failed because: " + error)
+                setstateOfUpload("آپلود به مشکل خورد")
             },
             onProgress: function (bytesUploaded, bytesTotal) {
                 var percentage = (bytesUploaded / bytesTotal * 100).toFixed(2)
                 console.log(bytesUploaded, bytesTotal, percentage + "%")
-
+                setstateOfUpload("در حال آپلود")
                 setProgress(percentage)
             },
             onSuccess: function () {
-                // console.log("Download %s from %s", upload.file.name, upload.url)
+                setstateOfUpload("آپلود تکمیل شد")
             }
         })
 
@@ -86,31 +74,34 @@ const Dnd = (props) => {
     }
     const dropHandler = (e) => {
         e.preventDefault();
-        let my_file = e.dataTransfer.files[0];
-         uploadTus(my_file)
+        // if (e.dataTransfer.files[0].type.includes("mp4" || "mp3" || "mkv") ){ // check the types
+            let my_file = e.dataTransfer.files[0]
+            uploadTus(my_file)
+        // } else {
+        //   alert("please Enter a file with .mp4 or .mp3 or .mkv type")
+        // }
+    }
 
+    const onDragOverHandler = (e) => {
+      e.preventDefault();
+       e.dataTransfer.dropEffect = "move";
     }
 
 
     const [file, setFile] = useState(null);
     const [progress, setProgress] = useState(0);
+    const [stateOfUpload, setstateOfUpload] = useState("")
 
     return (
-        <>
-
-            {file == null ?
-
-
-                <div style={{background:'red'}} draggable="true" onDragStart="drag(event)" onDrop={dropHandler}>
-
+            file === null ?
+                <div style={{background:'red'}} draggable onDragOver={onDragOverHandler} onDrop={dropHandler}>
                     <div className="admin-pages-layout file-upload">
-
                         <DragAndDrop/>
                         <h5>بارگذاری ویدیو</h5>
                         <p>برای بارگذاری ویدیو یک فایل را بکشید و رها کنید<br/>و یا فایل را انتخاب کنید</p>
                         <div className="row">
                             <div className="col-12 center">
-                                <div><input  type='file' onChange={onChangeHandler} className="button choose-video"/> انتخاب
+                                <div className="button choose-video"><input  type='file' onChange={onChangeHandler}/> انتخاب
                                     ویدیو
                                 </div>
                             </div>
@@ -125,17 +116,10 @@ const Dnd = (props) => {
                                 </Link>
                             </div>
                         </div>
-
-
-                        : <VideoInfo progress={progress}/>
                     </div>
                 </div>
-                : <VideoInfo progress={progress}/>
-
-            }
-        </>
-
-
+                : 
+                <VideoInfo progress={progress} stateOfUpload={stateOfUpload}/>
     )
 }
 
