@@ -9,6 +9,7 @@ import {ReactComponent as DragAndDrop} from "./drag-drop.svg"
 import Dnd from "../../../../components/Drag-and-Drop/DND.component";
 
 import LinearProgress from '@material-ui/core/LinearProgress';
+import VideoInfo from "../video-info/video-info.component";
 
 
 const UploadVideo = (props) => {
@@ -33,9 +34,11 @@ const UploadVideo = (props) => {
                         <Link to="/videos/video-info">
                             <div className="button-gray-fill">بعدا بارگذاری میکنم</div>
                         </Link>
-                    </div>    
+                    </div>
                 </div>
             </Dnd>
+
+            <VideoInfo/>
         </div>
     )
 }

@@ -8,7 +8,9 @@ import {ReactComponent as PictureLogo } from "./picture.svg";
 
 import "./video-info.styles.scss";
 
-const VideoInfo = () => {
+const VideoInfo = (props) => {
+
+
     return (
         <div className="video-info admin-pages-layout">
             <div className="input">
@@ -62,7 +64,7 @@ const VideoInfo = () => {
                         <span>Switch</span>
                     </div>
                     <div className="part">
-                        <span>قابل دانلود</span>
+                        <span>قابل دانلود  {props.progress}</span>
                         <span>Switch</span>
                     </div>
                 </div>
