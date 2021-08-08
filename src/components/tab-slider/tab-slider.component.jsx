@@ -36,6 +36,9 @@ const theme = createTheme({
 MuiTabs: {
     root: {
         marginBottom: "2.5rem",
+        '&$:hover' : {
+          color: "orange"
+        }
     },
 },
 },

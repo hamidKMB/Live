@@ -7,7 +7,7 @@ const TextInput = (props) => {
     <div>
       <fieldset className="field-set">
         <legend className="legend">{props.label}</legend>
-        <input required />
+        <input id={props.id} required />
       </fieldset>
     </div>
   );

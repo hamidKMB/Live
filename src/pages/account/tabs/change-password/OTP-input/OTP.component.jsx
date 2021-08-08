@@ -12,9 +12,10 @@ export default class Otp extends Component {
   render() {
     return (
       <OtpInput
+        id="otp-input"
         value={this.state.otp}
         onChange={this.handleChange}
-        numInputs={5}
+        numInputs={4}
         inputStyle="OTP-input"
         containerStyle="container-input"
         focusStyle="focus-input"
