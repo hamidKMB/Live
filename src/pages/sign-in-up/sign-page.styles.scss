@@ -1,0 +1,18 @@
+@import "../../root-styles/variables.scss";
+
+.sign{
+    width: 100vw;
+    height: 100vh;
+    background-color: $color-light-white;
+    
+    .card{
+        height: 20rem;
+        width: 30rem;
+    }
+    .sign-form{
+        input[type='submit']{
+            border: none;
+
+        }
+    }
+}

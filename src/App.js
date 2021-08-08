@@ -23,9 +23,15 @@ import "./App.css";
 import "./root-styles/__dark-mode.scss"
 import VideoInfo from "./pages/videos/uploaded-videos/video-info/video-info.component";
 import ApiRequest from "./ApiRequest";
+import Sign from "./pages/sign-in-up/sign-page.component";
 
 function App() {
   const [toggled, setToggled] = React.useState(false);
+  const [signed, setSigned] = React.useState(false)
+
+  const signHandler = () => {
+    setSigned(true)
+  }
 
   React.useEffect(() => {
     window.onresize = () => {
@@ -61,41 +67,48 @@ function App() {
 
   return (
     <div className={`App ${isDark ? `dark` : ` `}`}>
-      <Header toggleSideBar={handleClick} onToggleDarkMode={onToggledDarkMode} dark={isDark}/>
-      <SideMenu display={toggled ? "toggle-side-menu" : " "} />
-      <Switch>
-        {/* dashboard */}
-        <Route exact path="/" component={Dashboard} />
-
-        {/* account */}
-        <Route path="/account/:tab" component={Account} />
-
-        {/* Videos */}
-        <Route path="/videos/video-info" component={VideoInfo}/>
-        <Route path="/videos/upload-video" component={UploadVideo}/>
-        <Route path="/videos/:tab" component={Videos} />
-        
-        {/* Events */}
-        <Route path="/events" component={Events} />
-        
-        {/* Charts */}
-        <Route path="/charts" component={ChartPage} />
-        
-        {/* Finance */}
-        <Route path="/finance/:tab" component={Finance} />
-        
-        {/* Tickets */}
-        <Route path="/tickets" component={Tickets} />
-        
-        {/* Discounts */}
-        <Route path="/discounts" component={Discounts} />
-        
-        {/* Followers/Following */}
-        <Route path="/follow" component={Followers} />
-        
-        {/* BackUp */}
-        <Route path="/backup" component={BackUp} />
-      </Switch>
+      {
+        signed ? 
+          <div>
+          <Header toggleSideBar={handleClick} onToggleDarkMode={onToggledDarkMode} dark={isDark}/>
+          <SideMenu display={toggled ? "toggle-side-menu" : " "} />
+          <Switch>
+            {/* dashboard */}
+            <Route exact path="/" component={Dashboard} />
+    
+            {/* account */}
+            <Route path="/account/:tab" component={Account} />
+    
+            {/* Videos */}
+            <Route path="/videos/video-info" component={VideoInfo}/>
+            <Route path="/videos/upload-video" component={UploadVideo}/>
+            <Route path="/videos/:tab" component={Videos} />
+            
+            {/* Events */}
+            <Route path="/events" component={Events} />
+            
+            {/* Charts */}
+            <Route path="/charts" component={ChartPage} />
+            
+            {/* Finance */}
+            <Route path="/finance/:tab" component={Finance} />
+            
+            {/* Tickets */}
+            <Route path="/tickets" component={Tickets} />
+            
+            {/* Discounts */}
+            <Route path="/discounts" component={Discounts} />
+            
+            {/* Followers/Following */}
+            <Route path="/follow" component={Followers} />
+            
+            {/* BackUp */}
+            <Route path="/backup" component={BackUp} />
+          </Switch>
+          </div>
+          :
+          <Sign signed={signed} signHandler={signHandler}/>
+      }
     </div>
     );
 }
