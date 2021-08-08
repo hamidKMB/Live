@@ -1,0 +1,19 @@
+.OTP-input{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid grey;
+  font-size: 20pt
+}
+
+.container-input{
+  direction: ltr;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-evenly;
+}
+
+.focus-input{
+  outline: none;
+  border-bottom-color: orange;
+}

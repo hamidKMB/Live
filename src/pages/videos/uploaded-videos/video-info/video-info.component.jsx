@@ -45,6 +45,7 @@ const VideoInfo = (props) => {
             <div className="top">
                 <span className="status"> {props.stateOfUpload} </span>
                 <div className="background-image-of-video">
+                    <BinLogo className = "bin-logo-upload"/>
                     <img src="#" alt="ads"/>
                     <span className="progress-bar" style={{width:`${props.progress}%`}}/>
                 </div>

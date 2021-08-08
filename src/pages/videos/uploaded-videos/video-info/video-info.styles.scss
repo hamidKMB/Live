@@ -56,6 +56,16 @@
                 height: 155.15px;
                 position: relative;
                 margin: 20px 0;
+                .bin-logo-upload{
+                    position: absolute;
+                    top: 0.5rem;
+                    left: 1rem;
+                    padding: 3px;
+                    background-color: #fff;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    border-radius: 100%;
+                }
                 img{
                     border-radius: inherit;
                     object-fit: fill;
