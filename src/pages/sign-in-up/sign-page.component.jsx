@@ -1,6 +1,6 @@
 import React from "react";
 import TextInput from "../../components/text-input/text-input.component";
-import Otp from "../account/tabs/change-password/OTP-input/OTP.component";
+
 
 import ApiRequest from "../../ApiRequest.js";
 import OtpInput from "react-otp-input";
@@ -27,18 +27,19 @@ const Sign = (props) => {
         .then( (res) => {
             console.log(res);
             console.log(res.data.is_guest);
-            if (res.status = "SUCCESS" )
-            setIsPhoneNumberEntered("phone number Entered")
-            setIsUserEnteredBefore(res.is_guest)
-        }
-        ).catch(
-            err => console.log(err)
-        )
-        
-    }
-    //////////////////////////////////
+            if (res.status === "SUCCESS" )
+                setIsPhoneNumberEntered("phone number Entered")
+                setIsUserEnteredBefore(res.data.is_guest)
+            })
+            .catch(
+                err => console.log(err)
+                )
+                
+            }
+            //////////////////////////////////
     const onClickCheck = () => {
         console.log(mobile, otp);
+        console.log(isUserEnteredBefore);
         ApiRequest(
             "/auth/login_with_mobile",
             "POST",
@@ -47,22 +48,15 @@ const Sign = (props) => {
                 sms_code: parseInt(otp)
             }
             ).then(
-                (response) => { console.log(response);
-                    if (response.status = "SUCCESS" ){
+                (response) => { 
+                    console.log(response);
+                    if (response.status === "SUCCESS" ){
                         localStorage.setItem("token",response.token)
-                        if (isUserEnteredBefore) {
-                            return (
-                                props.signHandler()
-                            )
-                        } else {
-                            setIsPhoneNumberEntered("phone not in list")
-                        }
-
+                        !isUserEnteredBefore ? props.signHandler() : setIsPhoneNumberEntered("phone not in list")
                     } else {
                         setOtp("")
-                    }
-                
-            }
+                    } 
+                }
             )
     }
     return (

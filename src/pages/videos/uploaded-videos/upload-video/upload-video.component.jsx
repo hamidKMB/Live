@@ -1,20 +1,16 @@
 import React from "react";
 
 //React-Router-Dom
-import {Link, Redirect, useRouteMatch} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 //STYLES & Logo
 import {ReactComponent as DragAndDrop} from "./drag-drop.svg"
 
 import Dnd from "../../../../components/Drag-and-Drop/DND.component";
 
-import LinearProgress from '@material-ui/core/LinearProgress';
-import VideoInfo from "../video-info/video-info.component";
 
 
 const UploadVideo = (props) => {
-    const [isDrop, setIsDrop] = React.useState(false)
-
     return(
             <Dnd>
                 <DragAndDrop/>

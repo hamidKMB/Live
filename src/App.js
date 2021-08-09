@@ -22,12 +22,11 @@ import UploadVideo from "./pages/videos/uploaded-videos/upload-video/upload-vide
 import "./App.css";
 import "./root-styles/__dark-mode.scss"
 import VideoInfo from "./pages/videos/uploaded-videos/video-info/video-info.component";
-import ApiRequest from "./ApiRequest";
 import Sign from "./pages/sign-in-up/sign-page.component";
 
 function App() {
   const [toggled, setToggled] = React.useState(false);
-  const [signed, setSigned] = React.useState(false)
+  const [signed, setSigned] = React.useState(true)
 
   const signHandler = () => {
     setSigned(true)

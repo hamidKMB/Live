@@ -3,7 +3,6 @@ import React, {useState} from "react";
 //UPPY
 import Uppy from '@uppy/core'
 import Tus from '@uppy/tus'
-import ProgressBar from '@uppy/progress-bar'
 
 
 import "./DND.styles.scss"
