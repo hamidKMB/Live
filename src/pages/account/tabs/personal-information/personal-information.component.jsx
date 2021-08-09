@@ -30,14 +30,17 @@ const PersonalInformation = () => {
           <TextInput
           label="نام و نام خانوادگی"
           className="text-field"
+          input
         />
         <TextInput
           label="پست الکترونیک"
-          
+          input
+          disable={true}
         />
         <TextInput
           label="شماره همراه"
-          
+          input
+          disable={true}
         />
         </div>
       </div>
