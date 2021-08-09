@@ -53,5 +53,12 @@
     border: none;
     outline: none;
   }
+  textarea{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    resize: none;
+    width: 100%;
+  }
 }
 

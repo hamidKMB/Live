@@ -22,26 +22,14 @@ const VideoInfo = (props) => {
     return (
         <div className="video-info admin-pages-layout">
             <div className="input">
-                <TextInput
-                label="عنوان ویدیو"
-                />
-                <TextInput
-                label="توضیحات ویدیو"
-                />
-                <TextInput
-                label="دسته بندی"
-                />
-                <TextInput
-                label="دوره"
-                />
-                <TextInput
-                label="هزینه ویدیو"
-                />
-                <TextInput
-                label="انتخاب تخفیف"
-                />
+                <TextInput label="عنوان ویدیو" input />
+                <TextInput label="توضیحات ویدیو" textArea maxLength="500"/>
+                <TextInput label="دسته بندی" dropDown dropItems={[' ', 'هنری', 'آموزشی']} />
+                <TextInput label="دوره" dropDown dropItems={[' ']} />
+                <TextInput label="هزینه ویدیو" input />
+                <TextInput label="انتخاب تخفیف" dropDown dropItems={[' ']} />
             </div>
-            <div className="status-and-others">
+            <div className="status-and-others m-xl-auto me-lg-auto pe-2">
             <div className="top">
                 <span className="status"> {props.stateOfUpload} </span>
                 <div className="background-image-of-video">
@@ -51,19 +39,19 @@ const VideoInfo = (props) => {
                 </div>
                 <span className="mb-3"> status </span>
                 <span>تصویری برای کاور ویدیو انتخاب کنید</span>
-                <div className="row mb-3 mt-3">
-                    <div className="col-lg-6 col-md-6 col-sm-12 upload-status">
+                <div className="row d-flex flex-column flex-lg-row mt-3 mb-3 me-1 ms-1 align-items-md-center">
+                    <div className="col-lg-6 col-md-6 col-sm-12 upload-status mb-lg-0 mb-2">
                         <div className="button-outline font">
-                            بارگذاری تصویر<UploadLogo/>
+                            بارگذاری تصویر<UploadLogo className="ms-1"/>
                         </div>
                     </div>
                     <div className="col-lg-6 col-md-6 col-sm-12 upload-status">
                         <div className="button-outline font">
-                            انتخاب تصویر از ویدیو<PictureLogo/>
+                            انتخاب تصویر از ویدیو<PictureLogo className="ms-1"/>
                         </div>
                     </div>
                 </div>
-                <div className="switch-parts">
+                <div className="switch-parts w-100 px-1 ">
                     <div className="part">
                         <span>ثبت نظر (پسندیدن/نپسندیدن)</span>
                         <Switch
@@ -96,9 +84,9 @@ const VideoInfo = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="bottom">
+            <div className="bottom d-flex d-flex flex-column">
                 <span className="mb-2">بعد از تایید ادمین ویدیو شما منتشر میشود</span>
-                <div className="button publish-video">
+                <div className="button publish-video mx-auto px-4">
                     انتشار ویدیو
                 </div>
             </div>

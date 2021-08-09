@@ -41,12 +41,15 @@ const ChangePassword = () => {
             <div className="field-holder">
                 <TextInput
                 label="رمز عبور فعلی"
+                input
                 />
                 <TextInput
                 label="رمز عبور جدید"
+                input
                 />
                 <TextInput
                 label="تکرار رمز عبور جدید"
+                input
                 />
                 <ul>
                     <li>حداقل 8 کاراکتر</li>
@@ -105,7 +108,7 @@ const ChangePassword = () => {
                                     <p>
                                         لطفا شماره موبایل خود را وارد کنید
                                     </p>
-                                    <TextInput id="mobile-number" label="شماره موبایل"/>
+                                    <TextInput id="mobile-number" label="شماره موبایل" input/>
                                     <div className="button me-auto ms-auto" onClick={openNewModal}>
                                         تایید و ادامه
                                     </div>

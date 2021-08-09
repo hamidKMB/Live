@@ -13,7 +13,7 @@ const TextInput = (props) => {
           props.input?
           <input id={props.id} disabled={props.disable ? true : false} required />
           :
-          props.dropDown &&
+          props.dropDown ?
           <select name="myselect" className="drop-down-city-country">
             {
                 props.dropItems.map((item, index) => (
@@ -23,6 +23,9 @@ const TextInput = (props) => {
                 ))
             }
           </select>
+          :
+          props.textArea &&
+          <textarea name="video-description" rows="6" cols="70" maxLength={props.maxLength}/>
         }
         {
           props.disable && <PencilLogo className="pencil"/>
