@@ -1,7 +1,13 @@
 @import "../../../../root-styles/variables.scss";
 
 .notifications {
-    margin-top: 4rem;
+    margin: 4rem 0 0 10rem;
+    @media screen and (max-width: 1025px) {
+        margin: 4rem 0 0 6rem;
+    }
+    @media screen and (max-width: 788px) {
+        margin: 4rem 0 0 0;
+    }
     .head{
         display: flex;
         flex-direction: row;

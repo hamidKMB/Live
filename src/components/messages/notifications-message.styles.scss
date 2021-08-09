@@ -1,3 +1,5 @@
+@import "../../root-styles/variables.scss";
+
 .notification-message{
     width: 100%;
     padding: 1rem 0.8rem;
@@ -5,9 +7,10 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #000;
+    border: 1px solid rgba($color-light-grey, 0.4);
     border-radius: 5px;
     margin-bottom: 1rem;
+    background-color: $color-light-white;
     p{
         display: inline-block;
         margin: 0;
