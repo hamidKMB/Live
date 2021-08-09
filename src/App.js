@@ -1,6 +1,6 @@
 //REACT
 import React from "react";
-import { Switch, Route} from "react-router-dom";
+import { Switch, Route, useLocation} from "react-router-dom";
 
 //COMPONENTS
 import Header from "./components/header/header.component";
@@ -11,11 +11,11 @@ import PrivateRoute from "./PrivateRoute";
 //STYLES
 import "./App.css";
 import "./root-styles/__dark-mode.scss"
- 
 
 function App() {
   const [toggled, setToggled] = React.useState(false);
- 
+  const {pathname} = useLocation();
+  console.log(pathname);
   React.useEffect(() => {
     window.onresize = () => {
       // prevent from toggled State on True
@@ -50,10 +50,26 @@ function App() {
 
   return (
     <div className={`App ${isDark ? `dark` : ` `}`}>
-        <Header toggleSideBar={handleClick} onToggleDarkMode={onToggledDarkMode} dark={isDark}/>
-        <SideMenu display={toggled ? "toggle-side-menu" : " "} />
+      {
+        pathname !== "/login" &&
+        <>
+          <Header 
+            toggleSideBar={handleClick} 
+            onToggleDarkMode={onToggledDarkMode} 
+            dark={isDark}
+          />
+          <SideMenu 
+            display={toggled ? "toggle-side-menu" : " "} 
+          />
+        </>
+      }
         <Switch>
-              {routes.map((route) => (route.private ? <PrivateRoute {...route}/> : <Route {...route}/>))}
+            {routes.map((route) => (
+              route.private ? 
+              <PrivateRoute {...route}/> : 
+              <Route {...route}/>
+              ))
+            }
         </Switch>
     </div>
     );

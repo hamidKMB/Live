@@ -13,10 +13,8 @@
     @media screen and (max-width: 832px) {
         flex-direction: column;
         justify-content: center;
-        height: 150vh;;
     }
     justify-content: space-evenly;
-    height: 90vh;
     .input{
         display: flex;
         flex-direction: column;
@@ -110,10 +108,6 @@
             }
         }
         .bottom{
-            position: absolute;
-            @media screen and (max-width: 833px){ 
-                position: static;
-            }
             bottom: 0;
             margin: 20px 0;
             width: 100%;

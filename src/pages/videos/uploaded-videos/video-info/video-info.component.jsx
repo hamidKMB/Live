@@ -29,7 +29,7 @@ const VideoInfo = (props) => {
                 <TextInput label="هزینه ویدیو" input />
                 <TextInput label="انتخاب تخفیف" dropDown dropItems={[' ']} />
             </div>
-            <div className="status-and-others m-xl-auto me-lg-auto pe-2">
+            <div className="status-and-others mx-xl-auto me-lg-auto pe-2">
             <div className="top">
                 <span className="status"> {props.stateOfUpload} </span>
                 <div className="background-image-of-video">
