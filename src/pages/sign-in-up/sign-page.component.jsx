@@ -17,7 +17,7 @@ const Sign = (props) => {
     };
     //////////////////////////////////
     const sendPhoneToApi = () => {
-        setMobile(document.getElementById("phone-number").value);
+        setMobile("09121000110");
         console.log(mobile);
         ApiRequest(
             "/auth/request_sms_code_for_login" ,
@@ -65,7 +65,7 @@ const Sign = (props) => {
                  isPhoneNumberEntered === "phone not Entered"?
 
                     <div className="sign-form card d-flex justify-content-center mt-5 mb-5 p-5">
-                        <TextInput label="تلفن همراه" id="phone-number"/>
+                        <TextInput label="تلفن همراه" id="phone-number" input/>
                         <input 
                             type="submit" 
                             className="button me-auto ms-auto  mt-4" 
@@ -99,7 +99,7 @@ const Sign = (props) => {
                 isPhoneNumberEntered === "phone not in list" &&
 
                     <div className="sign-form card d-flex justify-content-center mt-5 mb-5 p-5">
-                            <TextInput label="نام و نام خانوادگی" />
+                            <TextInput label="نام و نام خانوادگی" input/>
                             <input 
                                 type="submit" 
                                 className="button me-auto ms-auto  mt-4" 
