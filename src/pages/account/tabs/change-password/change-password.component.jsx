@@ -69,9 +69,9 @@ const ChangePassword = () => {
                         {
                             acceptMobileNumber ?
                             <div className="change-password-modal d-flex align-items-center position-relative w-100 h-100">
-                                <CircleAndDotsLogo className="position-absolute top-0 end-0 mt-5"/>
-                                <DesignLogo className="position-absolute bottom-0 end-0 me-5 mb-5"/>
-                                <div className="card card-enter-mobile h-75 mt-auto mb-auto">
+                                <CircleAndDotsLogo className="d-none d-md-block position-absolute top-0 end-0 mt-5 me-5"/>
+                                <DesignLogo className="d-none d-md-block position-absolute bottom-0 end-0 me-5 mb-5"/>
+                                <div className="card card-enter-mobile h-75 m-auto otp-change-password-card" >
                                     <h6>
                                         بازیابی رمز عبور
                                     </h6>
@@ -92,13 +92,13 @@ const ChangePassword = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <ModalChangePasswordLogo className="me-auto ms-auto"/>
+                                <ModalChangePasswordLogo className="d-none d-md-block me-auto ms-auto"/>
                             </div>
                             :
                             <div className="change-password-modal d-flex align-items-center position-relative w-100 h-100">
-                                <CircleAndDotsLogo className="position-absolute top-0 end-0 mt-5"/>
-                                <DesignLogo className="position-absolute bottom-0 end-0 me-5 mb-5"/>
-                                <div className="card card-enter-mobile h-75 mt-auto mb-auto">
+                                <CircleAndDotsLogo className="d-none d-md-block position-absolute top-0 end-0 mt-5"/>
+                                <DesignLogo className="d-none d-md-block position-absolute bottom-0 end-0 me-5 mb-5"/>
+                                <div className="card card-enter-mobile h-75 m-auto ">
                                     <h6>
                                         بازیابی رمز عبور
                                     </h6>
@@ -106,11 +106,11 @@ const ChangePassword = () => {
                                         لطفا شماره موبایل خود را وارد کنید
                                     </p>
                                     <TextInput id="mobile-number" label="شماره موبایل"/>
-                                    <div className="button me-5 ms-5" onClick={openNewModal}>
+                                    <div className="button me-auto ms-auto" onClick={openNewModal}>
                                         تایید و ادامه
                                     </div>
                                 </div>
-                                <ModalChangePasswordLogo className="me-auto ms-auto"/>
+                                <ModalChangePasswordLogo className="d-none d-md-block me-auto ms-auto"/>
                             </div>
                         }
                     </Modal>
