@@ -5,10 +5,10 @@ import TextInput from "../../components/text-input/text-input.component";
 import ApiRequest from "../../ApiRequest.js";
 import OtpInput from "react-otp-input";
 import "./sign-page.styles.scss";
+import { Redirect } from "react-router-dom";
 
 const Sign = (props) => {
     const [isPhoneNumberEntered, setIsPhoneNumberEntered] = React.useState("phone not Entered");
-    const [isUserEnteredBefore, setIsUserEnteredBefore] = React.useState(false);
     const [otp, setOtp] = React.useState("")
     const [mobile, setMobile] = React.useState("");
     
@@ -17,7 +17,6 @@ const Sign = (props) => {
     };
     //////////////////////////////////
     const sendPhoneToApi = () => {
-        setMobile("09121000110");
         console.log(mobile);
         ApiRequest(
             "/auth/request_sms_code_for_login" ,
@@ -29,7 +28,6 @@ const Sign = (props) => {
             console.log(res.data.is_guest);
             if (res.status === "SUCCESS" )
                 setIsPhoneNumberEntered("phone number Entered")
-                setIsUserEnteredBefore(res.data.is_guest)
             })
             .catch(
                 err => console.log(err)
@@ -38,8 +36,6 @@ const Sign = (props) => {
             }
             //////////////////////////////////
     const onClickCheck = () => {
-        console.log(mobile, otp);
-        console.log(isUserEnteredBefore);
         ApiRequest(
             "/auth/login_with_mobile",
             "POST",
@@ -52,12 +48,16 @@ const Sign = (props) => {
                     console.log(response);
                     if (response.status === "SUCCESS" ){
                         localStorage.setItem("token",response.token)
-                        !isUserEnteredBefore ? props.signHandler() : setIsPhoneNumberEntered("phone not in list")
+                        
                     } else {
                         setOtp("")
                     } 
                 }
             )
+    }
+
+    const onChangeHandlerINput = (value) => {
+        setMobile(value)
     }
     return (
         <div className="sign d-flex justify-content-center align-items-center">
@@ -65,7 +65,7 @@ const Sign = (props) => {
                  isPhoneNumberEntered === "phone not Entered"?
 
                     <div className="sign-form card d-flex justify-content-center mt-5 mb-5 p-5">
-                        <TextInput label="تلفن همراه" id="phone-number" input/>
+                        <TextInput label="تلفن همراه" id="phone-number" onChange={(e) => onChangeHandlerINput(e.target.value)} input/>
                         <input 
                             type="submit" 
                             className="button me-auto ms-auto  mt-4" 
@@ -75,8 +75,6 @@ const Sign = (props) => {
                     </div>
 
                 :
-                isPhoneNumberEntered === "phone number Entered" ?
-
                     <div className="sign-form card d-flex justify-content-center mt-5 mb-5 p-5">
                         <OtpInput
                             id="otp-input"
@@ -93,20 +91,7 @@ const Sign = (props) => {
                             placeholder="تایید و ادامه" 
                             onClick={onClickCheck}
                         />
-                    </div>
-
-                : 
-                isPhoneNumberEntered === "phone not in list" &&
-
-                    <div className="sign-form card d-flex justify-content-center mt-5 mb-5 p-5">
-                            <TextInput label="نام و نام خانوادگی" input/>
-                            <input 
-                                type="submit" 
-                                className="button me-auto ms-auto  mt-4" 
-                                placeholder="تایید و ادامه" 
-                                onClick={props.signHandler}
-                            />
-                    </div>  
+                    </div> 
             }
         </div>
         )

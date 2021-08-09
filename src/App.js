@@ -6,8 +6,8 @@ import { Switch, Route} from "react-router-dom";
 import Header from "./components/header/header.component";
 import SideMenu from "./components/side-menu/side-menu.component";
 
- import routes from "./routes";
-  import PrivateRoute from "./PrivateRoute";
+import routes from "./routes";
+import PrivateRoute from "./PrivateRoute";
 //STYLES
 import "./App.css";
 import "./root-styles/__dark-mode.scss"
@@ -16,9 +16,6 @@ import "./root-styles/__dark-mode.scss"
 function App() {
   const [toggled, setToggled] = React.useState(false);
  
-
- 
-
   React.useEffect(() => {
     window.onresize = () => {
       // prevent from toggled State on True
@@ -53,21 +50,11 @@ function App() {
 
   return (
     <div className={`App ${isDark ? `dark` : ` `}`}>
-      {
-      
-          <div>
-          
-          <Header toggleSideBar={handleClick} onToggleDarkMode={onToggledDarkMode} dark={isDark}/>
-          <SideMenu display={toggled ? "toggle-side-menu" : " "} />
-          
-          <Switch>
-                {routes.map((route) => (route.private ? <PrivateRoute {...route}/> : <Route {...route}/>))}
- 
-          </Switch>
-          </div>
-         
-      
-      }
+        <Header toggleSideBar={handleClick} onToggleDarkMode={onToggledDarkMode} dark={isDark}/>
+        <SideMenu display={toggled ? "toggle-side-menu" : " "} />
+        <Switch>
+              {routes.map((route) => (route.private ? <PrivateRoute {...route}/> : <Route {...route}/>))}
+        </Switch>
     </div>
     );
 }

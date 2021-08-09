@@ -11,7 +11,7 @@ const TextInput = (props) => {
         <legend className="legend">{props.label}</legend>
         {
           props.input?
-          <input id={props.id} disabled={props.disable ? true : false} required />
+          <input id={props.id} disabled={props.disable ? true : false} required onChange={props.onChange}/>
           :
           props.dropDown ?
           <select name="myselect" className="drop-down-city-country">
