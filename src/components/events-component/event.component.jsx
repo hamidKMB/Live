@@ -7,6 +7,10 @@ import "./event.styles.scss";
 import "../../root-styles/buttons.scss";
 
 const Event = (props) => {
+    const [isMenuOpen , setIsMenuOpen] = React.useState(true)
+    const mouseHandler = () => {
+        setIsMenuOpen(!isMenuOpen)
+    }
     return (
       <div className="c col-lg-6">
         <div className="card card-event">
@@ -18,8 +22,12 @@ const Event = (props) => {
               <span>{props.title}</span>
               <div>
                 <span>{props.date}</span>
-                <span>
-                  <ThreeDotHorizontal />
+                <span className="three-dot-hover">
+                  <ThreeDotHorizontal className="three-dot"/>
+                    <div className="card d-flex flex-column justify-content-start menu-on-three-dot w-100 p-4 position-absolute ">
+                        <span>ویرایش</span>
+                        <span>حذف</span>
+                    </div>
                 </span>
               </div>
             </div>
@@ -37,3 +45,6 @@ const Event = (props) => {
 }
 
 export default Event;
+
+// onMouseEnter={mouseHandler} onMouseLeave={mouseHandler}
+// onMouseEnter={() => setIsMenuOpen(true)} onMouseLeave={ () => setIsMenuOpen(false)}

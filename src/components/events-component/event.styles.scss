@@ -73,6 +73,11 @@
                     }
                 }
             }
+            .three-dot{
+                &:hover{
+                    cursor: pointer;
+                }
+            }
         }
     }
     .button-holder{

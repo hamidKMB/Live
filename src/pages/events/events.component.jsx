@@ -31,21 +31,30 @@ const Events = () => {
         <div className="button button-events" onClick={() => history.push('/events/upload-live')}>+ ایجاد رویداد جدید</div>
       </div>
       <div className="row">
-       {
-         eventList.map( (item) => (
-           <Event
-            key = {item.id}
-            image={item.image_path}
-            title={item.title}
-            date={item.created_at}
-            timeLeftToStart={item.published_at}
-            genere={item.category.title}
-           />
-         ))
-       }
+        <Event
+            key = "index"
+            image="#"
+            title="adsasd"
+            date="adsasd"
+            timeLeftToStart="adsasd"
+            genere="adsasd"
+           />  
       </div>
-    </div>
-  );
-};
-
-export default Events;
+      </div>
+      );
+    };
+    
+    export default Events;
+    
+    //  {
+    //    eventList.map( (item) => (
+    //      <Event
+    //       key = {item.id}
+    //       image={item.image_path}
+    //       title={item.title}
+    //       date={item.created_at}
+    //       timeLeftToStart={item.published_at}
+    //       genere={item.category.title}
+    //      />
+    //    ))
+    //  }
