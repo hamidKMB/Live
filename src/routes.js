@@ -14,6 +14,7 @@ import VideoInfo from "./pages/videos/uploaded-videos/video-info/video-info.comp
 import BackUp from "./pages/back-up/back-up.component";
 import UploadVideo from "./pages/videos/uploaded-videos/upload-video/upload-video.component";
 import NotFound from "./pages/sign-in-up/not-found.component";
+import UploadLive from "./pages/events/Upload-Live/Upload-Live.component";
 
 const routes = [
 
@@ -59,6 +60,12 @@ const routes = [
         exact: true,
         path: '/events',
         component: Events
+    },
+    {
+        private: true,
+        exact: true,
+        path: '/events/upload-live',
+        component: UploadLive
     },
     {
         private: true,

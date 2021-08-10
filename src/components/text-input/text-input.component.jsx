@@ -6,7 +6,7 @@ import {ReactComponent as PencilLogo} from "./pencil.svg";
 
 const TextInput = (props) => {
   return (
-    <div>
+    <>
       <fieldset className={`field-set position-relative ${props.disable && "disable"}`} >
         <legend className="legend">{props.label}</legend>
         {
@@ -31,7 +31,7 @@ const TextInput = (props) => {
           props.disable && <PencilLogo className="pencil"/>
         }
       </fieldset>
-    </div>
+    </>
   );
 };
 

@@ -2,7 +2,7 @@
 import React from "react";
 
 import Event from "../../components/events-component/event.component";
-
+import { useHistory } from "react-router";
 //STYLES
 import "../../root-styles/layout.scss";
 import "../../root-styles/buttons.scss";
@@ -12,6 +12,8 @@ import ApiRequest from "../../ApiRequest";
 const Events = () => {
 
   const [eventList, setEventList] = React.useState([]);
+  const history = useHistory();
+  
   React.useEffect(() => {
       ApiRequest("/vod/list", "get").then((res) => {
           console.log(res);
@@ -26,7 +28,7 @@ const Events = () => {
     <div className="admin-pages-layout events-layout">
       <div className="header-events">
         <h1 className="detail">لیست رویداد های ایجاد شده </h1>
-        <div className="button button-events">+ ایجاد رویداد جدید</div>
+        <div className="button button-events" onClick={() => history.push('/events/upload-live')}>+ ایجاد رویداد جدید</div>
       </div>
       <div className="row">
        {

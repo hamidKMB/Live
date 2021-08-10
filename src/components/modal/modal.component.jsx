@@ -26,7 +26,7 @@ class Modal extends React.Component{
         <div className="black-overlay"/>
           <div className="main-modal">
             <div className="content-in-modal">
-              <CrossLogo className="cross-logo" onClick={this.props.closeModal}/>
+              <CrossLogo className="cross-logo" id={this.props.name} onClick={this.props.closeModal}/>
               {this.props.children}
             </div>
           </div>
