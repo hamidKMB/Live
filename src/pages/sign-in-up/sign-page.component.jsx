@@ -9,11 +9,11 @@ import ApiRequest from "../../ApiRequest";
 
 const Sign = (props) => {
 
-    const [isPhoneNumberEntered, setIsPhoneNumberEntered] =
-        React.useState("phone not Entered");
+    const [isPhoneNumberEntered, setIsPhoneNumberEntered] =React.useState("phone not Entered");
     const [otp, setOtp] = React.useState("");
     const [mobile, setMobile] = React.useState("");
     const history = useHistory();
+
     const handleChange = (otp) => {
         setOtp(otp);
     };
@@ -23,26 +23,23 @@ const Sign = (props) => {
     })
 
     //////////////////////////////////
-    const sendPhoneToApi = () => {
+    const sendPhoneToApi = () => { //Sending the Phone number to API Request for SMS
         console.log(mobile);
         ApiRequest("/auth/request_sms_code_for_login", "POST", {mobile: mobile})
             .then((res) => {
-                console.log(res);
-                console.log(res.data.is_guest);
                 if (res.status === "SUCCESS")
                     setIsPhoneNumberEntered("phone number Entered");
             })
             .catch((err) => console.log(err));
     };
     //////////////////////////////////
-    const onClickCheck = () => {
+    const onClickCheck = () => { // Check user and login if the OTP entered True
         ApiRequest("/auth/login_with_mobile", "POST", {
             mobile: mobile,
             sms_code: parseInt(otp),
         }).then((response) => {
-            console.log(response);
             if (response.status === "SUCCESS") {
-                localStorage.setItem("token", response.token);
+                Cookies.set("token", response.token);
                 return history.push("/")
             } else {
                 setOtp("");
@@ -55,7 +52,6 @@ const Sign = (props) => {
     };
 
     return (
-
         <div className="sign d-flex justify-content-center align-items-center">
             {isPhoneNumberEntered === "phone not Entered" ? (
                 <div className="sign-form card d-flex justify-content-center mt-5 mb-5 p-5">

@@ -8,7 +8,7 @@ import "../../root-styles/layout.scss";
 import "../../root-styles/buttons.scss";
 import "./events-page.styles.scss"
 import ApiRequest from "../../ApiRequest";
-import Cookies from 'js-cookie';
+
 const Events = () => {
 
   const [eventList, setEventList] = React.useState([]);
@@ -19,7 +19,6 @@ const Events = () => {
           if(res.status==="SUCCESS"){
               setEventList(res.data.data);
           }
-
        });
     },[])
     console.log(eventList);
