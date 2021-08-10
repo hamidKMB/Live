@@ -8,12 +8,18 @@ import "../../root-styles/layout.scss";
 import "../../root-styles/buttons.scss";
 import "./events-page.styles.scss"
 import ApiRequest from "../../ApiRequest";
-
+import Cookies from 'js-cookie';
 const Events = () => {
+
   const [eventList, setEventList] = React.useState([]);
   React.useEffect(() => {
       ApiRequest("/vod/list", "get").then((res) => {
-         setEventList(res.data.data);
+          console.log(res);
+
+          if(res.status==="SUCCESS"){
+              setEventList(res.data.data);
+          }
+
        });
     },[])
     console.log(eventList);

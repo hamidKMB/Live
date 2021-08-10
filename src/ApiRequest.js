@@ -6,6 +6,7 @@ let base_url = 'https://api.ideamooz.com/api/v1';
 
 const ApiRequest = async (url, method, data = {}) => {
     try {
+        console.log(localStorage.getItem("token"))
         return await axios.request({
             url: base_url+url,
             method: method,

@@ -4059,7 +4059,7 @@ css-blank-pseudo@^0.1.4:
 
 css-box-model@~1.2.1:
   version "1.2.1"
-  resolved "https://registry.yarnpkg.com/css-box-model/-/css-box-model-1.2.1.tgz#59951d3b81fd6b2074a62d49444415b0d2b4d7c1"
+  resolved "https://registry.npmjs.org/css-box-model/-/css-box-model-1.2.1.tgz"
   integrity sha512-a7Vr4Q/kd/aw96bnJG332W9V9LkJO69JRcaCYDUqjp6/z0w6VcZjgAcTbgFxEPfBgdnAwlh3iwu+hLopa+flJw==
   dependencies:
     tiny-invariant "^1.0.6"
@@ -7245,6 +7245,11 @@ js-base64@^2.1.8, js-base64@^2.6.1:
   resolved "https://registry.npmjs.org/js-base64/-/js-base64-2.6.4.tgz"
   integrity sha512-pZe//GGmwJndub7ZghVHz7vjb2LgC1m8B07Au3eYqeqv9emhESByMXxaEgkUkEqJe87oBbSniGYoQNIBklc7IQ==
 
+js-cookie@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-3.0.0.tgz#db1661d5459920ec95aaf186ccf74ceb4a495164"
+  integrity sha512-oUbbplKuH07/XX2YD2+Q+GMiPpnVXaRz8npE7suhBH9QEkJe2W7mQ6rwuMXHue3fpfcftQwzgyvGzIHyfCSngQ==
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz"
@@ -9944,6 +9949,11 @@ react-is@^17.0.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-otp-input@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.npmjs.org/react-otp-input/-/react-otp-input-2.4.0.tgz"
+  integrity sha512-AIgl7u4sS9BTNCxX1xlaS5fPWay/Zml8Ho5LszXZKXrH1C/TiFsTQGmtl13UecQYO3mSF3HUzG2rrDf0sjEFmg==
+
 react-refresh@^0.8.3:
   version "0.8.3"
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.8.3.tgz"
@@ -10046,7 +10056,7 @@ react-scripts@4.0.3:
 
 react-simple-drag-drop@^1.6.1:
   version "1.6.1"
-  resolved "https://registry.yarnpkg.com/react-simple-drag-drop/-/react-simple-drag-drop-1.6.1.tgz#b55788582d5622ffb39cbe07a4386cba345b0bc2"
+  resolved "https://registry.npmjs.org/react-simple-drag-drop/-/react-simple-drag-drop-1.6.1.tgz"
   integrity sha512-E1MRqxmFAjOEB4N1wBbXwU9oHSGA9c9aADJ1rGsNDWKx+ruWBClN2rpPjgeYphlSE1QlL5OtCyjSBZea6QkD4g==
   dependencies:
     css-box-model "~1.2.1"
@@ -11674,22 +11684,9 @@ tunnel-agent@^0.6.0:
   dependencies:
     safe-buffer "^5.0.1"
 
-tus-js-client@^2.1.1:
+tus-js-client@^2.1.1, tus-js-client@latest:
   version "2.3.0"
   resolved "https://registry.npmjs.org/tus-js-client/-/tus-js-client-2.3.0.tgz"
-  integrity sha512-I4cSwm6N5qxqCmBqenvutwSHe9ntf81lLrtf6BmLpG2v4wTl89atCQKqGgqvkodE6Lx+iKIjMbaXmfvStTg01g==
-  dependencies:
-    buffer-from "^0.1.1"
-    combine-errors "^3.0.3"
-    is-stream "^2.0.0"
-    js-base64 "^2.6.1"
-    lodash.throttle "^4.1.1"
-    proper-lockfile "^2.0.1"
-    url-parse "^1.4.3"
-
-tus-js-client@latest:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/tus-js-client/-/tus-js-client-2.3.0.tgz#5d76145476cea46a4e7c045a0054637cddf8dc39"
   integrity sha512-I4cSwm6N5qxqCmBqenvutwSHe9ntf81lLrtf6BmLpG2v4wTl89atCQKqGgqvkodE6Lx+iKIjMbaXmfvStTg01g==
   dependencies:
     buffer-from "^0.1.1"
