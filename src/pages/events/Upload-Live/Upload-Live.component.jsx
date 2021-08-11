@@ -4,7 +4,7 @@ import "./Upload-Live.styles.scss";
 import TextInput from "../../../components/text-input/text-input.component";
 import { Switch } from "@material-ui/core";
 import { ReactComponent as UploadLogo } from "./upload-logo.svg";
-import { ReactComponent as CreateNewTicketLogo } from "./new-ticket-logo.svg";
+
 import * as tus from "tus-js-client";
 import Modal from "../../../components/modal/modal.component";
 import NewDiscount from "./new-discount.component";
@@ -100,12 +100,12 @@ const UploadLive = () => {
 
     return(
         <div className="admin-pages-layout upload-live d-flex flex-column flex-md-row">
-            <div className="input d-flex flex-column justify-content-evenly">
+            <div className="input d-flex flex-column justify-content-evenly ms-md-auto ">
                 <TextInput label="عنوان پخش زنده" input />
                 <TextInput label="دسته بندی" dropDown dropItems={[' ', 'هنری', 'آموزشی']} />
                 <div className="d-flex flex-row align-items-start">
                     <TextInput label="بلیط پخش زنده" dropDown dropItems={[' ']} />
-                    <div className="button w-25 me-1 mt-2" onClick={ openModal } name="newTicket"> + بلیط جدید</div>
+                    <div className="button me-1 mt-2 button-size" onClick={ openModal } name="newTicket"> + بلیط جدید</div>
                 </div>
                 {
                     isModalShow.newTicket && 
@@ -115,7 +115,7 @@ const UploadLive = () => {
                 }
                 <div className="d-flex flex-row align-items-start">
                     <TextInput label="تخفیف" dropDown dropItems={[' ']} />
-                    <div className="button w-25 me-1 mt-2" onClick={ openModal } name="newDiscount"> + تخفیف جدید</div>
+                    <div className="button me-1 mt-2 button-size" onClick={ openModal } name="newDiscount"> + تخفیف جدید</div>
                 </div>
                 {
                     isModalShow.newDiscount &&
@@ -123,7 +123,7 @@ const UploadLive = () => {
                         <NewDiscount closeModal={closeModal}/>
                     </Modal>
                 }
-                <div className="d-flex flex-row justify-content-between">
+                <div className="d-flex flex-row justify-content-between dating">
                     <TextInput label="زمان پخش زنده" dropDown dropItems={[' ']} />
                     <TextInput label="تاریخ پخش زنده" dropDown dropItems={[' ']} />
                 </div>
@@ -132,11 +132,9 @@ const UploadLive = () => {
             <div className="status-and-others d-flex flex-column justify-content-between mx-xl-auto me-lg-auto me-md-1 pe-2">
             <div className="top d-flex flex-column justify-content-between align-items-start">
                 <span>تصویری برای کاور پخش زنده انتخاب کنید</span>
-                <div className="choose-cover-for-live my-4">
+                <div className="choose-cover-for-live my-4" style={file && {backgroundImage:`url(${file})`}} onClick={file ? () => setFile(null) : null}>
                     {
-                        file ?
-                        <img src={file} onClick={() => setFile(null)}/>
-                        :
+                        !file &&
                         <div 
                         draggable onDragOver={onDragOverHandler} onDrop={dropHandler} 
                         className="mt-4 h-75 my-auto d-flex flex-column justify-content-between align-items-center text-center">

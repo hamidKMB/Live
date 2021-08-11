@@ -74,7 +74,7 @@ const ChangePassword = () => {
                             <div className="change-password-modal d-flex align-items-center position-relative w-100 h-100">
                                 <CircleAndDotsLogo className="d-none d-md-block position-absolute top-0 end-0 mt-5 me-5"/>
                                 <DesignLogo className="d-none d-md-block position-absolute bottom-0 end-0 me-5 mb-5"/>
-                                <div className="card card-enter-mobile h-75 m-auto otp-change-password-card" >
+                                <div className="card card-enter-mobile m-auto otp-change-password-card" >
                                     <h6>
                                         بازیابی رمز عبور
                                     </h6>
@@ -101,7 +101,7 @@ const ChangePassword = () => {
                             <div className="change-password-modal d-flex align-items-center position-relative w-100 h-100">
                                 <CircleAndDotsLogo className="d-none d-md-block position-absolute top-0 end-0 mt-5"/>
                                 <DesignLogo className="d-none d-md-block position-absolute bottom-0 end-0 me-5 mb-5"/>
-                                <div className="card card-enter-mobile h-75 m-auto ">
+                                <div className="card card-enter-mobile m-auto ">
                                     <h6>
                                         بازیابی رمز عبور
                                     </h6>
