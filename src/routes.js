@@ -71,7 +71,7 @@ const routes = [
     {
         private: true,
         exact: true,
-        path: '/events/chat',
+        path: '/events/chat/:tab',
         component: ChatPage
     },
     {
