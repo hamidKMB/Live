@@ -15,6 +15,7 @@ import BackUp from "./pages/back-up/back-up.component";
 import UploadVideo from "./pages/videos/uploaded-videos/upload-video/upload-video.component";
 import NotFound from "./pages/sign-in-up/not-found.component";
 import UploadLive from "./pages/events/Upload-Live/Upload-Live.component";
+import ChatPage from "./pages/chat-page/chat-page.component";
 
 const routes = [
 
@@ -66,6 +67,12 @@ const routes = [
         exact: true,
         path: '/events/upload-live',
         component: UploadLive
+    },
+    {
+        private: true,
+        exact: true,
+        path: '/events/chat',
+        component: ChatPage
     },
     {
         private: true,
