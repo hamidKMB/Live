@@ -23,7 +23,7 @@ const Events = () => {
           }
        });
     },[])
-    console.log(eventList);
+
   return (
     <div className="admin-pages-layout events-layout">
       <div className="header-events">

@@ -7,7 +7,7 @@ import "./event.styles.scss";
 import "../../root-styles/buttons.scss";
 
 const Event = (props) => {
-    const [isMenuOpen , setIsMenuOpen] = React.useState(true)
+    const [isMenuOpen , setIsMenuOpen] = React.useState(false)
     const mouseHandler = () => {
         setIsMenuOpen(!isMenuOpen)
     }
@@ -22,12 +22,15 @@ const Event = (props) => {
               <span>{props.title}</span>
               <div>
                 <span>{props.date}</span>
-                <span className="three-dot-hover">
+                <span className="three-dot-hover" onMouseEnter={mouseHandler} onMouseLeave={mouseHandler}>
                   <ThreeDotHorizontal className="three-dot"/>
-                    <div className="card d-flex flex-column justify-content-start menu-on-three-dot w-100 p-4 position-absolute ">
-                        <span>ویرایش</span>
-                        <span>حذف</span>
-                    </div>
+                  {
+                    isMenuOpen &&
+                      <div className="card d-flex flex-column justify-content-start menu-on-three-dot w-auto p-2 ps-4 h-auto position-absolute ">
+                          <span className="mb-2">ویرایش</span>
+                          <span>حذف</span>
+                      </div>
+                  }  
                 </span>
               </div>
             </div>
@@ -45,6 +48,3 @@ const Event = (props) => {
 }
 
 export default Event;
-
-// onMouseEnter={mouseHandler} onMouseLeave={mouseHandler}
-// onMouseEnter={() => setIsMenuOpen(true)} onMouseLeave={ () => setIsMenuOpen(false)}
