@@ -15,7 +15,7 @@ import "./root-styles/__dark-mode.scss"
 function App() {
   const [toggled, setToggled] = React.useState(false);
   const {pathname} = useLocation();
-  console.log(pathname);
+  
   React.useEffect(() => {
     window.onresize = () => {
       // prevent from toggled State on True
