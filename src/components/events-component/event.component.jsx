@@ -29,7 +29,7 @@ const Event = (props) => {
                   {
                     isMenuOpen &&
                       <div className="card d-flex flex-column justify-content-start menu-on-three-dot w-auto p-2 ps-4 h-auto position-absolute ">
-                          <span className="mb-2" onClick={() => history.push("/events/chat")}>صفحه چت</span>
+                          <span className="mb-2" onClick={() => history.push("/events/chat/public-chat")}>صفحه چت</span>
                           <span className="mb-2">ویرایش</span>
                           <span>حذف</span>
                       </div>

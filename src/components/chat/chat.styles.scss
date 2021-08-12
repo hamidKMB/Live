@@ -1,0 +1,116 @@
+@import "../../root-styles/variables.scss";
+
+
+.hole-chat-component{
+    border-radius: 5px;
+    background-color: $color-light-white;
+    color: $color-light-text;
+    
+    height: 73vh;
+    .contacts-and-type-of-chat{
+        background-color:  rgba($color-light-orange, 0.1);
+        .side{
+            a{
+                text-decoration: none;
+                background-color: $color-light-white ;
+                padding: 0.5rem;
+                border-radius: 5px;
+                margin: 10px;
+                .chat-type-logo{
+                background-color: $color-light-dark-white;
+                border-radius: 100%;
+                }
+                .chat-type{
+                    color: $color-light-text;
+                    @media screen and (max-width: 952px) {
+                        font-size: 10pt;
+                    }
+                }
+                .top-circle,
+                .bottom-circle
+                {
+                display: none;
+                width: 30px;
+                height: 30px;
+                overflow: hidden;
+                position: absolute;
+                }
+                .top-circle{
+                    left: -1px;
+                    top:-30px;
+                }
+                .bottom-circle{
+                    left: -1px;
+                    bottom:-30px;
+                }
+                .top-circle:before,
+                .bottom-circle:before
+                {
+                content: "";
+                display: block;
+                width: 200%;
+                height: 200%;
+                position: absolute;
+                border-radius: 40%;
+                }
+                .top-circle:before {
+                bottom: 0;
+                left: 0;
+                box-shadow: -10px 10px 0 0 $color-light-dark-white;
+                }
+                .bottom-circle:before {
+                top: 0;
+                left: 0;
+                box-shadow: -10px -10px 0 0 $color-light-dark-white;
+                }
+            }
+            a.active-style{
+                background-color: rgba($color-light-dark-white,1);
+                border-right: 7px solid $color-light-text;
+                margin: 10px 2px 10px 0;
+                .chat-type-logo{
+                background-color: $color-light-white;
+                }
+                .top-circle,
+                .bottom-circle{
+                    display: block;
+                }
+            }
+            h6{
+                color: $color-light-orange
+            }
+            .private-chats-contacts{
+                overflow-y: scroll;
+                    &::-webkit-scrollbar {
+                        /* Hide scrollbar for Chrome, Safari and Opera */
+                        display: none;
+                    }
+                -ms-overflow-style: none;
+                /* IE and Edge */
+                scrollbar-width: none;
+                /* Firefox */
+                height: 23rem;
+                @media screen and (max-width: 826px) {
+                    height: 21rem;
+                }
+            }
+        }
+    }
+    .chats{
+        border-radius: 5px;
+        .head-of-chat-container{
+            background-color: rgba($color-light-orange, 0.1);
+            border-radius: 5px;
+            .chat-type-logo{
+                background-color: $color-light-dark-white;
+                border-radius: 100%;
+            }
+        }
+        .chat-container{
+            height: 66vh;
+            border: 2px solid rgba($color-light-dark-white, 1);
+            border-top: 0;
+            border-radius: 0 0 5px 5px;
+        }
+    }
+}

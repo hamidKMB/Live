@@ -31,7 +31,6 @@ const routes = [
     path: "/",
     component: Dashboard,
   },
-
   {
     exact: true,
     private: true,
