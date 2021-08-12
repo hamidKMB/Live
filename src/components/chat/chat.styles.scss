@@ -5,11 +5,11 @@
     border-radius: 5px;
     background-color: $color-light-white;
     color: $color-light-text;
-    
-    height: 73vh;
+    height: 28rem;
     .contacts-and-type-of-chat{
         background-color:  rgba($color-light-orange, 0.1);
         .side{
+            height: 100%;
             a{
                 text-decoration: none;
                 background-color: $color-light-white ;
@@ -77,7 +77,8 @@
                 }
             }
             h6{
-                color: $color-light-orange
+                color: $color-light-orange;
+                font-size: 9pt;
             }
             .private-chats-contacts{
                 overflow-y: scroll;
@@ -89,15 +90,13 @@
                 /* IE and Edge */
                 scrollbar-width: none;
                 /* Firefox */
-                height: 23rem;
-                @media screen and (max-width: 826px) {
-                    height: 21rem;
-                }
+                height: 40%;
             }
+        
         }
     }
     .chats{
-        border-radius: 5px;
+        border-radius: 5px 5px 10px 10px;
         .head-of-chat-container{
             background-color: rgba($color-light-orange, 0.1);
             border-radius: 5px;
@@ -107,7 +106,7 @@
             }
         }
         .chat-container{
-            height: 66vh;
+            height: 84%;
             border: 2px solid rgba($color-light-dark-white, 1);
             border-top: 0;
             border-radius: 0 0 5px 5px;

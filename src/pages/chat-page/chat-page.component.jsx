@@ -11,7 +11,7 @@ const ChatPage = () => {
 
     return(
         <div className="chat-page-layout">
-            <div className="container pt-5">
+            <div className="container">
                 <div className="head-chat my-auto d-flex flex-row align-items-center justify-content-between mb-5">
                     <span>
                         "گفتگو های پخش زنده"بررسی مشکلات موجود در سایت
