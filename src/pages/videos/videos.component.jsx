@@ -60,7 +60,7 @@ const Videos = () => {
               <h5>
                 همه دوره های ایجاد شده
               </h5>
-              <Link to={`/videos/upload-video`}>
+              <Link to={`/videos/courses/upload-course`}>
                 <div className="button upload-video">
                   آپلود دوره جدید
                 </div>

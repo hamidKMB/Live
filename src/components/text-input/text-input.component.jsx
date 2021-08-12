@@ -25,7 +25,7 @@ const TextInput = (props) => {
           </select>
           :
           props.textArea &&
-          <textarea name="video-description" rows="6" cols="70" maxLength={props.maxLength}/>
+          <textarea name="video-description" rows={props.rows? props.rows : "6"} cols={props.cols ? props.cols : "70"} maxLength={props.maxLength} style={{resize: `${props.resize ? "vertical" : "none" }`}}/>
         }
         {
           props.disable && <PencilLogo className="pencil"/>
