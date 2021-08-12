@@ -98,126 +98,158 @@ const UploadLive = () => {
         })
     };
 
-    return(
-        <div className="admin-pages-layout upload-live d-flex flex-column flex-md-row">
-            <div className="input d-flex flex-column justify-content-evenly ms-md-auto ">
-                <TextInput label="عنوان پخش زنده" input />
-                <TextInput label="دسته بندی" dropDown dropItems={[' ', 'هنری', 'آموزشی']} />
-                <div className="d-flex flex-row align-items-start">
-                    <TextInput label="بلیط پخش زنده" dropDown dropItems={[' ']} />
-                    <div className="button me-1 mt-2 button-size" onClick={ openModal } name="newTicket"> + بلیط جدید</div>
-                </div>
-                {
-                    isModalShow.newTicket && 
-                    <Modal isShow={isModalShow.newTicket} closeModal={closeModal} name="newTicket">
-                        <NewTicket closeModal={closeModal}/>
-                    </Modal>
-                }
-                <div className="d-flex flex-row align-items-start">
-                    <TextInput label="تخفیف" dropDown dropItems={[' ']} />
-                    <div className="button me-1 mt-2 button-size" onClick={ openModal } name="newDiscount"> + تخفیف جدید</div>
-                </div>
-                {
-                    isModalShow.newDiscount &&
-                    <Modal isShow={isModalShow.newDiscount} closeModal={closeModal} name="newDiscount">
-                        <NewDiscount closeModal={closeModal}/>
-                    </Modal>
-                }
-                <div className="d-flex flex-row justify-content-between dating">
-                    <TextInput label="زمان پخش زنده" dropDown dropItems={[' ']} />
-                    <TextInput label="تاریخ پخش زنده" dropDown dropItems={[' ']} />
-                </div>
-                <TextInput label="توضیحات ویدیو" textArea maxLength="400"/>
+    return (
+      <div className="admin-pages-layout upload-live d-flex flex-column flex-md-row">
+        <div className="input d-flex flex-column justify-content-center mx-auto">
+          <TextInput label="عنوان پخش زنده" input />
+          <TextInput
+            label="دسته بندی"
+            dropDown
+            dropItems={[" ", "هنری", "آموزشی"]}
+          />
+          <div className="d-flex flex-row align-items-start">
+            <TextInput label="بلیط پخش زنده" dropDown dropItems={[" "]} />
+            <div
+              className="button me-1 mt-2 button-size"
+              onClick={openModal}
+              name="newTicket"
+            >
+              {" "}
+              + بلیط جدید
             </div>
-            <div className="status-and-others d-flex flex-column justify-content-between mx-xl-auto me-lg-auto me-md-1 pe-2">
-            <div className="top d-flex flex-column justify-content-between align-items-start">
-                <span>تصویری برای کاور پخش زنده انتخاب کنید</span>
-                <div className="choose-cover-for-live my-4" style={file && {backgroundImage:`url(${file})`}} onClick={file ? () => setFile(null) : null}>
-                    {
-                        !file &&
-                        <div 
-                        draggable onDragOver={onDragOverHandler} onDrop={dropHandler} 
-                        className="mt-4 h-75 my-auto d-flex flex-column justify-content-between align-items-center text-center">
-                            <UploadLogo/>
-                            <span className="text-break w-75">برای بارگذاری کاور پخش زنده یک تصویر را بکشید و رها کنید</span>
-                            <label className="choose-picture">
-                                <input  type='file' onChange={onChangeHandler}/> 
-                                انتخاب تصویر
-                            </label>
-                        </div>
-                    }
-                </div>
-                <div className="switch-parts w-100 px-1 ">
-                    <div className="d-flex justify-content-between align-items-center">
-                        <span>انتشار پخش زنده</span>
-                        <Switch
-                            checked={state.publishLive}
-                            onChange={handleChange}
-                            color="primary"
-                            name="publishLive"
-                            inputProps={{ 'aria-label': 'primary checkbox' }}
-                        />
-                    </div>
-                    <div className="d-flex justify-content-between align-items-center">
-                        <span>چت عمومی</span>
-                        <Switch
-                            checked={state.publicChat}
-                            onChange={handleChange}
-                            color="primary"
-                            name="publicChat"
-                            inputProps={{ 'aria-label': 'primary checkbox' }}
-                        />
-                    </div>
-                    <div className="d-flex justify-content-between align-items-center">
-                        <span>دیدگاه</span>
-                        <Switch
-                            checked={state.comments}
-                            onChange={handleChange}
-                            color="primary"
-                            name="comments"
-                            inputProps={{ 'aria-label': 'primary checkbox' }}
-                        />
-                    </div>
-                    <div className="d-flex justify-content-between align-items-center">
-                        <span>چت خصوصی</span>
-                        <Switch
-                            checked={state.privateChat}
-                            onChange={handleChange}
-                            color="primary"
-                            name="privateChat"
-                            inputProps={{ 'aria-label': 'primary checkbox' }}
-                        />
-                    </div>
-                    <div className="d-flex justify-content-between align-items-center">
-                        <span>ذخیره پخش زنده</span>
-                        <Switch
-                            checked={state.saveLive}
-                            onChange={handleChange}
-                            color="primary"
-                            name="saveLive"
-                            inputProps={{ 'aria-label': 'primary checkbox' }}
-                        />
-                    </div>
-                    <div className="d-flex justify-content-between align-items-center">
-                        <span>ماشین زمان</span>
-                        <Switch
-                            checked={state.timeMachine}
-                            onChange={handleChange}
-                            color="primary"
-                            name="timeMachine"
-                            inputProps={{ 'aria-label': 'primary checkbox' }}
-                        />
-                    </div>
-                </div>
+          </div>
+          {isModalShow.newTicket && (
+            <Modal
+              isShow={isModalShow.newTicket}
+              closeModal={closeModal}
+              name="newTicket"
+            >
+              <NewTicket closeModal={closeModal} />
+            </Modal>
+          )}
+          <div className="d-flex flex-row align-items-start">
+            <TextInput label="تخفیف" dropDown dropItems={[" "]} />
+            <div
+              className="button me-1 mt-2 button-size"
+              onClick={openModal}
+              name="newDiscount"
+            >
+              {" "}
+              + تخفیف جدید
             </div>
-            <div className="bottom d-flex d-flex flex-column">
-                <div className="button publish-video mx-auto px-4">
-                    ایجاد پخش زنده
-                </div>
-            </div>
-            </div>
+          </div>
+          {isModalShow.newDiscount && (
+            <Modal
+              isShow={isModalShow.newDiscount}
+              closeModal={closeModal}
+              name="newDiscount"
+            >
+              <NewDiscount closeModal={closeModal} />
+            </Modal>
+          )}
+          <div className="d-flex flex-row justify-content-between dating">
+            <TextInput label="زمان پخش زنده" dropDown dropItems={[" "]} />
+            <TextInput label="تاریخ پخش زنده" dropDown dropItems={[" "]} />
+          </div>
+          <TextInput label="توضیحات ویدیو" textArea maxLength="400" />
         </div>
-    )
+        <div className="status-and-others d-flex flex-column justify-content-between mx-xl-auto me-lg-auto me-md-1 pe-2">
+          <div className="top d-flex flex-column justify-content-between align-items-start">
+            <span>تصویری برای کاور پخش زنده انتخاب کنید</span>
+            <div
+              className="choose-cover-for-live my-4"
+              style={file && { backgroundImage: `url(${file})` }}
+              onClick={file ? () => setFile(null) : null}
+            >
+              {!file && (
+                <div
+                  draggable
+                  onDragOver={onDragOverHandler}
+                  onDrop={dropHandler}
+                  className="mt-4 h-75 my-auto d-flex flex-column justify-content-between align-items-center text-center"
+                >
+                  <UploadLogo />
+                  <span className="text-break w-75">
+                    برای بارگذاری کاور پخش زنده یک تصویر را بکشید و رها کنید
+                  </span>
+                  <label className="choose-picture">
+                    <input type="file" onChange={onChangeHandler} />
+                    انتخاب تصویر
+                  </label>
+                </div>
+              )}
+            </div>
+            <div className="switch-parts w-100 px-1 ">
+              <div className="d-flex justify-content-between align-items-center">
+                <span>انتشار پخش زنده</span>
+                <Switch
+                  checked={state.publishLive}
+                  onChange={handleChange}
+                  color="primary"
+                  name="publishLive"
+                  inputProps={{ "aria-label": "primary checkbox" }}
+                />
+              </div>
+              <div className="d-flex justify-content-between align-items-center">
+                <span>چت عمومی</span>
+                <Switch
+                  checked={state.publicChat}
+                  onChange={handleChange}
+                  color="primary"
+                  name="publicChat"
+                  inputProps={{ "aria-label": "primary checkbox" }}
+                />
+              </div>
+              <div className="d-flex justify-content-between align-items-center">
+                <span>دیدگاه</span>
+                <Switch
+                  checked={state.comments}
+                  onChange={handleChange}
+                  color="primary"
+                  name="comments"
+                  inputProps={{ "aria-label": "primary checkbox" }}
+                />
+              </div>
+              <div className="d-flex justify-content-between align-items-center">
+                <span>چت خصوصی</span>
+                <Switch
+                  checked={state.privateChat}
+                  onChange={handleChange}
+                  color="primary"
+                  name="privateChat"
+                  inputProps={{ "aria-label": "primary checkbox" }}
+                />
+              </div>
+              <div className="d-flex justify-content-between align-items-center">
+                <span>ذخیره پخش زنده</span>
+                <Switch
+                  checked={state.saveLive}
+                  onChange={handleChange}
+                  color="primary"
+                  name="saveLive"
+                  inputProps={{ "aria-label": "primary checkbox" }}
+                />
+              </div>
+              <div className="d-flex justify-content-between align-items-center">
+                <span>ماشین زمان</span>
+                <Switch
+                  checked={state.timeMachine}
+                  onChange={handleChange}
+                  color="primary"
+                  name="timeMachine"
+                  inputProps={{ "aria-label": "primary checkbox" }}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="bottom d-flex d-flex flex-column">
+            <div className="button publish-video mx-auto px-4">
+              ایجاد پخش زنده
+            </div>
+          </div>
+        </div>
+      </div>
+    );
 }
 
 export default UploadLive;

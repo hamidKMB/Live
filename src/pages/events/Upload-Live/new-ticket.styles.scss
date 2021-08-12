@@ -5,14 +5,17 @@ div.dating{
 }
 
 .new-ticket-discount{
-    padding: 6% 0;
+    padding: 2% 2%;
     .input-and-header{
         margin: 0 auto 0 0;
         width: 50%;
-        
         @media screen and (max-width: 768px) {
             margin: 0 0 0 0;
             width: 100%;
+        }
+        fieldset.field-set{
+            padding: 0 15px 8px 15px;
+            margin-bottom: 0.5rem ;
         }
     }
 }
