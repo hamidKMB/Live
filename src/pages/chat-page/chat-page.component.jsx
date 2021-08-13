@@ -10,9 +10,9 @@ const ChatPage = () => {
     const history = useHistory()
 
     return(
-        <div className="chat-page-layout">
-            <div className="container">
-                <div className="head-chat my-auto d-flex flex-row align-items-center justify-content-between mb-5">
+        <div className="chat-page-layout d-flex flex-column justify content center">
+            <div className="py-5">
+                <div className="head-chat mb-4 d-flex flex-row align-items-center justify-content-between ">
                     <span>
                         "گفتگو های پخش زنده"بررسی مشکلات موجود در سایت
                     </span>

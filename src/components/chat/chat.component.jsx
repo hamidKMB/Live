@@ -7,6 +7,8 @@ import {ReactComponent as CommentsLogo} from "./Logos/comments-logo.svg";
 import "./chat.styles.scss";
 import { NavLink, Route, Switch } from "react-router-dom";
 import PrivateChatSide from "./components/private-chats-side.component";
+import PublicChat from "./components/public-messages.component";
+import UserMessage from "./components/admin(user)-message-component";
 
 const Chat = () => {
     const [chatType, setChatType] = React.useState('گفتگو عمومی');
@@ -48,44 +50,44 @@ const Chat = () => {
               <span className="top-circle" />
               <span className="bottom-circle" />
             </NavLink>
-                <h6 className="me-2 my-2">گفتگو های خصوصی</h6>
-                <div className="private-chats-contacts ms-1 me-2">
-                    <PrivateChatSide
-                        userId="علی"
-                        userMessagePreview="لورم ایپسوم"
-                        numberOfUnreadMessages="8"
-                    />
-                    <PrivateChatSide
-                        userId="علی"
-                        userMessagePreview="لورم ایپسوم"
-                        numberOfUnreadMessages="8"
-                    />
-                    <PrivateChatSide
-                        userId="علی"
-                        userMessagePreview="لورم ایپسوم"
-                        numberOfUnreadMessages="8"
-                    />
-                    <PrivateChatSide
-                        userId="علی"
-                        userMessagePreview="لورم ایپسوم"
-                        numberOfUnreadMessages="8"
-                    />
-                    <PrivateChatSide
-                        userId="علی"
-                        userMessagePreview="لورم ایپسوم"
-                        numberOfUnreadMessages="8"
-                    />
-                    <PrivateChatSide
-                        userId="علی"
-                        userMessagePreview="لورم ایپسوم"
-                        numberOfUnreadMessages="8"
-                    />
-                    <PrivateChatSide
-                        userId="علی"
-                        userMessagePreview="لورم ایپسوم"
-                        numberOfUnreadMessages="8"
-                    />
-                </div>
+            <h6 className="me-2 my-2">گفتگو های خصوصی</h6>
+            <div className="private-chats-contacts ms-1 me-2">
+              <PrivateChatSide
+                userId="علی"
+                userMessagePreview="لورم ایپسوم"
+                numberOfUnreadMessages="8"
+              />
+              <PrivateChatSide
+                userId="علی"
+                userMessagePreview="لورم ایپسوم"
+                numberOfUnreadMessages="8"
+              />
+              <PrivateChatSide
+                userId="علی"
+                userMessagePreview="لورم ایپسوم"
+                numberOfUnreadMessages="8"
+              />
+              <PrivateChatSide
+                userId="علی"
+                userMessagePreview="لورم ایپسوم"
+                numberOfUnreadMessages="8"
+              />
+              <PrivateChatSide
+                userId="علی"
+                userMessagePreview="لورم ایپسوم"
+                numberOfUnreadMessages="8"
+              />
+              <PrivateChatSide
+                userId="علی"
+                userMessagePreview="لورم ایپسوم"
+                numberOfUnreadMessages="8"
+              />
+              <PrivateChatSide
+                userId="علی"
+                userMessagePreview="لورم ایپسوم"
+                numberOfUnreadMessages="8"
+              />
+            </div>
           </div>
         </div>
         <div className="chats w-75 d-flex flex-column">
@@ -96,10 +98,36 @@ const Chat = () => {
               <ThreeDotLogo className="me-auto" />
             </div>
           </div>
-          <div className="chat-container">
+          <div className="chat-container p-2">
             <Switch>
               <Route path="/events/chat/public-chat" exact>
-                <h2>public chat</h2>
+                <PublicChat
+                  userId="علی"
+                  userMessagePreview="لورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوم"
+                />
+                <PublicChat
+                  userId="علی"
+                  userMessagePreview="لورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوم"
+                />
+                <PublicChat
+                  userId="علی"
+                  userMessagePreview="لورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوم"
+                />
+                <PublicChat
+                  userId="علی"
+                  userMessagePreview="لورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوم"
+                />
+                <PublicChat
+                  userId="علی"
+                  userMessagePreview="لورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوم"
+                />
+                <PublicChat
+                  userId="علی"
+                  userMessagePreview="لورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوم"
+                />
+                <UserMessage
+                  userMessagePreview="لورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوم"
+                />
               </Route>
               <Route path="/events/chat/comments" exact>
                 <h2>private chat</h2>

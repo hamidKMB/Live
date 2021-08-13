@@ -3,11 +3,13 @@
 .private-chat-side{
     background-color: $color-light-white;
     border-radius: 5px;
-    font-size: 11pt;
     margin: 0 0 10px 0;
-    font-size: 1vw;
+    font-size: 0.7vw;
+    @media screen and (max-width: 1775px) {
+        font-size: 0.85vw;
+    }
     @media screen and (max-width: 767px) {
-        font-size: 1.5vw;
+        font-size: 1.4vw;
     }
     img{
         border-radius: 100%;

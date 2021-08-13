@@ -4,7 +4,7 @@ import "./private-chat-side.styles.scss";
 
 const PrivateChatSide = (props) => {
     return(
-        <div className="private-chat-side d-flex flex-row align-items-center px-2 py-1">
+        <div className="private-chat-side d-flex flex-row align-items-center px-2 py-1" onClick={props.onClick}>
             <img src="./WhatsApp Image 2021-06-22 at 13.15.45 - Copy.jpeg" alt="p" className="m-3"/>
             <div className="d-flex flex-column justify-content-evenly align-items-start message-preview">
                 <span> {props.userId} </span>
