@@ -1,0 +1,16 @@
+@import "../../../root-styles/variables.scss";
+
+.message-chat{
+    img{
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    span{
+        color: $color-light-grey;
+        &:hover{
+            cursor: pointer;
+            text-decoration-line: underline;
+        }
+    }
+}

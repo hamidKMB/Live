@@ -1,8 +1,10 @@
 import React from "react";
 
+import "./message-chat.scss";
+
 const UserMessage = (props) => {
   return (
-    <div className="d-flex flex-row-reverse align-items-start justify-content-start me-auto mb-2 px-2 py-1 w-75">
+    <div className="message-chat d-flex flex-row-reverse align-items-start justify-content-start me-auto mb-2 px-2 py-1 w-75">
       <img
         src="./WhatsApp Image 2021-06-22 at 13.15.45 - Copy.jpeg"
         alt="p"

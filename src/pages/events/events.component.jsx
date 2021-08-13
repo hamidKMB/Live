@@ -15,13 +15,17 @@ const Events = () => {
   const history = useHistory();
   
   React.useEffect(() => {
-      ApiRequest("/vod/list", "get").then((res) => {
+      ApiRequest("/vod/list", "get")
+        .then((res) => {
           console.log(res);
-
-          if(res.status==="SUCCESS"){
-              setEventList(res.data.data);
+          if (res.status === "SUCCESS") {
+            setEventList(res.data.data);
           }
-       });
+        })
+        .catch((err) => {
+          console.error(err)
+          alert("دیتایی یافت نشد")
+        });
     },[])
 
   return (
@@ -38,7 +42,7 @@ const Events = () => {
             date="adsasd"
             timeLeftToStart="adsasd"
             genere="adsasd"
-           />  
+          />  
       </div>
       </div>
       );

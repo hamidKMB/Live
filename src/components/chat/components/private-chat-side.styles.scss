@@ -5,6 +5,9 @@
     border-radius: 5px;
     margin: 0 0 10px 0;
     font-size: 0.7vw;
+    &:hover{
+        cursor: pointer;
+    }
     @media screen and (max-width: 1775px) {
         font-size: 0.85vw;
     }

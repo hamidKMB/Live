@@ -3,7 +3,7 @@ import {ReactComponent as PublicChatLogo} from "./Logos/Public-Chat-logo.svg";
 import {ReactComponent as PrivateChatLogo} from "./Logos/Private-Chat-Logo.svg";
 import {ReactComponent as ThreeDotLogo} from "./Logos/three-dot-logo.svg";
 import {ReactComponent as CommentsLogo} from "./Logos/comments-logo.svg";
-
+import {ReactComponent as CrossLogo} from "./Logos/crossMark.svg";
 import "./chat.styles.scss";
 import { NavLink, Route, Switch } from "react-router-dom";
 import PrivateChatSide from "./components/private-chats-side.component";
@@ -13,6 +13,13 @@ import UserMessage from "./components/admin(user)-message-component";
 const Chat = () => {
     const [chatType, setChatType] = React.useState('گفتگو عمومی');
     const [chatLogo, setChatLogo] = React.useState(<PublicChatLogo/>)
+    const [selectedUser, setSelectUser] = React.useState(false)
+    const [followed, setFollowed] = React.useState(false);
+    const [mouseEntered, setMouseEntered] = React.useState("دنبال شده")
+    const onClickAccountHandler = (event) => {
+      setSelectUser(true)
+    }
+
     return (
       <div className="hole-chat-component card d-flex flex-row p-0">
         <div className="contacts-and-type-of-chat w-25 d-flex flex-column">
@@ -104,30 +111,34 @@ const Chat = () => {
                 <PublicChat
                   userId="علی"
                   userMessagePreview="لورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوم"
+                  onClick={onClickAccountHandler}
                 />
                 <PublicChat
                   userId="علی"
                   userMessagePreview="لورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوم"
+                  onClick={onClickAccountHandler}
                 />
                 <PublicChat
                   userId="علی"
                   userMessagePreview="لورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوم"
+                  onClick={onClickAccountHandler}
                 />
                 <PublicChat
                   userId="علی"
                   userMessagePreview="لورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوم"
+                  onClick={onClickAccountHandler}
                 />
                 <PublicChat
                   userId="علی"
                   userMessagePreview="لورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوم"
+                  onClick={onClickAccountHandler}
                 />
                 <PublicChat
                   userId="علی"
                   userMessagePreview="لورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوم"
+                  onClick={onClickAccountHandler}
                 />
-                <UserMessage
-                  userMessagePreview="لورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوم"
-                />
+                <UserMessage userMessagePreview="لورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوملورم ایپسوم" />
               </Route>
               <Route path="/events/chat/comments" exact>
                 <h2>private chat</h2>
@@ -135,6 +146,37 @@ const Chat = () => {
             </Switch>
           </div>
         </div>
+        {selectedUser && (
+          <div className="side-menu-user-detail py-4 px-3">
+            <div className="holder d-flex flex-column justify-content-center align-items-center">
+              <div className="head d-flex flex-row me-auto mb-3">
+                <h6 className="ms-4 text-nowrap fw-bold"> اطلاعات کاربر </h6>
+                <CrossLogo onClick={() => setSelectUser(false)} />
+              </div>
+              <div className="user-profile mb-3">
+                <img src="#" alt="adasas" />
+              </div>
+              <p className="user-name fw-bold">هدی</p>
+              <p className="user-id">@hoda_mohammadi</p>
+              <div className="d-flex flex-row fst-normal text-nowrap mb-3">
+                <span>105 هزار دنبال کننده</span>
+                <span>254 ویدیو</span>
+              </div>
+              <div
+                className={followed ? "button-outline" : "button"}
+                onClick={() => setFollowed(!followed)}
+                onMouseEnter={() => setMouseEntered("آنفالو کردن")}
+                onMouseLeave={() => setMouseEntered("دنبال شده")}
+              >
+                {followed ? (
+                  <p className="m-0"> {mouseEntered}</p>
+                ) : (
+                  <p className="m-0"> + دنبال کردن</p>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
 }
