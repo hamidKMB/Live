@@ -28,6 +28,7 @@
     "react-simple-drag-drop": "^1.6.1",
     "redux": "^4.1.1",
     "tus-js-client": "latest",
+    "use-screenshot-hook": "^1.0.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

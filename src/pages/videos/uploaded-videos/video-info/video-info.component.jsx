@@ -5,10 +5,60 @@ import TextInput from "../../../../components/text-input/text-input.component"
 import {ReactComponent as BinLogo } from "./bin.svg";
 import {ReactComponent as UploadLogo } from "./upload.svg";
 import {ReactComponent as PictureLogo } from "./picture.svg";
+import {ReactComponent as Design1 } from "./design-modal1.svg";
+import {ReactComponent as Design2 } from "./design-modal2.svg";
+import {ReactComponent as CaptureVideo } from "./capture-video.svg";
 import Switch from '@material-ui/core/Switch';
 import "./video-info.styles.scss";
+import * as tus from "tus-js-client";
+import Modal from "../../../../components/modal/modal.component";
+import { useScreenshot } from "use-screenshot-hook";
 
 const VideoInfo = (props) => {
+    const [uploadedVideo, setUploadedVideo] = React.useState(null)
+    React.useEffect(() => {
+        props.video && (props.progress === "100.00") && setUploadedVideo(props.video)
+    },[props.video])
+
+    // Define some vars required later
+        let w, h, ratio;
+    // Add a listener to wait for the 'loadedmetadata' state so the video's dimensions can be read
+    const metaData = () => {
+        let video = document.querySelector('.video-on-modal')
+        let canvas = document.querySelector('canvas');
+        // Get a handle on the 2d context of the canvas element
+        // Calculate the ratio of the video's width to height
+        ratio = video.videoWidth / video.videoHeight;
+        // Define the required width as 100 pixels smaller than the actual video's width
+        w = video.videoWidth - 100;
+        // Calculate the height based on the video's width and the ratio
+        h = parseInt(w / ratio, 10);
+        // Set the canvas width and height to the values just calculated
+        canvas.width = w;
+        canvas.height = h;			
+    }
+    // Takes a snapshot of the video
+    const snap = () => {    
+        let video = document.querySelector('.video-on-modal')
+        let canvas = document.querySelector('canvas');
+        let context = canvas.getContext('2d');
+        console.log("snap Called");
+        // Define the size of the rectangle that will be filled (basically the entire element)
+        context.fillRect(0, 0, w, h);
+        // Grab the image from the video
+        context.drawImage(video, 0, 0, w, h);
+    }
+    
+	
+    const firstVideoPoster = () => {
+        var video = document.querySelector('video');
+        var videoPoster = document.querySelector('video').poster;
+        video.addEventListener("loadedmetadata", () => {
+            videoPoster = video.currentTime
+        })
+    }
+	
+
     const [state, setState] = React.useState({
         checkedA: false ,
         checkedB: false ,
@@ -18,6 +68,51 @@ const VideoInfo = (props) => {
     const handleChange = (event) => {
      setState({ ...state, [event.target.name]: event.target.checked });
     };
+
+    const [file, setFile] = React.useState(null);
+    const uploadTus = (my_file) => {
+        // Get the selected file from the input element
+        // Create a new tus upload
+        let upload = new tus.Upload(my_file, {
+            endpoint: "https://storage.livenegah.com:1443/tus/xx?token=9721",
+            retryDelays: [0, 3000, 5000, 10000, 20000],
+            // metadata: {
+            //     filename: file.name,
+            //     filetype: file.type
+            // },
+            onError: function (error) {
+                alert("upload Error" + error)
+            },
+            onProgress: function (bytesUploaded, bytesTotal) {
+                var percentage = (bytesUploaded / bytesTotal * 100).toFixed(2)
+                console.log(bytesUploaded, bytesTotal, percentage + "%")
+            },
+            onSuccess: function () {
+                setFile(URL.createObjectURL(my_file))
+            }
+        })
+        // Check if there are any previous uploads to continue.
+        upload.findPreviousUploads().then(function (previousUploads) {
+            // Found previous uploads so we select the first one.
+            // if (previousUploads.length) {
+            //     upload.resumeFromPreviousUpload(previousUploads[0])
+            // }
+
+            // Start the upload
+            upload.start()
+        })
+    }
+
+
+    //functions for Drag And Drop and Choose Picture 
+    const onChangeHandler = (e) => {
+        let my_file = e.target.files[0];
+        uploadTus(my_file)
+    }
+
+
+    const [isModalShow, setIsModalShow] = React.useState(false);
+
 
     return (
         <div className="video-info admin-pages-layout">
@@ -32,21 +127,40 @@ const VideoInfo = (props) => {
             <div className="status-and-others mx-xl-auto me-lg-auto pe-2">
             <div className="top">
                 <span className="status"> {props.stateOfUpload} </span>
-                <div className="background-image-of-video">
-                    <BinLogo className = "bin-logo-upload"/>
-                    <img src="#" alt="ads"/>
+                <div 
+                className="background-image-of-video" 
+                >   
+                    {
+                        props.video&&
+                        <video preload="auto" 
+                        src={
+                            props.progress < "1.00" && 
+                            `${URL.createObjectURL(props.video)}`
+                        } 
+                        poster={!file ? firstVideoPoster : file} 
+                        type="video/mp4"
+                        />
+                    }
+                    {
+                        (file || props.progress === "100.00") &&
+                        <BinLogo 
+                            className = "bin-logo-upload"
+                            onClick={file ? () => setFile(null) : null}
+                        />
+                    }
                     <span className="progress-bar" style={{width:`${props.progress}%`}}/>
                 </div>
                 <span className="mb-3"> status </span>
                 <span>تصویری برای کاور ویدیو انتخاب کنید</span>
                 <div className="row d-flex flex-column flex-lg-row mt-3 mb-3 me-1 ms-1 align-items-md-center">
                     <div className="col-lg-6 col-md-6 col-sm-12 upload-status mb-lg-0 mb-2">
-                        <div className="button-outline font">
+                        <label for="choose-picture" className="button-outline font">
                             بارگذاری تصویر<UploadLogo className="ms-1"/>
-                        </div>
+                            <input type="file" id="choose-picture" className="d-none" onChange={onChangeHandler}/>
+                        </label>
                     </div>
                     <div className="col-lg-6 col-md-6 col-sm-12 upload-status">
-                        <div className="button-outline font">
+                        <div className="button-outline font" onClick={() => setIsModalShow(true)}>
                             انتخاب تصویر از ویدیو<PictureLogo className="ms-1"/>
                         </div>
                     </div>
@@ -91,6 +205,40 @@ const VideoInfo = (props) => {
                 </div>
             </div>
             </div>
+            {
+                isModalShow &&
+                <Modal 
+                    isShow={isModalShow}
+                    closeModal={() => setIsModalShow(false)}
+                >
+                    <div className="item-holders position-relative d-flex flex-row p-4">
+                        <Design1 className="position-absolute"/>
+                        <Design2 className="position-absolute"/>
+                        <div className="card d-flex flex-column justify-content-center align-items-center p-4">
+                            <video 
+                                className="video-on-modal mb-3"
+                                preload="auto" 
+                                src={
+                                  
+                                    `${URL.createObjectURL(props.video)}`
+                                }
+                                type="video/mp4"
+                                controls
+                                width="300.86px"
+                                height="170.03px"
+                                onLoadedMetadata={metaData}
+                            />
+                            <span className="text-break text-center fs-6 fw-light lh-lg mx-auto mb-3 mt-1">
+                                برای انتخاب تصویر کاور میتوانید حین پخش ویدیو،تصویر<br/> دلخواه خود را برش بزنید 
+                            </span>
+                            <div className="button-outline font" onClick={snap}>
+                                <CaptureVideo/>برش تصویر 
+                            </div>
+                        </div>
+                        <canvas width="1" height="1" className="border border-5"></canvas>
+                    </div>
+                </Modal>
+            }
         </div>
     )
 }

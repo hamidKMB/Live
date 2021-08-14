@@ -121,7 +121,7 @@ const Dnd = (props) => {
                     </div>
                 </div>
                 : 
-                <VideoInfo id='changed-video-info' progress={progress} stateOfUpload={stateOfUpload}/>
+                <VideoInfo id='changed-video-info' progress={progress} stateOfUpload={stateOfUpload} video={file}/>
             // }
         // </div>
     )
