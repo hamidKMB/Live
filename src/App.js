@@ -50,29 +50,27 @@ function App() {
 
   return (
     <div className={`App ${isDark ? `dark` : ` `}`}>
-      {
-        pathname !== "/login" &&
+      {pathname !== "/login" && (
         <>
-          <Header 
-            toggleSideBar={handleClick} 
-            onToggleDarkMode={onToggledDarkMode} 
+          <Header
+            toggleSideBar={handleClick}
+            onToggleDarkMode={onToggledDarkMode}
             dark={isDark}
           />
-          <SideMenu 
-            display={toggled ? "toggle-side-menu" : " "} 
-          />
+          <SideMenu display={toggled ? "toggle-side-menu" : " "} />
         </>
-      }
-        <Switch>
-            {routes.map((route) => (
-              route.private ? 
-              <PrivateRoute {...route}/> : 
-              <Route {...route}/>
-              ))
-            }
-        </Switch>
+      )}
+      <Switch>
+        {routes.map((route, index) =>
+          route.private ? (
+            <PrivateRoute key={index} {...route} />
+          ) : (
+            <Route key={index}  {...route} />
+          )
+        )}
+      </Switch>
     </div>
-    );
+  );
 }
 
 export default App;

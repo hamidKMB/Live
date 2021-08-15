@@ -12,53 +12,41 @@ import Switch from '@material-ui/core/Switch';
 import "./video-info.styles.scss";
 import * as tus from "tus-js-client";
 import Modal from "../../../../components/modal/modal.component";
-import { useScreenshot } from "use-screenshot-hook";
 
 const VideoInfo = (props) => {
     const [uploadedVideo, setUploadedVideo] = React.useState(null)
+
     React.useEffect(() => {
         props.video && (props.progress === "100.00") && setUploadedVideo(props.video)
-    },[props.video])
+    },[props.video, props.progress])
 
-    // Define some vars required later
-        let w, h, ratio;
-    // Add a listener to wait for the 'loadedmetadata' state so the video's dimensions can be read
-    const metaData = () => {
-        let video = document.querySelector('.video-on-modal')
-        let canvas = document.querySelector('canvas');
-        // Get a handle on the 2d context of the canvas element
-        // Calculate the ratio of the video's width to height
-        ratio = video.videoWidth / video.videoHeight;
-        // Define the required width as 100 pixels smaller than the actual video's width
-        w = video.videoWidth - 100;
-        // Calculate the height based on the video's width and the ratio
+    
+    let w, h, ratio, canvas, context, video;
+
+    const metaData = (event) => {
+        video= event.target
+        canvas= document.querySelector("canvas");
+        ratio = parseInt(event.target.attributes[5].nodeValue) / parseInt(event.target.attributes[6].nodeValue);
+        console.log(ratio);
+        w = parseInt(event.target.attributes[5].nodeValue) - 100;
+        console.log(w);
         h = parseInt(w / ratio, 10);
-        // Set the canvas width and height to the values just calculated
+        console.log(h);
         canvas.width = w;
-        canvas.height = h;			
+        console.log(canvas.width);
+        canvas.height = h;		
+        console.log(canvas.height);	
     }
-    // Takes a snapshot of the video
+    
     const snap = () => {    
-        let video = document.querySelector('.video-on-modal')
-        let canvas = document.querySelector('canvas');
-        let context = canvas.getContext('2d');
-        console.log("snap Called");
-        // Define the size of the rectangle that will be filled (basically the entire element)
+        console.log(w, h);
+        console.log(video);
+        context = canvas.getContext("2d")
         context.fillRect(0, 0, w, h);
-        // Grab the image from the video
         context.drawImage(video, 0, 0, w, h);
     }
     
 	
-    const firstVideoPoster = () => {
-        var video = document.querySelector('video');
-        var videoPoster = document.querySelector('video').poster;
-        video.addEventListener("loadedmetadata", () => {
-            videoPoster = video.currentTime
-        })
-    }
-	
-
     const [state, setState] = React.useState({
         checkedA: false ,
         checkedB: false ,
@@ -132,12 +120,10 @@ const VideoInfo = (props) => {
                 >   
                     {
                         props.video&&
-                        <video preload="auto" 
-                        src={
-                            props.progress < "1.00" && 
-                            `${URL.createObjectURL(props.video)}`
-                        } 
-                        poster={!file ? firstVideoPoster : file} 
+                        <video 
+                        preload="auto" 
+                        src={`${URL.createObjectURL(props.video)}`} 
+                        poster={file && file} 
                         type="video/mp4"
                         />
                     }
@@ -154,7 +140,7 @@ const VideoInfo = (props) => {
                 <span>تصویری برای کاور ویدیو انتخاب کنید</span>
                 <div className="row d-flex flex-column flex-lg-row mt-3 mb-3 me-1 ms-1 align-items-md-center">
                     <div className="col-lg-6 col-md-6 col-sm-12 upload-status mb-lg-0 mb-2">
-                        <label for="choose-picture" className="button-outline font">
+                        <label htmlFor="choose-picture" className="button-outline font">
                             بارگذاری تصویر<UploadLogo className="ms-1"/>
                             <input type="file" id="choose-picture" className="d-none" onChange={onChangeHandler}/>
                         </label>
@@ -218,10 +204,7 @@ const VideoInfo = (props) => {
                             <video 
                                 className="video-on-modal mb-3"
                                 preload="auto" 
-                                src={
-                                  
-                                    `${URL.createObjectURL(props.video)}`
-                                }
+                                src={`${URL.createObjectURL(uploadedVideo)}`}
                                 type="video/mp4"
                                 controls
                                 width="300.86px"
