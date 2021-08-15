@@ -17,6 +17,7 @@ import NotFound from "./pages/sign-in-up/not-found.component";
 import UploadLive from "./pages/events/Upload-Live/Upload-Live.component";
 import ChatPage from "./pages/chat-page/chat-page.component";
 import UploadCourse from "./pages/videos/courses/upload-course/upload-course.component";
+import CourseSections from "./pages/videos/courses/course-sections/course-sections.component";
 
 const routes = [
   {
@@ -54,6 +55,12 @@ const routes = [
     exact: true,
     path: "/videos/courses/upload-course",
     component: UploadCourse,
+  },
+  {
+    private: true,
+    exact: true,
+    path: "/videos/courses/:tab",
+    component: CourseSections,
   },
   {
     private: true,
