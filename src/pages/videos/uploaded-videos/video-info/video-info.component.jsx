@@ -12,6 +12,7 @@ import Switch from '@material-ui/core/Switch';
 import "./video-info.styles.scss";
 import * as tus from "tus-js-client";
 import Modal from "../../../../components/modal/modal.component";
+import CreateNewCourse from "../upload-video/create-new-course";
 
 const VideoInfo = (props) => {
     const [uploadedVideo, setUploadedVideo] = React.useState(null)
@@ -37,7 +38,7 @@ const VideoInfo = (props) => {
 
     const onClickSnapShot = () => {
         const url = canvas.toDataURL("image/png", 0.5);
-        setIsModalShow(false);
+        closeModal()
         setFile(url)
     }
     
@@ -94,8 +95,25 @@ const VideoInfo = (props) => {
     }
 
 
-    const [isModalShow, setIsModalShow] = React.useState(false);
+    const [isModalShow, setIsModalShow] = React.useState({
+      editVideo: false ,
+      createCourse: false ,
+      createSeason: false
+    });
 
+    const openModal = (event) => {
+      setIsModalShow({
+        ...isModalShow,
+        [event.target.attributes[1].nodeValue]: true,
+      });
+      
+    };
+
+    const closeModal = () => {
+      Object.keys(isModalShow).forEach((key) => {
+        setIsModalShow((isModalShow[key] = false));
+      });
+    };
 
     return (
       <div className="video-info admin-pages-layout">
@@ -107,11 +125,58 @@ const VideoInfo = (props) => {
             dropDown
             dropItems={[" ", "هنری", "آموزشی"]}
           />
-          <TextInput label="دوره" dropDown dropItems={[" "]} />
+          <div className="d-flex flex-row align-items-start">
+            <TextInput label="دوره" dropDown dropItems={[" "]} />
+            <div
+              className="button me-1 mt-2 button-size"
+              name="createCourse"
+              onClick={openModal}
+            >
+              {" "}
+              + دوره جدید
+            </div>
+            {isModalShow.createCourse && (
+              <Modal
+                isShow={isModalShow.createCourse}
+                closeModal={() => setIsModalShow(false)}
+              >
+                <div className="create-new-course-style p-3">
+                  <CreateNewCourse />
+                </div>
+              </Modal>
+            )}
+          </div>
+          <div className="d-flex flex-row align-items-start">
+            <TextInput label="فصل" dropDown dropItems={[" "]} />
+            <div
+              onClick={openModal}
+              className="button me-1 mt-2 button-size"
+              name="createSeason"
+            >
+              {" "}
+              + فصل جدید
+            </div>
+            {isModalShow.createSeason && (
+              <Modal
+                isShow={isModalShow.createSeason}
+                closeModal={() => setIsModalShow(false)}
+                className="w-50"
+              >
+                <div className="new-season p-md-5 p-sm-3 p-0">
+                  <div className="ss mx-auto d-flex flex-column justify-content-center">
+                    <h5 className="fs-6 fw-bold mb-5">ایجاد فصل جدید</h5>
+                    <TextInput label="عنوان فصل" input />
+                    <TextInput label="عنوان دوره" dropDown dropItems={[" "]}/>
+                    <div className="button mx-auto px-sm-5 px-2 rounded mt-3">ایجاد فصل</div>
+                  </div>
+                </div>
+              </Modal>
+            )}
+          </div>
           <TextInput label="هزینه ویدیو" input />
           <TextInput label="انتخاب تخفیف" dropDown dropItems={[" "]} />
         </div>
-        <div className="status-and-others mx-xl-auto me-lg-auto pe-2">
+        <div className="status-and-others d-flex flex-column justify-content-between mx-xl-auto me-lg-auto pe-2">
           <div className="top">
             <span className="status"> {props.stateOfUpload} </span>
             <div className="background-image-of-video">
@@ -155,7 +220,12 @@ const VideoInfo = (props) => {
               <div className="col-lg-6 col-md-6 col-sm-12 upload-status">
                 <div
                   className="button-outline font"
-                  onClick={() => setIsModalShow(true)}
+                  name="editVideo"
+                  onClick={
+                    props.video
+                      ? openModal
+                      : () => alert("first upload a video")
+                  }
                 >
                   انتخاب تصویر از ویدیو
                   <PictureLogo className="ms-1" />
@@ -195,7 +265,7 @@ const VideoInfo = (props) => {
               </div>
             </div>
           </div>
-          <div className="bottom d-flex d-flex flex-column">
+          <div className="bottom d-flex d-flex flex-column mt-auto">
             <span className="mb-2">
               بعد از تایید ادمین ویدیو شما منتشر میشود
             </span>
@@ -204,8 +274,11 @@ const VideoInfo = (props) => {
             </div>
           </div>
         </div>
-        {isModalShow && (
-          <Modal isShow={isModalShow} closeModal={() => setIsModalShow(false)}>
+        {isModalShow.editVideo && (
+          <Modal
+            isShow={isModalShow.editVideo}
+            closeModal={() => setIsModalShow(false)}
+          >
             <div className="item-holders position-relative d-flex justify-content-between align-items-center flex-row p-4">
               <Design1 className="position-absolute design-1" />
               <Design2 className="position-absolute design-2" />
