@@ -21,32 +21,27 @@ const VideoInfo = (props) => {
     },[props.video, props.progress])
 
     
-    let w, h, ratio, canvas, context, video;
-
+    // screenshot
+    let canvas, context, video;
     const metaData = (event) => {
-        video= event.target
-        canvas= document.querySelector("canvas");
-        ratio = parseInt(event.target.attributes[5].nodeValue) / parseInt(event.target.attributes[6].nodeValue);
-        console.log(ratio);
-        w = parseInt(event.target.attributes[5].nodeValue) - 100;
-        console.log(w);
-        h = parseInt(w / ratio, 10);
-        console.log(h);
-        canvas.width = w;
-        console.log(canvas.width);
-        canvas.height = h;		
-        console.log(canvas.height);	
+    video = event.target;
+    canvas = document.querySelector("canvas");
+    // w = parseInt(event.target.attributes[5].nodeValue);
+    // h = parseInt(event.target.attributes[6].nodeValue);
     }
-    
+
     const snap = () => {    
-        console.log(w, h);
-        console.log(video);
         context = canvas.getContext("2d")
-        context.fillRect(0, 0, w, h);
-        context.drawImage(video, 0, 0, w, h);
+        context.drawImage(video, 0, 0, 300, 150)
+    }
+
+    const onClickSnapShot = () => {
+        const url = canvas.toDataURL("image/png", 0.5);
+        setIsModalShow(false);
+        setFile(url)
     }
     
-	
+	//swithc Parts
     const [state, setState] = React.useState({
         checkedA: false ,
         checkedB: false ,
@@ -54,10 +49,11 @@ const VideoInfo = (props) => {
     });
 
     const handleChange = (event) => {
-     setState({ ...state, [event.target.name]: event.target.checked });
+        setState({ ...state, [event.target.name]: event.target.checked });
     };
 
     const [file, setFile] = React.useState(null);
+
     const uploadTus = (my_file) => {
         // Get the selected file from the input element
         // Create a new tus upload
@@ -94,8 +90,7 @@ const VideoInfo = (props) => {
 
     //functions for Drag And Drop and Choose Picture 
     const onChangeHandler = (e) => {
-        let my_file = e.target.files[0];
-        uploadTus(my_file)
+        setFile(URL.createObjectURL(e.target.files[0]));
     }
 
 
@@ -103,127 +98,148 @@ const VideoInfo = (props) => {
 
 
     return (
-        <div className="video-info admin-pages-layout">
-            <div className="input">
-                <TextInput label="عنوان ویدیو" input />
-                <TextInput label="توضیحات ویدیو" textArea maxLength="500"/>
-                <TextInput label="دسته بندی" dropDown dropItems={[' ', 'هنری', 'آموزشی']} />
-                <TextInput label="دوره" dropDown dropItems={[' ']} />
-                <TextInput label="هزینه ویدیو" input />
-                <TextInput label="انتخاب تخفیف" dropDown dropItems={[' ']} />
-            </div>
-            <div className="status-and-others mx-xl-auto me-lg-auto pe-2">
-            <div className="top">
-                <span className="status"> {props.stateOfUpload} </span>
-                <div 
-                className="background-image-of-video" 
-                >   
-                    {
-                        props.video&&
-                        <video 
-                        preload="auto" 
-                        src={`${URL.createObjectURL(props.video)}`} 
-                        poster={file && file} 
-                        type="video/mp4"
-                        />
-                    }
-                    {
-                        (file || props.progress === "100.00") &&
-                        <BinLogo 
-                            className = "bin-logo-upload"
-                            onClick={file ? () => setFile(null) : null}
-                        />
-                    }
-                    <span className="progress-bar" style={{width:`${props.progress}%`}}/>
-                </div>
-                <span className="mb-3"> status </span>
-                <span>تصویری برای کاور ویدیو انتخاب کنید</span>
-                <div className="row d-flex flex-column flex-lg-row mt-3 mb-3 me-1 ms-1 align-items-md-center">
-                    <div className="col-lg-6 col-md-6 col-sm-12 upload-status mb-lg-0 mb-2">
-                        <label htmlFor="choose-picture" className="button-outline font">
-                            بارگذاری تصویر<UploadLogo className="ms-1"/>
-                            <input type="file" id="choose-picture" className="d-none" onChange={onChangeHandler}/>
-                        </label>
-                    </div>
-                    <div className="col-lg-6 col-md-6 col-sm-12 upload-status">
-                        <div className="button-outline font" onClick={() => setIsModalShow(true)}>
-                            انتخاب تصویر از ویدیو<PictureLogo className="ms-1"/>
-                        </div>
-                    </div>
-                </div>
-                <div className="switch-parts w-100 px-1 ">
-                    <div className="part">
-                        <span>ثبت نظر (پسندیدن/نپسندیدن)</span>
-                        <Switch
-                            checked={state.checkedA}
-                            onChange={handleChange}
-                            color="primary"
-                            name="checkedA"
-                            inputProps={{ 'aria-label': 'primary checkbox' }}
-                        />
-                    </div>
-                    <div className="part">
-                        <span>ارسال دیدگاه</span>
-                        <Switch
-                            checked={state.checkedB}
-                            onChange={handleChange}
-                            color="primary"
-                            name="checkedB"
-                            inputProps={{ 'aria-label': 'primary checkbox' }}
-                        />
-                    </div>
-                    <div className="part">
-                        <span>قابل دانلود</span>
-                        <Switch
-                            checked={state.checkedC}
-                            onChange={handleChange}
-                            color="primary"
-                            name="checkedC"
-                            inputProps={{ 'aria-label': 'primary checkbox' }}
-                        />
-                    </div>
-                </div>
-            </div>
-            <div className="bottom d-flex d-flex flex-column">
-                <span className="mb-2">بعد از تایید ادمین ویدیو شما منتشر میشود</span>
-                <div className="button publish-video mx-auto px-4">
-                    انتشار ویدیو
-                </div>
-            </div>
-            </div>
-            {
-                isModalShow &&
-                <Modal 
-                    isShow={isModalShow}
-                    closeModal={() => setIsModalShow(false)}
-                >
-                    <div className="item-holders position-relative d-flex flex-row p-4">
-                        <Design1 className="position-absolute"/>
-                        <Design2 className="position-absolute"/>
-                        <div className="card d-flex flex-column justify-content-center align-items-center p-4">
-                            <video 
-                                className="video-on-modal mb-3"
-                                preload="auto" 
-                                src={`${URL.createObjectURL(uploadedVideo)}`}
-                                type="video/mp4"
-                                controls
-                                width="300.86px"
-                                height="170.03px"
-                                onLoadedMetadata={metaData}
-                            />
-                            <span className="text-break text-center fs-6 fw-light lh-lg mx-auto mb-3 mt-1">
-                                برای انتخاب تصویر کاور میتوانید حین پخش ویدیو،تصویر<br/> دلخواه خود را برش بزنید 
-                            </span>
-                            <div className="button-outline font" onClick={snap}>
-                                <CaptureVideo/>برش تصویر 
-                            </div>
-                        </div>
-                        <canvas width="1" height="1" className="border border-5"></canvas>
-                    </div>
-                </Modal>
-            }
+      <div className="video-info admin-pages-layout">
+        <div className="input">
+          <TextInput label="عنوان ویدیو" input />
+          <TextInput label="توضیحات ویدیو" textArea maxLength="500" />
+          <TextInput
+            label="دسته بندی"
+            dropDown
+            dropItems={[" ", "هنری", "آموزشی"]}
+          />
+          <TextInput label="دوره" dropDown dropItems={[" "]} />
+          <TextInput label="هزینه ویدیو" input />
+          <TextInput label="انتخاب تخفیف" dropDown dropItems={[" "]} />
         </div>
-    )
+        <div className="status-and-others mx-xl-auto me-lg-auto pe-2">
+          <div className="top">
+            <span className="status"> {props.stateOfUpload} </span>
+            <div className="background-image-of-video">
+              {props.video && (
+                <video
+                  preload="auto"
+                  src={`${
+                    props.progress === "100.00" &&
+                    URL.createObjectURL(props.video)
+                  }#t=1`}
+                  poster={file && file}
+                  type="video/mp4"
+                />
+              )}
+              {(file || props.progress === "100.00") && (
+                <BinLogo
+                  className="bin-logo-upload"
+                  onClick={file ? () => setFile(null) : null}
+                />
+              )}
+              <span
+                className="progress-bar"
+                style={{ width: `${props.progress}%` }}
+              />
+            </div>
+            <span className="mb-3"> status </span>
+            <span>تصویری برای کاور ویدیو انتخاب کنید</span>
+            <div className="row d-flex flex-column flex-lg-row mt-3 mb-3 me-1 ms-1 align-items-md-center">
+              <div className="col-lg-6 col-md-6 col-sm-12 upload-status mb-lg-0 mb-2">
+                <label htmlFor="choose-picture" className="button-outline font">
+                  بارگذاری تصویر
+                  <UploadLogo className="ms-1" />
+                  <input
+                    type="file"
+                    id="choose-picture"
+                    className="d-none"
+                    onChange={onChangeHandler}
+                  />
+                </label>
+              </div>
+              <div className="col-lg-6 col-md-6 col-sm-12 upload-status">
+                <div
+                  className="button-outline font"
+                  onClick={() => setIsModalShow(true)}
+                >
+                  انتخاب تصویر از ویدیو
+                  <PictureLogo className="ms-1" />
+                </div>
+              </div>
+            </div>
+            <div className="switch-parts w-100 px-1 ">
+              <div className="part">
+                <span>ثبت نظر (پسندیدن/نپسندیدن)</span>
+                <Switch
+                  checked={state.checkedA}
+                  onChange={handleChange}
+                  color="primary"
+                  name="checkedA"
+                  inputProps={{ "aria-label": "primary checkbox" }}
+                />
+              </div>
+              <div className="part">
+                <span>ارسال دیدگاه</span>
+                <Switch
+                  checked={state.checkedB}
+                  onChange={handleChange}
+                  color="primary"
+                  name="checkedB"
+                  inputProps={{ "aria-label": "primary checkbox" }}
+                />
+              </div>
+              <div className="part">
+                <span>قابل دانلود</span>
+                <Switch
+                  checked={state.checkedC}
+                  onChange={handleChange}
+                  color="primary"
+                  name="checkedC"
+                  inputProps={{ "aria-label": "primary checkbox" }}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="bottom d-flex d-flex flex-column">
+            <span className="mb-2">
+              بعد از تایید ادمین ویدیو شما منتشر میشود
+            </span>
+            <div className="button publish-video mx-auto px-4">
+              انتشار ویدیو
+            </div>
+          </div>
+        </div>
+        {isModalShow && (
+          <Modal isShow={isModalShow} closeModal={() => setIsModalShow(false)}>
+            <div className="item-holders position-relative d-flex justify-content-between align-items-center flex-row p-4">
+              <Design1 className="position-absolute design-1" />
+              <Design2 className="position-absolute design-2" />
+              <div className="card d-flex flex-column justify-content-center align-items-center py-4 px-2 mx-auto card-video">
+                <video
+                  className="video-on-modal mb-3"
+                  preload="auto"
+                  src={`${URL.createObjectURL(props.video)}`}
+                  type="video/mp4"
+                  controls
+                  disablePictureInPicture
+                  disableRemotePlayback
+                  onLoadedMetadata={metaData}
+                />
+                <span className="text-break text-center fw-light lh-lg mx-auto mb-3 mt-1">
+                  برای انتخاب تصویر کاور میتوانید حین پخش ویدیو،تصویر
+                  <br /> دلخواه خود را برش بزنید
+                </span>
+                <div className="button-outline font" onClick={snap}>
+                  <CaptureVideo />
+                  برش تصویر
+                </div>
+              </div>
+              <div className="w-50 d-flex flex-column">
+                <canvas className="border border-1 m-auto h-50 w-75 rounded" />
+                <div className="button mt-2 mx-auto" onClick={onClickSnapShot}>
+                  ثبت کاور تصویر
+                </div>
+              </div>
+            </div>
+          </Modal>
+        )}
+      </div>
+    );
 }
 
 export default VideoInfo;
