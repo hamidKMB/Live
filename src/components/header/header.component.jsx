@@ -70,7 +70,7 @@ const Header = (props) => {
                 <div className="hover-state">نمایش اعلان ها</div>
               </span>
               <span>
-                <Link to="/videos">
+                <Link to="/videos/uploaded">
                   <VideoCameraIcon className="icon-color" />
                 </Link> 
                 <span className="gooshe" />
