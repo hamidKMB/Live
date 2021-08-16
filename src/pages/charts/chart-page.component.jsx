@@ -38,7 +38,9 @@ const ChartPage = () => {
           />
         </div>
         <div className="chart-container">
-          <h6>{filters.sellOrView} تمام {filters.liveOrVideo} :</h6>
+          <h6>
+            {filters.sellOrView} تمام {filters.liveOrVideo} :
+          </h6>
           {filters.sellOrView === "آمار بازدید" ? (
             <>
               <div className="row mb-5 mt-4">
@@ -71,15 +73,15 @@ const ChartPage = () => {
               </div>
               <div className="row">
                 <div className="col-12">
-                  <div className="card bar-chart-card">
+                  <div className="card bar-chart-card px-5 py-3">
                     <VerticalBar />
                   </div>
                 </div>
               </div>
             </>
           ) : (
-            <div>
-                <LineChart/>
+            <div className="card px-5 py-3 mt-5">
+              <LineChart />
             </div>
           )}
         </div>

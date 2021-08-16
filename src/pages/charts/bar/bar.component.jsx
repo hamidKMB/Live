@@ -16,24 +16,73 @@ const data = {
 };
 
 const options = {
-    plugins:{
-        legend: {
-        display: false
-        }
+  plugins: {
+    legend: {
+      display: false,
     },
+    tooltip: {
+      enabled: true,
+      backgroundColor: "#fff",
+      title: {
+        display: false,
+      },
+      titleSpacing: 0,
+      titleMarginBottom: 0,
+      bodyColor: "#000",
+      borderColor: "rgba(0, 0, 0, 0.3)",
+      borderWidth: 0.5,
+      bodyFont: {
+        size: 14,
+        weight: "bold",
+        family: "IRANSans_FaNum",
+      },
+      bodyAlign: "center",
+      bodySpacing: 0,
+      displayColors: false,
+      rtl: true,
+      position: "nearest",
+      yAlign: "bottom",
+    },
+  },
   scales: {
-    yAxes: [
-      {
-        ticks: {
-          beginAtZero: true,
+    x: {
+      grid: {
+        display: false,
+      },
+      ticks: {
+        autoSkip: false,
+        maxRotation: 70,
+        minRotation: 70,
+        font: {
+          size: 15,
+          weight: "bold",
+          family: "IRANSans_FaNum",
         },
       },
-    ],
-    xAxes: {
-        ticks: {
-            display: true,
-        }
-    }
+    },
+    y: {
+      grid: {
+        lineWidth: 2,
+        color: "rgba(0, 0, 0, 0.2)",
+      },
+      ticks: {
+        beginAtZero: true,
+        font: {
+          size: 12,
+          weight: "bold",
+          family: "IRANSans_FaNum",
+        },
+      },
+      title: {
+        display: true,
+        text: "تعداد بازدید",
+        font: {
+          size: 15,
+          weight: "bold",
+          family: "IRANSans_FaNum",
+        },
+      },
+    },
   },
 };
 
