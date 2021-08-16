@@ -66,18 +66,6 @@ const Videos = () => {
                 </div>
               </Link>
             </div>
-          : 
-        url === "/videos/courses/:courseTitle" ?
-        <div className="videos-detail">
-              <h5>
-                New Title
-              </h5>
-              <Link to={`/videos/upload-video`}>
-                <div className="button upload-video">
-                  آپلود ویدیو جدید
-                </div>
-              </Link>
-          </div>
           :
           null
       }

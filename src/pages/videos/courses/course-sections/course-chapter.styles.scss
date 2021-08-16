@@ -1,0 +1,28 @@
+
+.chapter-part-holder{
+    .image-holder{
+        width: 45%;
+        .not-uploaded,
+        .time{
+            font-size: 80%;
+            font-weight: 300;
+        }
+    }
+    .others{
+        font-size: 80%;
+        .desctiption {
+            p{
+                word-break: break-word;
+                overflow: hidden;
+                display: -webkit-box;
+                line-height: 1rem;
+                /* fallback */
+                max-height: 4rem;
+                /* fallback */
+                -webkit-line-clamp: 3;
+                /* number of lines to show */
+                -webkit-box-orient: vertical;
+            }
+        }
+    }
+}
