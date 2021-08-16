@@ -22,9 +22,9 @@ const data = {
   ],
 };
 
-const DoughnutChart = () => (
+const DoughnutChart = (props) => (
   <>
-    <Doughnut data={data} />
+    <Doughnut data={data} options={{cutout: "80%"}}/>
   </>
 )
 
