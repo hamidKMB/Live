@@ -36,6 +36,9 @@ const theme = createTheme({
 MuiTabs: {
     root: {
         marginBottom: "2.5rem",
+        '&$:hover' : {
+          color: "orange"
+        }
     },
 },
 },
@@ -69,9 +72,10 @@ const TabSlider = ( props ) => {
             }}
             >
             {
-                props.tabDetails.map((item) => {
+                props.tabDetails.map((item,index) => {
                     return(
                         <Tab
+                        key={index}
                         label={item.label}
                         component={Link}
                         to={item.link}

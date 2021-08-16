@@ -73,6 +73,21 @@
                     }
                 }
             }
+            .three-dot-hover{
+                span{
+                    font-weight: 300;
+                }
+                &:hover{
+                    
+                    cursor: pointer;
+                    background-color: rgba($color-light-grey, 0.4);
+                    border-radius: 100%;
+                    padding: 0 4px;
+                }
+                div.card{
+                    left: 10px
+                }
+            }
         }
     }
     .button-holder{

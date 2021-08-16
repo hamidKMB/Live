@@ -1,0 +1,41 @@
+@import "../../../root-styles/variables.scss";
+
+.private-chat-side{
+    background-color: $color-light-white;
+    border-radius: 5px;
+    margin: 0 0 10px 0;
+    font-size: 0.7vw;
+    &:hover{
+        cursor: pointer;
+    }
+    @media screen and (max-width: 1775px) {
+        font-size: 0.85vw;
+    }
+    @media screen and (max-width: 767px) {
+        font-size: 1.4vw;
+    }
+    img{
+        border-radius: 100%;
+        width: 1rem;
+        height: 1rem;
+        object-fit: fill;
+    }
+    .message-preview{
+        width: 70%;
+        span{
+            font-weight: bold;
+        }
+        p{
+            font-weight: 300;
+            margin: 0;
+            color: $color-light-grey;
+        }
+    }
+    span{
+        &:last-child{
+            background-color: rgba($color-light-grey, 0.4);
+            padding: 5px 10px;
+            border-radius: 100%;
+        }
+    }
+}

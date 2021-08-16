@@ -1,0 +1,29 @@
+@import "../../root-styles/variables.scss";
+
+.sign{
+    width: 100vw;
+    height: 100vh;
+    background-color: $color-light-white;
+    
+    .card{
+        height: 20rem;
+        width: 30rem;
+    }
+    .sign-form{
+        fieldset.field-set{
+            margin-bottom: 20px;
+        }
+        input[type='submit']{
+            border: none;
+        }
+        .login{
+            top: -2.5rem;
+            left: 1rem;
+            // opacity: 0.2;
+            width: 40%;
+        }
+        #second-login{
+            width: 30%;
+        }
+    }
+}

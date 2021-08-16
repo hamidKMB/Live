@@ -1,5 +1,13 @@
 @import "../../root-styles/variables.scss";
 
+
+.disable{
+  background-color: rgba($color-light-text, 0.1) !important;
+  &:hover {
+    border-color: rgba($color-light-grey, 0.5) !important;
+  }
+}
+
 .field-set {
   width: 100%;
   padding: 0 15px 15px 15px;
@@ -31,6 +39,25 @@
     &:focus {
       outline: none;
     }
+  }
+  .pencil{
+    position: absolute;
+    top: 8px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  .drop-down-city-country{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+  textarea{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
   }
 }
 

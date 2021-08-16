@@ -4,12 +4,5 @@
     border: 1px solid $color-light-orange;
     border-radius: 5px;
     padding: 5px;
-    option{
-        &:hover{
-            background-color: red;
-        }
-    }
-    select {
-        outline: none;
-    }
+    outline: none;
 }

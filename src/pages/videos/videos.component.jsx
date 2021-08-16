@@ -60,24 +60,12 @@ const Videos = () => {
               <h5>
                 همه دوره های ایجاد شده
               </h5>
-              <Link to={`/videos/upload-video`}>
+              <Link to={`/videos/courses/upload-course`}>
                 <div className="button upload-video">
                   آپلود دوره جدید
                 </div>
               </Link>
             </div>
-          : 
-        url === "/videos/courses/:courseTitle" ?
-        <div className="videos-detail">
-              <h5>
-                New Title
-              </h5>
-              <Link to={`/videos/upload-video`}>
-                <div className="button upload-video">
-                  آپلود ویدیو جدید
-                </div>
-              </Link>
-          </div>
           :
           null
       }

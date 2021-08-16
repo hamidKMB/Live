@@ -1,9 +1,11 @@
+@import "../../../../root-styles/variables.scss";
+
 .video-info{
     display: flex;
     flex-direction: row;
-    padding: 10rem 6rem 10rem 4rem;
+    padding: 10rem 6rem 1rem 4rem;
     @media screen and (max-width: 991px) {
-        padding: 8rem 8rem 8rem 1rem;
+        padding: 8rem 8rem 0 1rem;
     }
     @media screen and (max-width: 786px){
         padding: 7rem 1rem;
@@ -13,42 +15,95 @@
         justify-content: center;
     }
     justify-content: space-evenly;
-    height: 80vh;
     .input{
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-evenly;
         width: 50%;
         @media screen and (max-width: 832px) {
         width:100%;
-    }
-        fieldset{
+        }
+        .new-season{
+            .ss{
+                width: 50%;
+                @media screen and (max-width: 1025px) {
+                    width: 65%;
+                }
+                @media screen and (max-width: 768px) {
+                    width: 75%;
+                }
+                @media screen and (max-width: 426px) {
+                    width: 95%;
+                }
+                fieldset.field-set{
+                    padding: 0 15px 5px 15px;
+                }
+            }
+        }
+        .button-size {
+            width: 35%;
+            padding: 1.2rem 0;
+            font-size: 1rem;
+            font-weight: 300;
+            height: 66px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            align-content: center;
+            @media screen and (max-width: 426px) {
+                padding: 0.5rem 0;
+            }
+        }
+        fieldset.field-set{
             margin-bottom: 20px;
         }
     }
     .status-and-others{
-        margin-right: 7rem;
-        @media screen and (max-width: 832px) {
-        margin-right: 0;
-        margin-top: 2rem;
-    }
         position: relative;
         height: 100%;
         .top{
             position: relative;
             top: 0;
             display: flex;
-            align-items: right;
+            justify-content: space-between;
+            align-items: flex-start;
+            @media screen and (max-width: 832px) {
+                align-items: center;
+            }
             flex-direction: column;
             justify-content: right;
             text-align: right;
+            .upload-status{
+                padding: 0;
+            }
             .background-image-of-video{
                 border-radius: 7px 7px 0 0;
-                background-color: grey;
-                width: 277.5px;
-                height: 155.15px;
+                // background-size:cover;
+                // background-position: center;
+                // object-fit: fill;
+                width: 100%;
+                height: 171.15px;
                 position: relative;
                 margin: 20px 0;
+                .bin-logo-upload{
+                    position: absolute;
+                    top: 0.5rem;
+                    left: 1rem;
+                    padding: 3px;
+                    background-color: #fff;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    border-radius: 100%;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+                video{
+                    width: 100%;
+                    height: 171.15px;
+                    object-fit: fill;
+                    border-radius: inherit;
+                }
                 img{
                     border-radius: inherit;
                     object-fit: fill;
@@ -56,13 +111,13 @@
                     height: inherit;
                 }
                 span.progress-bar{
-                    width: 100%;
                     position: absolute;
+                    left: 0;
                     bottom: -5px;
                     height: 5px;
                     margin: 0;
                     padding: 0;
-                    background-color: green;
+                    background-color: #71EFA3;
                 }
             }
             .row{
@@ -73,6 +128,9 @@
                             justify-content: center;
                             font-size: 13px;
                             width: 10rem;
+                            padding: 0.7rem 0.6rem !important;
+                            border: 2px solid $color-light-grey !important;
+                            margin: 0 0 0 10px;
                             &:hover{
                                 background-color: inherit;
                                 color: inherit;
@@ -87,14 +145,42 @@
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
+                    align-items: center;
                 }
             }
         }
         .bottom{
-            position: relative;
             bottom: 0;
+            text-align: center;
+            font-size: 8pt;
+            color: grey;
+            width: 100%;
+            @media screen and (max-width: 832px) {
+                text-align: center;
+            }
             .publish-video{
-                margin: 0 4rem;
+                border-radius: 5px;
+                font-size: 11pt;
+            }
+        }
+    }
+    .item-holders{
+        .design-1 {
+            top: 0;
+            right: 0;
+            width: 6rem;
+        }
+        .design-2 {
+            width: 4rem;
+            bottom: 0;
+            right: 0;
+        }
+        .card-video{
+            width: 40%;
+            font-size: 90%;
+            .video-on-modal{
+                border-radius: 10px;
+                width: 95%;
             }
         }
     }

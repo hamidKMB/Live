@@ -5,14 +5,23 @@ import { BrowserRouter as Router } from 'react-router-dom';
 //Styles
 import './index.css';
 
+//Redux
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from './Reducer';
 //COMPONENTS
 import App from './App';
 
 
+const store = createStore(rootReducer)
+
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router> ,
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>
+   ,
   document.getElementById('root')
 );
 

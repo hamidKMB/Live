@@ -1,7 +1,9 @@
 import React from "react"
 
 import { ReactComponent as ChangePasswordLogo } from "./change-password-logo.svg";
-
+import { ReactComponent as ModalChangePasswordLogo } from "./modal-change-password-logo.svg";
+import { ReactComponent as CircleAndDotsLogo } from "./circle-and-dots.svg";
+import { ReactComponent as DesignLogo } from "./design.svg";
 // import Modal from "../../../../components/modal/modal.component"
 
 import "./change-password.styles.scss"
@@ -9,16 +11,27 @@ import "../../../../root-styles/buttons.scss"
 
 import Modal from "../../../../components/modal/modal.component"
 import TextInput from "../../../../components/text-input/text-input.component"
-
+import Otp from "./OTP-input/OTP.component";
 const ChangePassword = () => {
     const [isModalShow, setIsModalShow] = React.useState(false);
+    const [acceptMobileNumber, setAcceptMobileNumber] = React.useState(false);
+    const [resendOtpTime , setResendOtpTime] = React.useState(59);
+
     const openModal = () => {
     setIsModalShow(true);
   };
 
   const closeModal = () => {
     setIsModalShow(false);
+    setAcceptMobileNumber(false)
   };
+
+  const openNewModal = () => {
+      setAcceptMobileNumber(true)
+      const interval = setInterval(() => {
+          setResendOtpTime(prevResendOtpTime => prevResendOtpTime > 0 ? prevResendOtpTime - 1 : clearInterval(interval))
+        }, 1000);
+  }
     return (
         <div className="change-password d-flex align-items-md-start align-items-center flex-md-row flex-column">
         <div className="change-password-form">
@@ -28,12 +41,15 @@ const ChangePassword = () => {
             <div className="field-holder">
                 <TextInput
                 label="رمز عبور فعلی"
+                input
                 />
                 <TextInput
                 label="رمز عبور جدید"
+                input
                 />
                 <TextInput
                 label="تکرار رمز عبور جدید"
+                input
                 />
                 <ul>
                     <li>حداقل 8 کاراکتر</li>
@@ -41,19 +57,65 @@ const ChangePassword = () => {
                 </ul>
                 <p>
                     رمز عبور خور را فراموش کرده اید؟ <span>
-                    <a href="/">
+                    <a onClick={openModal}>
                         بازیابی رمز عبور
                     </a>
                     </span>
                 </p>
-                <div className="button change-password-button" onClick={openModal}>
+                <div className="button change-password-button" >
                     تغییر رمز
                 </div>
                 </div>
                 {
                     isModalShow &&
                     <Modal closeModal={closeModal} isShow={isModalShow}>
-                        
+                        {
+                            acceptMobileNumber ?
+                            <div className="change-password-modal d-flex align-items-center position-relative w-100 h-100">
+                                <CircleAndDotsLogo className="d-none d-md-block position-absolute top-0 end-0 mt-5 me-5"/>
+                                <DesignLogo className="d-none d-md-block position-absolute bottom-0 end-0 me-5 mb-5"/>
+                                <div className="card card-enter-mobile m-auto otp-change-password-card" >
+                                    <h6>
+                                        بازیابی رمز عبور
+                                    </h6>
+                                    <p>
+                                        رمز یکبار مصرف به شماره  3333 333 0933 به صورت <br/> پیامک ارسال گردید. <span onClick={() => setAcceptMobileNumber(false)}>ویرایش شماره</span>
+                                    </p>
+                                    <Otp/>
+                                    <span className="progress-bar-otp">
+                                        <span className="progress-bar-otp-orange" style={{width:`${ 100 - ((resendOtpTime / 59) * 100)}%`}}/>
+                                    </span>
+                                    <p>تا00 :{resendOtpTime} ثانیه دیگر امکان ارسال مجدد رمز یکبار مصرف<br/> به شماره شما امکان پذیر خواهد بود</p>
+                                    <div className="d-flex align-items-center  justify-content-between">
+                                        <div className="button ps-4 pe-4 ">
+                                            تایید و ادامه
+                                        </div>
+                                        <div className="button ps-4 pe-4 resend ">
+                                            ارسال مجدد
+                                        </div>
+                                    </div>
+                                </div>
+                                <ModalChangePasswordLogo className="d-none d-md-block me-auto ms-auto"/>
+                            </div>
+                            :
+                            <div className="change-password-modal d-flex align-items-center position-relative w-100 h-100">
+                                <CircleAndDotsLogo className="d-none d-md-block position-absolute top-0 end-0 mt-5"/>
+                                <DesignLogo className="d-none d-md-block position-absolute bottom-0 end-0 me-5 mb-5"/>
+                                <div className="card card-enter-mobile m-auto ">
+                                    <h6>
+                                        بازیابی رمز عبور
+                                    </h6>
+                                    <p>
+                                        لطفا شماره موبایل خود را وارد کنید
+                                    </p>
+                                    <TextInput id="mobile-number" label="شماره موبایل" input/>
+                                    <div className="button me-auto ms-auto" onClick={openNewModal}>
+                                        تایید و ادامه
+                                    </div>
+                                </div>
+                                <ModalChangePasswordLogo className="d-none d-md-block me-auto ms-auto"/>
+                            </div>
+                        }
                     </Modal>
 
                 }

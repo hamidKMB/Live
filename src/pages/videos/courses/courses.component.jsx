@@ -22,7 +22,7 @@ const Courses = () => {
             <Video 
                 image="./WhatsApp Image 2021-06-22 at 13.15.45.jpeg"
                 time="22:30"
-                title="لورم ایپسوم"
+                title=" شسیسشیلورم ایپسوم"
                 register="115 نفر ثبت نام کرده اند"
                 cost="4500 تومان"
                 dateCreated="1394/05/21"
@@ -36,7 +36,7 @@ const Courses = () => {
             <Video 
                 image="./WhatsApp Image 2021-06-22 at 13.15.45.jpeg"
                 time="22:30"
-                title="لورم ایپسوم"
+                title="لورمشسیشسی ایپسوم"
                 cost="4500 تومان"
                 dateCreated="1394/05/21"
                 views="340k"

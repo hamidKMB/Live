@@ -10,18 +10,20 @@ const Tasfie = () => {
         <table className="table">
           <div className="tasfie-details-head d-flex flex-row align-items-center justify-content-start w-100 mb-5">
             <thead className="card d-flex flex-row align-items-center justify-content-evenly ms-4 w-75 pt-2 pe-1 pb-2">
-              <th className="border-0" scope="col">
-                شناسه پرداخت
-              </th>
-              <th className="border-0" scope="col">
-                توضیحات پرداخت
-              </th>
-              <th className="border-0" scope="col">
-                مبلغ (تومان)
-              </th>
-              <th className="border-0" scope="col">
-                تاریخ پرداخت
-              </th>
+              <tr className="border-1 rounded-3 bg-white d-flex flex-row align-items-center justify-content-evenly pt-2 pe-1 pb-2 mb-2">
+                <th className="border-0" scope="col">
+                  شناسه پرداخت
+                </th>
+                <th className="border-0" scope="col">
+                  توضیحات پرداخت
+                </th>
+                <th className="border-0" scope="col">
+                  مبلغ (تومان)
+                </th>
+                <th className="border-0" scope="col">
+                  تاریخ پرداخت
+                </th>
+              </tr>
             </thead>
             <div className="button">خروجی از لیست</div>
           </div>

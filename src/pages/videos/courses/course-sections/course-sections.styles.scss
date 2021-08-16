@@ -1,0 +1,15 @@
+@import "../../../../root-styles/variables.scss";
+
+.courses-section-layout{
+    padding: 4.5rem 16rem 1.5rem 4rem;
+        @media screen and (max-width: 787px) {
+            padding: 4.5rem 0 0 0;
+        }
+    .upload{
+        font-size: 10pt;
+        font-weight: 300;
+    }
+    .return{
+        font-size: 10pt;
+    }
+}
