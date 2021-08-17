@@ -8,55 +8,53 @@ const Payments = () => {
     return (
       <div className="payment">
         <table className="table">
-          <div className="payment-details-head d-flex flex-row align-items-center justify-content-start w-100 mb-5">
-            <thead className="card d-flex flex-row align-items-center justify-content-evenly ms-4 w-75 pt-2 pe-1 pb-2">
-              <tr className="border-1 rounded-3 bg-white d-flex flex-row align-items-center justify-content-evenly pt-2 pe-1 pb-2 mb-2">
-                <th className="border-0" scope="col">
-                  شناسه پرداخت
-                </th>
-                <th className="border-0" scope="col">
-                  توضیحات پرداخت
-                </th>
-                <th className="border-0" scope="col">
-                  مبلغ (تومان)
-                </th>
-                <th className="border-0" scope="col">
-                  تاریخ پرداخت
-                </th>
-              </tr>
-            </thead>
-            <div className="button">خروجی از لیست</div>
-          </div>
-          <div className="ss d-flex flex-row flex-md-column">
-            <tbody>
-              <TransactionDetail
-                shenasePardakht="25652145"
-                description="برداشت از کیف پول"
-                price="-2222222"
-                date="1400/02/25-12:30"
-                bardasht
-              />
-              <TransactionDetail
-                shenasePardakht="25652145"
-                description="برداشت از کیف پول"
-                price="+2222222"
-                date="1400/02/25-12:30"
-              />
-              <TransactionDetail
-                shenasePardakht="25652145"
-                description="برداشت از کیف پول"
-                price="-2222222"
-                date="1400/02/25-12:30"
-                bardasht
-              />
-              <TransactionDetail
-                shenasePardakht="25652145"
-                description="برداشت از کیف پول"
-                price="+2222222"
-                date="1400/02/25-12:30"
-              />
-            </tbody>
-          </div>
+          <thead className="d-flex flex-row align-items-baseline justify-content-evenly ms-4 w-100 py-2">
+            <tr className="th-holder shadow p-1 mb-3 w-75 bg-white d-flex flex-row align-items-center">
+              <th className="border-0" scope="col">
+                شناسه پرداخت
+              </th>
+              <th className="border-0" scope="col">
+                توضیحات پرداخت
+              </th>
+              <th className="border-0" scope="col">
+                مبلغ (تومان)
+              </th>
+              <th className="border-0" scope="col">
+                تاریخ پرداخت
+              </th>
+            </tr>
+            <th className="button mx-auto rounded-2" scope="col">
+              خروجی از لیست
+            </th>
+          </thead>
+          <tbody className="ss d-flex flex-column">
+            <TransactionDetail
+              shenasePardakht="25652145"
+              description="برداشت از کیف پول"
+              price="-2222222"
+              date="1400/02/25-12:30"
+              bardasht
+            />
+            <TransactionDetail
+              shenasePardakht="25652145"
+              description="برداشت از کیف پول"
+              price="+2222222"
+              date="1400/02/25-12:30"
+            />
+            <TransactionDetail
+              shenasePardakht="25652145"
+              description="برداشت از کیف پول"
+              price="-2222222"
+              date="1400/02/25-12:30"
+              bardasht
+            />
+            <TransactionDetail
+              shenasePardakht="25652145"
+              description="برداشت از کیف پول"
+              price="+2222222"
+              date="1400/02/25-12:30"
+            />
+          </tbody>
         </table>
       </div>
     );

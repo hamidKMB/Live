@@ -1,12 +1,24 @@
+@import "../../../root-styles/variables.scss";
+
 .payment{
     .table{
-        .payment-details-head{
-            thead.card{
+        thead{
+            .th-holder{
                 border-radius: 17px;
+                text-align: center;
                 th{
-                    font-size: 12px;
+                    font-size: 90%;
                     font-weight: 500;
+                    width: 40%;
+                    color: $color-light-grey;
                 }
+                &:hover {
+                    background-color: inherit ;
+                }
+            }
+            th.button {
+                font-size: 90%;
+                font-weight: 300;
             }
         }
     }

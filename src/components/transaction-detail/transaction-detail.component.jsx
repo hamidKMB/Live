@@ -4,13 +4,13 @@ import "./transaction-detail.styles.scss"
 
 const TransactionDetail = (props) => {
   return props.tasfie ? (
-    <tr className="text-center border-1 rounded-3 bg-white d-flex flex-row align-items-center justify-content-evenly pt-2 pe-1 pb-2 mb-2">
-      <td>{props.shenase}</td>
-      <td>{props.requestDate}</td>
-      <td>{props.tasfieTill}</td>
-      <td>{props.tasfieItems}</td>
-      <td>{props.price}</td>
-      <td
+    <tr className="sv border-1 rounded-3 bg-white d-flex flex-row align-items-center mb-2 p-2">
+      <td className="border-0">{props.shenase}</td>
+      <td className="border-0">{props.requestDate}</td>
+      <td className="border-0">{props.tasfieTill}</td>
+      <td className="border-0">{props.tasfieItems}</td>
+      <td className="border-0">{props.price}</td>
+      <td className="border-0"
         style={
           props.situation === "در حال بررسی"
             ? { color: "orange" }
@@ -23,13 +23,13 @@ const TransactionDetail = (props) => {
       </td>
     </tr>
   ) : (
-    <tr className="border-1 rounded-3 bg-white d-flex flex-row align-items-center justify-content-evenly pt-2 pe-1 pb-2 mb-2">
-      <td>{props.shenasePardakht}</td>
-      <td>{props.description}</td>
-      <td style={props.bardasht ? { color: "red" } : { color: "green" }}>
+    <tr className="sv border-1 rounded-3 bg-white d-flex flex-row align-items-center mb-2 p-2">
+      <td className="border-0">{props.shenasePardakht}</td>
+      <td className="border-0">{props.description}</td>
+      <td className="border-0" style={props.bardasht ? { color: "red" } : { color: "green" }}>
         {props.price}
       </td>
-      <td>{props.date}</td>
+      <td className="border-0">{props.date}</td>
     </tr>
   );
 }

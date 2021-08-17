@@ -43,10 +43,10 @@ const Finance = () => {
           <Wallet/>
         </Route>
         <Route path="/finance/payments">
-          <Tasfie/>
+          <Payment/>
         </Route>
         <Route path="/finance/tasfie">
-          <Payment/>
+          <Tasfie/>
         </Route>
         <Route path="/finance/sheba">
           <h3>t</h3>
