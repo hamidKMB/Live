@@ -9,15 +9,17 @@
         padding: 7rem 1rem;
     }
     .videos-detail{
-        margin: 2.5rem 0 1.9rem;
+        margin: 2.5rem auto 1.9rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
         h5{
             margin: 0;
+            font-size: 100%;
         }
         a{
             text-decoration: none;
+            font-size: 90%;
             .upload-videos{
                 &:hover{
                     cursor: pointer;

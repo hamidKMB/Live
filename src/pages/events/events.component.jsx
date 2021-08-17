@@ -32,7 +32,7 @@ const Events = () => {
     <div className="admin-pages-layout events-layout">
       <div className="header-events">
         <h1 className="detail">لیست رویداد های ایجاد شده </h1>
-        <div className="button button-events" onClick={() => history.push('/events/upload-live')}>+ ایجاد رویداد جدید</div>
+        <div className="button button-events me-sm-auto ms-0" onClick={() => history.push('/events/upload-live')}>+ ایجاد رویداد جدید</div>
       </div>
       <div className="row">
         <Event

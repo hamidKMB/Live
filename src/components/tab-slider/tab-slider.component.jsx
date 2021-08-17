@@ -12,7 +12,10 @@ import {
 const useStyles = makeStyles({
     root: {
         flexGrow: 1,
-        width: "50vw",
+        width: "80%",
+        "@media (max-width: 426px)" : {
+          width: "95%"
+        },
         backgroundColor: "inherit",
         border: "none",
         boxShadow: "none",
@@ -32,6 +35,14 @@ const theme = createTheme({
             minWidth: "fit-content",
         },
     },
+},
+MuiPaper:{
+  root:{
+    "@media (max-width: 426px)" : {
+      margin: "0 auto" ,
+      width: "95%"
+    }
+  }
 },
 MuiTabs: {
     root: {
@@ -67,22 +78,22 @@ const TabSlider = ( props ) => {
           <Tabs
             value={value}
             onChange={handleChange}
+            variant="scrollable"
+            scrollButtons="off"
             TabIndicatorProps={{
               style: { backgroundColor: "#EFA00B", color: "#000" },
             }}
-            >
-            {
-                props.tabDetails.map((item,index) => {
-                    return(
-                        <Tab
-                        key={index}
-                        label={item.label}
-                        component={Link}
-                        to={item.link}
-                        />
-                    )
-            })
-            }
+          >
+            {props.tabDetails.map((item, index) => {
+              return (
+                <Tab
+                  key={index}
+                  label={item.label}
+                  component={Link}
+                  to={item.link}
+                />
+              );
+            })}
           </Tabs>
         </Paper>
       </ThemeProvider>
