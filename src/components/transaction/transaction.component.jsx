@@ -10,7 +10,9 @@ const Transaction = (props) => {
         <div className="text-div w-100 d-flex flex-row-reverse justify-content-between">
           <span
             className="text-span"
-            style={props.bardasht ? { color: "red"} : {color : "green"}}
+            style={
+              props.typeOfTransaction === "برداشت" ? { color: "red" } : { color: "green" }
+            }
           >
             {props.price}
           </span>
