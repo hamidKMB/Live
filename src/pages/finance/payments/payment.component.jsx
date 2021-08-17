@@ -23,7 +23,7 @@ const Payments = () => {
                 تاریخ پرداخت
               </th>
             </tr>
-            <th className="button mx-auto rounded-2" scope="col">
+            <th className="button mx-auto rounded-2">
               خروجی از لیست
             </th>
           </thead>

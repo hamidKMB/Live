@@ -1,16 +1,45 @@
 @import "../../root-styles/variables.scss";
 
 tr.sv {
-    border-color: rgba(grey, 0.4);
+    border-color: rgba($color-light-grey, 0.4);
     td {
         padding: 0.5rem 0.5rem;
         font-size: 80%;
         font-weight: 500;
         width: 40%;
         text-align: center;
+        position: relative;
+        svg.info-icon{
+            color: $color-light-grey;
+            &:hover{
+                color: $color-light-orange;
+            }
+        }
+        .tip {
+            position: absolute;
+            top: -2.6rem;
+            left: -1.85rem;
+            display: block;
+            border-radius: 5px;
+            background-color: $color-light-grey;
+            color: $color-light-white;
+            font-weight: 100;
+            font-size: 8pt;
+            padding: 10px 6px;
+            width: 6rem;
+            .triangle {
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                bottom: -2.7rem;
+                left: 1.1rem;
+                background-color: $color-light-grey;
+                clip-path: polygon(50% 25%, 41% 12%, 59% 12%);
+            }
+        }
     }
     &:hover{
-        background-color: rgba($color-light-orange, 0.2) !important;
+        background-color: rgba($color-light-orange, 0.1) !important;
         cursor: pointer;
     }
 }

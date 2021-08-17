@@ -1,17 +1,33 @@
-.table {
-    .tasfie-details-head {
-        thead.card {
-            border-radius: 17px;
-            width: 80%;
-            th {
-                font-size: 12px;
-                font-weight: 500;
+@import "../../../root-styles/variables.scss";
+
+.tasfie {
+    .table {
+        thead {
+            .th-holder {
+                border-radius: 17px;
+                text-align: center;
+                width: 85%;
+                th {
+                    &:not(last-child){
+                        font-size: 75%;
+                        font-weight: 500;
+                        width: 40%;
+                        color: $color-light-grey;
+                    }
+                }
+                &:hover {
+                    background-color: inherit;
+                }
+            }
+            th.button {
+                font-size: 80%;
+                font-weight: 300;
             }
         }
     }
     tbody {
         tr {
-            width: 80%;
+            width: 85%;
         }
     }
 }
