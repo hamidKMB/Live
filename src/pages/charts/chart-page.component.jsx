@@ -20,7 +20,7 @@ const ChartPage = () => {
 
     return (
       <div className="admin-pages-layout chart-layout">
-        <div className="drop-down-holder d-flex justify-content-between flex-row">
+        <div className="drop-down-holder d-flex justify-content-start flex-sm-row flex-column">
           <DropDown
             name="sellOrView"
             onChange={changeHandler}
@@ -39,33 +39,30 @@ const ChartPage = () => {
         </div>
         <div className="chart-container">
           <h6>
-            {filters.sellOrView} تمام {filters.liveOrVideo} :
+            {filters.sellOrView} تمام {filters.liveOrVideo} در{" "}
+            {filters.duration}:
           </h6>
           {filters.sellOrView === "آمار بازدید" ? (
             <>
               <div className="row mb-5 mt-4">
-                <div className="col-6 align-items-start">
-                  <div className="card rounded-card-chart d-flex flex-row align-items-center p-4">
-                    <span className="items d-flex flex-column me-3">
-                      <span className="mb-2 opera">اپرا</span>
-                      <span className="mb-2 chrome">کروم</span>
-                      <span className="mb-2 firefox">فایرفاکس</span>
-                      <span className="mb-2 safari">سافاری</span>
+                <div className="col-lg-6 col-md-6 col-sm-12 py-2 ">
+                  <div className="card w-75 ms-md-auto mx-md-0 mx-auto rounded-card-chart d-flex flex-row align-items-center p-2">
+                    <span className="items py-3 d-flex flex-column me-3">
+                      <span className="mb-1 opera">اپرا</span>
+                      <span className="mb-1 chrome">کروم</span>
+                      <span className="mb-1 firefox">فایرفاکس</span>
+                      <span className="mb-1 safari">سافاری</span>
                     </span>
                     <DoughnutChart />
-                    <p className="d-flex flex-column text-center lh-lg position-absolute">
-                      <span>number</span>
-                      <span>بازدید </span>
-                    </p>
                   </div>
                 </div>
-                <div className="col-6 align-items-end">
-                  <div className="card rounded-card-chart d-flex flex-row align-items-center p-4">
-                    <span className="items d-flex flex-column me-3">
-                      <span className="mb-2 mac">مک</span>
-                      <span className="mb-2 windows">ویندوز</span>
-                      <span className="mb-2 android">اندروید</span>
-                      <span className="mb-2 Linux">لینوکس</span>
+                <div className="col-lg-6 col-md-6 col-sm-12 py-2">
+                  <div className="card w-75 me-md-auto  mx-md-0 mx-auto rounded-card-chart d-flex flex-row align-items-center p-2">
+                    <span className="items py-3 d-flex flex-column me-3">
+                      <span className="mb-1 mac">مک</span>
+                      <span className="mb-1 windows">ویندوز</span>
+                      <span className="mb-1 android">اندروید</span>
+                      <span className="mb-1 Linux">لینوکس</span>
                     </span>
                     <DoughnutChart />
                   </div>
