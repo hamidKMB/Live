@@ -1,18 +1,17 @@
-.tasfie{
-    .table{
-        .tasfie-details-head{
-            thead.card{
-                border-radius: 17px;
-                th{
-                    font-size: 12px;
-                    font-weight: 500;
-                }
+.table {
+    .tasfie-details-head {
+        thead.card {
+            border-radius: 17px;
+            width: 80%;
+            th {
+                font-size: 12px;
+                font-weight: 500;
             }
         }
     }
-    tbody{
-        tr{
-            width: 75%;
+    tbody {
+        tr {
+            width: 80%;
         }
     }
 }
