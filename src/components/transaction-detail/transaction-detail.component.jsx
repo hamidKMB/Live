@@ -11,7 +11,7 @@ const TransactionDetail = (props) => {
       <td className="border-0">{props.shenase}</td>
       <td className="border-0">{props.requestDate}</td>
       <td className="border-0">{props.tasfieTill}</td>
-      <td className="border-0">{props.tasfieItems}</td>
+      <td className="border-0">{props.tasfieItems}حواله </td>
       <td className="border-0">{props.price}</td>
       <td
         className="border-0"
@@ -29,6 +29,7 @@ const TransactionDetail = (props) => {
       <span
           onMouseEnter={() => setIsMouseIn(true)}
           onMouseLeave={() => setIsMouseIn(false)}
+          onClick={props.onClick}
           className="position-relative"
         >
         <InfoIcon
