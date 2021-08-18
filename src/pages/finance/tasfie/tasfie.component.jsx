@@ -4,6 +4,7 @@ import "./tasfie.styles.scss";
 
 import TransactionDetail from "../../../components/transaction-detail/transaction-detail.component";
 import Modal from "../../../components/modal/modal.component";
+import BubbleSpinner from "../../../components/loading-spinner/loading-spinner.component";
 
 
 const Tasfie = () => {
@@ -85,6 +86,7 @@ const Tasfie = () => {
                   <>
                     <h6>درحال بررسی پرداختی ها تا تاریخ date</h6>
                     <span>لطفا چند لحظه صبر کنید</span>
+                    <BubbleSpinner color="#EFA00B" />
                     <span style={{ display: "none" }}>
                       {setTimeout(
                         () =>
@@ -106,7 +108,7 @@ const Tasfie = () => {
                     <h6>stock تومان</h6>
                     <h6>وجود دارد.</h6>
                     <div
-                      className="button mx-auto mt-4 py-2 px-3 rounded-2"
+                      className="button mx-auto mt-4 py-2 px-4 rounded-2"
                       onClick={() =>
                         setCheckingRequest({
                           ...checkingRequest,
