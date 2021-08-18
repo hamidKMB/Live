@@ -6,10 +6,13 @@
             .th-holder {
                 border-radius: 17px;
                 text-align: center;
-                width: 85%;
+                width: 84%;
+                @media screen and (max-width: 646px) {
+                    width: 100%
+                }
                 th {
                     &:not(last-child){
-                        font-size: 75%;
+                        font-size: 70%;
                         font-weight: 500;
                         width: 40%;
                         color: $color-light-grey;
@@ -20,18 +23,32 @@
                 }
             }
             th.button {
-                font-size: 80%;
+                width: 15%;
+                font-size: 70%;
                 font-weight: 300;
+                @media screen and (max-width: 646px) {
+                    position: fixed;
+                    margin: 0 30%;
+                    bottom: 8%;
+                    z-index: 9;
+                    width: 35%;
+                }
             }
         }
     }
     tbody {
         tr {
             width: 85%;
+            @media screen and (max-width: 646px) {
+                width: 100%
+            }
         }
     }
     div.card{
         padding: 4rem;
+        @media screen and (max-width: 542px) {
+            padding: 0;
+        }
         height: 17rem;
         
         h6{

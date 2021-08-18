@@ -57,6 +57,7 @@ const InformationTasfie = (props) => {
         <div className="bg-white rounded-3 text-break shadow-none border border-2 p-2 mt-3">
           Some Text
         </div>
+        <div className="overflow-auto">
         <table className="bg-white table border border-2 rounded-3 mt-3">
           <tr className="bg-light text-center" id="head-row">
             <th scope="col" className="border-0">
@@ -92,6 +93,7 @@ const InformationTasfie = (props) => {
             </td>
           </tr>
         </table>
+        </div>
       </div>
     );
 }

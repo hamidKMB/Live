@@ -54,83 +54,87 @@ const Tasfie = () => {
     }
     return (
       <div className="tasfie">
-        {
-          !informationClicked.isClicked ?
-          <table className="table">
-            <thead className="d-flex flex-row align-items-baseline justify-content-evenly ms-4 w-100 py-2">
-              <tr className="th-holder shadow p-1 mb-3 bg-white d-flex flex-row align-items-center">
-                <th className="border-0" scope="col">
-                  شناسه
+        {!informationClicked.isClicked ? (
+          <div className="overflow-auto">
+            <table className="table">
+              <thead className="d-flex flex-row align-items-baseline justify-content-md-evenly ms-4 w-100 py-2">
+                <tr className="th-holder shadow p-1 mb-3 bg-white d-flex flex-row align-items-center">
+                  <th className="border-0" scope="col">
+                    شناسه
+                  </th>
+                  <th className="border-0" scope="col">
+                    تاریخ ثبت درخواست
+                  </th>
+                  <th className="border-0" scope="col">
+                    تسویه تا تاریخ
+                  </th>
+                  <th className="border-0" scope="col">
+                    آیتم های تسویه
+                  </th>
+                  <th className="border-0" scope="col">
+                    مبلغ واریزی
+                  </th>
+                  <th className="border-0" scope="col">
+                    وضعیت درخواست
+                  </th>
+                  <th className="border-0" scope="col"></th>
+                </tr>
+                <th
+                  className="button mx-md-auto rounded-2 px-lg-3 px-md-1"
+                  onClick={openModal}
+                >
+                  ثبت درخواست تسویه
                 </th>
-                <th className="border-0" scope="col">
-                  تاریخ ثبت درخواست
-                </th>
-                <th className="border-0" scope="col">
-                  تسویه تا تاریخ
-                </th>
-                <th className="border-0" scope="col">
-                  آیتم های تسویه
-                </th>
-                <th className="border-0" scope="col">
-                  مبلغ واریزی
-                </th>
-                <th className="border-0" scope="col">
-                  وضعیت درخواست
-                </th>
-                <th className="border-0" scope="col"></th>
-              </tr>
-              <th className="button mx-auto rounded-2" onClick={openModal}>
-                ثبت درخواست تسویه
-              </th>
-            </thead>
-            <tbody className="ss d-flex flex-column">
-              <TransactionDetail
-                shenase="256521"
-                requestDate="1400/02/25-12:30"
-                tasfieTill="1400/02/25-12:30"
-                tasfieItems="1"
-                price="25985065 تومان"
-                situation="در حال بررسی" //taken from API
-                onClick={clickEvent}
-                tasfie
-              />
-              <TransactionDetail
-                shenase="256521"
-                requestDate="1400/02/25-12:30"
-                tasfieTill="1400/02/25-12:30"
-                tasfieItems="1"
-                price="25985065 تومان"
-                situation="واریز شده" //taken from API
-                onClick={clickEvent}
-                tasfie
-              />
-              <TransactionDetail
-                shenase="256521"
-                requestDate="1400/02/25-12:30"
-                tasfieTill="1400/02/25-12:30"
-                tasfieItems="1"
-                price="25985065 تومان"
-                situation="رد شده" //taken from API
-                onClick={clickEvent}
-                tasfie
-              />
-            </tbody>
-          </table>
-          :
-          <InformationTasfie 
-              return={() => setInformationClick(false)} 
-              shenase={informationClicked.shenase}
-              dateOfSubmitRequest={informationClicked.dateOfSubmitRequest}
-              tasfieTillDate={informationClicked.tasfieTillDate}
-              tasfieItems={informationClicked.tasfieItems}
-              variziMablaq={informationClicked.variziMablaq}
-              situation={informationClicked.situation}
-            />
-        }
+              </thead>
+              <tbody className="ss d-flex flex-column">
+                <TransactionDetail
+                  shenase="256521"
+                  requestDate="1400/02/25-12:30"
+                  tasfieTill="1400/02/25-12:30"
+                  tasfieItems="1"
+                  price="25985065 تومان"
+                  situation="در حال بررسی" //taken from API
+                  onClick={clickEvent}
+                  tasfie
+                />
+                <TransactionDetail
+                  shenase="256521"
+                  requestDate="1400/02/25-12:30"
+                  tasfieTill="1400/02/25-12:30"
+                  tasfieItems="1"
+                  price="25985065 تومان"
+                  situation="واریز شده" //taken from API
+                  onClick={clickEvent}
+                  tasfie
+                />
+                <TransactionDetail
+                  shenase="256521"
+                  requestDate="1400/02/25-12:30"
+                  tasfieTill="1400/02/25-12:30"
+                  tasfieItems="1"
+                  price="25985065 تومان"
+                  situation="رد شده" //taken from API
+                  onClick={clickEvent}
+                  tasfie
+                />
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <InformationTasfie
+            return={() => setInformationClick(false)}
+            shenase={informationClicked.shenase}
+            dateOfSubmitRequest={informationClicked.dateOfSubmitRequest}
+            tasfieTillDate={informationClicked.tasfieTillDate}
+            tasfieItems={informationClicked.tasfieItems}
+            variziMablaq={informationClicked.variziMablaq}
+            situation={informationClicked.situation}
+          />
+        )}
         {submitRequest && (
           <Modal isShow={submitRequest} closeModal={closeModal}>
-            <div className="tasfie-modal d-flex flex-row py-4 px-5">
-              <div className="card text-center justify-content-center">
+            <div className="tasfie-modal d-flex flex-row py-md-4 px-md-5">
+              <div className="card shadow-none border border-1 text-center justify-content-center">
                 {!checkingRequest.calculating ? (
                   <>
                     <h6>درحال بررسی پرداختی ها تا تاریخ date</h6>

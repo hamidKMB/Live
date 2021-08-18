@@ -1,6 +1,5 @@
 .finance-page{
     padding: 7rem 5rem 7rem 4rem;
-    overflow-x: auto;
     @media screen and (max-width: 1025px) {
         padding: 7rem 3rem 7rem 4rem;
     }
@@ -10,6 +9,6 @@
     }
 
     @media screen and (max-width: 786px) {
-        padding: 7rem 1rem;
+        padding: 7rem 0.5rem;
     }
 }
