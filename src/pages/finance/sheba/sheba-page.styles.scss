@@ -1,0 +1,35 @@
+.sheba{
+    table.table{
+        .th-holder-sheba{
+            background-color: #fff;
+            border-radius: 10px;
+            flex-direction: row;
+            font-size: 11pt;
+            font-weight: normal;
+            padding: 0.7rem 0.7rem;
+        }
+    }
+    .sheba-modal{
+        .right{
+            width: 65%;
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
+            .card{
+                max-width: 25rem;
+                fieldset.field-set{
+                    padding-bottom: 0.4rem;
+                    padding-left: 1px;
+                    padding-right: 1px;
+                    legend{
+                        margin-bottom: 0;
+                    }
+                    input{
+                        text-align: left;
+                        font-size: 11pt;
+                    }
+                }
+            }
+        }
+    }
+}
