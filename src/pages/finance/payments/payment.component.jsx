@@ -9,7 +9,7 @@ const Payments = () => {
       <div className="payment">
         <table className="table">
           <thead className="d-flex flex-row align-items-baseline justify-content-evenly ms-4 w-100 py-2">
-            <tr className="th-holder shadow p-1 mb-3 w-75 bg-white d-flex flex-row align-items-center">
+            <tr className="th-holder shadow p-1 mb-3 bg-white d-flex flex-row align-items-center">
               <th className="border-0" scope="col">
                 شناسه پرداخت
               </th>

@@ -6,6 +6,10 @@
             .th-holder{
                 border-radius: 17px;
                 text-align: center;
+                width: 75%;
+                @media screen and (max-width: 578px) {
+                    width: 100%
+                }
                 th{
                     font-size: 90%;
                     font-weight: 500;
@@ -19,12 +23,21 @@
             th.button {
                 font-size: 90%;
                 font-weight: 300;
+                @media screen and (max-width: 578px) {
+                    position: fixed;
+                    bottom: 8%;
+                    margin: 0 10%;
+                    z-index: 9;
+                }
             }
         }
     }
     tbody{
         tr{
             width: 75%;
+            @media screen and (max-width: 578px) {
+                width: 100%
+            }
         }
     }
 }
