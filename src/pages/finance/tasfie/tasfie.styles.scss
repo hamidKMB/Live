@@ -30,4 +30,21 @@
             width: 85%;
         }
     }
+    div.card{
+        padding: 4rem;
+        height: 17rem;
+        
+        h6{
+            margin-bottom: 1rem;
+            font-weight: 400;
+            font-size: 100%
+        }
+        span{
+            font-weight: 300;
+            font-size: 8pt;
+        }
+        div.button{
+            font-size: 10pt;
+        }
+    }
 }
