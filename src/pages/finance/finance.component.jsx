@@ -11,6 +11,7 @@ import "../../root-styles/layout.scss";
 import Wallet from "./wallet/wallet.component";
 import Tasfie from "./tasfie/tasfie.component";
 import Payment from "./payments/payment.component";
+import Sheba from "./sheba/sheba-page.component";
 
 const Finance = () => {
   return (
@@ -49,7 +50,7 @@ const Finance = () => {
           <Tasfie/>
         </Route>
         <Route path="/finance/sheba">
-          <h3>t</h3>
+          <Sheba/>
         </Route>
       </Switch>
     </div>
