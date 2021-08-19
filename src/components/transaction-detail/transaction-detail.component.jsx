@@ -8,13 +8,24 @@ const TransactionDetail = (props) => {
 
   return props.tasfie ? (
     <tr className="sv border-1 rounded-3 bg-white d-flex flex-row align-items-center mb-2 p-2">
-      <td className="border-0">{props.shenase}</td>
-      <td className="border-0">{props.requestDate}</td>
-      <td className="border-0">{props.tasfieTill}</td>
-      <td className="border-0">{props.tasfieItems}حواله </td>
-      <td className="border-0">{props.price}</td>
+      <td className="border-0" name="shenase">
+        {props.shenase}
+      </td>
+      <td className="border-0" name="dateOfSubmitRequest">
+        {props.requestDate}
+      </td>
+      <td className="border-0" name="tasfieTillDate">
+        {props.tasfieTill}
+      </td>
+      <td className="border-0" name="tasfieItems">
+        {props.tasfieItems}حواله{" "}
+      </td>
+      <td className="border-0" name="variziMablaq">
+        {props.price}
+      </td>
       <td
         className="border-0"
+        name="situation"
         style={
           props.situation === "در حال بررسی"
             ? { color: "orange" }
@@ -26,22 +37,19 @@ const TransactionDetail = (props) => {
         {props.situation}
       </td>
       <td className="border-0">
-      <span
+        <span
           onMouseEnter={() => setIsMouseIn(true)}
           onMouseLeave={() => setIsMouseIn(false)}
-          onClick={props.onClick}
           className="position-relative"
         >
-        <InfoIcon
-          className="info-icon"
-        />
-        {isMouseIn && (
-          <div className="tip">
-            <span className="triangle" />
-            جزئیات درخواست
-          </div>
-        )}
-      </span>
+          <InfoIcon className="info-icon" onClick={props.onClick} />
+          {isMouseIn && (
+            <div className="tip">
+              <span className="triangle" />
+              جزئیات درخواست
+            </div>
+          )}
+        </span>
       </td>
     </tr>
   ) : (

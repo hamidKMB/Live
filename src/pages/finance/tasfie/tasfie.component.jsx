@@ -20,7 +20,7 @@ const Tasfie = () => {
       setSubmitRequest(false)
     };
 
-    const [informationClicked, setInformationClick] = React.useState({
+    const [informationClicked, setInformationClicked] = React.useState({
       isClicked: false ,
       shenase: "",
       dateOfSubmitRequest: "",
@@ -29,28 +29,22 @@ const Tasfie = () => {
       variziMablaq: "",
       situation: ""
     })
+
     const clickEvent = (event) => {
-      setInformationClick({
-        isClicked: true ,
-        shenase:
-          event.target.parentNode.parentElement.parentElement.parentElement
-            .childNodes[0].innerText,
-        dateOfSubmitRequest:
-          event.target.parentNode.parentElement.parentElement.parentElement
-            .childNodes[1].innerText,
-        tasfieTillDate:
-          event.target.parentNode.parentElement.parentElement.parentElement
-            .childNodes[2].innerText,
-        tasfieItems:
-          event.target.parentNode.parentElement.parentElement.parentElement
-            .childNodes[3].innerText,
-        variziMablaq:
-          event.target.parentNode.parentElement.parentElement.parentElement
-            .childNodes[4].innerText,
-        situation:
-          event.target.parentNode.parentElement.parentElement.parentElement
-            .childNodes[5].innerText,
-      });
+      const selectedRow =
+      event.target.parentElement.parentElement.parentElement.parentElement
+      .children
+      selectedRow.length === 7 &&
+        setInformationClicked({
+          ...informationClicked,
+          isClicked: true,
+          shenase: selectedRow[0].innerText,
+          dateOfSubmitRequest: selectedRow[1].innerText,
+          tasfieTillDate: selectedRow[2].innerText,
+          tasfieItems: selectedRow[3].innerText,
+          variziMablaq: selectedRow[4].innerText,
+          situation: selectedRow[5].innerText
+        });
     }
     return (
       <div className="tasfie">
@@ -121,8 +115,9 @@ const Tasfie = () => {
             </table>
           </div>
         ) : (
+          //informationTasfie Page
           <InformationTasfie
-            return={() => setInformationClick(false)}
+            return={() => setInformationClicked(false)}
             shenase={informationClicked.shenase}
             dateOfSubmitRequest={informationClicked.dateOfSubmitRequest}
             tasfieTillDate={informationClicked.tasfieTillDate}
