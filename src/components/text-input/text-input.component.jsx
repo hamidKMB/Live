@@ -11,7 +11,11 @@ const TextInput = (props) => {
         <legend className="legend">{props.label}</legend>
         {
           props.input?
-          <input id={props.id} disabled={props.disable ? true : false} required onChange={props.onChange}/>
+          <input 
+            id={props.id} 
+            disabled={props.disable ? true : false} 
+            required 
+            onChange={props.onChange}/>
           :
           props.dropDown ?
           <select name="myselect" className="drop-down-city-country">
@@ -25,7 +29,13 @@ const TextInput = (props) => {
           </select>
           :
           props.textArea &&
-          <textarea name="video-description" rows={props.rows? props.rows : "6"} cols={props.cols ? props.cols : "70"} maxLength={props.maxLength} style={{resize: `${props.resize ? "vertical" : "none" }`}}/>
+          <textarea 
+            name="video-description" 
+            rows={props.rows? props.rows : "6"} 
+            cols={props.cols ? props.cols : "70"} 
+            maxLength={props.maxLength} 
+            style={{resize: `${props.resize ? "vertical" : "none" }`}}
+          />
         }
         {
           props.disable && <PencilLogo className="pencil"/>

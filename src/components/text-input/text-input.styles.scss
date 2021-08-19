@@ -10,22 +10,22 @@
 
 .field-set {
   width: 100%;
-  padding: 0 15px 15px 15px;
+  padding: 0 15px 10px 15px;
   border-radius: 5px;
   border: 2px solid rgba($color-light-grey, 0.5);
   background-color: transparent;
   &:hover{
-    border-color: orange;
+    border-color: $color-light-orange;
   }
   &:focus-within {
-    border-color: orange;
+    border-color: $color-light-orange;
     background-color: #fff;
   }
   .legend {
     float: none;
     text-align: right;
     padding: 0 10px;
-    margin-right: 5px;
+    margin: 0 5px 5px 0;
     width: fit-content;
     font-size: 10pt;
     color:rgba($color-light-grey, 0.9)
