@@ -1,5 +1,5 @@
 import React from "react"
-
+import DeleteIcon from "@material-ui/icons/Delete";
 
 const ShebaDetail = (props) => {
     return (
@@ -24,7 +24,7 @@ const ShebaDetail = (props) => {
             className="mx-md-auto mx-sm-1"
             style={props.confirmed ? { color: "green" } : { color: "red" }}
           >
-            {props.confirmed ? <>معتبر</> : <>Logo</>}
+            {props.confirmed ? <>معتبر</> : <DeleteIcon/>}
           </span>
         </td>
         <td className="border-0">

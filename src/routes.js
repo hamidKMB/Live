@@ -18,6 +18,7 @@ import UploadLive from "./pages/events/Upload-Live/Upload-Live.component";
 import ChatPage from "./pages/chat-page/chat-page.component";
 import UploadCourse from "./pages/videos/courses/upload-course/upload-course.component";
 import CourseSections from "./pages/videos/courses/course-sections/course-sections.component";
+import CreateNewTicket from "./pages/tickets/create-new-ticket.component";
 
 const routes = [
   {
@@ -97,6 +98,12 @@ const routes = [
     exact: true,
     path: "/finance/:tab",
     component: Finance,
+  },
+  {
+    private: true,
+    exact: true,
+    path: "/tickets/create-new-ticket",
+    component: CreateNewTicket,
   },
   {
     private: true,

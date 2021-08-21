@@ -1,0 +1,58 @@
+@import "../../root-styles/variables.scss";
+
+.ticket-layout{
+    padding: 7rem 7rem 7rem 5rem;
+
+    @media screen and (max-width: 1025px) {
+        padding: 7rem 3rem 7rem 4rem;
+    }
+
+    @media screen and (max-width: 993px) {
+        padding: 7rem 6rem 0 1rem;
+    }
+
+    @media screen and (max-width: 786px) {
+        padding: 7rem 0.5rem;
+    }
+    .ticket-header{
+        h5{
+            font-size: 120%;
+            @media screen and (max-width: 394px) {
+                font-size: 100%;
+            }
+        }
+        div.button,
+        div.button-outline{
+            font-size: 85%;
+        }
+        
+    }
+    .width{
+        width: 84%;
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+    }
+    .sold-ticket{
+        font-size: 100%;
+        color: $color-light-orange;
+    }
+    .table-holder{
+        width: 85%;
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+    }
+    table.table{
+        .thead-ticket{
+            min-width: 40rem;
+            .th-holder-ticket{
+                border-radius: 15px;
+                th{
+                    font-weight: 400;
+                    font-size: 80%;
+                }
+            }
+        }
+    }
+}

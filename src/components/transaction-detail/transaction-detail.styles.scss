@@ -9,6 +9,9 @@ tr.sv {
         width: 40%;
         text-align: center;
         position: relative;
+        svg.other{
+            color: $color-light-grey;
+        }
         svg.info-icon{
             color: $color-light-grey;
             &:hover{
