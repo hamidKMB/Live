@@ -11,7 +11,7 @@ const Sheba = () => {
     return (
       <div className="sheba">
         <div className="header-sheba d-flex flex-row align-items-center px-3 mb-5">
-          <h5>شبا های تسویه حساب</h5>
+          <h4>شبا های تسویه حساب</h4>
           <div
             className="button me-auto fw-light rounded-3"
             onClick={() => setAddNewSheba(true)}
@@ -19,35 +19,37 @@ const Sheba = () => {
             + افزودن شبای جدید
           </div>
         </div>
-        <table className="table text-center">
-          <thead>
-            <tr className="th-holder-sheba shadow py-1 px-3 mb-3 bg-white d-flex flex-row mx-3">
-              <th scope="col" className="border-0 w-25">
-                کد
-              </th>
-              <th scope="col" className="border-0">
-                شبا
-              </th>
-              <th scope="col" className="border-0">
-                وضعیت
-              </th>
-              <th scope="col" className="border-0"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <ShebaDetail
-              code="125"
-              sheba="IR500120020000008648038631"
-              confirmed
-              default
-            />
-            <ShebaDetail
-              code="125"
-              sheba="IR500120020000008648038631"
-            />
-          </tbody>
-        </table>
-        <div className="warnings me-3">
+        <div className="overflow-auto">
+          <table className="table text-center">
+            <thead>
+              <tr className="th-holder-sheba shadow py-1 px-3 mb-3 bg-white d-flex flex-row mx-3">
+                <th scope="col" className="border-0 w-25">
+                  کد
+                </th>
+                <th scope="col" className="border-0">
+                  شبا
+                </th>
+                <th scope="col" className="border-0">
+                  وضعیت
+                </th>
+                <th scope="col" className="border-0"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <ShebaDetail
+                code="125"
+                sheba="IR500120020000008648038631"
+                confirmed
+                default
+              />
+              <ShebaDetail
+                code="125"
+                sheba="IR500120020000008648038631"
+              />
+            </tbody>
+          </table>
+        </div>
+        <div className="warnings mx-3">
             <p className="notes">
                 <InfoIcon style={{color:"orange"}} className="ms-2"/>
                 کاربر گرامی پیش از ثبت شماره شبا لطفا به نکات زیر توجه فرمایید:
