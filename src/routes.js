@@ -127,7 +127,7 @@ const routes = [
   {
     private: true,
     exact: true,
-    path: "/follow",
+    path: "/follow/:tab",
     component: Followers,
   },
   {

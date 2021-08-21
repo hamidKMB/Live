@@ -1,0 +1,17 @@
+@import "../../root-styles/variables.scss";
+
+.search{
+    border-radius: 15px;
+    width: 100%;
+    .search-box{
+        input{
+            width: 80%;
+            outline: none;
+            font-size: 10pt;
+            &::-webkit-input-placeholder{
+                color: rgba($color-light-grey, 0.5);
+            }
+        }
+    }
+}
+
