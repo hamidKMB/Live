@@ -19,6 +19,7 @@ import ChatPage from "./pages/chat-page/chat-page.component";
 import UploadCourse from "./pages/videos/courses/upload-course/upload-course.component";
 import CourseSections from "./pages/videos/courses/course-sections/course-sections.component";
 import CreateNewTicket from "./pages/tickets/create-new-ticket.component";
+import CreateNewDiscount from "./pages/discounts/create-new-discount";
 
 const routes = [
   {
@@ -110,6 +111,12 @@ const routes = [
     exact: true,
     path: "/tickets",
     component: Tickets,
+  },
+  {
+    private: true,
+    exact: true,
+    path: "/discounts/create-new-discount",
+    component: CreateNewDiscount,
   },
   {
     private: true,

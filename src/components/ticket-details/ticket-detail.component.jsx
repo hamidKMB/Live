@@ -30,14 +30,32 @@ const TicketDetail = (props) => {
       <td className="border-0" name="shenase">
         {props.informationTicket ? props.personName : props.title}
       </td>
-      <td className="border-0" name="dateOfSubmitRequest">
-        {props.price} تومان
-      </td>
-      <td className="border-0" name="tasfieTillDate">
-        {props.informationTicket ? props.discount : `${props.capacity} نفر`}
-      </td>
+      {props.informationTicket ? (
+        <td className="border-0" name="dateOfSubmitRequest">
+          {props.discountComponentClicked
+            ? props.eventName
+            : `${props.price} تومان`}
+        </td>
+      ) : (
+        <td className="border-0" name="dateOfSubmitRequest">
+          {props.discountComponent
+            ? props.discountCode
+            : `${props.price} تومان`}
+        </td>
+      )}
+      {props.discountComponent && (
+        <td className="border-0" name="tasfieItems">
+          {props.discountValue}تومان
+        </td>
+      )}
+      {
+        !props.discountComponentClicked &&
+        <td className="border-0" name="tasfieTillDate">
+          {props.informationTicket ? props.discount : `${props.capacity} نفر`}
+        </td>
+      }
       <td className="border-0" name="tasfieItems">
-        {props.informationTicket ? `${props.paid}تومان` : props.title}
+        {props.informationTicket ? `${props.paid}تومان` : props.event}
       </td>
       <td className="border-0">
         {!props.informationTicket ? (
