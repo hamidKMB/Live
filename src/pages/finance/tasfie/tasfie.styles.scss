@@ -36,32 +36,41 @@
             }
         }
     }
-    tbody {
-        tr {
-            width: 85%;
+    tbody.ss{
+        height:68vh;
+        .tr-holder-s{
+            width: 83%;
             @media screen and (max-width: 646px) {
                 width: 100%
             }
+            tr{
+                width: 100%;
+            }
         }
     }
-    div.card{
-        padding: 4rem;
-        @media screen and (max-width: 542px) {
-            padding: 0;
-        }
-        height: 17rem;
-        
-        h6{
-            margin-bottom: 1rem;
-            font-weight: 400;
-            font-size: 100%
-        }
-        span{
-            font-weight: 300;
-            font-size: 8pt;
-        }
-        div.button{
-            font-size: 10pt;
+    .tasfie-modal{
+        font-size: 100%;
+        div.card{
+                width: 20rem;
+                height: 19rem;
+                padding: 2.5rem 1rem;
+                left: 2rem;
+                @media screen and (max-width: 768px) {
+                    left:0
+                }
+            
+            h6{
+                margin-bottom: 1rem;
+                font-weight: 400;
+                font-size: 100%
+            }
+            span{
+                font-weight: 300;
+                font-size: 8pt;
+            }
+            div.button{
+                font-size: 10pt;
+            }
         }
     }
 }

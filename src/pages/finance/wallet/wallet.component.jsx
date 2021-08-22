@@ -44,7 +44,7 @@ const Wallet = () => {
                                 <ModalDesign1 className="design-1 mb-5"/>
                                 <ModalDesign2 className="design-2"/>
                             </div>
-                            <div className="card my-auto ms-md-auto position-relative ">
+                            <div className="card my-auto ms-md-auto mx-lg-auto position-relative ">
                                 <h5>
                                     افزایش موجودی
                                 </h5>
@@ -56,7 +56,7 @@ const Wallet = () => {
                                     افزایش موجودی
                                 </div>
                             </div>
-                            <ModalPaymentLogo className="d-md-block d-none mx-auto w-50"/>
+                            <ModalPaymentLogo className="d-md-block d-none mx-auto mx-lg-0 w-50"/>
                         </div>
                     </Modal>
                 )

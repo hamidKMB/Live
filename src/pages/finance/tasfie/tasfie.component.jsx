@@ -6,7 +6,9 @@ import TransactionDetail from "../../../components/transaction-detail/transactio
 import Modal from "../../../components/modal/modal.component";
 import BubbleSpinner from "../../../components/loading-spinner/loading-spinner.component";
 import InformationTasfie from "./information-tasfie/information-tasfie.component";
-
+import {ReactComponent as TasfieLogo} from "./tasfie-logo.svg";
+import {ReactComponent as ModalDesign1} from "../wallet/Modal-design1.svg";
+import {ReactComponent as ModalDesign2} from "../wallet/Modal-design2.svg";
 
 const Tasfie = () => {
     const [submitRequest, setSubmitRequest] = React.useState(false)
@@ -81,7 +83,8 @@ const Tasfie = () => {
                 </th>
               </thead>
               <tbody className="ss d-flex flex-column">
-                <TransactionDetail
+              <div className="tr-holder-s d-flex flex-column h-100">
+              <TransactionDetail
                   shenase="256521"
                   requestDate="1400/02/25-12:30"
                   tasfieTill="1400/02/25-12:30"
@@ -111,6 +114,7 @@ const Tasfie = () => {
                   onClick={clickEvent}
                   tasfie
                 />
+                </div>
               </tbody>
             </table>
           </div>
@@ -128,8 +132,12 @@ const Tasfie = () => {
         )}
         {submitRequest && (
           <Modal isShow={submitRequest} closeModal={closeModal}>
-            <div className="tasfie-modal d-flex flex-row py-md-4 px-md-5">
-              <div className="card shadow-none border border-1 text-center justify-content-center">
+            <div className="tasfie-modal d-flex py-5 align-items-center justify-content-center">
+              <div className="d-md-flex flex-column justify-content-between d-none">
+                  <ModalDesign1 className="design-1 mb-5"/>
+                  <ModalDesign2 className="design-2"/>
+              </div>
+              <div className="card text-center justify-content-center">
                 {!checkingRequest.calculating ? (
                   <>
                     <h6>درحال بررسی پرداختی ها تا تاریخ date</h6>
@@ -152,7 +160,7 @@ const Tasfie = () => {
                   checkingRequest.result &&
                   !checkingRequest.finalSubmitRequest ? (
                   <>
-                    <h6 className="mx-5">تا تاریخ 1400/01/01 مبلغ </h6>
+                    <h6>تا تاریخ 1400/01/01 مبلغ </h6>
                     <h6>stock تومان</h6>
                     <h6>وجود دارد.</h6>
                     <div
@@ -172,7 +180,7 @@ const Tasfie = () => {
                   checkingRequest.result &&
                   checkingRequest.finalSubmitRequest && (
                     <>
-                      <h6 className="mx-3">درخواست شما با موفقیت ثبت شد</h6>
+                      <h6 >درخواست شما با موفقیت ثبت شد</h6>
                       <h6>لطفا منتظر تایید بمانید</h6>
                       <div
                         className="button mx-auto mt-4 py-2 px-3 rounded-2"
@@ -192,7 +200,7 @@ const Tasfie = () => {
                   )
                 )}
               </div>
-              <div className="logo"></div>
+              <TasfieLogo className="d-md-block d-none mx-auto mx-lg-0  w-50"/>
             </div>
           </Modal>
         )}
