@@ -32,11 +32,18 @@
             }
         }
     }
-    tbody{
-        tr{
+    tbody.ss{
+        height:68vh;
+        .tr-holder{
             width: 75%;
-            @media screen and (max-width: 578px) {
-                width: 100%
+             @media screen and (max-width: 578px) {
+                    width: 100%
+                }
+            tr{
+                width: 100%;
+                @media screen and (max-width: 578px) {
+                    width: 100%
+                }
             }
         }
     }

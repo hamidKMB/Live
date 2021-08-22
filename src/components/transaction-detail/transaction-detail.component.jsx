@@ -7,7 +7,7 @@ const TransactionDetail = (props) => {
   const [isMouseIn, setIsMouseIn] = React.useState(false)
 
   return props.tasfie ? (
-    <tr className="sv border-1 rounded-3 bg-white d-flex flex-row align-items-center mb-2 p-2">
+    <tr className="sv border-1 rounded-3 bg-white d-flex flex-row align-items-center mb-2 p-2 w-75">
       <td className="border-0" name="shenase">
         {props.shenase}
       </td>
