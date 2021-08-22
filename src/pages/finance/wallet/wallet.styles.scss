@@ -32,8 +32,14 @@
     }
     .increase-stock{
         font-size: 100%;
-            .card{
-                padding: 2.5rem 0.8rem;
+        .card{
+                width: 20rem;
+                height: 23rem;
+                padding: 2.5rem 1rem;
+                left: 2rem;
+                @media screen and (max-width: 768px) {
+                    left:0
+                }
                 h5{
                     margin-bottom: 1.5rem;
                     font-size: 16px;
