@@ -15,7 +15,7 @@ const Follower = (props) => {
             <span>ویدیو {props.videosNumber}</span>
           </p>
         </div>
-        <div className="button-outline me-auto my-auto">مشاهده کانال</div>
+        <div className="button-outline me-auto my-auto py-2">مشاهده کانال</div>
       </div>
     );
 }
