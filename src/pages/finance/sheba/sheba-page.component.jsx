@@ -4,6 +4,9 @@ import TextInput from "../../../components/text-input/text-input.component"
 import ShebaDetail from "./sheba-detail/sheba-detail.component"
 import InfoIcon from "@material-ui/icons/Info";
 import "./sheba-page.styles.scss"
+import {ReactComponent as ShebaLogo} from "./sheba-logo.svg";
+import {ReactComponent as ModalDesign1} from "../wallet/Modal-design1.svg";
+import {ReactComponent as ModalDesign2} from "../wallet/Modal-design2.svg";
 
 const Sheba = () => {
     const [addNewSheba, setAddNewSheba] = React.useState(false)
@@ -74,9 +77,12 @@ const Sheba = () => {
               setEnterSheba(false);
             }}
           >
-            <div className="sheba-modal d-flex flex-row justify-content-md-center">
-              <div className="right px-4">
-                <div className="card justify-content-center py-5 px-4 w-100">
+            <div className="sheba-modal d-flex py-5 align-items-center justify-content-center">
+              <div className="d-md-flex flex-column justify-content-between d-none">
+                  <ModalDesign1 className="design-1 mb-5"/>
+                  <ModalDesign2 className="design-2"/>
+              </div>
+                <div className="card justify-content-center my-auto ms-md-auto mx-lg-auto position-relative">
                   {!enterSheba ? (
                     <>
                       <h6 className="mb-4 ms-auto fw-bold fs-6">
@@ -106,8 +112,8 @@ const Sheba = () => {
                     </div>
                   )}
                 </div>
-              </div>
-              <div className="left"></div>
+              
+              <ShebaLogo className="d-md-block d-none mx-auto mx-lg-0 w-50"/>
             </div>
           </Modal>
         )}
