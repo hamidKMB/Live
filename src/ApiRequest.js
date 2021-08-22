@@ -20,6 +20,7 @@ const ApiRequest = async (url, method, data = {}) => {
 
     } catch (error) {
         console.error(error);
+        console.log(error);
     }
 }
 
