@@ -44,7 +44,7 @@ const Followers = () => {
         ]}
       />
       <div className="d-flex flex-row">
-        <div className="main-holder d-flex flex-column ms-auto">
+        <div className="main-holder d-flex flex-column ms-md-auto mx-auto">
           <div className="search bg-white shadow-sm pe-4  py-2 mb-3">
             <div className="search-box">
               <SearchIcon className="icon-color"/>
@@ -56,7 +56,7 @@ const Followers = () => {
               />
             </div>
           </div>
-          <div>
+          <div className="content-holder">
             <Switch>
               <Route path="/follow/followers">
                 {

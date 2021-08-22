@@ -30,6 +30,42 @@ const FakeData = [
         videosNumber: "530",
         isUserFollowedBack: true
     }
+    ,
+    {
+        nickName: "طغرل",
+        followersNumber: "202",
+        videosNumber: "530",
+        isUserFollowedBack: true
+    }
+    ,
+    {
+        nickName: "طغرل",
+        followersNumber: "202",
+        videosNumber: "530",
+        isUserFollowedBack: true
+    }
+    ,
+    {
+        nickName: "طغرل",
+        followersNumber: "202",
+        videosNumber: "530",
+        isUserFollowedBack: true
+    }
+    ,
+    {
+        nickName: "طغرل",
+        followersNumber: "202",
+        videosNumber: "530",
+        isUserFollowedBack: true
+    }
+    ,
+    {
+        nickName: "طغرل",
+        followersNumber: "202",
+        videosNumber: "530",
+        isUserFollowedBack: true
+    }
+    
 ]
 
 export default FakeData;
