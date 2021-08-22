@@ -55,7 +55,7 @@ export const menuItemsData = [
   {
     title: "دنبال کنندگان/دنبال شدگان",
     logo: <FollowersLogo className="dashboard-icon"/>,
-    routeName: "/follow/following",
+    routeName: "/follow/followings",
   },
   {
     title: "پشتیبانی",

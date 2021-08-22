@@ -53,9 +53,14 @@ const SideMenu = (props) => {
                             "/finance/tasfie",
                             "/finance/sheba",
                             ];
+                        let followers_pages = [
+                            "/follow/followings",
+                            "/follow/followers"
+                        ]
                         pages = item.routeName.includes('account') ? account_pages : [];
                         pages = item.routeName.includes('videos') ? videos_pages : pages;
                         pages = item.routeName.includes('finance') ? finance_pages : pages;
+                        pages = item.routeName.includes('follow') ? followers_pages : pages;
                         if (pages.length > 0) {
                             return (
                                 <MenuMultiActiveItem
