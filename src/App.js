@@ -20,14 +20,17 @@ function App() {
     window.onresize = () => {
       // prevent from toggled State on True
       if (toggled) setToggled(false);
+      console.log("called-resize", toggled);
     };
   });
+  const onSideMenuClickHandler = () => {
+    if ( window.innerWidth < 768 ) setToggled(!toggled)
+  }
 
   const handleClick = () => {
     // hamburger Menu Toggle
-    setToggled((prevValue) => {
-      return !prevValue;
-    });
+    if (window.innerWidth < 768) setToggled(!toggled)
+    console.log("clicked", toggled);
   };
 
   const stored = localStorage.getItem("isDark");
@@ -57,7 +60,7 @@ function App() {
             onToggleDarkMode={onToggledDarkMode}
             dark={isDark}
           />
-          <SideMenu display={toggled ? "toggle-side-menu" : " "} />
+          <SideMenu display={toggled ? "toggle-side-menu"  : " " } onClick={onSideMenuClickHandler}/>
         </>
       )}
       <Switch>

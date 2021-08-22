@@ -71,6 +71,7 @@ const SideMenu = (props) => {
                                     title={item.title}
                                     routeName={item.routeName}
                                     logo={item.logo}
+                                    onClick={props.onClick}
                                 />
                             );
                         } else {
@@ -82,6 +83,7 @@ const SideMenu = (props) => {
                                     title={item.title}
                                     routeName={item.routeName}
                                     logo={item.logo}
+                                    onClick={props.onClick}
                                 />
                             );
                         }
