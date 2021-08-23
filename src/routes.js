@@ -133,6 +133,12 @@ const routes = [
   {
     private: true,
     exact: true,
+    path: "/backup/:tab",
+    component: BackUp,
+  },
+  {
+    private: true,
+    exact: true,
     path: "/backup",
     component: BackUp,
   },

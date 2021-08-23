@@ -6,7 +6,7 @@ import BackupRow from "../../components/backup-rows/back-up-rows.component";
 import {ReactComponent as AttachLogo} from "./attach-file.svg"
 import {ReactComponent as BackupAvatar} from "./back-up-avatar.svg"
 import {ReactComponent as CrossLogo} from "./cross-logo.svg"
-
+import { useHistory } from "react-router";
 //STYLES
 import "../../root-styles/layout.scss";
 import "./backup.styles.scss"
@@ -20,6 +20,8 @@ const BackUp = () => {
     title:"" ,
     situation: ""
   })
+  const history = useHistory();
+
   const onChangeHandler = (event) => {
      setUserAttachment([...userAttachment, event.target.files[0].name])
   }
@@ -33,18 +35,20 @@ const BackUp = () => {
   }
   
   const onClickRow = (event) => {
+    history.push(`/backup/${event.target.attributes[1].value}`)
     setChatDetails({
       title: event.target.attributes[1].value ,
       situation: event.target.attributes[2].value
     })
     setIsChatOpen(true)
+    
   }
 
   return (
     <div className="admin-pages-layout backup-layout">
       <div className="d-flex flex-row">
       <div className={`d-flex flex-column ${isChatOpen ? "w-50" : "w-100"}`}>
-        <div className="backup-header d-flex flex-row justify-content-between mb-3 align-items-center w-100">
+        <div className="backup-header d-flex flex-row justify-content-between mb-3 align-items-center">
           <h5 className="mb-0">لیست تیکت ها</h5>
           <div
             className="button py-2 me-auto"
@@ -110,7 +114,7 @@ const BackUp = () => {
         </div>
         <table className="table d-flex flex-column">
           <thead className="thead-backup">
-            <tr className="card d-flex flex-row justify-content-start">
+            <tr className="card tr-th-backup-head d-flex flex-row justify-content-start">
               <th scope="col" className="border-0 th-backup">شماره</th>
               <th scope="col" className="border-0 th-backup-2">عنوان</th>
               {
@@ -129,45 +133,46 @@ const BackUp = () => {
           </thead>
           <tbody className="tbody-back-up">
               <BackupRow 
-              code="100235" 
-              title="سشیارذشنسایر" 
-              unit="پشتیبانی" 
-              date="1400/02/25 - 12:30" 
-              situation="درحال پاسخگویی" 
-              isChatOpen={isChatOpen} 
-              onClick={onClickRow}/>
+                code="100235" 
+                title="سsdaنسایر" 
+                unit="پشتیبانی" 
+                date="1400/02/25 - 12:30" 
+                situation="درحال پاسخگویی" 
+                isChatOpen={isChatOpen} 
+                onClick={onClickRow}
+                />
+              <BackupRow 
+                code="100235" 
+                title="سشیارذsdaasdیر" 
+                unit="پشتیبانی" 
+                date="1400/02/25 - 12:30" 
+                situation="درحال بررسی" 
+                isChatOpen={isChatOpen} 
+                onClick={onClickRow}/>
+              <BackupRow 
+                code="100235" 
+                title="سشیارذَسیشسیشسییر" 
+                unit="پشتیبانی" 
+                date="1400/02/25 - 12:30" 
+                situation="بسته شده" 
+                reaction="good" 
+                isChatOpen={isChatOpen} onClick={onClickRow}/>
+              <BackupRow 
+                code="100235" 
+                title="سشیارEqual;ایر" 
+                unit="پشتیبانی" 
+                date="1400/02/25 - 12:30" 
+                situation="بسته شده" 
+                reaction="normal" 
+                isChatOpen={isChatOpen} onClick={onClickRow}/>
               <BackupRow 
               code="100235" 
-              title="سشیارذشنسایر" 
-              unit="پشتیبانی" 
-              date="1400/02/25 - 12:30" 
-              situation="درحال بررسی" 
-              isChatOpen={isChatOpen} 
-              onClick={onClickRow}/>
-              <BackupRow 
-              code="100235" 
-              title="سشیارذشنسایر" 
-              unit="پشتیبانی" 
-              date="1400/02/25 - 12:30" 
-              situation="بسته شده" 
-              reaction="good" 
-              isChatOpen={isChatOpen} onClick={onClickRow}/>
-              <BackupRow 
-              code="100235" 
-              title="سشیارذشنسایر" 
-              unit="پشتیبانی" 
-              date="1400/02/25 - 12:30" 
-              situation="بسته شده" 
-              reaction="normal" 
-              isChatOpen={isChatOpen} onClick={onClickRow}/>
-              <BackupRow 
-              code="100235" 
-              title="سشیارذشنسایر" 
-              unit="پشتیبانی" 
-              date="1400/02/25 - 12:30" 
-              situation="بسته شده" 
-              reaction="bad" 
-              isChatOpen={isChatOpen} onClick={onClickRow}/>
+                title="سشیارذaserر" 
+                unit="پشتیبانی" 
+                date="1400/02/25 - 12:30" 
+                situation="بسته شده" 
+                reaction="bad" 
+                isChatOpen={isChatOpen} onClick={onClickRow}/>
           </tbody>
         </table>
       </div>

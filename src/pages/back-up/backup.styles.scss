@@ -11,6 +11,7 @@
         padding: 7rem 1rem;
     }
     .backup-header{
+        width: 98%;
         .content-in-Modal-back-up{
             .input-holder{
                 width: 50%;
@@ -65,13 +66,16 @@
     }
     table.table{
         .thead-backup{
-            th.th-backup{
-                width: 30%;
-                text-align: center;
-            }
-            th.th-backup-2{
-                width: 40%;
-                text-align: right;
+            tr.tr-th-backup-head{
+                width: 98%;
+                th.th-backup{
+                    width: 30%;
+                    text-align: center;
+                }
+                th.th-backup-2{
+                    width: 40%;
+                    text-align: right;
+                }
             }
         }
     }
