@@ -6,15 +6,20 @@ import BackupRow from "../../components/backup-rows/back-up-rows.component";
 import {ReactComponent as AttachLogo} from "./attach-file.svg"
 import {ReactComponent as BackupAvatar} from "./back-up-avatar.svg"
 import {ReactComponent as CrossLogo} from "./cross-logo.svg"
+
 //STYLES
 import "../../root-styles/layout.scss";
 import "./backup.styles.scss"
+import BackupChat from "./back-up-chat.component";
 
 const BackUp = () => {
   const [isClicked, setIsClicked] = React.useState(false)
   const [userAttachment, setUserAttachment] = React.useState([])
   const [isChatOpen, setIsChatOpen] = React.useState(false);
-
+  const [chatDetails, setChatDetails] = React.useState({
+    title:"" ,
+    situation: ""
+  })
   const onChangeHandler = (event) => {
      setUserAttachment([...userAttachment, event.target.files[0].name])
   }
@@ -27,6 +32,14 @@ const BackUp = () => {
       ))
   }
   
+  const onClickRow = (event) => {
+    setChatDetails({
+      title: event.target.attributes[1].value ,
+      situation: event.target.attributes[2].value
+    })
+    setIsChatOpen(true)
+  }
+
   return (
     <div className="admin-pages-layout backup-layout">
       <div className="d-flex flex-row">
@@ -122,7 +135,7 @@ const BackUp = () => {
               date="1400/02/25 - 12:30" 
               situation="درحال پاسخگویی" 
               isChatOpen={isChatOpen} 
-              onClick={() => setIsChatOpen(!isChatOpen)}/>
+              onClick={onClickRow}/>
               <BackupRow 
               code="100235" 
               title="سشیارذشنسایر" 
@@ -130,7 +143,7 @@ const BackUp = () => {
               date="1400/02/25 - 12:30" 
               situation="درحال بررسی" 
               isChatOpen={isChatOpen} 
-              onClick={() => setIsChatOpen(!isChatOpen)}/>
+              onClick={onClickRow}/>
               <BackupRow 
               code="100235" 
               title="سشیارذشنسایر" 
@@ -138,7 +151,7 @@ const BackUp = () => {
               date="1400/02/25 - 12:30" 
               situation="بسته شده" 
               reaction="good" 
-              isChatOpen={isChatOpen} onClick={() => setIsChatOpen(!isChatOpen)}/>
+              isChatOpen={isChatOpen} onClick={onClickRow}/>
               <BackupRow 
               code="100235" 
               title="سشیارذشنسایر" 
@@ -146,7 +159,7 @@ const BackUp = () => {
               date="1400/02/25 - 12:30" 
               situation="بسته شده" 
               reaction="normal" 
-              isChatOpen={isChatOpen} onClick={() => setIsChatOpen(!isChatOpen)}/>
+              isChatOpen={isChatOpen} onClick={onClickRow}/>
               <BackupRow 
               code="100235" 
               title="سشیارذشنسایر" 
@@ -154,9 +167,12 @@ const BackUp = () => {
               date="1400/02/25 - 12:30" 
               situation="بسته شده" 
               reaction="bad" 
-              isChatOpen={isChatOpen} onClick={() => setIsChatOpen(!isChatOpen)}/>
+              isChatOpen={isChatOpen} onClick={onClickRow}/>
           </tbody>
         </table>
+      </div>
+      <div className={`${isChatOpen ? "w-50 d-flex bg-white flex-column border border-2 chat pt-2 m" : "d-none"}`}>
+          <BackupChat title={chatDetails.title} situation={chatDetails.situation} closeChat={() => setIsChatOpen(false)}/>
       </div>
       </div>
     </div>

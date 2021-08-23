@@ -75,4 +75,68 @@
             }
         }
     }
+    .chat{
+        height: 648px;
+        border-radius: 16px;
+        .chat-messages-holder{
+            overflow-y: auto;
+            height: 85%;
+            scroll-behavior: smooth;
+            &::-webkit-scrollbar {
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        display: none;
+    }
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+            span{
+                margin-bottom: 1rem;
+                font-size: 8pt;
+                color: rgba($color-light-grey, 0.6);
+            }
+            div.user-message{
+                border-radius: 5px;
+                
+                color: $color-light-text;
+                background-color: rgba($color-light-text, 0.05);
+                max-width: 70%;
+                height: fit-content;
+        
+            }
+            div.support-team-message{
+                border-radius: 5px;
+                color: $color-light-text;
+                background-color: rgba($color-light-orange, 0.09);
+                max-width: 70%;
+                height: fit-content;
+        
+            }
+        }
+        .typing-message{
+            border-radius: 0 0  16px 16px;
+            background-color: rgba($color-light-text, 0.05);
+            .attach-file-logo{
+                position: relative;
+                width: 10%;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                .gh{
+                    z-index: 0;
+                }
+            }
+            input{
+                width: 80%;
+                background-color: transparent;
+                border: none;
+                outline: none;
+            }
+            .send-message{
+                background-color: $color-light-text;
+                color: #fff;
+                border-radius: 0 0 0 16px;
+            }
+        }
+    }
 }
