@@ -18,6 +18,11 @@
                     width: 100%;
                 }
             }
+            .help-text{
+                font-size: 8pt;
+                color: $color-light-grey;
+                font-weight: 500;
+            }
             fieldset.field-set{
                 margin-bottom: 1.5rem;
                 legend{

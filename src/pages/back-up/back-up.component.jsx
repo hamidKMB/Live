@@ -49,8 +49,18 @@ const BackUp = () => {
                     <TextInput textArea maxLength="500" helperText="تا 500 کاراکتر" label="متن تیکت"/>
                     <div className="d-flex flex-sm-row flex-column-reverse">
                       <label htmlFor="add-document" className="input-file button p-2" onChange={onChangeHandler}>
-                          <AttachLogo className="ms-2"/> افزودن پیوست   
-                        <input type="file" id="add-document"/>
+                         {
+                           userAttachment.length === 2 ?
+                           
+                            "ظرفیت تکمیل "
+                           
+                           :
+                           <span>
+                            <AttachLogo className="ms-2"/> افزودن پیوست
+                           </span>
+                           
+                         }  
+                        <input type="file" id="add-document" disabled={userAttachment.length === 2 && true}/>
                       </label>
                       {
                         userAttachment.map((item,index) => {
@@ -65,6 +75,7 @@ const BackUp = () => {
                         })
                       }
                     </div>
+                    <span className="mb-0 mt-1 help-text">حداکثر 2 فایل</span>
                     <div className="d-flex mx-auto mt-4">
                       <div className="button rounded-3 ms-2 py-2 px-4">
                        ثبت تیکت 
