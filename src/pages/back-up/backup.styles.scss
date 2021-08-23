@@ -1,3 +1,5 @@
+@import "../../root-styles/variables.scss";
+
 .backup-layout{
     padding: 8rem 5rem;
     @media screen and (max-width: 991px) {
@@ -7,5 +9,53 @@
     @media screen and (max-width: 786px) {
         margin: 0;
         padding: 7rem 1rem;
+    }
+    .backup-header{
+        .content-in-Modal-back-up{
+            .input-holder{
+                width: 50%;
+                @media screen and (max-width:769px) {
+                    width: 100%;
+                }
+            }
+            fieldset.field-set{
+                margin-bottom: 1.5rem;
+                legend{
+                    margin-bottom: 0;
+                }
+            }
+        .input-file{
+            display: inline-flex;
+            align-items: center;
+            width: 10rem;
+            @media screen and (max-width:426px) {
+                width: 90%;
+                margin: 0 auto;
+            }
+            input#add-document{
+                display: none;
+            }
+        }
+        .attached-file {
+            position: relative;
+            border: 1px solid $color-light-text;
+            border-radius: 10px;
+            color: $color-light-grey;
+            font-size: 9pt;
+            @media screen and (max-width:426px) {
+                width: 90%;
+                margin: 0 auto 13px;
+            }
+            .cross-logo{
+                position: absolute;
+                right: -5px;
+                top: -7px;
+                .path{
+                    position: relative;
+                    z-index: -1;
+                }
+            }
+        }
+        }
     }
 }

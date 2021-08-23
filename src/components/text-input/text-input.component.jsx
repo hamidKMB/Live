@@ -8,6 +8,12 @@ const TextInput = (props) => {
   return (
     <>
       <fieldset className={`field-set position-relative ${props.disable && "disable"}`}>
+      {
+        props.textArea &&
+        <span className="helper-text">
+          {props.helperText}
+        </span>
+      }
         <legend className="legend">{props.label}</legend>
         {
           props.input?

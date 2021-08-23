@@ -21,6 +21,13 @@
     border-color: $color-light-orange;
     background-color: #fff;
   }
+  .helper-text{
+    font-size: 10pt;
+    color: rgba($color-light-grey, 0.8);
+    position: absolute;
+    left: 5px;
+    top: -2rem;
+  }
   .legend {
     float: none;
     text-align: right;
