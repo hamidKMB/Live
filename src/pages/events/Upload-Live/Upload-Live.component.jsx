@@ -11,6 +11,7 @@ import NewDiscount from "./new-discount.component";
 import NewTicket from "./new-ticket.component";
 
 const UploadLive = () => {
+    
     const [state, setState] = React.useState({ 
         //switches for enable/disable the Options
         publishLive: false ,
@@ -149,8 +150,9 @@ const UploadLive = () => {
           )}
           <div className="d-flex flex-row justify-content-between dating">
             <TextInput label="زمان پخش زنده" dropDown dropItems={[" "]} />
-            <TextInput label="تاریخ پخش زنده" dropDown dropItems={[" "]} />
+            <TextInput label="تاریخ پخش زنده" datePicker />
           </div>
+          
           <TextInput label="توضیحات ویدیو" textArea maxLength="400" />
         </div>
         <div className="status-and-others d-flex flex-column justify-content-between mx-xl-auto me-lg-auto me-md-1 pe-2">
