@@ -63,4 +63,16 @@
         }
         }
     }
+    table.table{
+        .thead-backup{
+            th.th-backup{
+                width: 30%;
+                text-align: center;
+            }
+            th.th-backup-2{
+                width: 40%;
+                text-align: right;
+            }
+        }
+    }
 }
