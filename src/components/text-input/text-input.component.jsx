@@ -25,7 +25,9 @@ const TextInput = (props) => {
             id={props.id} 
             disabled={props.disable ? true : false} 
             required 
-            onChange={props.onChange}/>
+            onChange={props.onChange}
+            placeholder={props.placeholder}
+            />
           :
           props.dropDown ?
           <select name="myselect" className="drop-down-city-country">
@@ -57,10 +59,12 @@ const TextInput = (props) => {
           />
           :
           props.timePicker &&
-          <TimePicker/>
+          <TimePicker
+            disable={props.disable}
+          />
         }
         {
-          props.disable && <PencilLogo className="pencil"/>
+          (props.disable && props.information) && <PencilLogo className="pencil"/>
         }
       </fieldset>
     </>
