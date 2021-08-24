@@ -149,7 +149,7 @@ const UploadLive = () => {
             </Modal>
           )}
           <div className="d-flex flex-row justify-content-between dating">
-            <TextInput label="زمان پخش زنده" dropDown dropItems={[" "]} />
+            <TextInput label="زمان پخش زنده" timePicker />
             <TextInput label="تاریخ پخش زنده" datePicker />
           </div>
           

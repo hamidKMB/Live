@@ -4,9 +4,11 @@ import "./text-input.styles.scss";
 import {ReactComponent as PencilLogo} from "./pencil.svg";
 import 'react-modern-calendar-datepicker/lib/DatePicker.css';
 import DatePicker from "react-modern-calendar-datepicker";
+import TimePicker from "./time-picker/time-picker.component";
 
 const TextInput = (props) => {
   const [selectedDay, setSelectedDay] = React.useState(null);
+  const [isClicked, setIsClicked] = React.useState(false)
   return (
     <>
       <fieldset className={`field-set position-relative ${props.disable && "disable"}`}>
@@ -45,7 +47,7 @@ const TextInput = (props) => {
             style={{resize: `${props.resize ? "vertical" : "none" }`}}
           />
           :
-          props.datePicker &&
+          props.datePicker ?
           <DatePicker
             value={selectedDay}
             onChange={setSelectedDay}
@@ -53,6 +55,9 @@ const TextInput = (props) => {
             shouldHighlightWeekends
             locale="fa"
           />
+          :
+          props.timePicker &&
+          <TimePicker/>
         }
         {
           props.disable && <PencilLogo className="pencil"/>
