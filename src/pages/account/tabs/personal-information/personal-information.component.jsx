@@ -36,13 +36,11 @@ const PersonalInformation = () => {
           label="پست الکترونیک"
           input
           disable={true}
-          information
         />
         <TextInput
           label="شماره همراه"
           input
           disable={true}
-          information
         />
         </div>
       </div>

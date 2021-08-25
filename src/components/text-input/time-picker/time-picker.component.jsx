@@ -2,7 +2,7 @@ import React from "react";
 
 import "./time-picker.styles.css";
 
-const TimePicker = (props) => {
+const TimePicker = () => {
     const [isClicked, setIsClicked] = React.useState(false);
     const [time, setTime] = React.useState({
         hour: null,
@@ -29,7 +29,6 @@ const TimePicker = (props) => {
         <input
           placeholder=" "
           type="text"
-          disabled={props.disable}
           value={
              `${
                   time.hour
@@ -50,8 +49,7 @@ const TimePicker = (props) => {
                 }`
               
           }
-          onFocus={() => setIsClicked(true)}
-          onBlur={() => setIsClicked(false)}
+          onClick={() => setIsClicked(!isClicked)}
         />
         {isClicked && (
             
