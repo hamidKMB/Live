@@ -20,6 +20,7 @@ import UploadCourse from "./pages/videos/courses/upload-course/upload-course.com
 import CourseSections from "./pages/videos/courses/course-sections/course-sections.component";
 import CreateNewTicket from "./pages/tickets/create-new-ticket.component";
 import CreateNewDiscount from "./pages/discounts/create-new-discount";
+import LimitDevice from "./pages/LIMIT_DEVICE/limit-device.component";
 
 const routes = [
   {
@@ -27,6 +28,12 @@ const routes = [
     private: false,
     path: "/login",
     component: Sign,
+  },
+  {
+    exact: true,
+    private: true,
+    path: "/limit_device_list",
+    component: LimitDevice,
   },
   {
     exact: true,

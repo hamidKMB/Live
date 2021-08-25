@@ -53,7 +53,7 @@ function App() {
 
   return (
     <div className={`App ${isDark ? `dark` : ` `}`}>
-      {pathname !== "/login" && (
+      {pathname !== "/login" && pathname !=="/limit_device_list" && (
         <>
           <Header
             toggleSideBar={handleClick}

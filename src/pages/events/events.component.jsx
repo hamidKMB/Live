@@ -8,6 +8,7 @@ import "../../root-styles/layout.scss";
 import "../../root-styles/buttons.scss";
 import "./events-page.styles.scss"
 import ApiRequest from "../../ApiRequest";
+import { Redirect } from "react-router-dom";
 
 const Events = () => {
 
@@ -17,7 +18,10 @@ const Events = () => {
   React.useEffect(() => {
       ApiRequest("/vod/list", "get")
         .then((res) => {
-          console.log(res);
+          
+          if (res.status === "LIMIT_DEVICE") {
+              history.push("/limit_device_list" ) 
+          }
           if (res.status === "SUCCESS") {
             setEventList(res.data.data);
           }
