@@ -7,9 +7,8 @@ const Message = (props) => {
       <div className="messages">
         <span className="message-text">{props.message}</span>
         <span className= {
-            props.ticket ?
-            "in-progress" :
-            null
+            props.ticket &&
+            "in-progress" 
         }
         >{props.messageDescription}</span>
       </div>

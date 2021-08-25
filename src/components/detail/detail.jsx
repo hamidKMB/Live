@@ -4,14 +4,13 @@ import "./detail.styles.scss"
 
 const Details = (props) => {
     return (
-        <div className="detail">
-        <span>
-            <h6>{props.title}</h6>
+        <div className="detail py-1">
+        <span className="m-0">
+            <h6 className="m-0">{props.title}</h6>
         </span>
             {
-                props.showAll ?
-                <span className="look-all">مشاهده همه</span> :
-                null
+                props.showAll &&
+                <span className="look-all" onClick={props.onClick}>مشاهده همه</span>
             }
         </div>
     )

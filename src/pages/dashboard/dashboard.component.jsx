@@ -11,7 +11,6 @@ import "../../root-styles/cards.scss"
 import "../../root-styles/columns.scss"
 import ApiRequest from "../../ApiRequest.js";
 //DATA
-import {dashboardData} from "./dashboard.data";
 import Message from "../../components/messages/messages.component";
 import { useHistory } from "react-router-dom";
 
@@ -23,12 +22,12 @@ const Dashboard = () => {
         tickets: [],
         login: [],
         help: {}
-    })
+    })  
     console.log(dashboardDetails);
     React.useEffect(() => {
         ApiRequest("/user/dashboard", "GET")
         .then((res) => {
-            if (res.message === "SUCCESS") {
+            if (res.status === "SUCCESS") {
                 setDashboardDetails({
                     abstract: res.data.abstract ,
                     notifications: res.data.notifications ,
@@ -36,93 +35,92 @@ const Dashboard = () => {
                     login: res.data.login ,
                     help: res.data.help
                 })
-            } else if (res.message === "LIMIT_DEVICE") history.push("/limit_device_list")
+            } else if (res.status === "LIMIT_DEVICE") history.push("/limit_device_list")
         })
         .catch ((err) => console.log(err))
-    }, [])
+    },[history])
 
     return (
-        <div className="dashboard admin-pages-layout">
-            <div className="row">
-                {dashboardDetails.abstract.map((item, index) => (
-                    <div className="col-lg-3 col-md-6 col-4 column" key={index}>
-                        <div className="card first-row">
-                            <h5>{item.value} {item.unit}</h5>
-                            <span>{item.title}</span>
-                        </div>
-                    </div>
-                ))}
+      <div className="dashboard admin-pages-layout">
+        <div className="row">
+          {dashboardDetails.abstract.map((item, index) => (
+            <div className="col-lg-3 col-md-6 col-4 column" key={index}>
+              <div className="card first-row">
+                <h5>
+                  {item.value} {item.unit !== "عدد" && item.unit}
+                </h5>
+                <span>{item.title}</span>
+              </div>
             </div>
-            <div className="row">
-                <div className="col-lg-6 col-md-6 column">
-                    <div className="card second-row" id="notif">
-                        <Details title="اعلان ها" showAll/>
-                        <div className="message-holder">
-                            {
-                                dashboardDetails.notifications.map((item, index) => {
-                                    <Message message={item.title} messageDescription={item.date} key={index}/>
-                                })
-                            }
-                        </div>
-                    </div>
-                </div>
-                <div className="col-lg-6 col-md-6 column">
-                    <div className="card second-row">
-                        <Details title="تیکت ها" showAll/>
-                        <div className="message-holder" id="tickets">
-                            <Message
-                                message="لورم ایپسوم"
-                                messageDescription="Situation"
-                                ticket
-                            />
-                            <Message
-                                message="لورم ایپسوم"
-                                messageDescription="Situation"
-                                ticket
-                            />
-                            <Message
-                                message="لورم ایپسوم"
-                                messageDescription="Situation"
-                                ticket
-                            />
-                            <Message message="لورم ایپسوم" messageDescription="Situation"/>
-                            <Message message="لورم ایپسوم" messageDescription="Situation"/>
-                            <Message message="لورم ایپسوم" messageDescription="Situation"/>
-                            <Message message="لورم ایپسوم" messageDescription="Situation"/>
-                            <Message message="لورم ایپسوم" messageDescription="Situation"/>
-                            <Message message="لورم ایپسوم" messageDescription="Situation"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-lg-6 col-md-6 column">
-                    <div className="card">
-                        <Details title="ورود و خروج"/>
-                    </div>
-                </div>
-                <div className="col-lg-3 col-md-3 column" id="wallet">
-                    <div className="card">
-                        <Details title="کیف پول"/>
-                        <div className="stock">
-                            <span>موجودی حساب :</span>
-                            <span>2541000 تومان</span>
-                        </div>
-                        <div className="button">افزایش موجودی</div>
-                    </div>
-                </div>
-                <div className="col-lg-3 col-md-3 column" id="guide">
-                    <div className="card">
-                        <Details title="راهنمای سایت"/>
-                        <div className="guide">
-                            <p>علی عزیز</p>
-                            <p>لورم ایپسوم اشنسیذ شسی شسی سشیذشیسذشسی اشسی</p>
-                        </div>
-                        <div className="button">ویدیو آموزش سایت</div>
-                    </div>
-                </div>
-            </div>
+          ))}
         </div>
+        <div className="row">
+          <div className="col-lg-6 col-md-6 column">
+            <div className="card second-row" id="notif">
+              <Details
+                title="اعلان ها"
+                showAll
+                onClick={() => history.push("/account/notifications")}
+              />
+              <div className="message-holder">
+                {dashboardDetails.notifications.map((item, index) => (
+                  <Message
+                    message={item.title}
+                    messageDescription={item.date}
+                    key={index}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-6 col-md-6 column">
+            <div className="card second-row">
+              <Details
+                title="تیکت ها"
+                showAll
+                onClick={() => history.push("/backup")}
+              />
+              <div className="message-holder" id="tickets">
+                {dashboardDetails.tickets.map((item, index) => (
+                  <Message
+                    message={item.title}
+                    messageDescription={item.status}
+                    ticket={item.status === "بی پاسخ پاسخ" ? true : false}
+                    key={index}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-lg-6 col-md-6 column">
+            <div className="card">
+              <Details title="ورود و خروج" />
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-3 column" id="wallet">
+            <div className="card">
+              <Details title="کیف پول" />
+              <div className="stock">
+                <span>موجودی حساب :</span>
+                <span>2541000 تومان</span>
+              </div>
+              <div className="button">افزایش موجودی</div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-3 column" id="guide">
+            <div className="card">
+              <Details title="راهنمای سایت" />
+              <div className="guide">
+                <p>{dashboardDetails.help.fullname} عزیز</p>
+                <p>{dashboardDetails.help.description}</p>
+              </div>
+              <div className="button">ویدیو آموزش سایت</div>
+            </div>
+          </div>
+        </div>
+      </div>
     );
 }
 
