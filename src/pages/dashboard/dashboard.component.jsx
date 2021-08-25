@@ -9,22 +9,46 @@ import "../../root-styles/layout.scss"
 import "../../root-styles/buttons.scss"
 import "../../root-styles/cards.scss"
 import "../../root-styles/columns.scss"
-
+import ApiRequest from "../../ApiRequest.js";
 //DATA
 import {dashboardData} from "./dashboard.data";
 import Message from "../../components/messages/messages.component";
+import { useHistory } from "react-router-dom";
 
 const Dashboard = () => {
-
+    const history = useHistory();
+    const [dashboardDetails, setDashboardDetails] = React.useState({
+        abstract: [] ,
+        notifications: [] ,
+        tickets: [],
+        login: [],
+        help: {}
+    })
+    console.log(dashboardDetails);
+    React.useEffect(() => {
+        ApiRequest("/user/dashboard", "GET")
+        .then((res) => {
+            if (res.message === "SUCCESS") {
+                setDashboardDetails({
+                    abstract: res.data.abstract ,
+                    notifications: res.data.notifications ,
+                    tickets: res.data.tickets ,
+                    login: res.data.login ,
+                    help: res.data.help
+                })
+            } else if (res.message === "LIMIT_DEVICE") history.push("/limit_device_list")
+        })
+        .catch ((err) => console.log(err))
+    }, [])
 
     return (
         <div className="dashboard admin-pages-layout">
             <div className="row">
-                {dashboardData.firstRow.map((item, index) => (
+                {dashboardDetails.abstract.map((item, index) => (
                     <div className="col-lg-3 col-md-6 col-4 column" key={index}>
                         <div className="card first-row">
-                            <h5>{item.number}</h5>
-                            <span>{item.description}</span>
+                            <h5>{item.value} {item.unit}</h5>
+                            <span>{item.title}</span>
                         </div>
                     </div>
                 ))}
@@ -34,12 +58,11 @@ const Dashboard = () => {
                     <div className="card second-row" id="notif">
                         <Details title="اعلان ها" showAll/>
                         <div className="message-holder">
-                            <Message message="لورم ایپسوم" messageDescription="Date"/>
-                            <Message message="لورم ایپسوم" messageDescription="Date"/>
-                            <Message message="لورم ایپسوم" messageDescription="Date"/>
-                            <Message message="لورم ایپسوم" messageDescription="Date"/>
-                            <Message message="لورم ایپسوم" messageDescription="Date"/>
-                            <Message message="لورم ایپسوم" messageDescription="Date"/>
+                            {
+                                dashboardDetails.notifications.map((item, index) => {
+                                    <Message message={item.title} messageDescription={item.date} key={index}/>
+                                })
+                            }
                         </div>
                     </div>
                 </div>
