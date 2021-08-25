@@ -27,6 +27,7 @@ const TimePicker = (props) => {
     return(
         <div className="holder">
         <input
+          className="time-picker"
           placeholder=" "
           type="text"
           disabled={props.disable}

@@ -25,7 +25,7 @@
     top: 3.1rem;
     padding: 5px 0;
 }
-input {
+input.time-picker {
   text-align: center;
   margin: 0 auto;
     padding: 0.4em 0.8em;
