@@ -48,7 +48,7 @@ const Video = (props) => {
                      </span>
                      :
                      <span className="cost">
-                        {props.cost}
+                        {props.cost ? props.cost : "رایگان"}
                      </span>
                  }
                  <span className="date-created">
