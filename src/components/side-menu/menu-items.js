@@ -65,6 +65,6 @@ export const menuItemsData = [
   {
     title: "خروج از حساب کاربری",
     logo: <LogoutLogo className="dashboard-icon"/>,
-    routeName: "/",
+    routeName: "/logout",
   },
 ];

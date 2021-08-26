@@ -1,6 +1,6 @@
 //REACT
 import React from "react";
-import { Switch, Route, useLocation} from "react-router-dom";
+import { Switch, Route, useLocation, Redirect, useHistory} from "react-router-dom";
 
 //COMPONENTS
 import Header from "./components/header/header.component";
@@ -11,11 +11,15 @@ import PrivateRoute from "./PrivateRoute";
 //STYLES
 import "./App.css";
 import "./root-styles/__dark-mode.scss"
+import ApiRequest from "./ApiRequest";
+import Cookies from "js-cookie";
+import logOut from "./logout";
 
 function App() {
   const [toggled, setToggled] = React.useState(false);
   const {pathname} = useLocation();
-  
+  const history = useHistory();
+
   React.useEffect(() => {
     window.onresize = () => {
       // prevent from toggled State on True
@@ -49,6 +53,8 @@ function App() {
     isDark?
     document.querySelector("body").classList.add("dark") :
     document.querySelector("body").classList.remove("dark")
+
+    pathname === "/logout" && logOut()
   })
 
   return (
