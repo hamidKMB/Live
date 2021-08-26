@@ -12,6 +12,7 @@ import "../../root-styles/columns.scss"
 import ApiRequest from "../../ApiRequest.js";
 //DATA
 import Message from "../../components/messages/messages.component";
+import NotificationMessage from "../../components/messages/notifications-message.component";
 import { useHistory } from "react-router-dom";
 
 const Dashboard = () => {
@@ -23,7 +24,6 @@ const Dashboard = () => {
         login: [],
         help: {}
     })  
-    console.log(dashboardDetails);
     React.useEffect(() => {
         ApiRequest("/user/dashboard", "GET")
         .then((res) => {
@@ -64,9 +64,13 @@ const Dashboard = () => {
               />
               <div className="message-holder">
                 {dashboardDetails.notifications.map((item, index) => (
-                  <Message
-                    message={item.title}
-                    messageDescription={item.date}
+                  <NotificationMessage
+                    notifMessage={
+                      item.title.length > 35
+                        ? item.title.slice(0, 35) + "..."
+                        : item.title
+                    }
+                    dateTime={item.date}
                     key={index}
                   />
                 ))}
@@ -83,7 +87,11 @@ const Dashboard = () => {
               <div className="message-holder" id="tickets">
                 {dashboardDetails.tickets.map((item, index) => (
                   <Message
-                    message={item.title}
+                    message={
+                      item.title.length > 35
+                        ? item.title.slice(0, 35) + "..."
+                        : item.title
+                    }
                     messageDescription={item.status}
                     ticket={item.status === "بی پاسخ پاسخ" ? true : false}
                     key={index}
@@ -106,7 +114,7 @@ const Dashboard = () => {
                 <span>موجودی حساب :</span>
                 <span>2541000 تومان</span>
               </div>
-              <div className="button">افزایش موجودی</div>
+              <div className="button resize">افزایش موجودی</div>
             </div>
           </div>
           <div className="col-lg-3 col-md-3 column" id="guide">
@@ -116,7 +124,7 @@ const Dashboard = () => {
                 <p>{dashboardDetails.help.fullname} عزیز</p>
                 <p>{dashboardDetails.help.description}</p>
               </div>
-              <div className="button">ویدیو آموزش سایت</div>
+              <div className="button resize px-1">ویدیو آموزش سایت</div>
             </div>
           </div>
         </div>

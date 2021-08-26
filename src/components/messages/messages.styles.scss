@@ -12,10 +12,14 @@
 
     .message-text {
         color: $color-light-text;
+        font-size: 90%;
     }
-
+    span{
+        font-size:80%;
+    }
     .in-progress {
         background-color: $color-light-open-ticket !important;
+        font-size:80%;
     }
 }
 
