@@ -17,17 +17,19 @@ const ApiRequest = async (url, method, data = {}) => {
                 Authorization: Cookies.get('token')
             }
         })
-        .then((res) => (
-            res.status === "FAILED" && 
-                    (
-                        res.message === "token_invalid" ||
-                        res.message === "token_absent" ||
-                        res.message === "token_blacklist" ||
-                        res.message === "user_not_found"
-                        ) && <Redirect to="/login"/>
-                )
-            );
-
+        .then((res) =>res.data)
+                // {
+                // if (res.data.status === "SUCCESS") {
+                //     return res.data.data
+                // } else if (res.data.status === "FAILED") {
+                //     if (res.data.message === "token_invalid" ||
+                //             res.data.message === "token_absent" ||
+                //             res.data.message === "token_blacklist" ||
+                //             res.data.message === "user_not_found") {
+                //                 <Redirect to="/login"/>
+                //             }
+                //         }
+                //     }
     } catch (error) {
         console.error(error);
         console.log(error);
