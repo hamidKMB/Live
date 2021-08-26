@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import Cookies from "js-cookie";
+import { Redirect } from "react-router-dom";
 
 let base_url = 'https://api.ideamooz.com/api/v1';
 
@@ -16,7 +17,16 @@ const ApiRequest = async (url, method, data = {}) => {
                 Authorization: Cookies.get('token')
             }
         })
-            .then(res => res.data);
+        .then((res) => (
+            res.status === "FAILED" && 
+                    (
+                        res.message === "token_invalid" ||
+                        res.message === "token_absent" ||
+                        res.message === "token_blacklist" ||
+                        res.message === "user_not_found"
+                        ) && <Redirect to="/login"/>
+                )
+            );
 
     } catch (error) {
         console.error(error);
