@@ -6,13 +6,13 @@ import {ReactComponent as AttachFileChatLogo} from "./attach-file-chat-logo.svg"
 const BackupChat = (props) => {
     return(
         <>
-            <div className="chat-header d-flex flex-row align-items-center border-bottom border-2 py-2 mx-2">
-              <h6 className="m-0">{props.title}</h6>
-              {
-                window.innerWidth > 575 &&
-                  <CloseChatLogo className="me-auto" onClick={props.closeChat}/>
-              }
-          </div>
+            {
+              window.innerWidth > 575 &&
+                <div className="chat-header d-flex flex-row align-items-center border-bottom border-2  py-2 mx-2">
+                    <h6 className="m-0">{props.title}</h6>
+                    <CloseChatLogo className="me-auto" onClick={props.closeChat}/>
+                </div>
+            }
           <div className="chat-messages-holder d-flex flex-column py-4 px-3">
               <UserMessage messageText="akshdbakshdbasdbas ashdbasdbas akshdbakshdbasdbas akshdbakshdbasdbas"/>
               <SupportTeamMessage messageText="dbakshdbasdbas ashdbasdbas akshdbakshdbasdbas akshdbakshdbasdba" supporterName="علی"/>

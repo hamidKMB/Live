@@ -1,6 +1,5 @@
 import React from "react";
 import {ReactComponent as PublicChatLogo} from "./Logos/Public-Chat-logo.svg";
-import {ReactComponent as PrivateChatLogo} from "./Logos/Private-Chat-Logo.svg";
 import {ReactComponent as ThreeDotLogo} from "./Logos/three-dot-logo.svg";
 import {ReactComponent as CommentsLogo} from "./Logos/comments-logo.svg";
 import {ReactComponent as CrossLogo} from "./Logos/crossMark.svg";

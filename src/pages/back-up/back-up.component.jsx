@@ -18,11 +18,17 @@ const BackUp = () => {
   const [userAttachment, setUserAttachment] = React.useState([])
   const [isChatOpen, setIsChatOpen] = React.useState(false);
 
-  window.onresize = () => {
-    console.log("NEW RESIZE :))))");
-    window.innerWidth < 575 &&
-    setIsChatOpen(false)
-  }
+  React.useEffect (() => {
+    const changeIsChatOpen = () => {
+      window.innerWidth < 575 && setIsChatOpen(false)
+      console.log("updating");
+    };
+
+    window.addEventListener("resize", changeIsChatOpen);
+
+    return () => window.removeEventListener("resize", changeIsChatOpen); 
+
+  }, [])
   
   const [chatDetails, setChatDetails] = React.useState({
     title:"" ,

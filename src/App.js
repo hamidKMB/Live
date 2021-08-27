@@ -21,7 +21,6 @@ function App() {
     window.onresize = () => {
       // prevent from toggled State on True
       if (toggled) setToggled(false);
-      console.log("called-resize", toggled);
     };
   });
   const onSideMenuClickHandler = () => {

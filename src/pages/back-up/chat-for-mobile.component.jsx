@@ -6,17 +6,17 @@ import BackupChat from "./back-up-chat.component";
 
 const BackupChatPhone = (props) => {
     return (
-      <div className="admin-pages-layout backup-layout">
+      <div>
         <div className="backup-header d-flex flex-row justify-content-between mb-3 align-items-center">
-          <h5 className="mb-0">{props.title}</h5>
+          <h5 className="mb-0 fs-6">{props.title}</h5>
           <div
-            className="button-outline py-2 me-auto"
+            className="button-outline py-1 me-auto"
             onClick={props.closeChat}
           >
             بازگشت
           </div>
         </div>
-        <div className="bg-white rounded-3 shadow-sm d-flex flex-row align-items-center mx-auto my-3 px-1 ">
+        <div className="bg-white rounded-3 shadow-sm justify-content-between d-flex flex-row align-items-center mx-auto my-3 px-2 py-2 ">
           <span>واحد: {props.unit}</span>
           <span className="reactions">
             {props.reaction === "good" ? (
