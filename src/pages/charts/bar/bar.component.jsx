@@ -6,8 +6,8 @@ const data = {
   datasets: [
     {
       data: [12, 19, 3, 6, 12, 19, 3, 6],
-      barThickness: 50,
-      borderRadius: 10, 
+      barThickness: 30,
+      borderRadius: 5, 
       backgroundColor: [
         'rgba(255, 159, 64, 1)',
       ],

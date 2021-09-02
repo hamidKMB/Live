@@ -16,10 +16,10 @@ const ApiRequest = async (url, method, data = {}) => {
                 Authorization: Cookies.get('token')
             }
         })
-            .then(res => res.data);
-
+    .then((res) => res.data)
     } catch (error) {
         console.error(error);
+        console.log(error);
     }
 }
 

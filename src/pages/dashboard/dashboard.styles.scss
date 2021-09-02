@@ -10,7 +10,7 @@
                 margin-bottom: 10%;
             }
             span{
-                font-size: 80%;
+                font-size: 75%;
             }
         }
     .second-row{
@@ -61,6 +61,10 @@
     }
     .guide{
         font-size: 12px;
+    }
+    div.button.resize {
+        font-size: 80% !important;
+        font-weight: 400 !important;
     }
 }
 

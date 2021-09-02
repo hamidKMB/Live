@@ -1,0 +1,51 @@
+@import "../../root-styles/variables.scss";
+
+
+    .followers-layout{
+        padding: 10rem 5rem;
+        @media screen and (max-width: 991px) {
+            padding: 8rem 6rem 8rem 3rem;
+            }
+            @media screen and (max-width: 786px){
+                margin: 0;
+                padding: 7rem 1rem;
+                .follower-logo-holder{
+                    display: none;
+                }
+            }
+        .main-holder{
+            width: 50%;
+            @media screen and (max-width: 768px) {
+                width: 95%;
+            }
+            .content-holder{
+                height: 67vh;
+                overflow-y: auto;
+                scroll-behavior: smooth;
+        &::-webkit-scrollbar {
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            display: none;
+        }
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+            }
+        }
+        .search{
+            border-radius: 15px;
+            width: 100%;
+            .search-box{
+                input{
+                    width: 80%;
+                    outline: none;
+                    font-size: 10pt;
+                    &::-webkit-input-placeholder{
+                        color: rgba($color-light-grey, 0.5);
+                    }
+                }
+            }
+        }
+    }
+
+

@@ -1,18 +1,33 @@
 @import "../../root-styles/variables.scss";
 
 .notification-message{
-    width: 100%;
-    padding: 1rem 0.8rem;
+    background-color: $color-light-white-items-select;
+    border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    border: 1px solid rgba($color-light-grey, 0.4);
-    border-radius: 5px;
-    margin-bottom: 1rem;
-    background-color: $color-light-white;
-    p{
+    color: $color-light-grey;
+    margin-bottom: 5px;
+    padding: 5px;
+    p.notification-title{
+        color: $color-light-text;
         display: inline-block;
         margin: 0;
+        font-size: 90%;
+    }
+    span.date-notif{
+        color: rgba($color-light-grey, 0.5);
+        font-size:80%;
+    }
+}
+
+.dark {
+    .notification-message {
+        background-color: $color-dark-grey;
+        color: rgba($color-light-white, 0.1);
+
+        .message-text {
+            color: rgba($color-light-white, 0.8)
+        }
     }
 }

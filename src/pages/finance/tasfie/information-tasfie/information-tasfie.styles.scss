@@ -1,0 +1,21 @@
+tr.bg-light#head-row {
+    th{
+        padding: 1rem 0;
+    }
+}
+
+tr.bg-white#special{
+    td{
+        padding: 1rem 0;
+    }
+    &::after{
+        content: " ";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        width: 96.5%;
+        margin: 0 2%;
+        background-color: rgba(grey, 0.5);
+    }
+}

@@ -2,14 +2,35 @@
     .drop-down-holder{
         width: 30vw;
         margin: 0 0 4rem 0;
+        @media screen and (max-width: 576px) {
+            margin: 0 auto 4rem;
+        }
+        select{
+            margin: 0 0 0 5%;
+            @media screen and (max-width: 576px) {
+                margin: 0 0 20px 0;
+            }
+        }
     }
     .chart-container{
         .row{
-            .col-6{
-                .rounded-card-chart{
-                    canvas{
-                        width: 40% !important;
-                        height: 90% !important;
+            .rounded-card-chart{
+                border-radius: 15px;
+                .items{
+                    font-size: 80%;
+                }
+                canvas{
+                    width: 40% !important;
+                    height: 90% !important;
+                }
+                p{
+                    top:38%;
+                    left:13%;
+                    font-size: 100%;
+                    span{
+                        &:first-child{
+                            font-weight: bold;
+                        }
                     }
                 }
             }

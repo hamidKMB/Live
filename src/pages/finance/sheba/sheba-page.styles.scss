@@ -1,0 +1,63 @@
+.sheba{
+    .header-sheba{
+        h4{
+            font-size: 100%;
+        }
+        font-size: 100%;
+    }
+    table.table{
+        min-width: 40;
+        tr.th-holder-sheba{
+            border-radius: 10px;
+            
+            th{
+                width: 40%;
+                font-weight: 400;
+            }
+        }
+        .td-holder-sheba{
+            td{
+                width: 40%;
+                font-size: 90%;
+                @media screen and (max-width: 582px) {
+                    &:nth-child(2){
+                        word-wrap:break-word;
+                    }
+                }
+            }
+        }
+    }
+    .warnings {
+        width: 75%;
+        @media screen and (max-width: 486px) {
+            width: 90%;
+        }
+        font-size: 11.5pt;
+        ul.list-designed{
+            list-style-type: '- ';
+        }
+    }
+    .sheba-modal{
+            .card{
+                width: 20rem;
+                height: 23rem;
+                padding: 2.5rem 1rem;
+                left: 2rem;
+                @media screen and (max-width: 768px) {
+                    left:0
+                }
+                fieldset.field-set{
+                    padding-bottom: 0.4rem;
+                    padding-left: 1px;
+                    padding-right: 1px;
+                    legend{
+                        margin-bottom: 0;
+                    }
+                    input{
+                        text-align: left;
+                        font-size: 11pt;
+                    }
+                }
+            }
+    }
+}

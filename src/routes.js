@@ -18,6 +18,9 @@ import UploadLive from "./pages/events/Upload-Live/Upload-Live.component";
 import ChatPage from "./pages/chat-page/chat-page.component";
 import UploadCourse from "./pages/videos/courses/upload-course/upload-course.component";
 import CourseSections from "./pages/videos/courses/course-sections/course-sections.component";
+import CreateNewTicket from "./pages/tickets/create-new-ticket.component";
+import CreateNewDiscount from "./pages/discounts/create-new-discount";
+import LimitDevice from "./pages/LIMIT_DEVICE/limit-device.component";
 
 const routes = [
   {
@@ -25,6 +28,12 @@ const routes = [
     private: false,
     path: "/login",
     component: Sign,
+  },
+  {
+    exact: true,
+    private: true,
+    path: "/limit_device_list",
+    component: LimitDevice,
   },
   {
     exact: true,
@@ -101,8 +110,20 @@ const routes = [
   {
     private: true,
     exact: true,
+    path: "/tickets/create-new-ticket",
+    component: CreateNewTicket,
+  },
+  {
+    private: true,
+    exact: true,
     path: "/tickets",
     component: Tickets,
+  },
+  {
+    private: true,
+    exact: true,
+    path: "/discounts/create-new-discount",
+    component: CreateNewDiscount,
   },
   {
     private: true,
@@ -113,8 +134,14 @@ const routes = [
   {
     private: true,
     exact: true,
-    path: "/follow",
+    path: "/follow/:tab",
     component: Followers,
+  },
+  {
+    private: true,
+    exact: true,
+    path: "/backup/:tab",
+    component: BackUp,
   },
   {
     private: true,

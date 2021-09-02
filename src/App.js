@@ -11,23 +11,26 @@ import PrivateRoute from "./PrivateRoute";
 //STYLES
 import "./App.css";
 import "./root-styles/__dark-mode.scss"
+import logOut from "./logout";
 
 function App() {
   const [toggled, setToggled] = React.useState(false);
   const {pathname} = useLocation();
-  
+
   React.useEffect(() => {
     window.onresize = () => {
       // prevent from toggled State on True
       if (toggled) setToggled(false);
     };
   });
+  const onSideMenuClickHandler = () => {
+    if ( window.innerWidth < 768 ) setToggled(!toggled)
+  }
 
   const handleClick = () => {
     // hamburger Menu Toggle
-    setToggled((prevValue) => {
-      return !prevValue;
-    });
+    if (window.innerWidth < 768) setToggled(!toggled)
+    console.log("clicked", toggled);
   };
 
   const stored = localStorage.getItem("isDark");
@@ -46,18 +49,20 @@ function App() {
     isDark?
     document.querySelector("body").classList.add("dark") :
     document.querySelector("body").classList.remove("dark")
+
+    pathname === "/logout" && logOut()
   })
 
   return (
     <div className={`App ${isDark ? `dark` : ` `}`}>
-      {pathname !== "/login" && (
+      {pathname !== "/login" && pathname !=="/limit_device_list" && (
         <>
           <Header
             toggleSideBar={handleClick}
             onToggleDarkMode={onToggledDarkMode}
             dark={isDark}
           />
-          <SideMenu display={toggled ? "toggle-side-menu" : " "} />
+          <SideMenu display={toggled ? "toggle-side-menu"  : " " } onClick={onSideMenuClickHandler}/>
         </>
       )}
       <Switch>

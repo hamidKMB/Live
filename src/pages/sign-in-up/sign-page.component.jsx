@@ -51,7 +51,7 @@ const Sign = (props) => {
         });
     };
 
-    const onChangeHandlerINput = (value) => {
+    const onChangeHandlerInput = (value) => {
         setMobile(value);
     };
 
@@ -68,10 +68,10 @@ const Sign = (props) => {
                     <TextInput
                         label="تلفن همراه"
                         id="phone-number"
-                        onChange={(e) => onChangeHandlerINput(e.target.value)}
+                        onChange={(e) => onChangeHandlerInput(e.target.value)}
                         input
                     />
-                    <label for="Enter-phone" className="button mx-auto" onClick={sendPhoneToApi}>
+                    <label htmlFor="Enter-phone" className="button mx-auto" onClick={sendPhoneToApi}>
                         تایید و ادامه
                         <input
                             type="submit"
@@ -100,7 +100,7 @@ const Sign = (props) => {
                         focusStyle="focus-input"
                         className="mb-3"
                     />
-                   <label for="Enter-phone" className="button mx-auto" onClick={onClickCheck}>
+                   <label htmlFor="Enter-phone" className="button mx-auto" onClick={onClickCheck}>
                         تایید و ادامه
                         <input
                             type="submit"

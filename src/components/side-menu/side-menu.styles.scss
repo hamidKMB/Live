@@ -1,8 +1,8 @@
 @import "../../root-styles/variables.scss";
 
 .side-menu {
-    animation: comeFromRight 1s ease;
     background-color: $color-light-white;
+    animation: comeFromRight 1s ease;
     width: 16rem;
     @media screen and (max-width: 1025px) {
         width: 14rem;
@@ -191,7 +191,9 @@
 
 .toggle-side-menu {
     display: block !important;
-
+}
+.toggle-in-side-menu {
+    
 }
 
 @keyframes comeFromRight {
@@ -214,7 +216,7 @@
     }
 
     100% {
-        transform: translateX(-20px);
+        transform: translateX(14rem);
         opacity: 0;
     }
 

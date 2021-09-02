@@ -11,6 +11,7 @@ const MenuMultiActiveItem = (props) => {
             <NavLink exact={props.routeName === "/"}
                 to={props.routeName}
                 isActive={() => props.multi_pages.includes(props.pathname)}
+                onClick={props.onClick}
             >
                 {props.title}
                 {props.logo}

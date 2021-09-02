@@ -1,72 +1,67 @@
-import React from "react";
+import React from "react"
 
-import "./payment.styles.scss";
+import "./payment.styles.scss"
 
 import TransactionDetail from "../../../components/transaction-detail/transaction-detail.component";
+import {ReactComponent as PaymentLogo} from "./payment-logo.svg";
 
-const Payment = () => {
+const Payments = () => {
     return (
-      <div className="payment">
+      <div className="payment d-flex flex-row">
         <table className="table">
-          <div className="tasfie-details-head d-flex flex-row align-items-center justify-content-start w-100 mb-5">
-            <thead className="card d-flex flex-row align-items-center justify-content-evenly ms-4 pt-2 pe-1 pb-2">
-              <tr>
-                <th className="border-0" scope="col">
-                    شناسه
-                  </th>
-                  <th className="border-0" scope="col">
-                    تاریخ ثبت درخواست
-                  </th>
-                  <th className="border-0" scope="col">
-                    تسویه تا تاریخ
-                  </th>
-                  <th className="border-0" scope="col">
-                    آیتم های تسویه
-                  </th>
-                  <th className="border-0" scope="col">
-                    مبلغ واریزی
-                  </th>
-                  <th className="border-0" scope="col">
-                    وضعیت درخواست
-                  </th>
-              </tr>  
-            </thead>
-            <div className="button">خروجی از لیست</div>
-          </div>
-          <div className="d-flex flex-row flex-md-column">
-            <tbody>
-              <TransactionDetail
-                shenase="256521"
-                requestDate="1400/02/25-12:30"
-                tasfieTill="1400/02/25-12:30"
-                tasfieItems="1حواله"
-                price="25985065 تومان"
-                situation="در حال بررسی" //taken from API
-                tasfie
-              />
-              <TransactionDetail
-                shenase="256521"
-                requestDate="1400/02/25-12:30"
-                tasfieTill="1400/02/25-12:30"
-                tasfieItems="1حواله"
-                price="25985065 تومان"
-                situation="واریز شده" //taken from API
-                tasfie
-              />
-              <TransactionDetail
-                shenase="256521"
-                requestDate="1400/02/25-12:30"
-                tasfieTill="1400/02/25-12:30"
-                tasfieItems="1حواله"
-                price="25985065 تومان"
-                situation="رد شده" //taken from API
-                tasfie
-              />
-            </tbody>
-          </div>
+          <thead className="d-flex flex-row align-items-baseline justify-content-evenly ms-4 w-100 py-2">
+            <tr className="th-holder shadow p-1 mb-3 bg-white d-flex flex-row align-items-center">
+              <th className="border-0" scope="col">
+                شناسه پرداخت
+              </th>
+              <th className="border-0" scope="col">
+                توضیحات پرداخت
+              </th>
+              <th className="border-0" scope="col">
+                مبلغ (تومان)
+              </th>
+              <th className="border-0" scope="col">
+                تاریخ پرداخت
+              </th>
+            </tr>
+            <th className="button mx-auto rounded-2">
+              خروجی از لیست
+            </th>
+          </thead>
+          <tbody className="ss d-flex flex-row align-items-center">
+            <div className="tr-holder d-flex flex-column h-100">
+            <TransactionDetail
+              shenasePardakht="25652145"
+              description="برداشت از کیف پول"
+              price="-2222222"
+              date="1400/02/25-12:30"
+              bardasht
+            />
+            <TransactionDetail
+              shenasePardakht="25652145"
+              description="برداشت از کیف پول"
+              price="+2222222"
+              date="1400/02/25-12:30"
+            />
+            <TransactionDetail
+              shenasePardakht="25652145"
+              description="برداشت از کیف پول"
+              price="-2222222"
+              date="1400/02/25-12:30"
+              bardasht
+            />
+            <TransactionDetail
+              shenasePardakht="25652145"
+              description="برداشت از کیف پول"
+              price="+2222222"
+              date="1400/02/25-12:30"
+            />
+            </div>
+            <PaymentLogo className="payment-logo d-md-block d-none m-auto pe-1 w-25"/>
+          </tbody>
         </table>
       </div>
     );
 }
 
-export default Payment
+export default Payments;

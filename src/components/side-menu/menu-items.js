@@ -55,7 +55,7 @@ export const menuItemsData = [
   {
     title: "دنبال کنندگان/دنبال شدگان",
     logo: <FollowersLogo className="dashboard-icon"/>,
-    routeName: "/follow",
+    routeName: "/follow/followings",
   },
   {
     title: "پشتیبانی",
@@ -65,6 +65,6 @@ export const menuItemsData = [
   {
     title: "خروج از حساب کاربری",
     logo: <LogoutLogo className="dashboard-icon"/>,
-    routeName: "/",
+    routeName: "/logout",
   },
 ];
