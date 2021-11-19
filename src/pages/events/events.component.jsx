@@ -6,29 +6,53 @@ import { useHistory } from "react-router";
 //STYLES
 import "../../root-styles/layout.scss";
 import "../../root-styles/buttons.scss";
-import "./events-page.styles.scss"
+import "./events-page.styles.scss";
 import ApiRequest from "../../ApiRequest";
 
 const Events = () => {
-
-  const [eventList, setEventList] = React.useState([]);
+  const [eventList, setEventList] = React.useState([
+    {
+      key: "index",
+      image: "#",
+      title: "title",
+      date: "date",
+      timeLeftToStart: "CountDownTime",
+      genere: "Genre",
+    },
+    {
+      key: "index1",
+      image: "#",
+      title: "adsasd",
+      date: "adsasd",
+      timeLeftToStart: "adsasd",
+      genere: "adsasd",
+    },
+    {
+      key: "index2",
+      image: "#",
+      title: "adsasd",
+      date: "adsasd",
+      timeLeftToStart: "adsasd",
+      genere: "adsasd",
+    },
+  ]);
   const history = useHistory();
-  console.log(eventList);
-  React.useEffect(() => {
-      ApiRequest("/live/list", "GET")
-        .then((res) => {
-          if (res.status === "LIMIT_DEVICE") {
-            history.push("/limit_device_list");
-          }
-          if (res.status === "SUCCESS") {
-            setEventList(res.data.data);
-          }
-        })
-        .catch((err) => {
-          console.error(err);
-          alert("دیتایی یافت نشد");
-        });
-    },[history, setEventList])
+  // console.log(eventList);
+  // React.useEffect(() => {
+  //     ApiRequest("/live/list", "GET")
+  //       .then((res) => {
+  //         if (res.status === "LIMIT_DEVICE") {
+  //           history.push("/limit_device_list");
+  //         }
+  //         if (res.status === "SUCCESS") {
+  //           setEventList(res.data.data);
+  //         }
+  //       })
+  //       .catch((err) => {
+  //         console.error(err);
+  //         alert("دیتایی یافت نشد");
+  //       });
+  //   },[history, setEventList])
 
   return (
     <div className="admin-pages-layout events-layout">
@@ -45,10 +69,10 @@ const Events = () => {
         <Event
           key="index"
           image="#"
-          title="adsasd"
-          date="adsasd"
-          timeLeftToStart="adsasd"
-          genere="adsasd"
+          title="title"
+          date="date"
+          timeLeftToStart="CountDown"
+          genere="Genre"
         />
         {eventList.map((item) => (
           <Event
@@ -63,6 +87,6 @@ const Events = () => {
       </div>
     </div>
   );
-    };
-    
-    export default Events;
+};
+
+export default Events;
